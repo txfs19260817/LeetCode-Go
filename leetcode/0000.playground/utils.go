@@ -1,5 +1,7 @@
 package _000_playground
 
+import "fmt"
+
 type ListNode struct {
 	Val  int
 	Next *ListNode
@@ -30,4 +32,27 @@ func abs(a int) int {
 		return -1 * a
 	}
 	return a
+}
+
+func BuildLinkedListFromSlice(nums []int) *ListNode {
+	head := &ListNode{}
+	p := head
+	for _, num := range nums {
+		node := &ListNode{num, nil}
+		p.Next = node
+		p = p.Next
+	}
+	return head.Next
+}
+
+func PrintLinkedList(head *ListNode) {
+	for head != nil {
+		fmt.Print(head.Val)
+		if head.Next != nil {
+			fmt.Print("->")
+		} else {
+			fmt.Println()
+		}
+		head = head.Next
+	}
 }

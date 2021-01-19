@@ -25,4 +25,4 @@ func hasCycle(head *ListNode) bool {
 
 [1]
 -1
- */
+*/

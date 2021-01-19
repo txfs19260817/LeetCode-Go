@@ -31,4 +31,4 @@ func detectCycle(head *ListNode) *ListNode {
 
 [1]
 -1
- */
+*/

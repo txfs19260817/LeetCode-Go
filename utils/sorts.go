@@ -93,14 +93,13 @@ func partition(data []int, left, right int) int {
 
 func partition2(data []int, left, right int) int {
 	pivotElem := data[right]
-	i := left - 1
+	i := left
 	for j := left; j < right; j++ {
 		if data[j] < pivotElem {
-			i++
 			data[i], data[j] = data[j], data[i]
+			i++
 		}
 	}
-	i++
 	data[i], data[right] = data[right], data[i]
 	return i
 }

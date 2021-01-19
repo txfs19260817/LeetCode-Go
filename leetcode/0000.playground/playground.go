@@ -1,46 +1,35 @@
 package _000_playground
 
-func sortList(head *ListNode) *ListNode {
-	if head == nil || head.Next == nil {
-		return head
-	}
-	mid := middleOfLL(head)
-	temp:=mid.Next
-	mid.Next=nil
-	mid=temp
-	return mergeSort(sortList(head), sortList(mid))
+/*
+A playground to code benefiting from auto-completion within IDE.
+*/
+func findKthLargest(nums []int, k int) int {
+	return qs(nums, 0, len(nums)-1, k)
 }
 
-func mergeSort(left *ListNode, right *ListNode) *ListNode {
-	head := &ListNode{}
-	res:=head
-	for left!=nil && right!=nil {
-		if left.Val<right.Val{
-			head.Next=left
-			left=left.Next
-		} else {
-			head.Next=right
-			right=right.Next
+func qs(nums []int, l, r, k int) int {
+	if l == r {
+		return nums[l]
+	}
+	pivot := partition(nums, l, r)
+	if pivot == k {
+		return nums[k]
+	}
+	if pivot > k {
+		return qs(nums, l, pivot-1, k)
+	}
+	return qs(nums, pivot+1, r, k)
+}
+
+func partition(nums []int, l, r int) int {
+	pivotElem := nums[r]
+	i := l
+	for j := l; j < r; j++ {
+		if nums[j] > pivotElem {
+			nums[i], nums[j] = nums[j], nums[i]
+			i++
 		}
-		head=head.Next
-		head.Next=nil
 	}
-	if left != nil {
-		head.Next=left
-	}
-	if right!=nil {
-		head.Next=right
-	}
-	return res.Next
-}
-
-func middleOfLL(head *ListNode) *ListNode {
-	if head == nil || head.Next == nil {
-		return head
-	}
-	s,f:=head,head.Next
-	for f.Next!=nil&&f.Next.Next!=nil {
-		s,f = s.Next, f.Next.Next
-	}
-	return s
+	nums[i], nums[r] = nums[r], nums[i]
+	return i
 }

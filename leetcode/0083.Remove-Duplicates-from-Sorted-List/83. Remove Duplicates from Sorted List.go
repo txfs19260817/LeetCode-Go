@@ -10,12 +10,12 @@ func deleteDuplicates(head *ListNode) *ListNode {
 		return head
 	}
 
-	for p:=head; p!=nil; p=p.Next{
-		q:=p.Next
-		for q!=nil && p.Val==q.Val {
-			q=q.Next
+	for p := head; p != nil; p = p.Next {
+		q := p.Next
+		for q != nil && p.Val == q.Val {
+			q = q.Next
 		}
-		p.Next=q
+		p.Next = q
 	}
 	return head
 }
@@ -23,4 +23,4 @@ func deleteDuplicates(head *ListNode) *ListNode {
 /*
 [1,1,2]
 [1,1,2,3,3]
- */
+*/
