@@ -13,6 +13,11 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
+type Node struct {
+	Val  int
+	Next *Node
+}
+
 func max(a, b int) int {
 	if a > b {
 		return a
