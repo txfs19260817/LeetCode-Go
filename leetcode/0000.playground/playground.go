@@ -3,33 +3,33 @@ package _000_playground
 /*
 A playground to code benefiting from auto-completion within IDE.
 */
-func findKthLargest(nums []int, k int) int {
-	return qs(nums, 0, len(nums)-1, k)
-}
-
-func qs(nums []int, l, r, k int) int {
-	if l == r {
-		return nums[l]
+func pancakeSort(arr []int) []int {
+	if len(arr) < 2 {
+		return arr
 	}
-	pivot := partition(nums, l, r)
-	if pivot == k {
-		return nums[k]
-	}
-	if pivot > k {
-		return qs(nums, l, pivot-1, k)
-	}
-	return qs(nums, pivot+1, r, k)
-}
-
-func partition(nums []int, l, r int) int {
-	pivotElem := nums[r]
-	i := l
-	for j := l; j < r; j++ {
-		if nums[j] > pivotElem {
-			nums[i], nums[j] = nums[j], nums[i]
-			i++
+	var res []int
+	for right := len(arr); right > 0; right-- {
+		idx := find(arr, right)
+		if idx+1 != right {
+			reverse(arr, 0, idx)
+			reverse(arr, 0, right-1)
+			res = append(res, idx+1, right)
 		}
 	}
-	nums[i], nums[r] = nums[r], nums[i]
-	return i
+	return res
+}
+
+func reverse(arr []int, l, r int) {
+	for ; l < r; l, r = l+1, r-1 {
+		arr[l], arr[r] = arr[r], arr[l]
+	}
+}
+
+func find(arr []int, t int) int {
+	for i, a := range arr {
+		if a == t {
+			return i
+		}
+	}
+	return -1
 }

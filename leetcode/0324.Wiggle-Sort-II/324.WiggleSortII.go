@@ -1,22 +1,40 @@
 package _324_Wiggle_Sort_II
 
-import "sort"
-
 func wiggleSort(nums []int) {
-	sort.Ints(nums)
+	if len(nums) < 2 {
+		return
+	}
+	qs(nums, 0, len(nums)-1)
 	res := make([]int, len(nums))
-
 	mid := len(nums) / 2
-	if len(nums)%2 == 1 {
-		mid++
+	for i, j := 0, mid; j < len(nums); i, j = i+2, j+1 {
+		res[i] = nums[j]
 	}
+	for i, j := 1, 0; j < mid; i, j = i+2, j+1 {
+		res[i] = nums[j]
+	}
+	for i, r := range res {
+		nums[i] = r
+	}
+}
 
-	for i, j := mid-1, 0; i >= 0; i, j = i-1, j+2 {
-		res[j] = nums[i]
+func qs(nums []int, l, r int) {
+	if l < r {
+		pivot := partition(nums, l, r)
+		qs(nums, l, pivot-1)
+		qs(nums, pivot+1, r)
 	}
-	for i, j := len(nums)-1, 1; i >= mid; i, j = i-1, j+2 {
-		res[j] = nums[i]
-	}
+}
 
-	copy(nums, res)
+func partition(nums []int, l, r int) int {
+	pivotElem := nums[r]
+	i := l
+	for j := l; j < r; j++ {
+		if nums[j] > pivotElem {
+			nums[i], nums[j] = nums[j], nums[i]
+			i++
+		}
+	}
+	nums[i], nums[r] = nums[r], nums[i]
+	return i
 }
