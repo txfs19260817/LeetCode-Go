@@ -17,12 +17,12 @@ func Test_intersection(t *testing.T) {
 	}{
 		{
 			name: "nums1 = [1,2,2,1], nums2 = [2,2]",
-			args: args{[]int{1,2,2,1}, []int{2,2}},
+			args: args{[]int{1, 2, 2, 1}, []int{2, 2}},
 			want: []int{2},
 		},
 		{
 			name: "nums1 = [9,5], nums2 = [9,4,9,8,4]",
-			args: args{[]int{9,5}, []int{9,4,9,8,4}},
+			args: args{[]int{9, 5}, []int{9, 4, 9, 8, 4}},
 			want: []int{9},
 		},
 	}
@@ -37,6 +37,6 @@ func Test_intersection(t *testing.T) {
 
 func Benchmark_intersection(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		intersection([]int{9,5}, []int{9,4,9,8,4})
+		intersection([]int{9, 5}, []int{9, 4, 9, 8, 4})
 	}
 }

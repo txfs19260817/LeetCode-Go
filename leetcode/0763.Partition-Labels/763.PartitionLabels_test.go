@@ -17,7 +17,7 @@ func Test_partitionLabels(t *testing.T) {
 		{
 			name: "S = `ababcbacadefegdehijhklij`",
 			args: args{"ababcbacadefegdehijhklij"},
-			want: []int{9,7,8},
+			want: []int{9, 7, 8},
 		},
 	}
 	for _, tt := range tests {
