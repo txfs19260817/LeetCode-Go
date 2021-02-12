@@ -166,8 +166,7 @@ func RadixSort(data []int) []int {
 			maxNum = num
 		}
 	}
-	exp := 1
-	for ; maxNum/exp > 0; exp *= 10 {
+	for exp := 1; maxNum/exp > 0; exp *= 10 {
 		counts := make([]int, 10)
 
 		for _, num := range data {
