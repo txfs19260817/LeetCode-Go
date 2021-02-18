@@ -137,7 +137,7 @@ func HeapSort(data []int) []int {
 		adjustHeap(data, i, len(data))
 	}
 	for i := len(data) - 1; i > 0; i-- {
-		data[i], data[0] = data[0], data[i]
+		data[i], data[0] = data[0], data[i] // comment this to get descending order
 		adjustHeap(data, 0, i)
 	}
 	return data
