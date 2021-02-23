@@ -22,5 +22,8 @@ coverage.txt
 
 .vscode
 .idea
+.DS_Store
 
 .orig
+
+playground.go

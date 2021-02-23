@@ -133,6 +133,7 @@ func merge(left, right []int) []int {
 }
 
 func HeapSort(data []int) []int {
+	// https://www.cnblogs.com/chengxiao/p/6129630.html
 	for i := len(data)/2 - 1; i >= 0; i-- {
 		adjustHeap(data, i, len(data))
 	}
