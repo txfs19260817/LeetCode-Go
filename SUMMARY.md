@@ -5,5 +5,6 @@
 
 ## Solutions
 
-* [LeetCode 150. Evaluate Reverse Polish Notation](solutions/leetcode-150.-evaluate-reverse-polish-notation.md)
+* [73. Set Matrix Zeroes](solutions/73.-set-matrix-zeroes.md)
+* [150. Evaluate Reverse Polish Notation](solutions/leetcode-150.-evaluate-reverse-polish-notation.md)
 
