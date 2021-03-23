@@ -1,4 +1,4 @@
-# LeetCode 150. Evaluate Reverse Polish Notation
+# 150. Evaluate Reverse Polish Notation
 
 ## [LeetCode **150. Evaluate Reverse Polish Notation**](https://leetcode-cn.com/problems/evaluate-reverse-polish-notation/)
 
