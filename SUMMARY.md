@@ -11,5 +11,5 @@
 * [20. Valid Parentheses](solutions/20.-valid-parentheses.md)
 * [29. Divide Two Integers](solutions/29.-divide-two-integers.md)
 * [73. Set Matrix Zeroes](solutions/73.-set-matrix-zeroes.md)
-* [150. Evaluate Reverse Polish Notation](solutions/leetcode-150.-evaluate-reverse-polish-notation.md)
+* [150. Evaluate Reverse Polish Notation](solutions/150.-evaluate-reverse-polish-notation.md)
 

@@ -29,7 +29,7 @@ description: 用于记录做过的LeetCode题目以及解答
 | No. | Title | Solution | Difficulty |
 | :--- | :--- | :--- | :--- |
 | 0020 | Valid Parentheses | [Go](solutions/20.-valid-parentheses.md) | Easy |
-| 0150 | Evaluate Reverse Polish Notation | [Go](solutions/leetcode-150.-evaluate-reverse-polish-notation.md) | Medium |
+| 0150 | Evaluate Reverse Polish Notation | [Go](solutions/150.-evaluate-reverse-polish-notation.md) | Medium |
 
 ### String
 
