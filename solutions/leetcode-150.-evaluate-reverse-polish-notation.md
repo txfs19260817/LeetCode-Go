@@ -57,6 +57,11 @@ Stack
 
 A stack is applied here. Traverse every token in the input array. If the token is a number, then add it as an integer to the stack. Otherwise it should be an operator and let `o`  denote it. Pop 2 elements from the stack successively and denote them `b` and `a` respectively. Then push the result of `a o b` into the stack. Finally, return the only remaining element in this stack.
 
+### Complexity
+
+* Time complexity: O\(n\)
+* Space complexity: O\(n\)
+
 ### Code
 
 ```go
