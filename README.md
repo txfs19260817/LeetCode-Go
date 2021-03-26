@@ -18,6 +18,12 @@ description: 用于记录做过的LeetCode题目以及解答
 | :--- | :--- | :--- | :--- |
 | 0001 | Two Sum | [Go](solutions/1.-two-sum.md) | Easy |
 
+### Linked List
+
+| No. | Title | Solution | Difficulty |
+| :--- | :--- | :--- | :--- |
+| 0002 | Add Two Numbers | [Go](solutions/2.-add-two-numbers.md) | Medium |
+
 ### Math
 
 | No. | Title | Solution | Difficulty |
@@ -30,6 +36,7 @@ description: 用于记录做过的LeetCode题目以及解答
 | :--- | :--- | :--- | :--- |
 | 0020 | Valid Parentheses | [Go](solutions/20.-valid-parentheses.md) | Easy |
 | 0150 | Evaluate Reverse Polish Notation | [Go](solutions/150.-evaluate-reverse-polish-notation.md) | Medium |
+| 0456 | 132 Pattern  | [Go](solutions/456.-132-pattern.md) | Medium |
 
 ### String
 

@@ -16,8 +16,8 @@ Explanation of the response here.
 
 ### Complexity
 
-* Time complexity: O\(\)
-* Space complexity: O\(\)
+* Time complexity: $$O(n)$$
+* Space complexity: $$O(n)$$
 
 ### Code
 
