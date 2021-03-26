@@ -11,6 +11,7 @@
 * [13. Roman to Integer](solutions/13.-roman-to-integer.md)
 * [20. Valid Parentheses](solutions/20.-valid-parentheses.md)
 * [29. Divide Two Integers](solutions/29.-divide-two-integers.md)
+* [32. Longest Valid Parentheses](solutions/32.-longest-valid-parentheses.md)
 * [34. Find First and Last Position of Element in Sorted Array](solutions/34.-find-first-and-last-position-of-element-in-sorted-array.md)
 * [73. Set Matrix Zeroes](solutions/73.-set-matrix-zeroes.md)
 * [82. Remove Duplicates from Sorted List II](solutions/82.-remove-duplicates-from-sorted-list-ii.md)

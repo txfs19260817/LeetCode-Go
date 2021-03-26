@@ -52,6 +52,7 @@ description: 用于记录做过的LeetCode题目以及解答
 | :--- | :--- | :--- | :--- |
 | 0012 | Integer to Roman | [Go](solutions/12.-integer-to-roman.md) | Medium |
 | 0013 | Roman to Integer | [Go](solutions/13.-roman-to-integer.md) | Easy |
+| 0032 | Longest Valid Parentheses | [Go](solutions/32.-longest-valid-parentheses.md) | Hard |
 
 ## Reference
 
