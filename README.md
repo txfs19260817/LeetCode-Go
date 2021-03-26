@@ -12,6 +12,12 @@ description: 用于记录做过的LeetCode题目以及解答
 | :--- | :--- | :--- | :--- |
 | 0073 | Set Matrix Zeroes | [Go](solutions/73.-set-matrix-zeroes.md) | Medium |
 
+### Binary Search
+
+| No. | Title | Solution | Difficulty |
+| :--- | :--- | :--- | :--- |
+| 0034 | Find First and Last Position of Element in Sorted Array | [Go](solutions/34.-find-first-and-last-position-of-element-in-sorted-array.md) | Medium |
+
 ### Hash Table
 
 | No. | Title | Solution | Difficulty |
