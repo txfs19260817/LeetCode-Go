@@ -1,4 +1,4 @@
-package _000_playground
+package utils
 
 import "fmt"
 
@@ -7,39 +7,7 @@ type ListNode struct {
 	Next *ListNode
 }
 
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
-
-type Node struct {
-	Val  int
-	Next *Node
-}
-
-func max(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
-}
-
-func min(a, b int) int {
-	if a < b {
-		return a
-	}
-	return b
-}
-
-func abs(a int) int {
-	if a < 0 {
-		return -1 * a
-	}
-	return a
-}
-
-func BuildLinkedListFromSlice(nums []int) *ListNode {
+func BuildLinkedListFromInts(nums []int) *ListNode {
 	head := &ListNode{}
 	p := head
 	for _, num := range nums {
@@ -60,4 +28,16 @@ func PrintLinkedList(head *ListNode) {
 		}
 		head = head.Next
 	}
+}
+
+func AreLinkedListsEqual(l1, l2 *ListNode) bool {
+	for ; l1 != nil && l2 != nil; l1, l2 = l1.Next, l2.Next {
+		if l1.Val != l2.Val {
+			return false
+		}
+	}
+	if l1 != nil || l2 != nil {
+		return false
+	}
+	return true
 }

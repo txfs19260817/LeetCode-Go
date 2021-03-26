@@ -6,7 +6,7 @@ import (
 )
 
 func Test_splitListToParts(t *testing.T) {
-	root := buildLinkedListFromSlice([]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10})
+	root := buildLinkedListFromInts([]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10})
 	list := splitListToParts(root, 3)
 	for _, node := range list {
 		printLinkedList(node)
@@ -25,7 +25,7 @@ func printLinkedList(head *ListNode) {
 	}
 }
 
-func buildLinkedListFromSlice(nums []int) *ListNode {
+func buildLinkedListFromInts(nums []int) *ListNode {
 	head := &ListNode{}
 	p := head
 	for _, num := range nums {

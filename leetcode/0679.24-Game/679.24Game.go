@@ -73,35 +73,30 @@ func judgePoint241(nums []int) bool {
 		ternaryOp(float64(nums[0])/float64(nums[1]), float64(nums[2]), float64(nums[3])) ||
 		ternaryOp(float64(nums[1])-float64(nums[0]), float64(nums[2]), float64(nums[3])) ||
 		ternaryOp(float64(nums[1])/float64(nums[0]), float64(nums[2]), float64(nums[3])) ||
-
 		ternaryOp(float64(nums[0])+float64(nums[2]), float64(nums[1]), float64(nums[3])) ||
 		ternaryOp(float64(nums[0])-float64(nums[2]), float64(nums[1]), float64(nums[3])) ||
 		ternaryOp(float64(nums[0])*float64(nums[2]), float64(nums[1]), float64(nums[3])) ||
 		ternaryOp(float64(nums[0])/float64(nums[2]), float64(nums[1]), float64(nums[3])) ||
 		ternaryOp(float64(nums[2])-float64(nums[0]), float64(nums[1]), float64(nums[3])) ||
 		ternaryOp(float64(nums[2])/float64(nums[0]), float64(nums[1]), float64(nums[3])) ||
-
 		ternaryOp(float64(nums[3])+float64(nums[0]), float64(nums[1]), float64(nums[2])) ||
 		ternaryOp(float64(nums[3])-float64(nums[0]), float64(nums[1]), float64(nums[2])) ||
 		ternaryOp(float64(nums[3])*float64(nums[0]), float64(nums[1]), float64(nums[2])) ||
 		ternaryOp(float64(nums[3])/float64(nums[0]), float64(nums[1]), float64(nums[2])) ||
 		ternaryOp(float64(nums[0])-float64(nums[3]), float64(nums[1]), float64(nums[2])) ||
 		ternaryOp(float64(nums[0])/float64(nums[3]), float64(nums[1]), float64(nums[2])) ||
-
 		ternaryOp(float64(nums[1])+float64(nums[2]), float64(nums[3]), float64(nums[0])) ||
 		ternaryOp(float64(nums[1])-float64(nums[2]), float64(nums[3]), float64(nums[0])) ||
 		ternaryOp(float64(nums[1])*float64(nums[2]), float64(nums[3]), float64(nums[0])) ||
 		ternaryOp(float64(nums[1])/float64(nums[2]), float64(nums[3]), float64(nums[0])) ||
 		ternaryOp(float64(nums[2])-float64(nums[1]), float64(nums[3]), float64(nums[0])) ||
 		ternaryOp(float64(nums[2])/float64(nums[1]), float64(nums[3]), float64(nums[0])) ||
-
 		ternaryOp(float64(nums[2])+float64(nums[3]), float64(nums[0]), float64(nums[1])) ||
 		ternaryOp(float64(nums[2])-float64(nums[3]), float64(nums[0]), float64(nums[1])) ||
 		ternaryOp(float64(nums[2])*float64(nums[3]), float64(nums[0]), float64(nums[1])) ||
 		ternaryOp(float64(nums[2])/float64(nums[3]), float64(nums[0]), float64(nums[1])) ||
 		ternaryOp(float64(nums[3])-float64(nums[2]), float64(nums[0]), float64(nums[1])) ||
 		ternaryOp(float64(nums[3])/float64(nums[2]), float64(nums[0]), float64(nums[1])) ||
-
 		ternaryOp(float64(nums[1])+float64(nums[3]), float64(nums[0]), float64(nums[2])) ||
 		ternaryOp(float64(nums[1])-float64(nums[3]), float64(nums[0]), float64(nums[2])) ||
 		ternaryOp(float64(nums[1])*float64(nums[3]), float64(nums[0]), float64(nums[2])) ||
@@ -117,14 +112,12 @@ func ternaryOp(a, b, c float64) bool {
 		binaryOp(a/b, c) ||
 		binaryOp(b-a, c) ||
 		binaryOp(b/a, c) ||
-
 		binaryOp(b+c, a) ||
 		binaryOp(b-c, a) ||
 		binaryOp(b*c, a) ||
 		binaryOp(b/c, a) ||
 		binaryOp(c-b, a) ||
 		binaryOp(c/b, a) ||
-
 		binaryOp(a+c, b) ||
 		binaryOp(a-c, b) ||
 		binaryOp(a*c, b) ||

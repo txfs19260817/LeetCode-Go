@@ -9,6 +9,27 @@ func deleteDuplicates(head *ListNode) *ListNode {
 	if head == nil || head.Next == nil {
 		return head
 	}
+	dummyHead := &ListNode{-114514, head}
+	pre := dummyHead
+	for cur := head; cur != nil && cur.Next != nil; cur = cur.Next {
+		if cur.Val != cur.Next.Val {
+			pre = cur
+			continue
+		}
+		next := cur.Next
+		for next != nil && cur.Val == next.Val {
+			next = next.Next
+		}
+		pre.Next = next
+		cur = pre
+	}
+	return dummyHead.Next
+}
+
+func deleteDuplicates1(head *ListNode) *ListNode {
+	if head == nil || head.Next == nil {
+		return head
+	}
 	dummyHead := &ListNode{}
 	p, r := head, dummyHead
 	for p != nil {
