@@ -12,6 +12,8 @@
 * [20. Valid Parentheses](solutions/20.-valid-parentheses.md)
 * [29. Divide Two Integers](solutions/29.-divide-two-integers.md)
 * [73. Set Matrix Zeroes](solutions/73.-set-matrix-zeroes.md)
+* [82. Remove Duplicates from Sorted List II](solutions/82.-remove-duplicates-from-sorted-list-ii.md)
+* [83. Remove Duplicates from Sorted List](solutions/83.-remove-duplicates-from-sorted-list.md)
 * [150. Evaluate Reverse Polish Notation](solutions/150.-evaluate-reverse-polish-notation.md)
 * [456. 132 Pattern](solutions/456.-132-pattern.md)
 

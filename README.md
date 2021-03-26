@@ -23,6 +23,8 @@ description: 用于记录做过的LeetCode题目以及解答
 | No. | Title | Solution | Difficulty |
 | :--- | :--- | :--- | :--- |
 | 0002 | Add Two Numbers | [Go](solutions/2.-add-two-numbers.md) | Medium |
+| 0082 | Remove Duplicates from Sorted List II | [Go](solutions/82.-remove-duplicates-from-sorted-list-ii.md) | Medium |
+| 0083 | Remove Duplicates from Sorted List | [Go](solutions/83.-remove-duplicates-from-sorted-list.md) | Easy |
 
 ### Math
 
