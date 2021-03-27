@@ -10,6 +10,7 @@ description: 用于记录做过的LeetCode题目以及解答
 
 | No. | Title | Solution | Difficulty |
 | :--- | :--- | :--- | :--- |
+| 0048 | Rotate Image | [Go](solutions/48.-rotate-image.md) | Medium |
 | 0073 | Set Matrix Zeroes | [Go](solutions/73.-set-matrix-zeroes.md) | Medium |
 
 ### Binary Search
