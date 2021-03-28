@@ -20,4 +20,5 @@
 * [83. Remove Duplicates from Sorted List](solutions/83.-remove-duplicates-from-sorted-list.md)
 * [150. Evaluate Reverse Polish Notation](solutions/150.-evaluate-reverse-polish-notation.md)
 * [456. 132 Pattern](solutions/456.-132-pattern.md)
+* [470. Implement Rand10\(\) Using Rand7\(\)](solutions/470.-implement-rand10-using-rand7.md)
 

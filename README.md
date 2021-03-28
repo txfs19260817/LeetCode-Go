@@ -39,6 +39,7 @@ description: 用于记录做过的LeetCode题目以及解答
 | No. | Title | Solution | Difficulty |
 | :--- | :--- | :--- | :--- |
 | 0029 | Divide Two Integers | [Go](solutions/29.-divide-two-integers.md) | Medium |
+| 0470 | Implement Rand10\(\) Using Rand7\(\) | [Go](solutions/470.-implement-rand10-using-rand7.md) | Medium |
 
 ### Stack
 
