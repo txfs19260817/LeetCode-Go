@@ -47,9 +47,3 @@ func deleteDuplicates1(head *ListNode) *ListNode {
 	}
 	return dummyHead.Next
 }
-
-/*
-[1,1]
-[1,1,1,2,3]
-[1,2,3,3,4,4,5]
-*/

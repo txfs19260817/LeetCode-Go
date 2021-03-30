@@ -6,49 +6,44 @@ type ListNode struct {
 }
 
 func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
-	if l1 == nil {
-		return l2
-	}
-	if l2 == nil {
-		return l1
-	}
-	res := &ListNode{1, nil}
+	var head *ListNode
 	len1, len2 := getLength(l1), getLength(l2)
-	if len1 >= len2 {
-		res.Next = add(l1, l2, len1-len2)
+	if len1 > len2 {
+		head = recursion(l1, l2, len1-len2)
 	} else {
-		res.Next = add(l2, l1, len2-len1)
+		head = recursion(l2, l1, len2-len1)
 	}
-	if res.Next != nil && res.Next.Val > 9 {
-		res.Next.Val %= 10
-		return res
+	if head != nil && head.Val > 9 {
+		temp := &ListNode{head.Val / 10, head}
+		head.Val %= 10
+		head = temp
 	}
-	return res.Next
+	return head
 }
 
-func add(long, short *ListNode, offset int) *ListNode {
+func recursion(long, short *ListNode, delta int) *ListNode {
 	if long == nil {
 		return nil
 	}
-	var res *ListNode
-	if offset == 0 {
-		res = &ListNode{long.Val + short.Val, nil}
-		res.Next = add(long.Next, short.Next, 0)
+	curNode := &ListNode{}
+	if delta == 0 {
+		curNode.Val = long.Val + short.Val
+		curNode.Next = recursion(long.Next, short.Next, 0)
 	} else {
-		res = &ListNode{long.Val, nil}
-		res.Next = add(long.Next, short, offset-1)
+		curNode.Val = long.Val
+		curNode.Next = recursion(long.Next, short, delta-1)
 	}
-	if res.Next != nil && res.Next.Val > 9 {
-		res.Val++
-		res.Next.Val %= 10
+	if curNode.Next != nil && curNode.Next.Val > 9 {
+		curNode.Val += curNode.Next.Val / 10
+		curNode.Next.Val %= 10
 	}
-	return res
+	return curNode
 }
 
-func getLength(l *ListNode) int {
-	count := 0
-	for cur := l; cur != nil; cur = cur.Next {
-		count++
+func getLength(head *ListNode) int {
+	var l int
+	for p := head; p != nil; p = p.Next {
+		l++
 	}
-	return count
+	return l
 }

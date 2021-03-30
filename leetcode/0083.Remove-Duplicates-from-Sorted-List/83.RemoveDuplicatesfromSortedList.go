@@ -19,8 +19,3 @@ func deleteDuplicates(head *ListNode) *ListNode {
 	}
 	return head
 }
-
-/*
-[1,1,2]
-[1,1,2,3,3]
-*/
