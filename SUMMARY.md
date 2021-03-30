@@ -16,9 +16,12 @@
 * [34. Find First and Last Position of Element in Sorted Array](solutions/34.-find-first-and-last-position-of-element-in-sorted-array.md)
 * [48. Rotate Image](solutions/48.-rotate-image.md)
 * [73. Set Matrix Zeroes](solutions/73.-set-matrix-zeroes.md)
+* [74. Search a 2D Matrix](solutions/74.-search-a-2d-matrix.md)
 * [82. Remove Duplicates from Sorted List II](solutions/82.-remove-duplicates-from-sorted-list-ii.md)
 * [83. Remove Duplicates from Sorted List](solutions/83.-remove-duplicates-from-sorted-list.md)
 * [150. Evaluate Reverse Polish Notation](solutions/150.-evaluate-reverse-polish-notation.md)
+* [240. Search a 2D Matrix II](solutions/240.-search-a-2d-matrix-ii.md)
+* [445. Add Two Numbers II](solutions/445.-add-two-numbers-ii.md)
 * [456. 132 Pattern](solutions/456.-132-pattern.md)
 * [470. Implement Rand10\(\) Using Rand7\(\)](solutions/470.-implement-rand10-using-rand7.md)
 

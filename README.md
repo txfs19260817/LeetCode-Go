@@ -13,12 +13,14 @@ description: 用于记录做过的LeetCode题目以及解答
 | 0031 | Next Permutation | [Go](solutions/31.-next-permutation.md) | Medium |
 | 0048 | Rotate Image | [Go](solutions/48.-rotate-image.md) | Medium |
 | 0073 | Set Matrix Zeroes | [Go](solutions/73.-set-matrix-zeroes.md) | Medium |
+| 0240 | Search a 2D Matrix II | [Go](solutions/240.-search-a-2d-matrix-ii.md) | Medium |
 
 ### Binary Search
 
 | No. | Title | Solution | Difficulty |
 | :--- | :--- | :--- | :--- |
 | 0034 | Find First and Last Position of Element in Sorted Array | [Go](solutions/34.-find-first-and-last-position-of-element-in-sorted-array.md) | Medium |
+| 0074 | Search a 2D Matrix | [Go](solutions/74.-search-a-2d-matrix.md) | Medium |
 
 ### Hash Table
 
@@ -33,6 +35,7 @@ description: 用于记录做过的LeetCode题目以及解答
 | 0002 | Add Two Numbers | [Go](solutions/2.-add-two-numbers.md) | Medium |
 | 0082 | Remove Duplicates from Sorted List II | [Go](solutions/82.-remove-duplicates-from-sorted-list-ii.md) | Medium |
 | 0083 | Remove Duplicates from Sorted List | [Go](solutions/83.-remove-duplicates-from-sorted-list.md) | Easy |
+| 0445 | Add Two Numbers II | [Go](solutions/445.-add-two-numbers-ii.md) | Medium |
 
 ### Math
 

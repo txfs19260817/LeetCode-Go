@@ -1,6 +1,6 @@
 # Template
 
-## LeetCode XXXX. QuestionTitle
+## LeetCode XXXX. Question Title
 
 ### Description
 
