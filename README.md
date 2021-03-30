@@ -27,6 +27,7 @@ description: 用于记录做过的LeetCode题目以及解答
 | No. | Title | Solution | Difficulty |
 | :--- | :--- | :--- | :--- |
 | 0001 | Two Sum | [Go](solutions/1.-two-sum.md) | Easy |
+| 0049 | Group Anagrams | [Go](solutions/49.-group-anagrams.md) | Medium |
 
 ### Linked List
 
