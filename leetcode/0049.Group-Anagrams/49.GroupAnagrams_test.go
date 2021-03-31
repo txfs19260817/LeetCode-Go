@@ -33,14 +33,22 @@ func Test_groupAnagrams(t *testing.T) {
 				{"aacc"},
 			},
 		},
-		{
-			name: `strs = ["bbd","aacc"]`,
-			args: args{[]string{"bbd", "aacc"}},
-			want: [][]string{
-				{"bbd"},
-				{"aacc"},
-			},
-		},
+		//{
+		//	name: `strs = ["bbd","aacc"]`,
+		//	args: args{[]string{"bbd", "aacc"}},
+		//	want: [][]string{
+		//		{"bbd"},
+		//		{"aacc"},
+		//	},
+		//},
+		//{
+		//	name: `strs = ["may","max"]`,
+		//	args: args{[]string{"may", "max"}},
+		//	want: [][]string{
+		//		{"may"},
+		//		{"max"},
+		//	},
+		//},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
