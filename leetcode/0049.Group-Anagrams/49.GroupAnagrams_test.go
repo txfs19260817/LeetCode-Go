@@ -60,6 +60,8 @@ func Test_groupAnagrams(t *testing.T) {
 				return len(tt.want[i]) < len(tt.want[j])
 			})
 			for i := range got {
+				sort.Strings(tt.want[i])
+				sort.Strings(got[i])
 				assert.ElementsMatch(t, tt.want[i], got[i])
 			}
 		})
