@@ -57,7 +57,7 @@ func Test_groupAnagrams(t *testing.T) {
 				return len(got[i]) < len(got[j])
 			})
 			sort.Slice(tt.want, func(i, j int) bool {
-				return len(got[i]) < len(got[j])
+				return len(tt.want[i]) < len(tt.want[j])
 			})
 			for i := range got {
 				assert.ElementsMatch(t, tt.want[i], got[i])

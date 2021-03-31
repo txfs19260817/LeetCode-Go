@@ -1,4 +1,4 @@
-package _008_String_to_Integer__atoi_
+package _008_String_to_Integer_atoi
 
 func myAtoi(s string) int {
 	ans, begin, sym := 0, 0, 1
