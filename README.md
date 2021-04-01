@@ -49,6 +49,7 @@
 | 0029 | Divide Two Integers | [Go](solutions/29.-divide-two-integers.md) | Medium |
 | 0043 | Multiply Strings | [Go](solutions/43.-multiply-strings.md) | Medium |
 | 0470 | Implement Rand10\(\) Using Rand7\(\) | [Go](solutions/470.-implement-rand10-using-rand7.md) | Medium |
+| 1006 | Clumsy Factorial | [Go](solutions/1006.-clumsy-factorial.md) | Medium |
 
 ### Stack
 
@@ -65,6 +66,7 @@
 | 0012 | Integer to Roman | [Go](solutions/12.-integer-to-roman.md) | Medium |
 | 0013 | Roman to Integer | [Go](solutions/13.-roman-to-integer.md) | Easy |
 | 0032 | Longest Valid Parentheses | [Go](solutions/32.-longest-valid-parentheses.md) | Hard |
+| 0038 | Count and Say | [Go](solutions/38.-count-and-say.md) | Easy |
 | 0415 | Add Strings | [Go](solutions/415.-add-strings.md) | Easy |
 
 ## Reference

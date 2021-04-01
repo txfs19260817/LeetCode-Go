@@ -14,6 +14,7 @@
 * [31. Next Permutation](solutions/31.-next-permutation.md)
 * [32. Longest Valid Parentheses](solutions/32.-longest-valid-parentheses.md)
 * [34. Find First and Last Position of Element in Sorted Array](solutions/34.-find-first-and-last-position-of-element-in-sorted-array.md)
+* [38. Count and Say](solutions/38.-count-and-say.md)
 * [43. Multiply Strings](solutions/43.-multiply-strings.md)
 * [48. Rotate Image](solutions/48.-rotate-image.md)
 * [49. Group Anagrams](solutions/49.-group-anagrams.md)
@@ -28,4 +29,5 @@
 * [456. 132 Pattern](solutions/456.-132-pattern.md)
 * [470. Implement Rand10\(\) Using Rand7\(\)](solutions/470.-implement-rand10-using-rand7.md)
 * [784. Letter Case Permutation](solutions/784.-letter-case-permutation.md)
+* [1006. Clumsy Factorial](solutions/1006.-clumsy-factorial.md)
 
