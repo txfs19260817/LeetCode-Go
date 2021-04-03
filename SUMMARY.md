@@ -34,4 +34,5 @@
 * [470. Implement Rand10\(\) Using Rand7\(\)](solutions/470.-implement-rand10-using-rand7.md)
 * [784. Letter Case Permutation](solutions/784.-letter-case-permutation.md)
 * [1006. Clumsy Factorial](solutions/1006.-clumsy-factorial.md)
+* [1143. Longest Common Subsequence](solutions/1143.-longest-common-subsequence.md)
 
