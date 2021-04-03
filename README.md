@@ -32,6 +32,7 @@
 | No. | Title | Solution | Difficulty |
 | :--- | :--- | :--- | :--- |
 | 0132 | Palindrome Partitioning II | [Go](solutions/132.-palindrome-partitioning-ii.md) | Hard |
+| 0583 | Delete Operation for Two Strings | [Go](solutions/583.-delete-operation-for-two-strings.md) | Medium |
 | 1143 | Longest Common Subsequence | [Go](solutions/1143.-longest-common-subsequence.md) | Medium |
 
 ### Hash Table
@@ -56,6 +57,8 @@
 | :--- | :--- | :--- | :--- |
 | 0029 | Divide Two Integers | [Go](solutions/29.-divide-two-integers.md) | Medium |
 | 0043 | Multiply Strings | [Go](solutions/43.-multiply-strings.md) | Medium |
+| 0066 | Plus One | [Go](solutions/66.-plus-one.md) | Easy |
+| 0067 | Add Binary | [Go](solutions/67.-add-binary.md) | Easy |
 | 0470 | Implement Rand10\(\) Using Rand7\(\) | [Go](solutions/470.-implement-rand10-using-rand7.md) | Medium |
 | 1006 | Clumsy Factorial | [Go](solutions/1006.-clumsy-factorial.md) | Medium |
 
