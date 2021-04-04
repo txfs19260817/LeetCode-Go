@@ -17,6 +17,7 @@
 
 | No. | Title | Solution | Difficulty |
 | :--- | :--- | :--- | :--- |
+| 0131 | Palindrome Partitioning | [Go](solutions/131.-palindrome-partitioning.md) | Medium |
 | 0784 | Letter Case Permutation | [Go](solutions/784.-letter-case-permutation.md) | Medium |
 
 ### Binary Search
@@ -25,6 +26,14 @@
 | :--- | :--- | :--- | :--- |
 | 0034 | Find First and Last Position of Element in Sorted Array | [Go](solutions/34.-find-first-and-last-position-of-element-in-sorted-array.md) | Medium |
 | 0074 | Search a 2D Matrix | [Go](solutions/74.-search-a-2d-matrix.md) | Medium |
+
+### Dynamic Programming
+
+| No. | Title | Solution | Difficulty |
+| :--- | :--- | :--- | :--- |
+| 0132 | Palindrome Partitioning II | [Go](solutions/132.-palindrome-partitioning-ii.md) | Hard |
+| 0583 | Delete Operation for Two Strings | [Go](solutions/583.-delete-operation-for-two-strings.md) | Medium |
+| 1143 | Longest Common Subsequence | [Go](solutions/1143.-longest-common-subsequence.md) | Medium |
 
 ### Hash Table
 
@@ -48,6 +57,8 @@
 | :--- | :--- | :--- | :--- |
 | 0029 | Divide Two Integers | [Go](solutions/29.-divide-two-integers.md) | Medium |
 | 0043 | Multiply Strings | [Go](solutions/43.-multiply-strings.md) | Medium |
+| 0066 | Plus One | [Go](solutions/66.-plus-one.md) | Easy |
+| 0067 | Add Binary | [Go](solutions/67.-add-binary.md) | Easy |
 | 0470 | Implement Rand10\(\) Using Rand7\(\) | [Go](solutions/470.-implement-rand10-using-rand7.md) | Medium |
 | 1006 | Clumsy Factorial | [Go](solutions/1006.-clumsy-factorial.md) | Medium |
 
@@ -68,6 +79,13 @@
 | 0032 | Longest Valid Parentheses | [Go](solutions/32.-longest-valid-parentheses.md) | Hard |
 | 0038 | Count and Say | [Go](solutions/38.-count-and-say.md) | Easy |
 | 0415 | Add Strings | [Go](solutions/415.-add-strings.md) | Easy |
+
+### Tree
+
+| No. | Title | Solution | Difficulty |
+| :--- | :--- | :--- | :--- |
+| 0116 | Populating Next Right Pointers in Each Node | [Go](solutions/116.-populating-next-right-pointers-in-each-node.md) | Medium |
+| 0117 | Populating Next Right Pointers in Each Node II | [Go](solutions/117.-populating-next-right-pointers-in-each-node-ii.md) | Medium |
 
 ## Reference
 
