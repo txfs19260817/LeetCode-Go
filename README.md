@@ -35,11 +35,18 @@
 | 0583 | Delete Operation for Two Strings | [Go](solutions/583.-delete-operation-for-two-strings.md) | Medium |
 | 1143 | Longest Common Subsequence | [Go](solutions/1143.-longest-common-subsequence.md) | Medium |
 
+### Greedy
+
+| No. | Title | Solution | Difficulty |
+| :--- | :--- | :--- | :--- |
+| 0045 | Jump Game II | [Go](solutions/45.-jump-game-ii.md) | Medium |
+
 ### Hash Table
 
 | No. | Title | Solution | Difficulty |
 | :--- | :--- | :--- | :--- |
 | 0001 | Two Sum | [Go](solutions/1.-two-sum.md) | Easy |
+| 0036 | Valid Sudoku | [Go](solutions/36.-valid-sudoku.md) | Medium |
 | 0049 | Group Anagrams | [Go](solutions/49.-group-anagrams.md) | Medium |
 
 ### Linked List
@@ -60,6 +67,7 @@
 | 0066 | Plus One | [Go](solutions/66.-plus-one.md) | Easy |
 | 0067 | Add Binary | [Go](solutions/67.-add-binary.md) | Easy |
 | 0470 | Implement Rand10\(\) Using Rand7\(\) | [Go](solutions/470.-implement-rand10-using-rand7.md) | Medium |
+| 0781 | Rabbits in Forest | [Go](solutions/781.-rabbits-in-forest.md) | Medium |
 | 1006 | Clumsy Factorial | [Go](solutions/1006.-clumsy-factorial.md) | Medium |
 
 ### Stack
