@@ -27,3 +27,4 @@ coverage.txt
 .orig
 
 playground.go
+mdtemplates/
