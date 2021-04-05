@@ -40,6 +40,8 @@
 | No. | Title | Solution | Difficulty |
 | :--- | :--- | :--- | :--- |
 | 0045 | Jump Game II | [Go](solutions/45.-jump-game-ii.md) | Medium |
+| 0135 | Candy | [Go](solutions/135.-candy.md) | Hard |
+| 0455 | Assign Cookies | [Go](solutions/455.-assign-cookies.md) | Easy |
 
 ### Hash Table
 
@@ -94,6 +96,12 @@
 | :--- | :--- | :--- | :--- |
 | 0116 | Populating Next Right Pointers in Each Node | [Go](solutions/116.-populating-next-right-pointers-in-each-node.md) | Medium |
 | 0117 | Populating Next Right Pointers in Each Node II | [Go](solutions/117.-populating-next-right-pointers-in-each-node-ii.md) | Medium |
+
+### Two Pointers
+
+| No. | Title | Solution | Difficulty |
+| :--- | :--- | :--- | :--- |
+| 0088 | Merge Sorted Array | [Go](solutions/88.-merge-sorted-array.md) | Easy |
 
 ## Reference
 
