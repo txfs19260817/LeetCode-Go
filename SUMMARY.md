@@ -10,6 +10,7 @@
 * [12. Integer to Roman](solutions/12.-integer-to-roman.md)
 * [13. Roman to Integer](solutions/13.-roman-to-integer.md)
 * [20. Valid Parentheses](solutions/20.-valid-parentheses.md)
+* [26. Remove Duplicates from Sorted Array](solutions/26.-remove-duplicates-from-sorted-array.md)
 * [29. Divide Two Integers](solutions/29.-divide-two-integers.md)
 * [31. Next Permutation](solutions/31.-next-permutation.md)
 * [32. Longest Valid Parentheses](solutions/32.-longest-valid-parentheses.md)
@@ -24,6 +25,7 @@
 * [67. Add Binary](solutions/67.-add-binary.md)
 * [73. Set Matrix Zeroes](solutions/73.-set-matrix-zeroes.md)
 * [74. Search a 2D Matrix](solutions/74.-search-a-2d-matrix.md)
+* [80. Remove Duplicates from Sorted Array II](solutions/80.-remove-duplicates-from-sorted-array-ii.md)
 * [82. Remove Duplicates from Sorted List II](solutions/82.-remove-duplicates-from-sorted-list-ii.md)
 * [83. Remove Duplicates from Sorted List](solutions/83.-remove-duplicates-from-sorted-list.md)
 * [88. Merge Sorted Array](solutions/88.-merge-sorted-array.md)
@@ -44,4 +46,5 @@
 * [784. Letter Case Permutation](solutions/784.-letter-case-permutation.md)
 * [1006. Clumsy Factorial](solutions/1006.-clumsy-factorial.md)
 * [1143. Longest Common Subsequence](solutions/1143.-longest-common-subsequence.md)
+* [1551. Minimum Operations to Make Array Equal](solutions/1551.-minimum-operations-to-make-array-equal.md)
 

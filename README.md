@@ -71,6 +71,7 @@
 | 0470 | Implement Rand10\(\) Using Rand7\(\) | [Go](solutions/470.-implement-rand10-using-rand7.md) | Medium |
 | 0781 | Rabbits in Forest | [Go](solutions/781.-rabbits-in-forest.md) | Medium |
 | 1006 | Clumsy Factorial | [Go](solutions/1006.-clumsy-factorial.md) | Medium |
+| 1551 | Minimum Operations to Make Array Equal | [Go](solutions/1551.-minimum-operations-to-make-array-equal.md) | Medium |
 
 ### Stack
 
@@ -101,6 +102,8 @@
 
 | No. | Title | Solution | Difficulty |
 | :--- | :--- | :--- | :--- |
+| 0026 | Remove Duplicates from Sorted Array | [Go](solutions/26.-remove-duplicates-from-sorted-array.md) | Easy |
+| 0080 | Remove Duplicates from Sorted Array II | [Go](solutions/80.-remove-duplicates-from-sorted-array-ii.md) | Medium |
 | 0088 | Merge Sorted Array | [Go](solutions/88.-merge-sorted-array.md) | Easy |
 
 ## Reference
