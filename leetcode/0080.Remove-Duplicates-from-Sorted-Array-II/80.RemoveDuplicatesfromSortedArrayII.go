@@ -1,9 +1,20 @@
 package _080_Remove_Duplicates_from_Sorted_Array_II
 
 func removeDuplicates(nums []int) int {
-	if len(nums) < 3 {
-		return len(nums)
+	process := func(k int) int {
+		var w int // writer pointer
+		for _, v := range nums {
+			if w < k || nums[w-k] != v {
+				nums[w] = v
+				w++
+			}
+		}
+		return w
 	}
+	return process(2)
+}
+
+func removeDuplicates1(nums []int) int {
 	var s, f, uniquePt, count int
 	for ; f < len(nums); f++ {
 		if nums[uniquePt] < nums[f] {

@@ -1,4 +1,4 @@
-package _080_Remove_Duplicates_from_Sorted_Array_II
+package _026_Remove_Duplicates_from_Sorted_Array
 
 import "testing"
 
@@ -14,14 +14,14 @@ func Test_removeDuplicates(t *testing.T) {
 		want int
 	}{
 		{
-			name: "nums = [1,1,1,2,2,3]",
-			args: args{nums: []int{1, 1, 1, 2, 2, 3}},
-			want: 5,
+			name: "nums = [1,1,2]",
+			args: args{[]int{1, 1, 2}},
+			want: 2,
 		},
 		{
-			name: "nums = [0,0,1,1,1,1,2,3,3]",
-			args: args{nums: []int{0, 0, 1, 1, 1, 1, 2, 3, 3}},
-			want: 7,
+			name: "nums = [0,0,1,1,1,2,2,3,3,4]",
+			args: args{[]int{0, 0, 1, 1, 1, 2, 2, 3, 3, 4}},
+			want: 5,
 		},
 	}
 	for _, tt := range tests {
