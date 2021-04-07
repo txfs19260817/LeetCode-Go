@@ -12,6 +12,7 @@
 | 0048 | Rotate Image | [Go](solutions/48.-rotate-image.md) | Medium |
 | 0073 | Set Matrix Zeroes | [Go](solutions/73.-set-matrix-zeroes.md) | Medium |
 | 0240 | Search a 2D Matrix II | [Go](solutions/240.-search-a-2d-matrix-ii.md) | Medium |
+| 0645 | Set Mismatch | [Go](solutions/645.-set-mismatch.md) | Easy |
 
 ### Backtracking
 
@@ -32,6 +33,7 @@
 | No. | Title | Solution | Difficulty |
 | :--- | :--- | :--- | :--- |
 | 0132 | Palindrome Partitioning II | [Go](solutions/132.-palindrome-partitioning-ii.md) | Hard |
+| 0474 | Ones and Zeroes | [Go](solutions/474.-ones-and-zeroes.md) | Medium |
 | 0583 | Delete Operation for Two Strings | [Go](solutions/583.-delete-operation-for-two-strings.md) | Medium |
 | 1143 | Longest Common Subsequence | [Go](solutions/1143.-longest-common-subsequence.md) | Medium |
 
@@ -50,6 +52,7 @@
 | 0001 | Two Sum | [Go](solutions/1.-two-sum.md) | Easy |
 | 0036 | Valid Sudoku | [Go](solutions/36.-valid-sudoku.md) | Medium |
 | 0049 | Group Anagrams | [Go](solutions/49.-group-anagrams.md) | Medium |
+| 0575 | Distribute Candies | [Go](solutions/575.-distribute-candies.md) | Easy |
 
 ### Linked List
 
