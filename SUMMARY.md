@@ -35,6 +35,8 @@
 * [132. Palindrome Partitioning II](solutions/132.-palindrome-partitioning-ii.md)
 * [135. Candy](solutions/135.-candy.md)
 * [150. Evaluate Reverse Polish Notation](solutions/150.-evaluate-reverse-polish-notation.md)
+* [153. Find Minimum in Rotated Sorted Array](solutions/153.-find-minimum-in-rotated-sorted-array.md)
+* [154. Find Minimum in Rotated Sorted Array II](solutions/154.-find-minimum-in-rotated-sorted-array-ii.md)
 * [240. Search a 2D Matrix II](solutions/240.-search-a-2d-matrix-ii.md)
 * [415. Add Strings](solutions/415.-add-strings.md)
 * [445. Add Two Numbers II](solutions/445.-add-two-numbers-ii.md)
@@ -49,5 +51,6 @@
 * [784. Letter Case Permutation](solutions/784.-letter-case-permutation.md)
 * [1006. Clumsy Factorial](solutions/1006.-clumsy-factorial.md)
 * [1143. Longest Common Subsequence](solutions/1143.-longest-common-subsequence.md)
+* [1460. Make Two Arrays Equal by Reversing Sub-arrays](solutions/1460.-make-two-arrays-equal-by-reversing-sub-arrays.md)
 * [1551. Minimum Operations to Make Array Equal](solutions/1551.-minimum-operations-to-make-array-equal.md)
 

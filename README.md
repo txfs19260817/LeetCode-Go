@@ -13,6 +13,7 @@
 | 0073 | Set Matrix Zeroes | [Go](solutions/73.-set-matrix-zeroes.md) | Medium |
 | 0240 | Search a 2D Matrix II | [Go](solutions/240.-search-a-2d-matrix-ii.md) | Medium |
 | 0645 | Set Mismatch | [Go](solutions/645.-set-mismatch.md) | Easy |
+| 1460 | Make Two Arrays Equal by Reversing Sub-arrays | [Go](solutions/1460.-make-two-arrays-equal-by-reversing-sub-arrays.md) | Easy |
 
 ### Backtracking
 
@@ -27,6 +28,8 @@
 | :--- | :--- | :--- | :--- |
 | 0034 | Find First and Last Position of Element in Sorted Array | [Go](solutions/34.-find-first-and-last-position-of-element-in-sorted-array.md) | Medium |
 | 0074 | Search a 2D Matrix | [Go](solutions/74.-search-a-2d-matrix.md) | Medium |
+| 0153 | Find Minimum in Rotated Sorted Array | [Go](solutions/153.-find-minimum-in-rotated-sorted-array.md) | Medium |
+| 0154 | Find Minimum in Rotated Sorted Array II | [Go](solutions/154.-find-minimum-in-rotated-sorted-array-ii.md) | Hard |
 
 ### Dynamic Programming
 
