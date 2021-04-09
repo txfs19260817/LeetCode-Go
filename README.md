@@ -14,6 +14,7 @@
 | 0240 | Search a 2D Matrix II | [Go](solutions/240.-search-a-2d-matrix-ii.md) | Medium |
 | 0645 | Set Mismatch | [Go](solutions/645.-set-mismatch.md) | Easy |
 | 1460 | Make Two Arrays Equal by Reversing Sub-arrays | [Go](solutions/1460.-make-two-arrays-equal-by-reversing-sub-arrays.md) | Easy |
+| 1539 | Kth Missing Positive Number | [Go](solutions/1539.-kth-missing-positive-number.md) | Easy |
 
 ### Backtracking
 
@@ -56,12 +57,14 @@
 | 0036 | Valid Sudoku | [Go](solutions/36.-valid-sudoku.md) | Medium |
 | 0049 | Group Anagrams | [Go](solutions/49.-group-anagrams.md) | Medium |
 | 0575 | Distribute Candies | [Go](solutions/575.-distribute-candies.md) | Easy |
+| 1640 | Check Array Formation Through Concatenation | [Go](solutions/1640.-check-array-formation-through-concatenation.md) | Easy |
 
 ### Linked List
 
 | No. | Title | Solution | Difficulty |
 | :--- | :--- | :--- | :--- |
 | 0002 | Add Two Numbers | [Go](solutions/2.-add-two-numbers.md) | Medium |
+| 0021 | Merge Two Sorted Lists | [Go](solutions/21.-merge-two-sorted-lists.md) | Easy |
 | 0082 | Remove Duplicates from Sorted List II | [Go](solutions/82.-remove-duplicates-from-sorted-list-ii.md) | Medium |
 | 0083 | Remove Duplicates from Sorted List | [Go](solutions/83.-remove-duplicates-from-sorted-list.md) | Easy |
 | 0445 | Add Two Numbers II | [Go](solutions/445.-add-two-numbers-ii.md) | Medium |
@@ -96,6 +99,7 @@
 | 0032 | Longest Valid Parentheses | [Go](solutions/32.-longest-valid-parentheses.md) | Hard |
 | 0038 | Count and Say | [Go](solutions/38.-count-and-say.md) | Easy |
 | 0415 | Add Strings | [Go](solutions/415.-add-strings.md) | Easy |
+| 1704 | Determine if String Halves Are Alike | [Go](solutions/1704.-determine-if-string-halves-are-alike.md) | Easy |
 
 ### Tree
 
@@ -111,6 +115,7 @@
 | 0026 | Remove Duplicates from Sorted Array | [Go](solutions/26.-remove-duplicates-from-sorted-array.md) | Easy |
 | 0080 | Remove Duplicates from Sorted Array II | [Go](solutions/80.-remove-duplicates-from-sorted-array-ii.md) | Medium |
 | 0088 | Merge Sorted Array | [Go](solutions/88.-merge-sorted-array.md) | Easy |
+| 0881 | Boats to Save People | [Go](solutions/881.-boats-to-save-people.md) | Medium |
 
 ## Reference
 
