@@ -5,7 +5,7 @@ type ListNode struct {
 	Next *ListNode
 }
 
-func mergeTwoLists0(l1 *ListNode, l2 *ListNode) *ListNode {
+func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
 	head := &ListNode{}
 	res := head
 	for l1 != nil && l2 != nil {
@@ -28,7 +28,7 @@ func mergeTwoLists0(l1 *ListNode, l2 *ListNode) *ListNode {
 	return res.Next
 }
 
-func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
+func mergeTwoLists1(l1 *ListNode, l2 *ListNode) *ListNode {
 	if l1 == nil {
 		return l2
 	}
