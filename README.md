@@ -77,6 +77,8 @@
 | 0043 | Multiply Strings | [Go](solutions/43.-multiply-strings.md) | Medium |
 | 0066 | Plus One | [Go](solutions/66.-plus-one.md) | Easy |
 | 0067 | Add Binary | [Go](solutions/67.-add-binary.md) | Easy |
+| 0263 | Ugly Number | [Go](solutions/263.-ugly-number.md) | Easy |
+| 0264 | Ugly Number II | [Go](solutions/264.-ugly-number-ii.md) | Medium |
 | 0470 | Implement Rand10\(\) Using Rand7\(\) | [Go](solutions/470.-implement-rand10-using-rand7.md) | Medium |
 | 0781 | Rabbits in Forest | [Go](solutions/781.-rabbits-in-forest.md) | Medium |
 | 1006 | Clumsy Factorial | [Go](solutions/1006.-clumsy-factorial.md) | Medium |
@@ -99,6 +101,7 @@
 | 0032 | Longest Valid Parentheses | [Go](solutions/32.-longest-valid-parentheses.md) | Hard |
 | 0038 | Count and Say | [Go](solutions/38.-count-and-say.md) | Easy |
 | 0415 | Add Strings | [Go](solutions/415.-add-strings.md) | Easy |
+| 1614 | Maximum Nesting Depth of the Parentheses | [Go](solutions/1614.-maximum-nesting-depth-of-the-parentheses.md) | Easy |
 | 1704 | Determine if String Halves Are Alike | [Go](solutions/1704.-determine-if-string-halves-are-alike.md) | Easy |
 
 ### Tree

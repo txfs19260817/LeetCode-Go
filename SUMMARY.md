@@ -39,6 +39,8 @@
 * [153. Find Minimum in Rotated Sorted Array](solutions/153.-find-minimum-in-rotated-sorted-array.md)
 * [154. Find Minimum in Rotated Sorted Array II](solutions/154.-find-minimum-in-rotated-sorted-array-ii.md)
 * [240. Search a 2D Matrix II](solutions/240.-search-a-2d-matrix-ii.md)
+* [263. Ugly Number](solutions/263.-ugly-number.md)
+* [264. Ugly Number II](solutions/264.-ugly-number-ii.md)
 * [415. Add Strings](solutions/415.-add-strings.md)
 * [445. Add Two Numbers II](solutions/445.-add-two-numbers-ii.md)
 * [455. Assign Cookies](solutions/455.-assign-cookies.md)
@@ -56,6 +58,7 @@
 * [1460. Make Two Arrays Equal by Reversing Sub-arrays](solutions/1460.-make-two-arrays-equal-by-reversing-sub-arrays.md)
 * [1539. Kth Missing Positive Number](solutions/1539.-kth-missing-positive-number.md)
 * [1551. Minimum Operations to Make Array Equal](solutions/1551.-minimum-operations-to-make-array-equal.md)
+* [1614. Maximum Nesting Depth of the Parentheses](solutions/1614.-maximum-nesting-depth-of-the-parentheses.md)
 * [1640. Check Array Formation Through Concatenation](solutions/1640.-check-array-formation-through-concatenation.md)
 * [1704. Determine if String Halves Are Alike](solutions/1704.-determine-if-string-halves-are-alike.md)
 
