@@ -42,6 +42,8 @@
 * [263. Ugly Number](solutions/263.-ugly-number.md)
 * [264. Ugly Number II](solutions/264.-ugly-number-ii.md)
 * [415. Add Strings](solutions/415.-add-strings.md)
+* [435. Non-overlapping Intervals](solutions/435.-non-overlapping-intervals.md)
+* [436. Find Right Interval](solutions/436.-find-right-interval.md)
 * [445. Add Two Numbers II](solutions/445.-add-two-numbers-ii.md)
 * [455. Assign Cookies](solutions/455.-assign-cookies.md)
 * [456. 132 Pattern](solutions/456.-132-pattern.md)

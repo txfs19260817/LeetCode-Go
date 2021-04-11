@@ -31,6 +31,7 @@
 | 0074 | Search a 2D Matrix | [Go](solutions/74.-search-a-2d-matrix.md) | Medium |
 | 0153 | Find Minimum in Rotated Sorted Array | [Go](solutions/153.-find-minimum-in-rotated-sorted-array.md) | Medium |
 | 0154 | Find Minimum in Rotated Sorted Array II | [Go](solutions/154.-find-minimum-in-rotated-sorted-array-ii.md) | Hard |
+| 0436 | Find Right Interval | [Go](solutions/436.-find-right-interval.md) | Medium |
 
 ### Dynamic Programming
 
@@ -47,6 +48,7 @@
 | :--- | :--- | :--- | :--- |
 | 0045 | Jump Game II | [Go](solutions/45.-jump-game-ii.md) | Medium |
 | 0135 | Candy | [Go](solutions/135.-candy.md) | Hard |
+| 0435 | Non-overlapping Intervals | [Go](solutions/435.-non-overlapping-intervals.md) | Medium |
 | 0455 | Assign Cookies | [Go](solutions/455.-assign-cookies.md) | Easy |
 
 ### Hash Table
