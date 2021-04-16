@@ -13,6 +13,7 @@
 | 0073 | Set Matrix Zeroes | [Go](solutions/73.-set-matrix-zeroes.md) | Medium |
 | 0240 | Search a 2D Matrix II | [Go](solutions/240.-search-a-2d-matrix-ii.md) | Medium |
 | 0645 | Set Mismatch | [Go](solutions/645.-set-mismatch.md) | Easy |
+| 0667 | Beautiful Arrangement II | [Go](solutions/667.-beautiful-arrangement-ii.md) | Medium |
 | 1460 | Make Two Arrays Equal by Reversing Sub-arrays | [Go](solutions/1460.-make-two-arrays-equal-by-reversing-sub-arrays.md) | Easy |
 | 1539 | Kth Missing Positive Number | [Go](solutions/1539.-kth-missing-positive-number.md) | Easy |
 
@@ -22,6 +23,7 @@
 | :--- | :--- | :--- | :--- |
 | 0131 | Palindrome Partitioning | [Go](solutions/131.-palindrome-partitioning.md) | Medium |
 | 0784 | Letter Case Permutation | [Go](solutions/784.-letter-case-permutation.md) | Medium |
+| 1302 | Deepest Leaves Sum | [Go](solutions/1302.-deepest-leaves-sum.md) | Medium |
 
 ### Binary Search
 
@@ -38,6 +40,7 @@
 | No. | Title | Solution | Difficulty |
 | :--- | :--- | :--- | :--- |
 | 0132 | Palindrome Partitioning II | [Go](solutions/132.-palindrome-partitioning-ii.md) | Hard |
+| 0329 | Longest Increasing Path in a Matrix | [Go](solutions/329.-longest-increasing-path-in-a-matrix.md) | Hard |
 | 0474 | Ones and Zeroes | [Go](solutions/474.-ones-and-zeroes.md) | Medium |
 | 0583 | Delete Operation for Two Strings | [Go](solutions/583.-delete-operation-for-two-strings.md) | Medium |
 | 1143 | Longest Common Subsequence | [Go](solutions/1143.-longest-common-subsequence.md) | Medium |
@@ -50,6 +53,7 @@
 | 0135 | Candy | [Go](solutions/135.-candy.md) | Hard |
 | 0435 | Non-overlapping Intervals | [Go](solutions/435.-non-overlapping-intervals.md) | Medium |
 | 0455 | Assign Cookies | [Go](solutions/455.-assign-cookies.md) | Easy |
+| 0936 | Stamping The Sequence | [Go](solutions/936.-stamping-the-sequence.md) | Hard |
 
 ### Hash Table
 
@@ -59,6 +63,7 @@
 | 0036 | Valid Sudoku | [Go](solutions/36.-valid-sudoku.md) | Medium |
 | 0049 | Group Anagrams | [Go](solutions/49.-group-anagrams.md) | Medium |
 | 0575 | Distribute Candies | [Go](solutions/575.-distribute-candies.md) | Easy |
+| 0953 | Verifying an Alien Dictionary | [Go](solutions/953.-verifying-an-alien-dictionary.md) | Easy |
 | 1640 | Check Array Formation Through Concatenation | [Go](solutions/1640.-check-array-formation-through-concatenation.md) | Easy |
 
 ### Linked List
