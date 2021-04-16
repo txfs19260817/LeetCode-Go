@@ -75,6 +75,7 @@
 | 0082 | Remove Duplicates from Sorted List II | [Go](solutions/82.-remove-duplicates-from-sorted-list-ii.md) | Medium |
 | 0083 | Remove Duplicates from Sorted List | [Go](solutions/83.-remove-duplicates-from-sorted-list.md) | Easy |
 | 0445 | Add Two Numbers II | [Go](solutions/445.-add-two-numbers-ii.md) | Medium |
+| 1721 | Swapping Nodes in a Linked List | [Go](solutions/1721.-swapping-nodes-in-a-linked-list.md) | Medium |
 
 ### Math
 
@@ -108,6 +109,7 @@
 | 0032 | Longest Valid Parentheses | [Go](solutions/32.-longest-valid-parentheses.md) | Hard |
 | 0038 | Count and Say | [Go](solutions/38.-count-and-say.md) | Easy |
 | 0415 | Add Strings | [Go](solutions/415.-add-strings.md) | Easy |
+| 1332 | Remove Palindromic Subsequences | [Go](solutions/1332.-remove-palindromic-subsequences.md) | Easy |
 | 1614 | Maximum Nesting Depth of the Parentheses | [Go](solutions/1614.-maximum-nesting-depth-of-the-parentheses.md) | Easy |
 | 1704 | Determine if String Halves Are Alike | [Go](solutions/1704.-determine-if-string-halves-are-alike.md) | Easy |
 
@@ -117,6 +119,7 @@
 | :--- | :--- | :--- | :--- |
 | 0116 | Populating Next Right Pointers in Each Node | [Go](solutions/116.-populating-next-right-pointers-in-each-node.md) | Medium |
 | 0117 | Populating Next Right Pointers in Each Node II | [Go](solutions/117.-populating-next-right-pointers-in-each-node-ii.md) | Medium |
+| 0623 | Add One Row to Tree | [Go](solutions/623.-add-one-row-to-tree.md) | Medium |
 
 ### Two Pointers
 
