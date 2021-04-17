@@ -62,6 +62,8 @@
 | 0001 | Two Sum | [Go](solutions/1.-two-sum.md) | Easy |
 | 0036 | Valid Sudoku | [Go](solutions/36.-valid-sudoku.md) | Medium |
 | 0049 | Group Anagrams | [Go](solutions/49.-group-anagrams.md) | Medium |
+| 0217 | Contains Duplicate | [Go](solutions/217.-contains-duplicate.md) | Easy |
+| 0219 | Contains Duplicate II | [Go](solutions/219.-contains-duplicate-ii.md) | Easy |
 | 0575 | Distribute Candies | [Go](solutions/575.-distribute-candies.md) | Easy |
 | 0953 | Verifying an Alien Dictionary | [Go](solutions/953.-verifying-an-alien-dictionary.md) | Easy |
 | 1640 | Check Array Formation Through Concatenation | [Go](solutions/1640.-check-array-formation-through-concatenation.md) | Easy |
@@ -91,6 +93,12 @@
 | 0781 | Rabbits in Forest | [Go](solutions/781.-rabbits-in-forest.md) | Medium |
 | 1006 | Clumsy Factorial | [Go](solutions/1006.-clumsy-factorial.md) | Medium |
 | 1551 | Minimum Operations to Make Array Equal | [Go](solutions/1551.-minimum-operations-to-make-array-equal.md) | Medium |
+
+### Sort
+
+| No. | Title | Solution | Difficulty |
+| :--- | :--- | :--- | :--- |
+| 0220 | Contains Duplicate III | [Go](solutions/220.-contains-duplicate-iii.md) | Medium |
 
 ### Stack
 
@@ -128,6 +136,7 @@
 | 0026 | Remove Duplicates from Sorted Array | [Go](solutions/26.-remove-duplicates-from-sorted-array.md) | Easy |
 | 0080 | Remove Duplicates from Sorted Array II | [Go](solutions/80.-remove-duplicates-from-sorted-array-ii.md) | Medium |
 | 0088 | Merge Sorted Array | [Go](solutions/88.-merge-sorted-array.md) | Easy |
+| 0202 | Happy Number | [Go](solutions/202.-happy-number.md) | Easy |
 | 0881 | Boats to Save People | [Go](solutions/881.-boats-to-save-people.md) | Medium |
 
 ## Reference
