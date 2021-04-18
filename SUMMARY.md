@@ -29,6 +29,7 @@
 * [80. Remove Duplicates from Sorted Array II](solutions/80.-remove-duplicates-from-sorted-array-ii.md)
 * [82. Remove Duplicates from Sorted List II](solutions/82.-remove-duplicates-from-sorted-list-ii.md)
 * [83. Remove Duplicates from Sorted List](solutions/83.-remove-duplicates-from-sorted-list.md)
+* [87. Scramble String](solutions/87.-scramble-string.md)
 * [88. Merge Sorted Array](solutions/88.-merge-sorted-array.md)
 * [116. Populating Next Right Pointers in Each Node](solutions/116.-populating-next-right-pointers-in-each-node.md)
 * [117. Populating Next Right Pointers in Each Node II](solutions/117.-populating-next-right-pointers-in-each-node-ii.md)
