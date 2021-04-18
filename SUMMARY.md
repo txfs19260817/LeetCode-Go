@@ -40,6 +40,7 @@
 * [153. Find Minimum in Rotated Sorted Array](solutions/153.-find-minimum-in-rotated-sorted-array.md)
 * [154. Find Minimum in Rotated Sorted Array II](solutions/154.-find-minimum-in-rotated-sorted-array-ii.md)
 * [202. Happy Number](solutions/202.-happy-number.md)
+* [204. Count Primes](solutions/204.-count-primes.md)
 * [217. Contains Duplicate](solutions/217.-contains-duplicate.md)
 * [219. Contains Duplicate II](solutions/219.-contains-duplicate-ii.md)
 * [220. Contains Duplicate III](solutions/220.-contains-duplicate-iii.md)

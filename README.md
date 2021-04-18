@@ -88,6 +88,7 @@
 | 0043 | Multiply Strings | [Go](solutions/43.-multiply-strings.md) | Medium |
 | 0066 | Plus One | [Go](solutions/66.-plus-one.md) | Easy |
 | 0067 | Add Binary | [Go](solutions/67.-add-binary.md) | Easy |
+| 0204 | Count Primes | [Go](solutions/204.-count-primes.md) | Easy |
 | 0263 | Ugly Number | [Go](solutions/263.-ugly-number.md) | Easy |
 | 0264 | Ugly Number II | [Go](solutions/264.-ugly-number-ii.md) | Medium |
 | 0470 | Implement Rand10\(\) Using Rand7\(\) | [Go](solutions/470.-implement-rand10-using-rand7.md) | Medium |
