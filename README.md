@@ -63,8 +63,10 @@
 | 0001 | Two Sum | [Go](solutions/1.-two-sum.md) | Easy |
 | 0036 | Valid Sudoku | [Go](solutions/36.-valid-sudoku.md) | Medium |
 | 0049 | Group Anagrams | [Go](solutions/49.-group-anagrams.md) | Medium |
+| 0205 | Isomorphic Strings | [Go](solutions/205.-isomorphic-strings.md) | Easy |
 | 0217 | Contains Duplicate | [Go](solutions/217.-contains-duplicate.md) | Easy |
 | 0219 | Contains Duplicate II | [Go](solutions/219.-contains-duplicate-ii.md) | Easy |
+| 0290 | Word Pattern | [Go](solutions/290.-word-pattern.md) | Easy |
 | 0575 | Distribute Candies | [Go](solutions/575.-distribute-candies.md) | Easy |
 | 0953 | Verifying an Alien Dictionary | [Go](solutions/953.-verifying-an-alien-dictionary.md) | Easy |
 | 1640 | Check Array Formation Through Concatenation | [Go](solutions/1640.-check-array-formation-through-concatenation.md) | Easy |
@@ -129,6 +131,7 @@
 | :--- | :--- | :--- | :--- |
 | 0116 | Populating Next Right Pointers in Each Node | [Go](solutions/116.-populating-next-right-pointers-in-each-node.md) | Medium |
 | 0117 | Populating Next Right Pointers in Each Node II | [Go](solutions/117.-populating-next-right-pointers-in-each-node-ii.md) | Medium |
+| 0440 | K-th Smallest in Lexicographical Order | [Go](solutions/440.-k-th-smallest-in-lexicographical-order.md) | Hard |
 | 0623 | Add One Row to Tree | [Go](solutions/623.-add-one-row-to-tree.md) | Medium |
 
 ### Two Pointers
