@@ -35,6 +35,13 @@
 | 0154 | Find Minimum in Rotated Sorted Array II | [Go](solutions/154.-find-minimum-in-rotated-sorted-array-ii.md) | Hard |
 | 0436 | Find Right Interval | [Go](solutions/436.-find-right-interval.md) | Medium |
 
+### Design
+
+| No. | Title | Solution | Difficulty |
+| :--- | :--- | :--- | :--- |
+| 0146 | LRU Cache | [Go](solutions/146.-lru-cache.md) | Medium |
+| 0460 | LFU Cache | [Go](solutions/460.-lfu-cache.md) | Hard |
+
 ### Dynamic Programming
 
 | No. | Title | Solution | Difficulty |
