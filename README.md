@@ -47,6 +47,7 @@
 | No. | Title | Solution | Difficulty |
 | :--- | :--- | :--- | :--- |
 | 0087 | Scramble String | [Go](solutions/87.-scramble-string.md) | Hard |
+| 0091 | Decode Ways | [Go](solutions/91.-decode-ways.md) | Medium |
 | 0132 | Palindrome Partitioning II | [Go](solutions/132.-palindrome-partitioning-ii.md) | Hard |
 | 0329 | Longest Increasing Path in a Matrix | [Go](solutions/329.-longest-increasing-path-in-a-matrix.md) | Hard |
 | 0474 | Ones and Zeroes | [Go](solutions/474.-ones-and-zeroes.md) | Medium |
