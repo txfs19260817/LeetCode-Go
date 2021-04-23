@@ -49,6 +49,8 @@
 | 0087 | Scramble String | [Go](solutions/87.-scramble-string.md) | Hard |
 | 0091 | Decode Ways | [Go](solutions/91.-decode-ways.md) | Medium |
 | 0132 | Palindrome Partitioning II | [Go](solutions/132.-palindrome-partitioning-ii.md) | Hard |
+| 0303 | Range Sum Query - Immutable | [Go](solutions/303.-range-sum-query-immutable.md) | Easy |
+| 0304 | Range Sum Query 2D - Immutable | [Go](solutions/304.-range-sum-query-2d-immutable.md) | Medium |
 | 0329 | Longest Increasing Path in a Matrix | [Go](solutions/329.-longest-increasing-path-in-a-matrix.md) | Hard |
 | 0474 | Ones and Zeroes | [Go](solutions/474.-ones-and-zeroes.md) | Medium |
 | 0583 | Delete Operation for Two Strings | [Go](solutions/583.-delete-operation-for-two-strings.md) | Medium |
@@ -118,6 +120,7 @@
 | :--- | :--- | :--- | :--- |
 | 0020 | Valid Parentheses | [Go](solutions/20.-valid-parentheses.md) | Easy |
 | 0150 | Evaluate Reverse Polish Notation | [Go](solutions/150.-evaluate-reverse-polish-notation.md) | Medium |
+| 0155 | Min Stack | [Go](solutions/155.-min-stack.md) | Easy |
 | 0456 | 132 Pattern  | [Go](solutions/456.-132-pattern.md) | Medium |
 
 ### String
