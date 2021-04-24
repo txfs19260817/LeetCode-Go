@@ -55,6 +55,8 @@
 * [303. Range Sum Query - Immutable](solutions/303.-range-sum-query-immutable.md)
 * [304. Range Sum Query 2D - Immutable](solutions/304.-range-sum-query-2d-immutable.md)
 * [329. Longest Increasing Path in a Matrix](solutions/329.-longest-increasing-path-in-a-matrix.md)
+* [368. Largest Divisible Subset](solutions/368.-largest-divisible-subset.md)
+* [377. Combination Sum IV](solutions/377.-combination-sum-iv.md)
 * [415. Add Strings](solutions/415.-add-strings.md)
 * [435. Non-overlapping Intervals](solutions/435.-non-overlapping-intervals.md)
 * [436. Find Right Interval](solutions/436.-find-right-interval.md)
