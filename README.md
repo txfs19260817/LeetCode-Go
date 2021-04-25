@@ -83,6 +83,14 @@
 | 0953 | Verifying an Alien Dictionary | [Go](solutions/953.-verifying-an-alien-dictionary.md) | Easy |
 | 1640 | Check Array Formation Through Concatenation | [Go](solutions/1640.-check-array-formation-through-concatenation.md) | Easy |
 
+### Heap
+
+| No. | Title | Solution | Difficulty |
+| :--- | :--- | :--- | :--- |
+| 0215 | Kth Largest Element in an Array | [Go](solutions/215.-kth-largest-element-in-an-array.md) | Medium |
+| 0347 | Top K Frequent Elements | [Go](solutions/347.-top-k-frequent-elements.md) | Medium |
+| 0703 | Kth Largest Element in a Stream | [Go](solutions/703.-kth-largest-element-in-a-stream.md) | Easy |
+
 ### Linked List
 
 | No. | Title | Solution | Difficulty |
@@ -146,6 +154,7 @@
 | 0117 | Populating Next Right Pointers in Each Node II | [Go](solutions/117.-populating-next-right-pointers-in-each-node-ii.md) | Medium |
 | 0440 | K-th Smallest in Lexicographical Order | [Go](solutions/440.-k-th-smallest-in-lexicographical-order.md) | Hard |
 | 0623 | Add One Row to Tree | [Go](solutions/623.-add-one-row-to-tree.md) | Medium |
+| 0897 | Increasing Order Search Tree | [Go](solutions/897.-increasing-order-search-tree.md) | Easy |
 
 ### Two Pointers
 
