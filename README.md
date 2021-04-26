@@ -33,7 +33,9 @@
 | 0074 | Search a 2D Matrix | [Go](solutions/74.-search-a-2d-matrix.md) | Medium |
 | 0153 | Find Minimum in Rotated Sorted Array | [Go](solutions/153.-find-minimum-in-rotated-sorted-array.md) | Medium |
 | 0154 | Find Minimum in Rotated Sorted Array II | [Go](solutions/154.-find-minimum-in-rotated-sorted-array-ii.md) | Hard |
+| 0410 | Split Array Largest Sum | [Go](solutions/410.-split-array-largest-sum.md) | Hard |
 | 0436 | Find Right Interval | [Go](solutions/436.-find-right-interval.md) | Medium |
+| 1011 | Capacity To Ship Packages Within D Days | [Go](solutions/1011.-capacity-to-ship-packages-within-d-days.md) | Medium |
 
 ### Design
 
