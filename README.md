@@ -155,8 +155,11 @@
 | 0116 | Populating Next Right Pointers in Each Node | [Go](solutions/116.-populating-next-right-pointers-in-each-node.md) | Medium |
 | 0117 | Populating Next Right Pointers in Each Node II | [Go](solutions/117.-populating-next-right-pointers-in-each-node-ii.md) | Medium |
 | 0440 | K-th Smallest in Lexicographical Order | [Go](solutions/440.-k-th-smallest-in-lexicographical-order.md) | Hard |
+| 0450 | Delete Node in a BST | [Go](solutions/450.-delete-node-in-a-bst.md) | Medium |
 | 0623 | Add One Row to Tree | [Go](solutions/623.-add-one-row-to-tree.md) | Medium |
+| 0654 | Maximum Binary Tree | [Go](solutions/654.-maximum-binary-tree.md) | Medium |
 | 0897 | Increasing Order Search Tree | [Go](solutions/897.-increasing-order-search-tree.md) | Easy |
+| 0938 | Range Sum of BST | [Go](solutions/938.-range-sum-of-bst.md) | Easy |
 
 ### Two Pointers
 
