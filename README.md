@@ -30,9 +30,11 @@
 | No. | Title | Solution | Difficulty |
 | :--- | :--- | :--- | :--- |
 | 0034 | Find First and Last Position of Element in Sorted Array | [Go](solutions/34.-find-first-and-last-position-of-element-in-sorted-array.md) | Medium |
+| 0069 | Sqrt\(x\) | [Go](solutions/69.-sqrt-x.md) | Easy |
 | 0074 | Search a 2D Matrix | [Go](solutions/74.-search-a-2d-matrix.md) | Medium |
 | 0153 | Find Minimum in Rotated Sorted Array | [Go](solutions/153.-find-minimum-in-rotated-sorted-array.md) | Medium |
 | 0154 | Find Minimum in Rotated Sorted Array II | [Go](solutions/154.-find-minimum-in-rotated-sorted-array-ii.md) | Hard |
+| 0367 | Valid Perfect Square | [Go](solutions/367.-valid-perfect-square.md) | Easy |
 | 0410 | Split Array Largest Sum | [Go](solutions/410.-split-array-largest-sum.md) | Hard |
 | 0436 | Find Right Interval | [Go](solutions/436.-find-right-interval.md) | Medium |
 | 1011 | Capacity To Ship Packages Within D Days | [Go](solutions/1011.-capacity-to-ship-packages-within-d-days.md) | Medium |
@@ -169,6 +171,7 @@
 | 0080 | Remove Duplicates from Sorted Array II | [Go](solutions/80.-remove-duplicates-from-sorted-array-ii.md) | Medium |
 | 0088 | Merge Sorted Array | [Go](solutions/88.-merge-sorted-array.md) | Easy |
 | 0202 | Happy Number | [Go](solutions/202.-happy-number.md) | Easy |
+| 0633 | Sum of Square Numbers | [Go](solutions/633.-sum-of-square-numbers.md) | Medium |
 | 0881 | Boats to Save People | [Go](solutions/881.-boats-to-save-people.md) | Medium |
 
 ## Reference
