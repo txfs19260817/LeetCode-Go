@@ -22,6 +22,7 @@
 | No. | Title | Solution | Difficulty |
 | :--- | :--- | :--- | :--- |
 | 0131 | Palindrome Partitioning | [Go](solutions/131.-palindrome-partitioning.md) | Medium |
+| 0403 | Frog Jump | [Go](solutions/403.-frog-jump.md) | Hard |
 | 0784 | Letter Case Permutation | [Go](solutions/784.-letter-case-permutation.md) | Medium |
 | 1302 | Deepest Leaves Sum | [Go](solutions/1302.-deepest-leaves-sum.md) | Medium |
 

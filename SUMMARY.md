@@ -61,6 +61,7 @@
 * [367. Valid Perfect Square](solutions/367.-valid-perfect-square.md)
 * [368. Largest Divisible Subset](solutions/368.-largest-divisible-subset.md)
 * [377. Combination Sum IV](solutions/377.-combination-sum-iv.md)
+* [403. Frog Jump](solutions/403.-frog-jump.md)
 * [410. Split Array Largest Sum](solutions/410.-split-array-largest-sum.md)
 * [415. Add Strings](solutions/415.-add-strings.md)
 * [435. Non-overlapping Intervals](solutions/435.-non-overlapping-intervals.md)
