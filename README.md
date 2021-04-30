@@ -45,6 +45,8 @@
 | No. | Title | Solution | Difficulty |
 | :--- | :--- | :--- | :--- |
 | 0146 | LRU Cache | [Go](solutions/146.-lru-cache.md) | Medium |
+| 0225 | Implement Stack using Queues | [Go](solutions/225.-implement-stack-using-queues.md) | Easy |
+| 0232 | Implement Queue using Stacks | [Go](solutions/232.-implement-queue-using-stacks.md) | Easy |
 | 0460 | LFU Cache | [Go](solutions/460.-lfu-cache.md) | Hard |
 
 ### Dynamic Programming

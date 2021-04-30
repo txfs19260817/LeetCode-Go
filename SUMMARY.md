@@ -50,6 +50,8 @@
 * [217. Contains Duplicate](solutions/217.-contains-duplicate.md)
 * [219. Contains Duplicate II](solutions/219.-contains-duplicate-ii.md)
 * [220. Contains Duplicate III](solutions/220.-contains-duplicate-iii.md)
+* [225. Implement Stack using Queues](solutions/225.-implement-stack-using-queues.md)
+* [232. Implement Queue using Stacks](solutions/232.-implement-queue-using-stacks.md)
 * [240. Search a 2D Matrix II](solutions/240.-search-a-2d-matrix-ii.md)
 * [263. Ugly Number](solutions/263.-ugly-number.md)
 * [264. Ugly Number II](solutions/264.-ugly-number-ii.md)
