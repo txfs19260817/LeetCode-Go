@@ -87,6 +87,7 @@
 | 0219 | Contains Duplicate II | [Go](solutions/219.-contains-duplicate-ii.md) | Easy |
 | 0290 | Word Pattern | [Go](solutions/290.-word-pattern.md) | Easy |
 | 0575 | Distribute Candies | [Go](solutions/575.-distribute-candies.md) | Easy |
+| 0690 | Employee Importance | [Go](solutions/690.-employee-importance.md) | Easy |
 | 0953 | Verifying an Alien Dictionary | [Go](solutions/953.-verifying-an-alien-dictionary.md) | Easy |
 | 1640 | Check Array Formation Through Concatenation | [Go](solutions/1640.-check-array-formation-through-concatenation.md) | Easy |
 
