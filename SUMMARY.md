@@ -76,6 +76,7 @@
 * [460. LFU Cache](solutions/460.-lfu-cache.md)
 * [470. Implement Rand10\(\) Using Rand7\(\)](solutions/470.-implement-rand10-using-rand7.md)
 * [474. Ones and Zeroes](solutions/474.-ones-and-zeroes.md)
+* [554. Brick Wall](solutions/554.-brick-wall.md)
 * [575. Distribute Candies](solutions/575.-distribute-candies.md)
 * [583. Delete Operation for Two Strings](solutions/583.-delete-operation-for-two-strings.md)
 * [623. Add One Row to Tree](solutions/623.-add-one-row-to-tree.md)
