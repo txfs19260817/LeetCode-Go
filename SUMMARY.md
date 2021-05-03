@@ -7,6 +7,7 @@
 
 * [1. Two Sum](solutions/1.-two-sum.md)
 * [2. Add Two Numbers](solutions/2.-add-two-numbers.md)
+* [7. Reverse Integer](solutions/7.-reverse-integer.md)
 * [12. Integer to Roman](solutions/12.-integer-to-roman.md)
 * [13. Roman to Integer](solutions/13.-roman-to-integer.md)
 * [20. Valid Parentheses](solutions/20.-valid-parentheses.md)
@@ -43,6 +44,7 @@
 * [153. Find Minimum in Rotated Sorted Array](solutions/153.-find-minimum-in-rotated-sorted-array.md)
 * [154. Find Minimum in Rotated Sorted Array II](solutions/154.-find-minimum-in-rotated-sorted-array-ii.md)
 * [155. Min Stack](solutions/155.-min-stack.md)
+* [187. Repeated DNA Sequences](solutions/187.-repeated-dna-sequences.md)
 * [202. Happy Number](solutions/202.-happy-number.md)
 * [204. Count Primes](solutions/204.-count-primes.md)
 * [205. Isomorphic Strings](solutions/205.-isomorphic-strings.md)

@@ -40,6 +40,12 @@
 | 0436 | Find Right Interval | [Go](solutions/436.-find-right-interval.md) | Medium |
 | 1011 | Capacity To Ship Packages Within D Days | [Go](solutions/1011.-capacity-to-ship-packages-within-d-days.md) | Medium |
 
+### Bit Manipulation
+
+| No. | Title | Solution | Difficulty |
+| :--- | :--- | :--- | :--- |
+| 0187 | Repeated DNA Sequences | [Go](solutions/187.-repeated-dna-sequences.md) | Medium |
+
 ### Design
 
 | No. | Title | Solution | Difficulty |
@@ -115,6 +121,7 @@
 
 | No. | Title | Solution | Difficulty |
 | :--- | :--- | :--- | :--- |
+| 0007 | Reverse Integer | [Go](solutions/7.-reverse-integer.md) | Easy |
 | 0029 | Divide Two Integers | [Go](solutions/29.-divide-two-integers.md) | Medium |
 | 0043 | Multiply Strings | [Go](solutions/43.-multiply-strings.md) | Medium |
 | 0066 | Plus One | [Go](solutions/66.-plus-one.md) | Easy |
