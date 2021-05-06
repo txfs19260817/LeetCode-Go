@@ -61,6 +61,7 @@
 * [290. Word Pattern](solutions/290.-word-pattern.md)
 * [303. Range Sum Query - Immutable](solutions/303.-range-sum-query-immutable.md)
 * [304. Range Sum Query 2D - Immutable](solutions/304.-range-sum-query-2d-immutable.md)
+* [320. Generalized Abbreviation](solutions/320.-generalized-abbreviation.md)
 * [329. Longest Increasing Path in a Matrix](solutions/329.-longest-increasing-path-in-a-matrix.md)
 * [347. Top K Frequent Elements](solutions/347.-top-k-frequent-elements.md)
 * [367. Valid Perfect Square](solutions/367.-valid-perfect-square.md)
@@ -100,6 +101,7 @@
 * [1011. Capacity To Ship Packages Within D Days](solutions/1011.-capacity-to-ship-packages-within-d-days.md)
 * [1143. Longest Common Subsequence](solutions/1143.-longest-common-subsequence.md)
 * [1302. Deepest Leaves Sum](solutions/1302.-deepest-leaves-sum.md)
+* [1318. Minimum Flips to Make a OR b Equal to c](solutions/1318.-minimum-flips-to-make-a-or-b-equal-to-c.md)
 * [1332. Remove Palindromic Subsequences](solutions/1332.-remove-palindromic-subsequences.md)
 * [1460. Make Two Arrays Equal by Reversing Sub-arrays](solutions/1460.-make-two-arrays-equal-by-reversing-sub-arrays.md)
 * [1539. Kth Missing Positive Number](solutions/1539.-kth-missing-positive-number.md)
@@ -107,5 +109,6 @@
 * [1614. Maximum Nesting Depth of the Parentheses](solutions/1614.-maximum-nesting-depth-of-the-parentheses.md)
 * [1640. Check Array Formation Through Concatenation](solutions/1640.-check-array-formation-through-concatenation.md)
 * [1704. Determine if String Halves Are Alike](solutions/1704.-determine-if-string-halves-are-alike.md)
+* [1720. Decode XORed Array](solutions/1720.-decode-xored-array.md)
 * [1721. Swapping Nodes in a Linked List](solutions/1721.-swapping-nodes-in-a-linked-list.md)
 

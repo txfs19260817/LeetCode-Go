@@ -12,7 +12,7 @@ Tags here.
 
 ### Solution
 
-Explanation of the response here.
+Explain the response here.
 
 ### Complexity
 
