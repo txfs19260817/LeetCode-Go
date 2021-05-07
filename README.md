@@ -179,6 +179,7 @@
 | 0654 | Maximum Binary Tree | [Go](solutions/654.-maximum-binary-tree.md) | Medium |
 | 0897 | Increasing Order Search Tree | [Go](solutions/897.-increasing-order-search-tree.md) | Easy |
 | 0938 | Range Sum of BST | [Go](solutions/938.-range-sum-of-bst.md) | Easy |
+| 1469 | Find All The Lonely Nodes | [Go](solutions/1469.-find-all-the-lonely-nodes.md) | Easy |
 
 ### Two Pointers
 
