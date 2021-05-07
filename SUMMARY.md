@@ -106,6 +106,7 @@
 * [1318. Minimum Flips to Make a OR b Equal to c](solutions/1318.-minimum-flips-to-make-a-or-b-equal-to-c.md)
 * [1332. Remove Palindromic Subsequences](solutions/1332.-remove-palindromic-subsequences.md)
 * [1460. Make Two Arrays Equal by Reversing Sub-arrays](solutions/1460.-make-two-arrays-equal-by-reversing-sub-arrays.md)
+* [1486. XOR Operation in an Array](solutions/1486.-xor-operation-in-an-array.md)
 * [1539. Kth Missing Positive Number](solutions/1539.-kth-missing-positive-number.md)
 * [1551. Minimum Operations to Make Array Equal](solutions/1551.-minimum-operations-to-make-array-equal.md)
 * [1614. Maximum Nesting Depth of the Parentheses](solutions/1614.-maximum-nesting-depth-of-the-parentheses.md)
