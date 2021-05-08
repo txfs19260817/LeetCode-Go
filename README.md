@@ -25,6 +25,7 @@
 | 0403 | Frog Jump | [Go](solutions/403.-frog-jump.md) | Hard |
 | 0784 | Letter Case Permutation | [Go](solutions/784.-letter-case-permutation.md) | Medium |
 | 1302 | Deepest Leaves Sum | [Go](solutions/1302.-deepest-leaves-sum.md) | Medium |
+| 1723 | Find Minimum Time to Finish All Jobs | [Go](solutions/1723.-find-minimum-time-to-finish-all-jobs.md) | Hard |
 
 ### Binary Search
 

@@ -115,4 +115,5 @@
 * [1704. Determine if String Halves Are Alike](solutions/1704.-determine-if-string-halves-are-alike.md)
 * [1720. Decode XORed Array](solutions/1720.-decode-xored-array.md)
 * [1721. Swapping Nodes in a Linked List](solutions/1721.-swapping-nodes-in-a-linked-list.md)
+* [1723. Find Minimum Time to Finish All Jobs](solutions/1723.-find-minimum-time-to-finish-all-jobs.md)
 
