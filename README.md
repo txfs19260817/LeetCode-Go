@@ -40,6 +40,7 @@
 | 0410 | Split Array Largest Sum | [Go](solutions/410.-split-array-largest-sum.md) | Hard |
 | 0436 | Find Right Interval | [Go](solutions/436.-find-right-interval.md) | Medium |
 | 1011 | Capacity To Ship Packages Within D Days | [Go](solutions/1011.-capacity-to-ship-packages-within-d-days.md) | Medium |
+| 1482 | Minimum Number of Days to Make m Bouquets | [Go](solutions/1482.-minimum-number-of-days-to-make-m-bouquets.md) | Medium |
 
 ### Bit Manipulation
 

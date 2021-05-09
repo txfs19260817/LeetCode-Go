@@ -107,6 +107,7 @@
 * [1332. Remove Palindromic Subsequences](solutions/1332.-remove-palindromic-subsequences.md)
 * [1460. Make Two Arrays Equal by Reversing Sub-arrays](solutions/1460.-make-two-arrays-equal-by-reversing-sub-arrays.md)
 * [1469. Find All The Lonely Nodes](solutions/1469.-find-all-the-lonely-nodes.md)
+* [1482. Minimum Number of Days to Make m Bouquets](solutions/1482.-minimum-number-of-days-to-make-m-bouquets.md)
 * [1486. XOR Operation in an Array](solutions/1486.-xor-operation-in-an-array.md)
 * [1539. Kth Missing Positive Number](solutions/1539.-kth-missing-positive-number.md)
 * [1551. Minimum Operations to Make Array Equal](solutions/1551.-minimum-operations-to-make-array-equal.md)
