@@ -179,6 +179,7 @@
 | 0450 | Delete Node in a BST | [Go](solutions/450.-delete-node-in-a-bst.md) | Medium |
 | 0623 | Add One Row to Tree | [Go](solutions/623.-add-one-row-to-tree.md) | Medium |
 | 0654 | Maximum Binary Tree | [Go](solutions/654.-maximum-binary-tree.md) | Medium |
+| 0872 | Leaf-Similar Trees | [Go](solutions/872.-leaf-similar-trees.md) | Easy |
 | 0897 | Increasing Order Search Tree | [Go](solutions/897.-increasing-order-search-tree.md) | Easy |
 | 0938 | Range Sum of BST | [Go](solutions/938.-range-sum-of-bst.md) | Easy |
 | 1469 | Find All The Lonely Nodes | [Go](solutions/1469.-find-all-the-lonely-nodes.md) | Easy |
@@ -192,7 +193,6 @@
 | 0088 | Merge Sorted Array | [Go](solutions/88.-merge-sorted-array.md) | Easy |
 | 0202 | Happy Number | [Go](solutions/202.-happy-number.md) | Easy |
 | 0633 | Sum of Square Numbers | [Go](solutions/633.-sum-of-square-numbers.md) | Medium |
-| 0872 | Leaf-Similar Trees | [Go](solutions/872.-leaf-similar-trees.md) | Easy |
 | 0881 | Boats to Save People | [Go](solutions/881.-boats-to-save-people.md) | Medium |
 
 ## Reference
