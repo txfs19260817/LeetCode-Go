@@ -192,6 +192,7 @@
 | 0088 | Merge Sorted Array | [Go](solutions/88.-merge-sorted-array.md) | Easy |
 | 0202 | Happy Number | [Go](solutions/202.-happy-number.md) | Easy |
 | 0633 | Sum of Square Numbers | [Go](solutions/633.-sum-of-square-numbers.md) | Medium |
+| 0872 | Leaf-Similar Trees | [Go](solutions/872.-leaf-similar-trees.md) | Easy |
 | 0881 | Boats to Save People | [Go](solutions/881.-boats-to-save-people.md) | Medium |
 
 ## Reference

@@ -94,6 +94,7 @@
 * [703. Kth Largest Element in a Stream](solutions/703.-kth-largest-element-in-a-stream.md)
 * [781. Rabbits in Forest](solutions/781.-rabbits-in-forest.md)
 * [784. Letter Case Permutation](solutions/784.-letter-case-permutation.md)
+* [872. Leaf-Similar Trees](solutions/872.-leaf-similar-trees.md)
 * [881. Boats to Save People](solutions/881.-boats-to-save-people.md)
 * [897. Increasing Order Search Tree](solutions/897.-increasing-order-search-tree.md)
 * [936. Stamping The Sequence](solutions/936.-stamping-the-sequence.md)
