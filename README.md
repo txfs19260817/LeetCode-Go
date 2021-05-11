@@ -51,6 +51,7 @@
 | 1318 | Minimum Flips to Make a OR b Equal to c | [Go](solutions/1318.-minimum-flips-to-make-a-or-b-equal-to-c.md) | Medium |
 | 1486 | XOR Operation in an Array | [Go](solutions/1486.-xor-operation-in-an-array.md) | Easy |
 | 1720 | Decode XORed Array | [Go](solutions/1720.-decode-xored-array.md) | Easy |
+| 1734 | Decode XORed Permutation | [Go](solutions/1734.-decode-xored-permutation.md) | Medium |
 
 ### Design
 
