@@ -79,6 +79,7 @@
 | 0474 | Ones and Zeroes | [Go](solutions/474.-ones-and-zeroes.md) | Medium |
 | 0583 | Delete Operation for Two Strings | [Go](solutions/583.-delete-operation-for-two-strings.md) | Medium |
 | 1143 | Longest Common Subsequence | [Go](solutions/1143.-longest-common-subsequence.md) | Medium |
+| 1269 | Number of Ways to Stay in the Same Place After Some Steps | [Go](solutions/untitled.md) | Hard |
 
 ### Greedy
 

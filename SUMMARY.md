@@ -103,6 +103,7 @@
 * [1006. Clumsy Factorial](solutions/1006.-clumsy-factorial.md)
 * [1011. Capacity To Ship Packages Within D Days](solutions/1011.-capacity-to-ship-packages-within-d-days.md)
 * [1143. Longest Common Subsequence](solutions/1143.-longest-common-subsequence.md)
+* [1269. Number of Ways to Stay in the Same Place After Some Steps](solutions/untitled.md)
 * [1302. Deepest Leaves Sum](solutions/1302.-deepest-leaves-sum.md)
 * [1310. XOR Queries of a Subarray](solutions/1310.-xor-queries-of-a-subarray.md)
 * [1318. Minimum Flips to Make a OR b Equal to c](solutions/1318.-minimum-flips-to-make-a-or-b-equal-to-c.md)
