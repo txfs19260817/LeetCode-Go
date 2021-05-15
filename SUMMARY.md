@@ -65,6 +65,7 @@
 * [304. Range Sum Query 2D - Immutable](solutions/304.-range-sum-query-2d-immutable.md)
 * [320. Generalized Abbreviation](solutions/320.-generalized-abbreviation.md)
 * [329. Longest Increasing Path in a Matrix](solutions/329.-longest-increasing-path-in-a-matrix.md)
+* [331. Verify Preorder Serialization of a Binary Tree](solutions/331.-verify-preorder-serialization-of-a-binary-tree.md)
 * [347. Top K Frequent Elements](solutions/347.-top-k-frequent-elements.md)
 * [367. Valid Perfect Square](solutions/367.-valid-perfect-square.md)
 * [368. Largest Divisible Subset](solutions/368.-largest-divisible-subset.md)
