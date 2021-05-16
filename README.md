@@ -178,6 +178,7 @@
 | :--- | :--- | :--- | :--- |
 | 0116 | Populating Next Right Pointers in Each Node | [Go](solutions/116.-populating-next-right-pointers-in-each-node.md) | Medium |
 | 0117 | Populating Next Right Pointers in Each Node II | [Go](solutions/117.-populating-next-right-pointers-in-each-node-ii.md) | Medium |
+| 0208 | Implement Trie \(Prefix Tree\) | [Go](solutions/208.-implement-trie-prefix-tree.md) | Medium |
 | 0331 | Verify Preorder Serialization of a Binary Tree | [Go](solutions/331.-verify-preorder-serialization-of-a-binary-tree.md) | Medium |
 | 0440 | K-th Smallest in Lexicographical Order | [Go](solutions/440.-k-th-smallest-in-lexicographical-order.md) | Hard |
 | 0450 | Delete Node in a BST | [Go](solutions/450.-delete-node-in-a-bst.md) | Medium |
