@@ -12,6 +12,8 @@
 | 0048 | Rotate Image | [Go](solutions/48.-rotate-image.md) | Medium |
 | 0073 | Set Matrix Zeroes | [Go](solutions/73.-set-matrix-zeroes.md) | Medium |
 | 0240 | Search a 2D Matrix II | [Go](solutions/240.-search-a-2d-matrix-ii.md) | Medium |
+| 0243 | Shortest Word Distance | [Go](solutions/243.-shortest-word-distance.md) | Easy |
+| 0245 | Shortest Word Distance III | [Go](solutions/245.-shortest-word-distance-iii.md) | Medium |
 | 0645 | Set Mismatch | [Go](solutions/645.-set-mismatch.md) | Easy |
 | 0667 | Beautiful Arrangement II | [Go](solutions/667.-beautiful-arrangement-ii.md) | Medium |
 | 1460 | Make Two Arrays Equal by Reversing Sub-arrays | [Go](solutions/1460.-make-two-arrays-equal-by-reversing-sub-arrays.md) | Easy |
@@ -61,6 +63,7 @@
 | 0146 | LRU Cache | [Go](solutions/146.-lru-cache.md) | Medium |
 | 0225 | Implement Stack using Queues | [Go](solutions/225.-implement-stack-using-queues.md) | Easy |
 | 0232 | Implement Queue using Stacks | [Go](solutions/232.-implement-queue-using-stacks.md) | Easy |
+| 0244 | Shortest Word Distance II | [Go](solutions/244.-shortest-word-distance-ii.md) | Medium |
 | 0460 | LFU Cache | [Go](solutions/460.-lfu-cache.md) | Hard |
 
 ### Dynamic Programming
