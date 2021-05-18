@@ -52,6 +52,7 @@
 | 0320 | Generalized Abbreviation | [Go](solutions/320.-generalized-abbreviation.md) | Medium |
 | 1310 | XOR Queries of a Subarray | [Go](solutions/1310.-xor-queries-of-a-subarray.md) | Medium |
 | 1318 | Minimum Flips to Make a OR b Equal to c | [Go](solutions/1318.-minimum-flips-to-make-a-or-b-equal-to-c.md) | Medium |
+| 1442 | Count Triplets That Can Form Two Arrays of Equal XOR | [Go](solutions/1442.-count-triplets-that-can-form-two-arrays-of-equal-xor.md) | Medium |
 | 1486 | XOR Operation in an Array | [Go](solutions/1486.-xor-operation-in-an-array.md) | Easy |
 | 1720 | Decode XORed Array | [Go](solutions/1720.-decode-xored-array.md) | Easy |
 | 1734 | Decode XORed Permutation | [Go](solutions/1734.-decode-xored-permutation.md) | Medium |

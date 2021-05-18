@@ -113,6 +113,7 @@
 * [1310. XOR Queries of a Subarray](solutions/1310.-xor-queries-of-a-subarray.md)
 * [1318. Minimum Flips to Make a OR b Equal to c](solutions/1318.-minimum-flips-to-make-a-or-b-equal-to-c.md)
 * [1332. Remove Palindromic Subsequences](solutions/1332.-remove-palindromic-subsequences.md)
+* [1442. Count Triplets That Can Form Two Arrays of Equal XOR](solutions/1442.-count-triplets-that-can-form-two-arrays-of-equal-xor.md)
 * [1460. Make Two Arrays Equal by Reversing Sub-arrays](solutions/1460.-make-two-arrays-equal-by-reversing-sub-arrays.md)
 * [1469. Find All The Lonely Nodes](solutions/1469.-find-all-the-lonely-nodes.md)
 * [1482. Minimum Number of Days to Make m Bouquets](solutions/1482.-minimum-number-of-days-to-make-m-bouquets.md)
