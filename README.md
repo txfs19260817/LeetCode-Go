@@ -56,6 +56,7 @@
 | 1486 | XOR Operation in an Array | [Go](solutions/1486.-xor-operation-in-an-array.md) | Easy |
 | 1720 | Decode XORed Array | [Go](solutions/1720.-decode-xored-array.md) | Easy |
 | 1734 | Decode XORed Permutation | [Go](solutions/1734.-decode-xored-permutation.md) | Medium |
+| 1738 | Find Kth Largest XOR Coordinate Value | [Go](solutions/1738.-find-kth-largest-xor-coordinate-value.md) | Medium |
 
 ### Design
 
