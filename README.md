@@ -110,6 +110,7 @@
 | 0554 | Brick Wall | [Go](solutions/554.-brick-wall.md) | Medium |
 | 0575 | Distribute Candies | [Go](solutions/575.-distribute-candies.md) | Easy |
 | 0690 | Employee Importance | [Go](solutions/690.-employee-importance.md) | Easy |
+| 0692 | Top K Frequent Words | [Go](solutions/692.-top-k-frequent-words.md) | Medium |
 | 0953 | Verifying an Alien Dictionary | [Go](solutions/953.-verifying-an-alien-dictionary.md) | Easy |
 | 1640 | Check Array Formation Through Concatenation | [Go](solutions/1640.-check-array-formation-through-concatenation.md) | Easy |
 
