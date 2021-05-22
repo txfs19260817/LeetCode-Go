@@ -1,0 +1,65 @@
+# 810. Chalkboard XOR Game
+
+## LeetCode [810. Chalkboard XOR Game](title)
+
+### Description
+
+We are given non-negative integers nums\[i\] which are written on a chalkboard. Alice and Bob take turns erasing exactly one number from the chalkboard, with Alice starting first. If erasing a number causes the bitwise XOR of all the elements of the chalkboard to become 0, then that player loses. \(Also, we'll say the bitwise XOR of one element is that element itself, and the bitwise XOR of no elements is 0.\)
+
+Also, if any player starts their turn with the bitwise XOR of all the elements of the chalkboard equal to 0, then that player wins.
+
+Return True if and only if Alice wins the game, assuming both players play optimally.
+
+**Example:**
+
+```text
+Input: nums = [1, 1, 2]
+Output: false
+Explanation: 
+Alice has two choices: erase 1 or erase 2. 
+If she erases 1, the nums array becomes [1, 2]. The bitwise XOR of all the elements of the chalkboard is 1 XOR 2 = 3. Now Bob can remove any element he wants, because Alice will be the one to erase the last element and she will lose. 
+If Alice erases 2 first, now nums becomes [1, 1]. The bitwise XOR of all the elements of the chalkboard is 1 XOR 1 = 0. Alice will lose.
+```
+
+**Notes:**
+
+* `1 <= N <= 1000`. 
+* `0 <= nums[i] <= 2^16`.
+
+### Tags
+
+Math
+
+### Solution
+
+Alice's winning conditions \(any\):
+
+* The length of `nums` is even;
+* The XOR of all elements is 0.
+
+Alice moves first. If the length of `nums` is even, Alice can always find out a number and make the XOR of remaining numbers is non-zero after erasing picked one.
+
+### Complexity
+
+* Time complexity: $$O(n)$$
+* Space complexity: $$O(1)$$
+
+### Code
+
+```go
+func xorGame(nums []int) bool {
+	if len(nums)%2 == 0 {
+		return true
+	}
+	var xor int
+	for _, num := range nums {
+		xor ^= num
+	}
+	return xor == 0
+}
+```
+
+## Reference
+
+1. [黑板异或游戏](https://leetcode-cn.com/problems/chalkboard-xor-game/solution/hei-ban-yi-huo-you-xi-by-leetcode-soluti-eb0c/)
+

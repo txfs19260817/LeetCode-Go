@@ -100,6 +100,7 @@
 * [703. Kth Largest Element in a Stream](solutions/703.-kth-largest-element-in-a-stream.md)
 * [781. Rabbits in Forest](solutions/781.-rabbits-in-forest.md)
 * [784. Letter Case Permutation](solutions/784.-letter-case-permutation.md)
+* [810. Chalkboard XOR Game](solutions/untitled-1.md)
 * [872. Leaf-Similar Trees](solutions/872.-leaf-similar-trees.md)
 * [881. Boats to Save People](solutions/881.-boats-to-save-people.md)
 * [897. Increasing Order Search Tree](solutions/897.-increasing-order-search-tree.md)
@@ -130,4 +131,5 @@
 * [1723. Find Minimum Time to Finish All Jobs](solutions/1723.-find-minimum-time-to-finish-all-jobs.md)
 * [1734. Decode XORed Permutation](solutions/1734.-decode-xored-permutation.md)
 * [1738. Find Kth Largest XOR Coordinate Value](solutions/1738.-find-kth-largest-xor-coordinate-value.md)
+* [1796. Second Largest Digit in a String](solutions/1796.-second-largest-digit-in-a-string.md)
 

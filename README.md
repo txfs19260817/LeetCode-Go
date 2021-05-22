@@ -50,6 +50,7 @@
 | :--- | :--- | :--- | :--- |
 | 0187 | Repeated DNA Sequences | [Go](solutions/187.-repeated-dna-sequences.md) | Medium |
 | 0320 | Generalized Abbreviation | [Go](solutions/320.-generalized-abbreviation.md) | Medium |
+| 0810 | Chalkboard XOR Game | [Go](solutions/untitled-1.md) | Hard |
 | 1310 | XOR Queries of a Subarray | [Go](solutions/1310.-xor-queries-of-a-subarray.md) | Medium |
 | 1318 | Minimum Flips to Make a OR b Equal to c | [Go](solutions/1318.-minimum-flips-to-make-a-or-b-equal-to-c.md) | Medium |
 | 1442 | Count Triplets That Can Form Two Arrays of Equal XOR | [Go](solutions/1442.-count-triplets-that-can-form-two-arrays-of-equal-xor.md) | Medium |
@@ -178,6 +179,7 @@
 | 1332 | Remove Palindromic Subsequences | [Go](solutions/1332.-remove-palindromic-subsequences.md) | Easy |
 | 1614 | Maximum Nesting Depth of the Parentheses | [Go](solutions/1614.-maximum-nesting-depth-of-the-parentheses.md) | Easy |
 | 1704 | Determine if String Halves Are Alike | [Go](solutions/1704.-determine-if-string-halves-are-alike.md) | Easy |
+| 1796 | Second Largest Digit in a String | [Go](solutions/1796.-second-largest-digit-in-a-string.md) | Easy |
 
 ### Tree
 
