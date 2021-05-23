@@ -126,6 +126,7 @@
 * [1614. Maximum Nesting Depth of the Parentheses](solutions/1614.-maximum-nesting-depth-of-the-parentheses.md)
 * [1640. Check Array Formation Through Concatenation](solutions/1640.-check-array-formation-through-concatenation.md)
 * [1704. Determine if String Halves Are Alike](solutions/1704.-determine-if-string-halves-are-alike.md)
+* [1707. Maximum XOR With an Element From Array](solutions/1707.-maximum-xor-with-an-element-from-array.md)
 * [1720. Decode XORed Array](solutions/1720.-decode-xored-array.md)
 * [1721. Swapping Nodes in a Linked List](solutions/1721.-swapping-nodes-in-a-linked-list.md)
 * [1723. Find Minimum Time to Finish All Jobs](solutions/1723.-find-minimum-time-to-finish-all-jobs.md)
