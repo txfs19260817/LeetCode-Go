@@ -94,6 +94,7 @@
 * [633. Sum of Square Numbers](solutions/633.-sum-of-square-numbers.md)
 * [645. Set Mismatch](solutions/645.-set-mismatch.md)
 * [654. Maximum Binary Tree](solutions/654.-maximum-binary-tree.md)
+* [664. Strange Printer](solutions/664.-strange-printer.md)
 * [667. Beautiful Arrangement II](solutions/667.-beautiful-arrangement-ii.md)
 * [690. Employee Importance](solutions/690.-employee-importance.md)
 * [692. Top K Frequent Words](solutions/692.-top-k-frequent-words.md)
