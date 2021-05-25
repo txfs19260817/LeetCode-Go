@@ -31,6 +31,7 @@
 * [80. Remove Duplicates from Sorted Array II](solutions/80.-remove-duplicates-from-sorted-array-ii.md)
 * [82. Remove Duplicates from Sorted List II](solutions/82.-remove-duplicates-from-sorted-list-ii.md)
 * [83. Remove Duplicates from Sorted List](solutions/83.-remove-duplicates-from-sorted-list.md)
+* [84. Largest Rectangle in Histogram](solutions/84.-largest-rectangle-in-histogram.md)
 * [87. Scramble String](solutions/87.-scramble-string.md)
 * [88. Merge Sorted Array](solutions/88.-merge-sorted-array.md)
 * [91. Decode Ways](solutions/91.-decode-ways.md)

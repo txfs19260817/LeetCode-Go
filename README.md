@@ -165,6 +165,7 @@
 | No. | Title | Solution | Difficulty |
 | :--- | :--- | :--- | :--- |
 | 0020 | Valid Parentheses | [Go](solutions/20.-valid-parentheses.md) | Easy |
+| 0084 | Largest Rectangle in Histogram | [Go](solutions/84.-largest-rectangle-in-histogram.md) | Hard |
 | 0150 | Evaluate Reverse Polish Notation | [Go](solutions/150.-evaluate-reverse-polish-notation.md) | Medium |
 | 0155 | Min Stack | [Go](solutions/155.-min-stack.md) | Easy |
 | 0456 | 132 Pattern  | [Go](solutions/456.-132-pattern.md) | Medium |
