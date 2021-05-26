@@ -169,6 +169,7 @@
 | 0150 | Evaluate Reverse Polish Notation | [Go](solutions/150.-evaluate-reverse-polish-notation.md) | Medium |
 | 0155 | Min Stack | [Go](solutions/155.-min-stack.md) | Easy |
 | 0456 | 132 Pattern  | [Go](solutions/456.-132-pattern.md) | Medium |
+| 1190 | Reverse Substrings Between Each Pair of Parentheses | [Go](solutions/1190.-reverse-substrings-between-each-pair-of-parentheses.md) | Medium |
 
 ### String
 

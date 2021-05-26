@@ -113,6 +113,7 @@
 * [1011. Capacity To Ship Packages Within D Days](solutions/1011.-capacity-to-ship-packages-within-d-days.md)
 * [1035. Uncrossed Lines](solutions/1035.-uncrossed-lines.md)
 * [1143. Longest Common Subsequence](solutions/1143.-longest-common-subsequence.md)
+* [1190. Reverse Substrings Between Each Pair of Parentheses](solutions/1190.-reverse-substrings-between-each-pair-of-parentheses.md)
 * [1269. Number of Ways to Stay in the Same Place After Some Steps](solutions/untitled.md)
 * [1302. Deepest Leaves Sum](solutions/1302.-deepest-leaves-sum.md)
 * [1310. XOR Queries of a Subarray](solutions/1310.-xor-queries-of-a-subarray.md)
