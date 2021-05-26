@@ -50,7 +50,7 @@
 | :--- | :--- | :--- | :--- |
 | 0187 | Repeated DNA Sequences | [Go](solutions/187.-repeated-dna-sequences.md) | Medium |
 | 0320 | Generalized Abbreviation | [Go](solutions/320.-generalized-abbreviation.md) | Medium |
-| 0810 | Chalkboard XOR Game | [Go](solutions/untitled-1.md) | Hard |
+| 0810 | Chalkboard XOR Game | [Go](solutions/810.-chalkboard-xor-game.md) | Hard |
 | 1310 | XOR Queries of a Subarray | [Go](solutions/1310.-xor-queries-of-a-subarray.md) | Medium |
 | 1318 | Minimum Flips to Make a OR b Equal to c | [Go](solutions/1318.-minimum-flips-to-make-a-or-b-equal-to-c.md) | Medium |
 | 1442 | Count Triplets That Can Form Two Arrays of Equal XOR | [Go](solutions/1442.-count-triplets-that-can-form-two-arrays-of-equal-xor.md) | Medium |
@@ -88,7 +88,7 @@
 | 0664 | Strange Printer | [Go](solutions/664.-strange-printer.md) | Hard |
 | 1035 | Uncrossed Lines | [Go](solutions/1035.-uncrossed-lines.md) | Medium |
 | 1143 | Longest Common Subsequence | [Go](solutions/1143.-longest-common-subsequence.md) | Medium |
-| 1269 | Number of Ways to Stay in the Same Place After Some Steps | [Go](solutions/untitled.md) | Hard |
+| 1269 | Number of Ways to Stay in the Same Place After Some Steps | [Go](solutions/1269.-number-of-ways-to-stay-in-the-same-place-after-some-steps.md) | Hard |
 
 ### Greedy
 
