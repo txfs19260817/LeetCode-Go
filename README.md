@@ -50,6 +50,7 @@
 | :--- | :--- | :--- | :--- |
 | 0187 | Repeated DNA Sequences | [Go](solutions/187.-repeated-dna-sequences.md) | Medium |
 | 0320 | Generalized Abbreviation | [Go](solutions/320.-generalized-abbreviation.md) | Medium |
+| 0461 | Hamming Distance | [Go](solutions/461.-hamming-distance.md) | Easy |
 | 0810 | Chalkboard XOR Game | [Go](solutions/810.-chalkboard-xor-game.md) | Hard |
 | 1310 | XOR Queries of a Subarray | [Go](solutions/1310.-xor-queries-of-a-subarray.md) | Medium |
 | 1318 | Minimum Flips to Make a OR b Equal to c | [Go](solutions/1318.-minimum-flips-to-make-a-or-b-equal-to-c.md) | Medium |

@@ -86,6 +86,7 @@
 * [455. Assign Cookies](solutions/455.-assign-cookies.md)
 * [456. 132 Pattern](solutions/456.-132-pattern.md)
 * [460. LFU Cache](solutions/460.-lfu-cache.md)
+* [461. Hamming Distance](solutions/461.-hamming-distance.md)
 * [470. Implement Rand10\(\) Using Rand7\(\)](solutions/470.-implement-rand10-using-rand7.md)
 * [474. Ones and Zeroes](solutions/474.-ones-and-zeroes.md)
 * [554. Brick Wall](solutions/554.-brick-wall.md)
