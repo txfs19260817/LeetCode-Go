@@ -89,6 +89,7 @@
 * [461. Hamming Distance](solutions/461.-hamming-distance.md)
 * [470. Implement Rand10\(\) Using Rand7\(\)](solutions/470.-implement-rand10-using-rand7.md)
 * [474. Ones and Zeroes](solutions/474.-ones-and-zeroes.md)
+* [477. Total Hamming Distance](solutions/477.-total-hamming-distance.md)
 * [554. Brick Wall](solutions/554.-brick-wall.md)
 * [575. Distribute Candies](solutions/575.-distribute-candies.md)
 * [583. Delete Operation for Two Strings](solutions/583.-delete-operation-for-two-strings.md)
