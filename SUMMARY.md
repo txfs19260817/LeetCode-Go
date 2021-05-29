@@ -56,6 +56,7 @@
 * [219. Contains Duplicate II](solutions/219.-contains-duplicate-ii.md)
 * [220. Contains Duplicate III](solutions/220.-contains-duplicate-iii.md)
 * [225. Implement Stack using Queues](solutions/225.-implement-stack-using-queues.md)
+* [231. Power of Two](solutions/231.-power-of-two.md)
 * [232. Implement Queue using Stacks](solutions/232.-implement-queue-using-stacks.md)
 * [240. Search a 2D Matrix II](solutions/240.-search-a-2d-matrix-ii.md)
 * [243. Shortest Word Distance](solutions/243.-shortest-word-distance.md)

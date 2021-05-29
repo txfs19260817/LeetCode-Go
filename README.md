@@ -49,6 +49,7 @@
 | No. | Title | Solution | Difficulty |
 | :--- | :--- | :--- | :--- |
 | 0187 | Repeated DNA Sequences | [Go](solutions/187.-repeated-dna-sequences.md) | Medium |
+| 0231 | Power of Two | [Go](solutions/231.-power-of-two.md) | Easy |
 | 0320 | Generalized Abbreviation | [Go](solutions/320.-generalized-abbreviation.md) | Medium |
 | 0461 | Hamming Distance | [Go](solutions/461.-hamming-distance.md) | Easy |
 | 0477 | Total Hamming Distance | [Go](solutions/477.-total-hamming-distance.md) | Medium |
