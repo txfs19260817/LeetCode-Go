@@ -114,10 +114,12 @@
 | 0219 | Contains Duplicate II | [Go](solutions/219.-contains-duplicate-ii.md) | Easy |
 | 0290 | Word Pattern | [Go](solutions/290.-word-pattern.md) | Easy |
 | 0554 | Brick Wall | [Go](solutions/554.-brick-wall.md) | Medium |
+| 0560 | Subarray Sum Equals K | [Go](solutions/560.-subarray-sum-equals-k.md) | Medium |
 | 0575 | Distribute Candies | [Go](solutions/575.-distribute-candies.md) | Easy |
 | 0690 | Employee Importance | [Go](solutions/690.-employee-importance.md) | Easy |
 | 0692 | Top K Frequent Words | [Go](solutions/692.-top-k-frequent-words.md) | Medium |
 | 0953 | Verifying an Alien Dictionary | [Go](solutions/953.-verifying-an-alien-dictionary.md) | Easy |
+| 1074 | Number of Submatrices That Sum to Target | [Go](solutions/1074.-number-of-submatrices-that-sum-to-target.md) | Hard |
 | 1640 | Check Array Formation Through Concatenation | [Go](solutions/1640.-check-array-formation-through-concatenation.md) | Easy |
 
 ### Heap
