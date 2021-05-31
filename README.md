@@ -51,6 +51,8 @@
 | 0187 | Repeated DNA Sequences | [Go](solutions/187.-repeated-dna-sequences.md) | Medium |
 | 0231 | Power of Two | [Go](solutions/231.-power-of-two.md) | Easy |
 | 0320 | Generalized Abbreviation | [Go](solutions/320.-generalized-abbreviation.md) | Medium |
+| 0326 | Power of Three | [Go](solutions/326.-power-of-three.md) | Easy |
+| 0342 | Power of Four | [Go](solutions/342.-power-of-four.md) | Easy |
 | 0461 | Hamming Distance | [Go](solutions/461.-hamming-distance.md) | Easy |
 | 0477 | Total Hamming Distance | [Go](solutions/477.-total-hamming-distance.md) | Medium |
 | 0810 | Chalkboard XOR Game | [Go](solutions/810.-chalkboard-xor-game.md) | Hard |
