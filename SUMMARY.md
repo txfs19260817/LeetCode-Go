@@ -142,5 +142,6 @@
 * [1723. Find Minimum Time to Finish All Jobs](solutions/1723.-find-minimum-time-to-finish-all-jobs.md)
 * [1734. Decode XORed Permutation](solutions/1734.-decode-xored-permutation.md)
 * [1738. Find Kth Largest XOR Coordinate Value](solutions/1738.-find-kth-largest-xor-coordinate-value.md)
+* [1744. Can You Eat Your Favorite Candy on Your Favorite Day?](solutions/1744.-can-you-eat-your-favorite-candy-on-your-favorite-day.md)
 * [1796. Second Largest Digit in a String](solutions/1796.-second-largest-digit-in-a-string.md)
 

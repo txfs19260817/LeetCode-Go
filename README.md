@@ -160,6 +160,7 @@
 | 0781 | Rabbits in Forest | [Go](solutions/781.-rabbits-in-forest.md) | Medium |
 | 1006 | Clumsy Factorial | [Go](solutions/1006.-clumsy-factorial.md) | Medium |
 | 1551 | Minimum Operations to Make Array Equal | [Go](solutions/1551.-minimum-operations-to-make-array-equal.md) | Medium |
+| 1744 | Can You Eat Your Favorite Candy on Your Favorite Day? | [Go](solutions/1744.-can-you-eat-your-favorite-candy-on-your-favorite-day.md) | Medium |
 
 ### Sort
 
