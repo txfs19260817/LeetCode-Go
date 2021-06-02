@@ -157,6 +157,7 @@
 | 0263 | Ugly Number | [Go](solutions/263.-ugly-number.md) | Easy |
 | 0264 | Ugly Number II | [Go](solutions/264.-ugly-number-ii.md) | Medium |
 | 0470 | Implement Rand10\(\) Using Rand7\(\) | [Go](solutions/470.-implement-rand10-using-rand7.md) | Medium |
+| 0523 | Continuous Subarray Sum | [Go](solutions/523.-continuous-subarray-sum.md) | Medium |
 | 0781 | Rabbits in Forest | [Go](solutions/781.-rabbits-in-forest.md) | Medium |
 | 1006 | Clumsy Factorial | [Go](solutions/1006.-clumsy-factorial.md) | Medium |
 | 1551 | Minimum Operations to Make Array Equal | [Go](solutions/1551.-minimum-operations-to-make-array-equal.md) | Medium |
