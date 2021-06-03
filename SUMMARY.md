@@ -70,6 +70,7 @@
 * [303. Range Sum Query - Immutable](solutions/303.-range-sum-query-immutable.md)
 * [304. Range Sum Query 2D - Immutable](solutions/304.-range-sum-query-2d-immutable.md)
 * [320. Generalized Abbreviation](solutions/320.-generalized-abbreviation.md)
+* [325. Maximum Size Subarray Sum Equals k](solutions/325.-maximum-size-subarray-sum-equals-k.md)
 * [326. Power of Three](solutions/326.-power-of-three.md)
 * [329. Longest Increasing Path in a Matrix](solutions/329.-longest-increasing-path-in-a-matrix.md)
 * [331. Verify Preorder Serialization of a Binary Tree](solutions/331.-verify-preorder-serialization-of-a-binary-tree.md)

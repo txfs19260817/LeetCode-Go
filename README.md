@@ -116,6 +116,7 @@
 | 0217 | Contains Duplicate | [Go](solutions/217.-contains-duplicate.md) | Easy |
 | 0219 | Contains Duplicate II | [Go](solutions/219.-contains-duplicate-ii.md) | Easy |
 | 0290 | Word Pattern | [Go](solutions/290.-word-pattern.md) | Easy |
+| 0325 | Maximum Size Subarray Sum Equals k | [Go](solutions/325.-maximum-size-subarray-sum-equals-k.md) | Medium |
 | 0525 | Contiguous Array | [Go](solutions/525.-contiguous-array.md) | Medium |
 | 0554 | Brick Wall | [Go](solutions/554.-brick-wall.md) | Medium |
 | 0560 | Subarray Sum Equals K | [Go](solutions/560.-subarray-sum-equals-k.md) | Medium |
