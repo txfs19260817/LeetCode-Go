@@ -94,6 +94,7 @@
 * [474. Ones and Zeroes](solutions/474.-ones-and-zeroes.md)
 * [477. Total Hamming Distance](solutions/477.-total-hamming-distance.md)
 * [523. Continuous Subarray Sum](solutions/523.-continuous-subarray-sum.md)
+* [525. Contiguous Array](solutions/525.-contiguous-array.md)
 * [554. Brick Wall](solutions/554.-brick-wall.md)
 * [560. Subarray Sum Equals K](solutions/560.-subarray-sum-equals-k.md)
 * [575. Distribute Candies](solutions/575.-distribute-candies.md)
