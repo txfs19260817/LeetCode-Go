@@ -122,6 +122,7 @@
 * [1011. Capacity To Ship Packages Within D Days](solutions/1011.-capacity-to-ship-packages-within-d-days.md)
 * [1035. Uncrossed Lines](solutions/1035.-uncrossed-lines.md)
 * [1074. Number of Submatrices That Sum to Target](solutions/1074.-number-of-submatrices-that-sum-to-target.md)
+* [1139. Largest 1-Bordered Square](solutions/1139.-largest-1-bordered-square.md)
 * [1143. Longest Common Subsequence](solutions/1143.-longest-common-subsequence.md)
 * [1190. Reverse Substrings Between Each Pair of Parentheses](solutions/1190.-reverse-substrings-between-each-pair-of-parentheses.md)
 * [1269. Number of Ways to Stay in the Same Place After Some Steps](solutions/1269.-number-of-ways-to-stay-in-the-same-place-after-some-steps.md)

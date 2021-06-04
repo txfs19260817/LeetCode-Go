@@ -92,6 +92,7 @@
 | 0583 | Delete Operation for Two Strings | [Go](solutions/583.-delete-operation-for-two-strings.md) | Medium |
 | 0664 | Strange Printer | [Go](solutions/664.-strange-printer.md) | Hard |
 | 1035 | Uncrossed Lines | [Go](solutions/1035.-uncrossed-lines.md) | Medium |
+| 1139 | Largest 1-Bordered Square | [Go](solutions/1139.-largest-1-bordered-square.md) | Medium |
 | 1143 | Longest Common Subsequence | [Go](solutions/1143.-longest-common-subsequence.md) | Medium |
 | 1269 | Number of Ways to Stay in the Same Place After Some Steps | [Go](solutions/1269.-number-of-ways-to-stay-in-the-same-place-after-some-steps.md) | Hard |
 
