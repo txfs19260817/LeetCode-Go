@@ -89,6 +89,7 @@
 | 0368 | Largest Divisible Subset | [Go](solutions/368.-largest-divisible-subset.md) | Medium |
 | 0377 | Combination Sum IV | [Go](solutions/377.-combination-sum-iv.md) | Medium |
 | 0474 | Ones and Zeroes | [Go](solutions/474.-ones-and-zeroes.md) | Medium |
+| 0494 | Target Sum | [Go](solutions/494.-target-sum.md) | Medium |
 | 0583 | Delete Operation for Two Strings | [Go](solutions/583.-delete-operation-for-two-strings.md) | Medium |
 | 0664 | Strange Printer | [Go](solutions/664.-strange-printer.md) | Hard |
 | 1035 | Uncrossed Lines | [Go](solutions/1035.-uncrossed-lines.md) | Medium |

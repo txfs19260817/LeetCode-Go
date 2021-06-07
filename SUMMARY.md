@@ -94,6 +94,7 @@
 * [470. Implement Rand10\(\) Using Rand7\(\)](solutions/470.-implement-rand10-using-rand7.md)
 * [474. Ones and Zeroes](solutions/474.-ones-and-zeroes.md)
 * [477. Total Hamming Distance](solutions/477.-total-hamming-distance.md)
+* [494. Target Sum](solutions/494.-target-sum.md)
 * [523. Continuous Subarray Sum](solutions/523.-continuous-subarray-sum.md)
 * [525. Contiguous Array](solutions/525.-contiguous-array.md)
 * [554. Brick Wall](solutions/554.-brick-wall.md)
