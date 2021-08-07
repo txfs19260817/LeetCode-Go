@@ -49,7 +49,10 @@
 | No. | Title | Solution | Difficulty |
 | :--- | :--- | :--- | :--- |
 | 0187 | Repeated DNA Sequences | [Go](solutions/187.-repeated-dna-sequences.md) | Medium |
+| 0231 | Power of Two | [Go](solutions/231.-power-of-two.md) | Easy |
 | 0320 | Generalized Abbreviation | [Go](solutions/320.-generalized-abbreviation.md) | Medium |
+| 0326 | Power of Three | [Go](solutions/326.-power-of-three.md) | Easy |
+| 0342 | Power of Four | [Go](solutions/342.-power-of-four.md) | Easy |
 | 0461 | Hamming Distance | [Go](solutions/461.-hamming-distance.md) | Easy |
 | 0477 | Total Hamming Distance | [Go](solutions/477.-total-hamming-distance.md) | Medium |
 | 0810 | Chalkboard XOR Game | [Go](solutions/810.-chalkboard-xor-game.md) | Hard |
@@ -86,9 +89,11 @@
 | 0368 | Largest Divisible Subset | [Go](solutions/368.-largest-divisible-subset.md) | Medium |
 | 0377 | Combination Sum IV | [Go](solutions/377.-combination-sum-iv.md) | Medium |
 | 0474 | Ones and Zeroes | [Go](solutions/474.-ones-and-zeroes.md) | Medium |
+| 0494 | Target Sum | [Go](solutions/494.-target-sum.md) | Medium |
 | 0583 | Delete Operation for Two Strings | [Go](solutions/583.-delete-operation-for-two-strings.md) | Medium |
 | 0664 | Strange Printer | [Go](solutions/664.-strange-printer.md) | Hard |
 | 1035 | Uncrossed Lines | [Go](solutions/1035.-uncrossed-lines.md) | Medium |
+| 1139 | Largest 1-Bordered Square | [Go](solutions/1139.-largest-1-bordered-square.md) | Medium |
 | 1143 | Longest Common Subsequence | [Go](solutions/1143.-longest-common-subsequence.md) | Medium |
 | 1269 | Number of Ways to Stay in the Same Place After Some Steps | [Go](solutions/1269.-number-of-ways-to-stay-in-the-same-place-after-some-steps.md) | Hard |
 
@@ -113,6 +118,8 @@
 | 0217 | Contains Duplicate | [Go](solutions/217.-contains-duplicate.md) | Easy |
 | 0219 | Contains Duplicate II | [Go](solutions/219.-contains-duplicate-ii.md) | Easy |
 | 0290 | Word Pattern | [Go](solutions/290.-word-pattern.md) | Easy |
+| 0325 | Maximum Size Subarray Sum Equals k | [Go](solutions/325.-maximum-size-subarray-sum-equals-k.md) | Medium |
+| 0525 | Contiguous Array | [Go](solutions/525.-contiguous-array.md) | Medium |
 | 0554 | Brick Wall | [Go](solutions/554.-brick-wall.md) | Medium |
 | 0560 | Subarray Sum Equals K | [Go](solutions/560.-subarray-sum-equals-k.md) | Medium |
 | 0575 | Distribute Candies | [Go](solutions/575.-distribute-candies.md) | Easy |
@@ -154,9 +161,11 @@
 | 0263 | Ugly Number | [Go](solutions/263.-ugly-number.md) | Easy |
 | 0264 | Ugly Number II | [Go](solutions/264.-ugly-number-ii.md) | Medium |
 | 0470 | Implement Rand10\(\) Using Rand7\(\) | [Go](solutions/470.-implement-rand10-using-rand7.md) | Medium |
+| 0523 | Continuous Subarray Sum | [Go](solutions/523.-continuous-subarray-sum.md) | Medium |
 | 0781 | Rabbits in Forest | [Go](solutions/781.-rabbits-in-forest.md) | Medium |
 | 1006 | Clumsy Factorial | [Go](solutions/1006.-clumsy-factorial.md) | Medium |
 | 1551 | Minimum Operations to Make Array Equal | [Go](solutions/1551.-minimum-operations-to-make-array-equal.md) | Medium |
+| 1744 | Can You Eat Your Favorite Candy on Your Favorite Day? | [Go](solutions/1744.-can-you-eat-your-favorite-candy-on-your-favorite-day.md) | Medium |
 
 ### Sort
 
