@@ -12,11 +12,6 @@ func Test_longestPalindrome(t *testing.T) {
 		want string
 	}{
 		{
-			name: `s = "babad"`,
-			args: args{"babad"},
-			want: "bab",
-		},
-		{
 			name: `s = "cbbd"`,
 			args: args{"cbbd"},
 			want: "bb",
@@ -26,16 +21,14 @@ func Test_longestPalindrome(t *testing.T) {
 			args: args{"a"},
 			want: "a",
 		},
-		{
-			name: `s = "ac"`,
-			args: args{"ac"},
-			want: "a",
-		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := longestPalindrome(tt.args.s); got != tt.want {
 				t.Errorf("longestPalindrome() = %v, want %v", got, tt.want)
+			}
+			if got := longestPalindrome2(tt.args.s); got != tt.want {
+				t.Errorf("longestPalindrome2() = %v, want %v", got, tt.want)
 			}
 		})
 	}
