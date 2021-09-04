@@ -22,3 +22,16 @@ func moveZeroes1(nums []int) {
 		}
 	}
 }
+
+func moveZeroes2(nums []int) {
+	var l, r int
+	for l, r = 0, 0; r < len(nums); r++ {
+		if nums[r] != 0 {
+			nums[l] = nums[r]
+			l++
+		}
+	}
+	for ; l < len(nums); l++ {
+		nums[l] = 0
+	}
+}
