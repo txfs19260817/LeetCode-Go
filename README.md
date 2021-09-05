@@ -1,6 +1,7 @@
 # LeetCode-Go-Notes
 
 [![codecov](https://codecov.io/gh/txfs19260817/LeetCode-Go/branch/master/graph/badge.svg?token=49SB7LBG5P)](https://codecov.io/gh/txfs19260817/LeetCode-Go)
+[![Go Test](https://github.com/txfs19260817/LeetCode-Go/actions/workflows/go.yml/badge.svg?branch=master)](https://github.com/txfs19260817/LeetCode-Go/actions/workflows/go.yml)
 
 ## Index
 
