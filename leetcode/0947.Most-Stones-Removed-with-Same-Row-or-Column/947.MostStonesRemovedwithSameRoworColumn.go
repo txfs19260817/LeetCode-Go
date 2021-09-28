@@ -1,4 +1,4 @@
-package _684_Redundant_Connection
+package _947_Most_Stones_Removed_with_Same_Row_or_Column
 
 type UnionFind struct {
 	parent, rank []int
@@ -42,20 +42,14 @@ func (u *UnionFind) Union(p, q int) {
 	u.Count--
 }
 
-func findRedundantConnection(edges [][]int) []int {
-	var ans []int
-	for i := len(edges) - 1; i >= 0; i-- {
-		uf := NewUnionFind(len(edges) + 1) // cuz `n == edges.length` + unused [0]
-		for j, edge := range edges {
-			if i == j {
-				continue
+func removeStones(stones [][]int) int {
+	uf := NewUnionFind(len(stones))
+	for i := range stones {
+		for j := i + 1; j < len(stones); j++ {
+			if stones[i][0] == stones[j][0] || stones[i][1] == stones[j][1] {
+				uf.Union(i, j)
 			}
-			uf.Union(edge[0], edge[1])
-		}
-		if uf.Count == 2 { // 0 + other groups
-			ans = edges[i]
-			break
 		}
 	}
-	return ans
+	return len(stones) - uf.Count
 }
