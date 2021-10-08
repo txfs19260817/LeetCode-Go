@@ -1,7 +1,49 @@
 package _542_01_Matrix
 
+// DP
 func updateMatrix(mat [][]int) [][]int {
-	dirX, dirY, finished := []int{0, -1, 0, 1}, []int{-1, 0, 1, 0}, false
+	dist := make([][]int, len(mat))
+	for i := range dist {
+		dist[i] = make([]int, len(mat[0]))
+		for j := range dist[i] {
+			if mat[i][j] != 0 {
+				dist[i][j] = len(mat) * len(mat[0])
+			}
+		}
+	}
+	for i := 0; i < len(mat); i++ {
+		for j := 0; j < len(mat[0]); j++ {
+			if i > 0 {
+				dist[i][j] = min(dist[i][j], dist[i-1][j]+1)
+			}
+			if j > 0 {
+				dist[i][j] = min(dist[i][j], dist[i][j-1]+1)
+			}
+		}
+	}
+	for i := len(mat) - 1; i >= 0; i-- {
+		for j := len(mat[0]) - 1; j >= 0; j-- {
+			if i < len(mat)-1 {
+				dist[i][j] = min(dist[i][j], dist[i+1][j]+1)
+			}
+			if j < len(mat[0])-1 {
+				dist[i][j] = min(dist[i][j], dist[i][j+1]+1)
+			}
+		}
+	}
+	return dist
+}
+
+func min(a, b int) int {
+	if a < b {
+		return a
+	}
+	return b
+}
+
+// BFS
+func updateMatrix2(mat [][]int) [][]int {
+	dirX, dirY, finished := [4]int{0, -1, 0, 1}, [4]int{-1, 0, 1, 0}, false
 	duplicate, visited := make([][]int, len(mat)), make([][]bool, len(mat))
 	for i := range mat {
 		visited[i] = make([]bool, len(mat[i]))
@@ -33,7 +75,7 @@ func updateMatrix(mat [][]int) [][]int {
 				}
 			}
 		}
-		mat, duplicate = duplicate, mat
+		mat = duplicate
 	}
 	return mat
 }

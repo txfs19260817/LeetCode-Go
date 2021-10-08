@@ -30,6 +30,9 @@ func Test_updateMatrix(t *testing.T) {
 			if got := updateMatrix(tt.args.mat); !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("updateMatrix() = %v, want %v", got, tt.want)
 			}
+			if got := updateMatrix2(tt.args.mat); !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("updateMatrix2() = %v, want %v", got, tt.want)
+			}
 		})
 	}
 }
