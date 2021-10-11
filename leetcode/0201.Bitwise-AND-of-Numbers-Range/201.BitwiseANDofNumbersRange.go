@@ -1,7 +1,7 @@
 package _201_Bitwise_AND_of_Numbers_Range
 
 func rangeBitwiseAnd(m int, n int) int {
-	var shift int
+	var shift int // common prefix + remaining 0s
 	for m < n {
 		m >>= 1
 		n >>= 1
