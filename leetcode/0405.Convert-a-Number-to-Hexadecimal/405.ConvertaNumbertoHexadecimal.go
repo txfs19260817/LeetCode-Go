@@ -14,7 +14,7 @@ func toHex(num int) string {
 			if val < 10 {
 				ch = '0' + byte(val)
 			} else {
-				ch = 'a' + byte(val - 10)
+				ch = 'a' + byte(val-10)
 			}
 			sb.WriteByte(ch)
 		}

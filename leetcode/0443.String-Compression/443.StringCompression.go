@@ -6,7 +6,7 @@ func compress(chars []byte) int {
 		for chars[l] == chars[r] && r <= len(chars) && r+1 < len(chars) && chars[l] == chars[r+1] { // let r points to the rightmost byte that equals to chars[l]
 			r++
 		}
-		chars[w] = chars[l] // write this byte
+		chars[w] = chars[l]             // write this byte
 		if cnt := r - l + 1; cnt != 1 { // with O(1) space, convert the number of chars[l] to string format and write them into chars
 			var digits int // get the number of digits
 			for k := cnt; k > 0; k /= 10 {

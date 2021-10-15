@@ -26,8 +26,8 @@ func Test_findRedundantConnection(t *testing.T) {
 		},
 		{
 			name: "edges = [[3,4],[1,2],[2,4],[3,5],[2,5]]",
-			args: args{[][]int{{3,4},{1,2},{2,4},{3,5},{2,5}}},
-			want: []int{2,5},
+			args: args{[][]int{{3, 4}, {1, 2}, {2, 4}, {3, 5}, {2, 5}}},
+			want: []int{2, 5},
 		},
 	}
 	for _, tt := range tests {

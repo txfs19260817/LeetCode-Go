@@ -15,17 +15,17 @@ func Test_isInterleave(t *testing.T) {
 	}{
 		{
 			name: `s1 = "aabcc", s2 = "dbbca", s3 = "aadbbcbcac"`,
-			args: args{"aabcc","dbbca","aadbbcbcac"},
+			args: args{"aabcc", "dbbca", "aadbbcbcac"},
 			want: true,
 		},
 		{
 			name: `s1 = "aabcc", s2 = "dbbca", s3 = "aadbbbaccc"`,
-			args: args{"aabcc","dbbca","aadbbbaccc"},
+			args: args{"aabcc", "dbbca", "aadbbbaccc"},
 			want: false,
 		},
 		{
 			name: `s1 = "", s2 = "", s3 = ""`,
-			args: args{"","",""},
+			args: args{"", "", ""},
 			want: true,
 		},
 	}

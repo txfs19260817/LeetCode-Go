@@ -14,17 +14,17 @@ func Test_maxSubArrayLen(t *testing.T) {
 	}{
 		{
 			name: "nums = [1,-1,5,-2,3], k = 3",
-			args: args{[]int{1,-1,5,-2,3},3},
+			args: args{[]int{1, -1, 5, -2, 3}, 3},
 			want: 4,
 		},
 		{
 			name: "nums = [-2,-1,2,1], k = 1",
-			args: args{[]int{-2,-1,2,1},1},
+			args: args{[]int{-2, -1, 2, 1}, 1},
 			want: 2,
 		},
 		{
 			name: "nums = [1,1,0], k = 1",
-			args: args{[]int{1,1,0},1},
+			args: args{[]int{1, 1, 0}, 1},
 			want: 2,
 		},
 	}

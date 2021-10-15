@@ -16,13 +16,13 @@ func Test_decode(t *testing.T) {
 	}{
 		{
 			name: "encoded = [3,1]",
-			args: args{[]int{3,1}},
-			want: []int{1,2,3},
+			args: args{[]int{3, 1}},
+			want: []int{1, 2, 3},
 		},
 		{
 			name: "encoded = [6,5,4,6]",
-			args: args{[]int{6,5,4,6}},
-			want: []int{2,4,1,5,3},
+			args: args{[]int{6, 5, 4, 6}},
+			want: []int{2, 4, 1, 5, 3},
 		},
 	}
 	for _, tt := range tests {

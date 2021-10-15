@@ -15,12 +15,12 @@ func Test_goodNodes(t *testing.T) {
 	}{
 		{
 			name: "root = [3,1,4,3,null,1,5]",
-			args: args{slice2TreeNode([]int{3,1,4,3,null,1,5})},
+			args: args{slice2TreeNode([]int{3, 1, 4, 3, null, 1, 5})},
 			want: 4,
 		},
 		{
 			name: "root = [3,3,null,4,2]",
-			args: args{slice2TreeNode([]int{3,3,null,4,2})},
+			args: args{slice2TreeNode([]int{3, 3, null, 4, 2})},
 			want: 3,
 		},
 		{
@@ -30,7 +30,7 @@ func Test_goodNodes(t *testing.T) {
 		},
 		{
 			name: "root = [2,null,4,10,8,null,null,4]",
-			args: args{slice2TreeNode([]int{2,null,4,10,8,null,null,4})},
+			args: args{slice2TreeNode([]int{2, null, 4, 10, 8, null, null, 4})},
 			want: 4,
 		},
 	}

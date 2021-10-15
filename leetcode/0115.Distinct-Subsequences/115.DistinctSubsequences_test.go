@@ -26,7 +26,7 @@ func Test_numDistinct(t *testing.T) {
 			name: `s = "rabbbit", t = "rabbit"`,
 			args: args{"rabbbit", "rabbit"},
 			want: 3,
-		},		{
+		}, {
 			name: `s = "ccc", t = "c"`,
 			args: args{"ccc", "c"},
 			want: 3,

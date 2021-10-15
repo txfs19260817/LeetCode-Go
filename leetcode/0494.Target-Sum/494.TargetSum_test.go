@@ -14,12 +14,12 @@ func Test_findTargetSumWays(t *testing.T) {
 	}{
 		{
 			name: "nums = [1,1,1,1,1], target = 3",
-			args: args{[]int{1,1,1,1,1},3},
+			args: args{[]int{1, 1, 1, 1, 1}, 3},
 			want: 5,
 		},
 		{
 			name: "nums = [1], target = 1",
-			args: args{[]int{1},1},
+			args: args{[]int{1}, 1},
 			want: 1,
 		},
 	}

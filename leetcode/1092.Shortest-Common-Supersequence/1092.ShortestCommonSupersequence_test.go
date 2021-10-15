@@ -16,12 +16,12 @@ func Test_shortestCommonSupersequence(t *testing.T) {
 	}{
 		{
 			name: `str1 = "bbbaaaba", str2 = "bbababbb"`,
-			args: args{"bbbaaaba","bbababbb"},
+			args: args{"bbbaaaba", "bbababbb"},
 			want: "bbabaaababb",
 		},
 		{
 			name: `str1 = "abac", str2 = "cab"`,
-			args: args{"abac","cab"},
+			args: args{"abac", "cab"},
 			want: "cabac",
 		},
 	}

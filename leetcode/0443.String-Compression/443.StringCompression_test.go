@@ -13,7 +13,7 @@ func Test_compress(t *testing.T) {
 	}{
 		{
 			name: `chars = ["a","a","b","b","c","c","c"]`,
-			args: args{[]byte{'a','a','b','b','c','c','c'}},
+			args: args{[]byte{'a', 'a', 'b', 'b', 'c', 'c', 'c'}},
 			want: 6,
 		},
 		{
@@ -23,12 +23,12 @@ func Test_compress(t *testing.T) {
 		},
 		{
 			name: `chars = ["a","a","b","b","c","c","c"]`,
-			args: args{[]byte{'a','b','b','b','b','b','b','b','b','b','b','b','b'}},
+			args: args{[]byte{'a', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b'}},
 			want: 4,
 		},
 		{
 			name: `chars = ["a","a","a","b","b","a","a"]`,
-			args: args{[]byte{'a','a','a','b','b','a','a'}},
+			args: args{[]byte{'a', 'a', 'a', 'b', 'b', 'a', 'a'}},
 			want: 6,
 		},
 	}

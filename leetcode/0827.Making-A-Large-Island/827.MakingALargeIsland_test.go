@@ -13,17 +13,17 @@ func Test_largestIsland(t *testing.T) {
 	}{
 		{
 			name: "grid = [[1,0],[0,1]]",
-			args: args{[][]int{{1,0},{0,1}}},
+			args: args{[][]int{{1, 0}, {0, 1}}},
 			want: 3,
 		},
 		{
 			name: "grid = [[1,1],[0,1]]",
-			args: args{[][]int{{1,1},{0,1}}},
+			args: args{[][]int{{1, 1}, {0, 1}}},
 			want: 4,
 		},
 		{
 			name: "grid = [[1,1],[1,1]]",
-			args: args{[][]int{{1,1},{1,1}}},
+			args: args{[][]int{{1, 1}, {1, 1}}},
 			want: 4,
 		},
 	}

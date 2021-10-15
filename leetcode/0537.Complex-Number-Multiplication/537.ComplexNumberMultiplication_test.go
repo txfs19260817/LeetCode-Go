@@ -14,12 +14,12 @@ func Test_complexNumberMultiply(t *testing.T) {
 	}{
 		{
 			name: `num1 = "1+1i", num2 = "1+1i"`,
-			args: args{"1+1i","1+1i"},
+			args: args{"1+1i", "1+1i"},
 			want: "0+2i",
 		},
 		{
 			name: `num1 = "1+-1i", num2 = "1+-1i"`,
-			args: args{"1+-1i","1+-1i"},
+			args: args{"1+-1i", "1+-1i"},
 			want: "0+-2i",
 		},
 	}

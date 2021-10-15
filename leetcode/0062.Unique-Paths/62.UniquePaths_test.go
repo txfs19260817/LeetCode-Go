@@ -14,17 +14,17 @@ func Test_uniquePaths(t *testing.T) {
 	}{
 		{
 			name: "m = 3, n = 7",
-			args: args{3,7},
+			args: args{3, 7},
 			want: 28,
 		},
 		{
 			name: "m = 3, n = 2",
-			args: args{3,2},
+			args: args{3, 2},
 			want: 3,
 		},
 		{
 			name: "m = 3, n = 3",
-			args: args{3,3},
+			args: args{3, 3},
 			want: 6,
 		},
 	}

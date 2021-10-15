@@ -14,17 +14,17 @@ func Test_numWays(t *testing.T) {
 	}{
 		{
 			name: "steps = 3, arrLen = 2",
-			args: args{3,2},
+			args: args{3, 2},
 			want: 4,
 		},
 		{
 			name: "steps = 2, arrLen = 4",
-			args: args{2,4},
+			args: args{2, 4},
 			want: 2,
 		},
 		{
 			name: "steps = 4, arrLen = 2",
-			args: args{4,2},
+			args: args{4, 2},
 			want: 8,
 		},
 	}

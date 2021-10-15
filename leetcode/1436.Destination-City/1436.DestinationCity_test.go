@@ -13,7 +13,7 @@ func Test_destCity(t *testing.T) {
 	}{
 		{
 			name: `[["London","New York"],["New York","Lima"],["Lima","Sao Paulo"]]`,
-			args: args{[][]string{{"London","New York"},{"New York","Lima"},{"Lima","Sao Paulo"}}},
+			args: args{[][]string{{"London", "New York"}, {"New York", "Lima"}, {"Lima", "Sao Paulo"}}},
 			want: "Sao Paulo",
 		},
 	}

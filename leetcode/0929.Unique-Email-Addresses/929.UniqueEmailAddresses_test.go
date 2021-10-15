@@ -13,7 +13,7 @@ func Test_numUniqueEmails(t *testing.T) {
 	}{
 		{
 			name: `["test.email+alex@leetcode.com","test.e.mail+bob.cathy@leetcode.com","testemail+david@lee.tcode.com"]`,
-			args: args{[]string{"test.email+alex@leetcode.com","test.e.mail+bob.cathy@leetcode.com","testemail+david@lee.tcode.com"}},
+			args: args{[]string{"test.email+alex@leetcode.com", "test.e.mail+bob.cathy@leetcode.com", "testemail+david@lee.tcode.com"}},
 			want: 2,
 		},
 	}

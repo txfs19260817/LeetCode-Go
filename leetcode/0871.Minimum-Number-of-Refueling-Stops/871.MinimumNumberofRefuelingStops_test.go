@@ -30,7 +30,7 @@ func Test_minRefuelStops(t *testing.T) {
 		},
 		{
 			name: "target = 100, startFuel = 50, stations = [[25,25],[50,50]]",
-			args: args{100, 50, [][]int{{25,25}, {50,50}}},
+			args: args{100, 50, [][]int{{25, 25}, {50, 50}}},
 			want: 1,
 		},
 	}

@@ -17,7 +17,7 @@ func Test_findRepeatedDnaSequences(t *testing.T) {
 		{
 			name: "AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT",
 			args: args{"AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT"},
-			want: []string{"AAAAACCCCC","CCCCCAAAAA"},
+			want: []string{"AAAAACCCCC", "CCCCCAAAAA"},
 		},
 		{
 			name: "``",

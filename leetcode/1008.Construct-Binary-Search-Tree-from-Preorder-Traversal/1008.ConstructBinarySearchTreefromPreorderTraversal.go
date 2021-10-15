@@ -22,8 +22,8 @@ func bstFromPreorder(preorder []int) *TreeNode {
 	}
 	if firstLargerIndex == -1 {
 		return &TreeNode{
-			Val:   preorder[0],
-			Left:  bstFromPreorder(preorder[1:]),
+			Val:  preorder[0],
+			Left: bstFromPreorder(preorder[1:]),
 		}
 	}
 	return &TreeNode{

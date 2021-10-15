@@ -28,12 +28,12 @@ func Test_largest1BorderedSquare(t *testing.T) {
 		},
 		{
 			name: "grid = [[0,0,0,1]]",
-			args: args{[][]int{{0,0,0,1}}},
+			args: args{[][]int{{0, 0, 0, 1}}},
 			want: 1,
 		},
 		{
 			name: "grid = [[0],[0],[0],[1]]",
-			args: args{[][]int{{0},{0},{0},{1}}},
+			args: args{[][]int{{0}, {0}, {0}, {1}}},
 			want: 1,
 		},
 	}
