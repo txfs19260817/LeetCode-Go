@@ -10,41 +10,32 @@ func isCousins(root *TreeNode, x int, y int) bool {
 	q := []*TreeNode{root}
 	for len(q) > 0 {
 		var p []*TreeNode
+		var ParentX, ParentY *TreeNode
 		for i := 0; i < len(q); i++ {
 			if q[i].Left != nil {
+				if q[i].Left.Val == x {
+					ParentX = q[i]
+				} else if q[i].Left.Val == y {
+					ParentY = q[i]
+				}
 				p = append(p, q[i].Left)
 			}
 			if q[i].Right != nil {
+				if q[i].Right.Val == x {
+					ParentX = q[i]
+				} else if q[i].Right.Val == y {
+					ParentY = q[i]
+				}
 				p = append(p, q[i].Right)
 			}
 		}
-		if len(q) > 1 && len(p) > 0 {
-			foundX, foundY := find(p, x), find(p, y)
-			if foundX && !foundY || !foundX && foundY {
-				return false
-			}
-			if foundX && foundY {
-				for _, node := range q {
-					if node.Left == nil || node.Right == nil {
-						continue
-					}
-					if node.Left.Val == x && node.Right.Val == y || node.Left.Val == y && node.Right.Val == x {
-						return false
-					}
-				}
-				return true
-			}
+		if ParentX != nil && ParentY != nil {
+			return ParentX != ParentY
+		}
+		if ParentX != nil || ParentY != nil {
+			break // return false
 		}
 		q = p
-	}
-	return false
-}
-
-func find(p []*TreeNode, target int) bool {
-	for _, node := range p {
-		if node.Val == target {
-			return true
-		}
 	}
 	return false
 }
