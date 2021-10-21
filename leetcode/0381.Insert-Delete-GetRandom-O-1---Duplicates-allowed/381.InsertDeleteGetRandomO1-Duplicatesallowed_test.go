@@ -1,0 +1,37 @@
+package _381_Insert_Delete_GetRandom_O_1___Duplicates_allowed
+
+import (
+	"github.com/stretchr/testify/assert"
+	"testing"
+)
+
+func TestConstructor(t *testing.T) {
+	{
+		randomizedCollection := Constructor()
+		assert.True(t, randomizedCollection.Insert(4))
+		assert.True(t, randomizedCollection.Insert(3))
+		assert.False(t, randomizedCollection.Insert(4))
+		assert.True(t, randomizedCollection.Insert(2))
+		assert.False(t, randomizedCollection.Insert(4))
+		assert.True(t, randomizedCollection.Remove(4))
+		assert.True(t, randomizedCollection.Remove(3))
+		assert.True(t, randomizedCollection.Remove(4))
+		assert.True(t, randomizedCollection.Remove(4))
+	}
+	{
+		randomizedCollection := Constructor()
+		assert.True(t, randomizedCollection.Insert(0))
+		assert.True(t, randomizedCollection.Insert(1))
+		assert.True(t, randomizedCollection.Remove(0))
+		assert.True(t, randomizedCollection.Insert(2))
+		assert.True(t, randomizedCollection.Remove(1))
+		assert.Equal(t, randomizedCollection.GetRandom(), 2)
+	}
+	{
+		randomizedCollection := Constructor()
+		assert.True(t, randomizedCollection.Insert(1))
+		assert.True(t, randomizedCollection.Remove(1))
+		assert.True(t, randomizedCollection.Insert(1))
+		assert.Equal(t, randomizedCollection.GetRandom(), 1)
+	}
+}
