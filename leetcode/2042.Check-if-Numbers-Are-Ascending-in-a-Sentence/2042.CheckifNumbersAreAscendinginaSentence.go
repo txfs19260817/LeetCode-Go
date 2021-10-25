@@ -1,4 +1,4 @@
-package _902_Check_if_Numbers_Are_Ascending_in_a_Sentence
+package _042_Check_if_Numbers_Are_Ascending_in_a_Sentence
 
 import (
 	"strconv"

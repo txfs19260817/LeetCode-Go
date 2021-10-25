@@ -1,8 +1,8 @@
-package _869_Maximum_Product_of_the_Length_of_Two_Palindromic_Subsequences
+package _002_Maximum_Product_of_the_Length_of_Two_Palindromic_Subsequences
 
 func maxProduct(s string) int {
 	var ans int
-	check := func(s []byte) bool {
+	palindromic := func(s []byte) bool {
 		for l, r := 0, len(s)-1; l < r; l, r = l+1, r-1 {
 			if s[r] != s[l] {
 				return false
@@ -12,7 +12,7 @@ func maxProduct(s string) int {
 	}
 	var dfs func(s1, s2 []byte, index int)
 	dfs = func(s1, s2 []byte, index int) {
-		if check(s1) && check(s2) {
+		if palindromic(s1) && palindromic(s2) {
 			if v := len(s1) * len(s2); ans < v {
 				ans = v
 			}

@@ -1,4 +1,4 @@
-package _904_Count_Number_of_Maximum_Bitwise_OR_Subsets
+package _044_Count_Number_of_Maximum_Bitwise_OR_Subsets
 
 func countMaxOrSubsets(nums []int) int {
 	getOrs := func(arr []int) (ors int) {

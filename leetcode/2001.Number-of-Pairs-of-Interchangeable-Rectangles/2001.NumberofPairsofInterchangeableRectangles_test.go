@@ -1,4 +1,4 @@
-package _868_Number_of_Pairs_of_Interchangeable_Rectangles
+package _001_Number_of_Pairs_of_Interchangeable_Rectangles
 
 import "testing"
 
