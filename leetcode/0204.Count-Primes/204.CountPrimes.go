@@ -12,8 +12,8 @@ func countPrimes(n int) int {
 			}
 		}
 	}
-	for _, n := range isPrime { // count prime numbers
-		if n == true {
+	for _, p := range isPrime { // count prime numbers
+		if p == true {
 			ans++
 		}
 	}
