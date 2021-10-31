@@ -10,8 +10,8 @@ func longestDupSubstring(s string) string {
 			r = mid
 		}
 	}
-	found := findDuplicate(s, l-1)
-	if found != -1 {
+
+	if found := findDuplicate(s, l-1); found != -1 { // l-1 == mid
 		return s[found : found+l-1]
 	}
 	return ""
@@ -34,7 +34,7 @@ func findDuplicate(s string, length int) int {
 	for i := 1; i < len(s)-length+1; i++ {
 		h = (h*26 - (int(s[i-1])-'a')*aL%4294967296 + 4294967296) % 4294967296
 		h = (h + int(s[i+length-1]-'a')) % 4294967296
-		if v, ok := hash2str[h]; ok && v == s[i:i+length] { // Be aware of hash collision!
+		if v, ok := hash2str[h]; ok && v == s[i:i+length] { // be aware of hash collision!
 			return i
 		}
 		hash2str[h] = s[i : i+length]
