@@ -14,7 +14,7 @@ FetchContent_MakeAvailable(googletest)
 
 enable_testing()
 
-add_executable(1.TwoSum 0001.Two-Sum/1.TwoSum.cpp)
+add_executable(1.TwoSum ./0001.Two-Sum/1.TwoSum.cpp)
 target_link_libraries(1.TwoSum gtest_main)
 
 include(GoogleTest)
