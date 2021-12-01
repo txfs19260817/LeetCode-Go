@@ -22,7 +22,7 @@ func Test_exist(t *testing.T) {
 			want: true,
 		},
 		{
-			name: "1",
+			name: "2",
 			args: args{[][]byte{
 				{'A', 'B', 'C', 'E'},
 				{'S', 'F', 'E', 'S'},
@@ -31,7 +31,7 @@ func Test_exist(t *testing.T) {
 			want: true,
 		},
 		{
-			name: "1",
+			name: "3",
 			args: args{[][]byte{
 				{'A', 'B', 'C', 'E'},
 				{'S', 'F', 'C', 'S'},
@@ -40,7 +40,7 @@ func Test_exist(t *testing.T) {
 			want: false,
 		},
 		{
-			name: "2",
+			name: "4",
 			args: args{[][]byte{{'a'}}, "a"},
 			want: true,
 		},
