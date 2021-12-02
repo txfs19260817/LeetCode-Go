@@ -1,0 +1,5 @@
+package am
+
+func solution()  {
+	
+}
