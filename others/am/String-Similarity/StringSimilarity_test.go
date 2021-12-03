@@ -17,7 +17,7 @@ func Test_similarities(t *testing.T) {
 		{
 			name: "ababa",
 			args: args{"ababa"},
-			want: []int{0,0,3,0,1},
+			want: []int{0, 0, 3, 0, 1},
 		},
 	}
 	for _, tt := range tests {
