@@ -31,7 +31,7 @@ func getAllAncestors(x int, child2parent map[int]map[int]bool) map[int]bool {
 			ans[p] = true
 			next = append(next, p)
 		}
-		childrenQueue = next
+		childrenQueue = append(childrenQueue, next...)
 	}
 	return ans
 }

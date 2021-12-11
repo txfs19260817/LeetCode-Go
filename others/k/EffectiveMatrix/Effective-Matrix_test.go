@@ -1,4 +1,4 @@
-package EffectiveMatrix
+package k
 
 import "testing"
 
