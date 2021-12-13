@@ -3,19 +3,13 @@ package _055_Plates_Between_Candles
 import "sort"
 
 func platesBetweenCandles(s string, queries [][]int) []int {
-	ans, plates, sum, candles := make([]int, len(queries)), make([]int, len(s)), 0, make([]int, 0, 2)
+	ans, plates, candles := make([]int, len(queries)), make([]int, len(s)+1), make([]int, 0, 2)
 	for i, c := range s {
+		plates[i+1] = plates[i]
 		if c == '|' {
 			candles = append(candles, i)
-			if sum == 0 { // start to accumulate
-				sum = 1
-			}
-			if i > 0 {
-				plates[i] = plates[i-1]
-			}
-		} else if sum > 0 { // c == '*'
-			plates[i] = sum
-			sum++
+		} else { // c == '*'
+			plates[i+1]++
 		}
 	}
 	for i, query := range queries {

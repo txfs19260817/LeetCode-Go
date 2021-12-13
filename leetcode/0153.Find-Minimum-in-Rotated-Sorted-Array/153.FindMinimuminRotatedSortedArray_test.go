@@ -26,11 +26,19 @@ func Test_findMin(t *testing.T) {
 			args: args{[]int{11, 13, 15, 17}},
 			want: 11,
 		},
+		{
+			name: "nums = [5,1]",
+			args: args{[]int{5, 1}},
+			want: 1,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := findMin(tt.args.nums); got != tt.want {
 				t.Errorf("findMin() = %v, want %v", got, tt.want)
+			}
+			if got := findMin2(tt.args.nums); got != tt.want {
+				t.Errorf("findMin2() = %v, want %v", got, tt.want)
 			}
 		})
 	}

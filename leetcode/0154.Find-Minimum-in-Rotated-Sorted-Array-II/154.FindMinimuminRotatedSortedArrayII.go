@@ -1,19 +1,19 @@
 package _154_Find_Minimum_in_Rotated_Sorted_Array_II
 
 func findMin(nums []int) int {
-	start, end := 0, len(nums)-1
-	for start+1 < end {
-		mid := start + (end-start)/2
-		if nums[mid] > nums[end] {
-			start = mid
-		} else if nums[mid] < nums[end] {
-			end = mid
+	l, r := 0, len(nums)-1
+	for l+1 < r {
+		mid := l + (r-l)/2
+		if nums[mid] > nums[r] {
+			l = mid
+		} else if nums[mid] < nums[r] {
+			r = mid
 		} else {
-			end--
+			r--
 		}
 	}
-	if nums[start] < nums[end] {
-		return nums[start]
+	if nums[l] < nums[r] {
+		return nums[l]
 	}
-	return nums[end]
+	return nums[r]
 }
