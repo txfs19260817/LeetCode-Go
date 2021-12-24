@@ -1,6 +1,26 @@
 package _828_Count_Unique_Characters_of_All_Substrings_of_a_Given_String
 
 func uniqueLetterString(s string) int {
+	ans, c2i := 0, map[rune][]int{}
+	for i, c := range s {
+		c2i[c] = append(c2i[c], i)
+	}
+	for _, indices := range c2i {
+		for i := 0; i < len(indices); i++ {
+			prev, next := -1, len(s)
+			if i > 0 {
+				prev = indices[i-1]
+			}
+			if i < len(indices)-1 {
+				next = indices[i+1]
+			}
+			ans += (indices[i] - prev) * (next - indices[i])
+		}
+	}
+	return ans
+}
+
+func uniqueLetterString2(s string) int {
 	var res int
 	for i := 0; i < len(s); i++ {
 		l := i - 1

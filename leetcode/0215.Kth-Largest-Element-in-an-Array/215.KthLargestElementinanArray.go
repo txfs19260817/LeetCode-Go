@@ -1,36 +1,32 @@
 package _215_Kth_Largest_Element_in_an_Array
 
 func findKthLargest(nums []int, k int) int {
-	if len(nums) == 0 {
-		return 0
-	}
-	return topK(nums, 0, len(nums)-1, len(nums)-k)
+	return qs(nums, 0, len(nums)-1, k-1)
 }
 
-func topK(data []int, left, right, k int) int {
-	if left == right {
-		return data[left]
+func qs(nums []int, l, r, k int) int {
+	if l == r {
+		return nums[l]
 	}
-	pivot := partition(data, left, right)
+	pivot := partition(nums, l, r)
 	if pivot == k {
-		return data[pivot]
+		return nums[k]
 	}
 	if pivot > k {
-		return topK(data, left, pivot-1, k)
+		return qs(nums, l, pivot-1, k)
 	}
-	return topK(data, pivot+1, right, k)
+	return qs(nums, pivot+1, r, k)
 }
 
-func partition(data []int, left, right int) int {
-	pivotElem := data[right]
-	i := left - 1
-	for j := left; j < right; j++ {
-		if data[j] < pivotElem {
+func partition(nums []int, l, r int) int {
+	pivotElem := nums[r]
+	i := l
+	for j := l; j < r; j++ {
+		if nums[j] > pivotElem { // descending order
+			nums[i], nums[j] = nums[j], nums[i]
 			i++
-			data[i], data[j] = data[j], data[i]
 		}
 	}
-	i++
-	data[i], data[right] = data[right], data[i]
+	nums[i], nums[r] = nums[r], nums[i]
 	return i
 }
