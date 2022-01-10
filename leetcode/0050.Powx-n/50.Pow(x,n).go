@@ -16,14 +16,9 @@ func myPow(x float64, n int) float64 {
 }
 
 func myPow1(x float64, n int) float64 {
-	if n == 0 {
-		return 1
-	}
-	ans, contrib, positive := 1.0, x, false
-	if n > 0 {
-		positive = true
-	} else {
-		n = -1 * n
+	ans, contrib, positive := 1., x, true
+	if n < 0 {
+		positive, n = false, -n
 	}
 	for ; n > 0; n /= 2 {
 		if n%2 == 1 {

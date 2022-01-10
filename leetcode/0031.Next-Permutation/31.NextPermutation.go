@@ -12,7 +12,7 @@ func nextPermutation(nums []int) {
 		}
 		nums[i], nums[k] = nums[k], nums[i] // swap them
 	}
-	for i, j := j, len(nums)-1; i < j; i, j = i+1, j-1 { // reverse the remain descending part
-		nums[i], nums[j] = nums[j], nums[i]
+	for l, r := j, len(nums)-1; l < r; l, r = l+1, r-1 { // reverse the remain descending part
+		nums[l], nums[r] = nums[r], nums[l]
 	}
 }
