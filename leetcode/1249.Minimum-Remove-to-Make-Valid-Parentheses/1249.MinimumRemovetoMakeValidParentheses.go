@@ -14,7 +14,7 @@ func minRemoveToMakeValid(s string) string {
 		}
 		chars = append(chars, c)
 	}
-	left -= balance // redundant '('
+	left -= balance // total left - redundant left = keeping left
 	ans := make([]rune, 0, len(chars))
 	for i := 0; i < len(chars); i++ {
 		if chars[i] == '(' {
