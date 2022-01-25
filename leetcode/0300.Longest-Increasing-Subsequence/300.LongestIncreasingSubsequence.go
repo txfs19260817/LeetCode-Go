@@ -15,7 +15,7 @@ func lengthOfLIS(nums []int) int {
 	return len(seq)
 }
 
-func lengthOfLIS1(nums []int) int {
+func lengthOfLIS2(nums []int) int {
 	ans, dp := 1, make([]int, len(nums))
 	for i := 0; i < len(nums); i++ {
 		dp[i] = 1
