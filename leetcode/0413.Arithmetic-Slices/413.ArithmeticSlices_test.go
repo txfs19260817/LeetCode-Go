@@ -32,6 +32,9 @@ func Test_numberOfArithmeticSlices(t *testing.T) {
 			if got := numberOfArithmeticSlices(tt.args.nums); got != tt.want {
 				t.Errorf("numberOfArithmeticSlices() = %v, want %v", got, tt.want)
 			}
+			if got := numberOfArithmeticSlices2(tt.args.nums); got != tt.want {
+				t.Errorf("numberOfArithmeticSlices2() = %v, want %v", got, tt.want)
+			}
 		})
 	}
 }
