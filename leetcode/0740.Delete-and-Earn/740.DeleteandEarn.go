@@ -1,11 +1,7 @@
 package _740_Delete_and_Earn
 
 func deleteAndEarn(nums []int) int {
-	var maxV int
-	for _, num := range nums {
-		maxV = max(maxV, num)
-	}
-	freq := make([]int, maxV+1)
+	freq := make([]int, 10001)
 	for _, num := range nums {
 		freq[num]++
 	}
