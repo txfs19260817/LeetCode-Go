@@ -1,0 +1,25 @@
+package _075_Maximum_Bags_With_Full_Capacity_of_Rocks
+
+import "sort"
+
+func maximumBags(capacity []int, rocks []int, additionalRocks int) int {
+	var ans int
+	var deltas []int
+	for i, c := range capacity {
+		r := rocks[i]
+		if c == r {
+			ans++
+			continue
+		}
+		deltas = append(deltas, c-r)
+	}
+	sort.Ints(deltas)
+	for _, d := range deltas {
+		if additionalRocks < d {
+			break
+		}
+		additionalRocks -= d
+		ans++
+	}
+	return ans
+}
