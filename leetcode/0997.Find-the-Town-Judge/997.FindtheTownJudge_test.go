@@ -1,4 +1,4 @@
-package _997_Find_the_Town_Judge
+package leetcode
 
 import "testing"
 

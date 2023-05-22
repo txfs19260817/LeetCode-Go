@@ -1,4 +1,4 @@
-package _124_Binary_Tree_Maximum_Path_Sum
+package leetcode
 
 type TreeNode struct {
 	Val   int

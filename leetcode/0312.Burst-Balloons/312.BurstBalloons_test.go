@@ -1,4 +1,4 @@
-package _312_Burst_Balloons
+package leetcode
 
 import "testing"
 

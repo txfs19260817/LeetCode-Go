@@ -1,4 +1,4 @@
-package _165_Compare_Version_Numbers
+package leetcode
 
 import "testing"
 

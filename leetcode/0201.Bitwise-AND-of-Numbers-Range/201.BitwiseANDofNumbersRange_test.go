@@ -1,4 +1,4 @@
-package _201_Bitwise_AND_of_Numbers_Range
+package leetcode
 
 import "testing"
 

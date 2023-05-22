@@ -1,4 +1,4 @@
-package _290_Word_Pattern
+package leetcode
 
 import "testing"
 

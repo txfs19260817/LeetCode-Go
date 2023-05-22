@@ -1,4 +1,4 @@
-package _899_Orderly_Queue
+package leetcode
 
 import "sort"
 

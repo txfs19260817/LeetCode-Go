@@ -1,4 +1,4 @@
-package _005_Minimum_Operations_to_Make_the_Array_Alternating
+package leetcode
 
 import "testing"
 

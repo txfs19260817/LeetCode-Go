@@ -1,4 +1,4 @@
-package _690_Employee_Importance
+package leetcode
 
 import "testing"
 

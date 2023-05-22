@@ -1,4 +1,4 @@
-package _349_Intersection_of_Two_Arrays
+package leetcode
 
 import (
 	"reflect"

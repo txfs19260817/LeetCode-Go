@@ -1,4 +1,4 @@
-package _097_Interleaving_String
+package leetcode
 
 func isInterleave(s1 string, s2 string, s3 string) bool {
 	if len(s1)+len(s2) != len(s3) {

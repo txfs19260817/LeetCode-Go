@@ -1,4 +1,4 @@
-package _966_Recover_the_Original_Array
+package leetcode
 
 import (
 	"reflect"

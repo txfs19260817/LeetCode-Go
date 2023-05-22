@@ -1,4 +1,4 @@
-package _474_Ones_and_Zeroes
+package leetcode
 
 import "testing"
 

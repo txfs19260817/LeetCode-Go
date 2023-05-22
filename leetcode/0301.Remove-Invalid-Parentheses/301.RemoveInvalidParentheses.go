@@ -1,4 +1,4 @@
-package _301_Remove_Invalid_Parentheses
+package leetcode
 
 func removeInvalidParentheses(s string) []string {
 	var ans []string

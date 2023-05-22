@@ -1,4 +1,4 @@
-package _954_Watering_Plants_II
+package leetcode
 
 import "testing"
 

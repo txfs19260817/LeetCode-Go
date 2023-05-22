@@ -1,4 +1,4 @@
-package _268_Missing_Number
+package leetcode
 
 func missingNumber(nums []int) int {
 	sum := len(nums) * (len(nums) - 1) / 2

@@ -1,4 +1,4 @@
-package _469_Find_All_The_Lonely_Nodes
+package leetcode
 
 import (
 	"testing"

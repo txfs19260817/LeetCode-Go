@@ -1,4 +1,4 @@
-package _492_The_kth_Factor_of_n
+package leetcode
 
 import "testing"
 

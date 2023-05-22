@@ -1,4 +1,4 @@
-package _567_Permutation_in_String
+package leetcode
 
 func checkInclusion(s1 string, s2 string) bool {
 	if len(s2) == 0 || len(s2) < len(s1) {

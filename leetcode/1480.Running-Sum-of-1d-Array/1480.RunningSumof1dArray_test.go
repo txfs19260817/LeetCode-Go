@@ -1,4 +1,4 @@
-package _480_Running_Sum_of_1d_Array
+package leetcode
 
 import (
 	"reflect"

@@ -1,4 +1,4 @@
-package _006_Clumsy_Factorial
+package leetcode
 
 func clumsy(N int) int {
 	var ans int

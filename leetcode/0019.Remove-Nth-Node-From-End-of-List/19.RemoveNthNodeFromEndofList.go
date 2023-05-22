@@ -1,4 +1,4 @@
-package _019_Remove_Nth_Node_From_End_of_List
+package leetcode
 
 type ListNode struct {
 	Val  int

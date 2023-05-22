@@ -1,4 +1,4 @@
-package _044_Count_Number_of_Maximum_Bitwise_OR_Subsets
+package leetcode
 
 import (
 	"math/rand"

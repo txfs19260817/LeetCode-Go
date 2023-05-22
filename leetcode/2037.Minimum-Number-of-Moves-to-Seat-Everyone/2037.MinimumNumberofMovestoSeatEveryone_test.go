@@ -1,4 +1,4 @@
-package _037_Minimum_Number_of_Moves_to_Seat_Everyone
+package leetcode
 
 import "testing"
 

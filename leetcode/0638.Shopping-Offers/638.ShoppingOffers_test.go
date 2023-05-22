@@ -1,4 +1,4 @@
-package _638_Shopping_Offers
+package leetcode
 
 import "testing"
 
@@ -25,7 +25,7 @@ func Test_shoppingOffers(t *testing.T) {
 		},
 		{
 			name: "price = [9,9], special = [[1,1,1]], needs = [2,2]",
-			args: args{[]int{9,9}, [][]int{{1,1,1}}, []int{2, 2}},
+			args: args{[]int{9, 9}, [][]int{{1, 1, 1}}, []int{2, 2}},
 			want: 2,
 		},
 	}

@@ -1,4 +1,4 @@
-package _234_Replace_the_Substring_for_Balanced_String
+package leetcode
 
 func balancedString(s string) int {
 	count, k, l, r, ans := map[byte]int{}, len(s)/4, 0, 0, len(s)

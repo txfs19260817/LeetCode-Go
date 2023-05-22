@@ -1,4 +1,4 @@
-package _078_Rearrange_Characters_to_Make_Target_String
+package leetcode
 
 import "testing"
 

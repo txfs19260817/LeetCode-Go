@@ -1,4 +1,4 @@
-package _953_Sum_of_Subarray_Ranges
+package leetcode
 
 func subArrayRanges(nums []int) int64 {
 	var ans int64

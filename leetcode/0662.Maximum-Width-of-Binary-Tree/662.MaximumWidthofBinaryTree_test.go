@@ -1,4 +1,4 @@
-package _662_Maximum_Width_of_Binary_Tree
+package leetcode
 
 import "testing"
 

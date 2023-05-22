@@ -1,4 +1,4 @@
-package _712_Minimum_ASCII_Delete_Sum_for_Two_Strings
+package leetcode
 
 func minimumDeleteSum(s1 string, s2 string) int {
 	dp := make([][]int, len(s1)+1)

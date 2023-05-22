@@ -1,4 +1,4 @@
-package _013_Merge_Nodes_in_Between_Zeros
+package leetcode
 
 type ListNode struct {
 	Val  int

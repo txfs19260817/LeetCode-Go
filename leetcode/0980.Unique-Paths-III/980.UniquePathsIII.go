@@ -1,4 +1,4 @@
-package _980_Unique_Paths_III
+package leetcode
 
 func uniquePathsIII(grid [][]int) int {
 	ans, visited := 0, make([][]bool, len(grid))

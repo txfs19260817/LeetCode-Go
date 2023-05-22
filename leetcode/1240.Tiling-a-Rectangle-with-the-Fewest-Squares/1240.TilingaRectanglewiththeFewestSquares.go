@@ -1,4 +1,4 @@
-package _240_Tiling_a_Rectangle_with_the_Fewest_Squares
+package leetcode
 
 // https://leetcode-cn.com/problems/tiling-a-rectangle-with-the-fewest-squares/solution/1240-pu-ci-zhuan-dong-tai-gui-hua-by-acw_weian/
 func tilingRectangle(n int, m int) int {

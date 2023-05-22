@@ -1,4 +1,4 @@
-package _900_RLE_Iterator
+package leetcode
 
 import (
 	"github.com/stretchr/testify/assert"

@@ -1,4 +1,4 @@
-package _400_Nth_Digit
+package leetcode
 
 import "testing"
 

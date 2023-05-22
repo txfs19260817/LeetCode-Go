@@ -1,4 +1,4 @@
-package _526_Beautiful_Arrangement
+package leetcode
 
 func countArrangement(n int) int {
 	var ans int

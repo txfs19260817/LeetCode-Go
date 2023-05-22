@@ -1,4 +1,4 @@
-package _918_Count_Vowel_Substrings_of_a_String
+package leetcode
 
 func countVowelSubstrings(word string) int {
 	var ans int
@@ -26,7 +26,7 @@ func countValidSub(word string) (ans int) {
 		return 0
 	}
 	vowel2cnt := map[byte]int{}
-	for l, r := 0, 0; r < len(word)&&l < len(word); {
+	for l, r := 0, 0; r < len(word) && l < len(word); {
 		vowel2cnt[word[r]]++
 		if vowel2cnt['a'] > 0 && vowel2cnt['e'] > 0 && vowel2cnt['i'] > 0 && vowel2cnt['o'] > 0 && vowel2cnt['u'] > 0 {
 			ans += len(word) - r

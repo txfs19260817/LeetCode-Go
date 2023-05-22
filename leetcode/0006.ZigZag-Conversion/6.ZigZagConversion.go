@@ -1,4 +1,4 @@
-package _006_ZigZag_Conversion
+package leetcode
 
 func convert(s string, numRows int) string {
 	if numRows == 1 {

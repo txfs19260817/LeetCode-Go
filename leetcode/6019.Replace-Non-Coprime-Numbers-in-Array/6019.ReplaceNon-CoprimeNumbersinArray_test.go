@@ -1,4 +1,4 @@
-package _019_Replace_Non_Coprime_Numbers_in_Array
+package leetcode
 
 import (
 	"reflect"

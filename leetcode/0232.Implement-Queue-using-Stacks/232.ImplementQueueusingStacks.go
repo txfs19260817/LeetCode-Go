@@ -1,4 +1,4 @@
-package _232_Implement_Queue_using_Stacks
+package leetcode
 
 type MyQueue struct {
 	a, b []int

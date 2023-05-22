@@ -1,4 +1,4 @@
-package _826_Most_Profit_Assigning_Work
+package leetcode
 
 import "sort"
 

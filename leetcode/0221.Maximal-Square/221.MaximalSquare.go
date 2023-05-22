@@ -1,4 +1,4 @@
-package _221_Maximal_Square
+package leetcode
 
 func maximalSquare(matrix [][]byte) int {
 	rows, cols := len(matrix), len(matrix[0])

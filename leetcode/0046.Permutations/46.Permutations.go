@@ -1,4 +1,4 @@
-package _046_Permutations
+package leetcode
 
 func permute(nums []int) [][]int {
 	var ans [][]int

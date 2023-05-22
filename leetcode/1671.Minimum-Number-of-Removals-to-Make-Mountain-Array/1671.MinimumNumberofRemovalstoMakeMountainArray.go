@@ -1,4 +1,4 @@
-package _671_Minimum_Number_of_Removals_to_Make_Mountain_Array
+package leetcode
 
 func minimumMountainRemovals(nums []int) int {
 	n := len(nums)

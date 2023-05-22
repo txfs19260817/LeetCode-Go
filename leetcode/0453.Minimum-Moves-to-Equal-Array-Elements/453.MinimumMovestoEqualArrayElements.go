@@ -1,4 +1,4 @@
-package _453_Minimum_Moves_to_Equal_Array_Elements
+package leetcode
 
 // https://leetcode-cn.com/problems/minimum-moves-to-equal-array-elements/solution/geekplayers-leetcode-ac-qing-xi-yi-dong-4ei1r/
 func minMoves(nums []int) int {

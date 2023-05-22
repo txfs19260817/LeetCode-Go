@@ -1,4 +1,4 @@
-package _020_Valid_Parentheses
+package leetcode
 
 func isValid(s string) bool {
 	stack := make([]rune, 0, len(s)/2)

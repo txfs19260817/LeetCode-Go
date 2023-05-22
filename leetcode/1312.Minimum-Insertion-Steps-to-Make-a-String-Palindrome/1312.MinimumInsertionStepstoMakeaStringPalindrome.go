@@ -1,4 +1,4 @@
-package _312_Minimum_Insertion_Steps_to_Make_a_String_Palindrome
+package leetcode
 
 func minInsertions(s string) int {
 	dp := make([][]int, len(s))

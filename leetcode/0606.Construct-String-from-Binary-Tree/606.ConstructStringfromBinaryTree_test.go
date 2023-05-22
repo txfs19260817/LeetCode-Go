@@ -1,4 +1,4 @@
-package _606_Construct_String_from_Binary_Tree
+package leetcode
 
 import "testing"
 

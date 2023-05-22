@@ -1,4 +1,4 @@
-package _229_Majority_Element_II
+package leetcode
 
 func majorityElement(nums []int) []int {
 	var major1, vote1, cnt1, major2, vote2, cnt2 int

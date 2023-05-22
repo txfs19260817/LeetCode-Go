@@ -1,4 +1,4 @@
-package _784_Letter_Case_Permutation
+package leetcode
 
 import (
 	"testing"

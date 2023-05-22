@@ -1,4 +1,4 @@
-package _073_Set_Matrix_Zeroes
+package leetcode
 
 import (
 	"testing"

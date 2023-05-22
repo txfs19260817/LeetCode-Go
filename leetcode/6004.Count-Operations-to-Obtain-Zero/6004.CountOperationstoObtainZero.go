@@ -1,4 +1,4 @@
-package _004_Count_Operations_to_Obtain_Zero
+package leetcode
 
 func countOperations(num1 int, num2 int) int {
 	var ans int

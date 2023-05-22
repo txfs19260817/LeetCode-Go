@@ -1,4 +1,4 @@
-package _667_Beautiful_Arrangement_II
+package leetcode
 
 func constructArray(n int, k int) []int {
 	l, r, ans := 1, k+1, make([]int, 0, n)

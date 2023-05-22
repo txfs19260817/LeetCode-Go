@@ -1,4 +1,4 @@
-package _065_Largest_Combination_With_Bitwise_AND_Greater_Than_Zero
+package leetcode
 
 func largestCombination(candidates []int) int {
 	var ans int

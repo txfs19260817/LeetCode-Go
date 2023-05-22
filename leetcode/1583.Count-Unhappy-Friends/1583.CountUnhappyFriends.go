@@ -1,4 +1,4 @@
-package _583_Count_Unhappy_Friends
+package leetcode
 
 func unhappyFriends(n int, preferences [][]int, pairs [][]int) int {
 	ans, rank, match := 0, make([][]int, n), make([]int, n)

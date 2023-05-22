@@ -1,4 +1,4 @@
-package _387_First_Unique_Character_in_a_String
+package leetcode
 
 func firstUniqChar(s string) int {
 	rune2cnt := map[rune]int{}

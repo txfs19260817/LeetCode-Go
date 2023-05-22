@@ -1,4 +1,4 @@
-package _210_Course_Schedule_II
+package leetcode
 
 import (
 	"reflect"

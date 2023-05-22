@@ -1,4 +1,4 @@
-package _633_Sum_of_Square_Numbers
+package leetcode
 
 import "testing"
 

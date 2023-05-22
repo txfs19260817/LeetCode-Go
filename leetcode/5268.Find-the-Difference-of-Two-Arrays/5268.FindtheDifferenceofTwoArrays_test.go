@@ -1,4 +1,4 @@
-package _268_Find_the_Difference_of_Two_Arrays
+package leetcode
 
 import (
 	"reflect"

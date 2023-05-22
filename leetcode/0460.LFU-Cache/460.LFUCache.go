@@ -1,4 +1,4 @@
-package _460_LFU_Cache
+package leetcode
 
 import "container/list"
 

@@ -1,4 +1,4 @@
-package _064_Maximum_Consecutive_Floors_Without_Special_Floors
+package leetcode
 
 import "sort"
 

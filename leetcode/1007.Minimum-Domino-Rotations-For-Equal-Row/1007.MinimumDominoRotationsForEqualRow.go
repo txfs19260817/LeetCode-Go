@@ -1,4 +1,4 @@
-package _007_Minimum_Domino_Rotations_For_Equal_Row
+package leetcode
 
 func minDominoRotations(tops []int, bottoms []int) int {
 	var n2is [7][]int

@@ -1,4 +1,4 @@
-package _274_H_Index
+package leetcode
 
 func hIndex(citations []int) int {
 	n := len(citations)

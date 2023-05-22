@@ -1,4 +1,4 @@
-package _092_Shortest_Common_Supersequence
+package leetcode
 
 import (
 	"testing"

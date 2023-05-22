@@ -1,4 +1,4 @@
-package _074_Percentage_of_Letter_in_String
+package leetcode
 
 func percentageLetter(s string, letter byte) int {
 	m := map[rune]int{}

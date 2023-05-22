@@ -1,4 +1,4 @@
-package _523_Continuous_Subarray_Sum
+package leetcode
 
 import "testing"
 

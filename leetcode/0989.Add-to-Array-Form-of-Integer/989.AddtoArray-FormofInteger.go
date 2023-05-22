@@ -1,4 +1,4 @@
-package _989_Add_to_Array_Form_of_Integer
+package leetcode
 
 func addToArrayForm(num []int, k int) []int {
 	for i := len(num) - 1; i >= 0; i-- {

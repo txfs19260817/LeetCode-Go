@@ -1,4 +1,4 @@
-package _227_Maximize_the_Topmost_Element_After_K_Moves
+package leetcode
 
 func maximumTop(nums []int, k int) int {
 	N := len(nums)

@@ -1,4 +1,4 @@
-package _001_Number_of_Pairs_of_Interchangeable_Rectangles
+package leetcode
 
 func interchangeableRectangles(rectangles [][]int) int64 {
 	ans, m := int64(0), map[float64]int64{}

@@ -1,4 +1,4 @@
-package _653_Two_Sum_IV___Input_is_a_BST
+package leetcode
 
 import "testing"
 

@@ -1,4 +1,4 @@
-package _905_Second_Minimum_Time_to_Reach_Destination
+package leetcode
 
 import "testing"
 

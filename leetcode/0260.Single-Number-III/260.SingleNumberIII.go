@@ -1,4 +1,4 @@
-package _260_Single_Number_III
+package leetcode
 
 func singleNumber(nums []int) []int {
 	xors, div, a, b := nums[0], 1, 0, 0

@@ -1,4 +1,4 @@
-package _223_Rectangle_Area
+package leetcode
 
 import "testing"
 

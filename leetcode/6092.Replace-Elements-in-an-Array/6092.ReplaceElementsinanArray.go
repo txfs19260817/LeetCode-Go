@@ -1,4 +1,4 @@
-package _092_Replace_Elements_in_an_Array
+package leetcode
 
 func arrayChange(nums []int, operations [][]int) []int {
 	n2i := map[int]int{}

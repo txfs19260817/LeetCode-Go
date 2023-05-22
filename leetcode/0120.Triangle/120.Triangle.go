@@ -1,4 +1,4 @@
-package _120_Triangle
+package leetcode
 
 func minimumTotal(triangle [][]int) int {
 	ans, dp := 1<<31, make([][]int, len(triangle))

@@ -1,4 +1,4 @@
-package _005_Minimum_Operations_to_Make_the_Array_Alternating
+package leetcode
 
 func minimumOperations(nums []int) int {
 	cntOdd, cntEven := map[int]int{}, map[int]int{}

@@ -1,4 +1,4 @@
-package _190_Reverse_Bits
+package leetcode
 
 func reverseBits(num uint32) uint32 {
 	var ans uint32

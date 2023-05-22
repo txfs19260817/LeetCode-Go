@@ -1,4 +1,4 @@
-package _357_Count_Numbers_with_Unique_Digits
+package leetcode
 
 func countNumbersWithUniqueDigits(n int) int {
 	if n == 0 {

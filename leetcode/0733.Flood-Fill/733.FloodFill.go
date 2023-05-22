@@ -1,4 +1,4 @@
-package _733_Flood_Fill
+package leetcode
 
 func floodFill(image [][]int, sr int, sc int, newColor int) [][]int {
 	oldColor := image[sr][sc]

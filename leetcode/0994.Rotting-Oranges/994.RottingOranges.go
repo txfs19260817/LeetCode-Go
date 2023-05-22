@@ -1,4 +1,4 @@
-package _994_Rotting_Oranges
+package leetcode
 
 func orangesRotting(grid [][]int) int {
 	var ans int

@@ -1,4 +1,4 @@
-package _230_Kth_Smallest_Element_in_a_BST
+package leetcode
 
 type TreeNode struct {
 	Val   int

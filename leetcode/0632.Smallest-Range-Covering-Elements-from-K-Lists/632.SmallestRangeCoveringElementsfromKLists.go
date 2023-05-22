@@ -1,4 +1,4 @@
-package _632_Smallest_Range_Covering_Elements_from_K_Lists
+package leetcode
 
 import (
 	"math"

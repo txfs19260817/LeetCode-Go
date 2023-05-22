@@ -1,4 +1,4 @@
-package _222_Count_Complete_Tree_Nodes
+package leetcode
 
 type TreeNode struct {
 	Val   int

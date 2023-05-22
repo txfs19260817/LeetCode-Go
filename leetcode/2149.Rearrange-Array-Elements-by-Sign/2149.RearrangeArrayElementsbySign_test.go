@@ -1,4 +1,4 @@
-package _149_Rearrange_Array_Elements_by_Sign
+package leetcode
 
 import (
 	"reflect"

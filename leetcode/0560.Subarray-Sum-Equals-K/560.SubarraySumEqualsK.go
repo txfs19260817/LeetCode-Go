@@ -1,4 +1,4 @@
-package _560_Subarray_Sum_Equals_K
+package leetcode
 
 func subarraySum(nums []int, k int) int {
 	ans, preSum, m := 0, 0, map[int]int{0: 1}

@@ -1,4 +1,4 @@
-package _076_Minimum_Window_Substring
+package leetcode
 
 func minWindow(s string, t string) string {
 	if len(s) < len(t) {

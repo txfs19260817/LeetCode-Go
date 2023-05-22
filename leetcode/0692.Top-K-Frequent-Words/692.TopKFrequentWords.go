@@ -1,4 +1,4 @@
-package _692_Top_K_Frequent_Words
+package leetcode
 
 import "sort"
 

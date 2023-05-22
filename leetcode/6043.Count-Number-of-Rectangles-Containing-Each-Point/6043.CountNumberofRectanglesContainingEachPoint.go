@@ -1,8 +1,8 @@
-package _043_Count_Number_of_Rectangles_Containing_Each_Point
+package leetcode
 
 import "sort"
 
-//https://leetcode-cn.com/problems/count-number-of-rectangles-containing-each-point/solution/pai-xu-pai-xu-pai-xu-pythonjavacgo-by-en-ou4k/
+// https://leetcode-cn.com/problems/count-number-of-rectangles-containing-each-point/solution/pai-xu-pai-xu-pai-xu-pythonjavacgo-by-en-ou4k/
 func countRectangles(rectangles [][]int, points [][]int) []int {
 	sort.Slice(rectangles, func(i, j int) bool { return rectangles[i][1] > rectangles[j][1] })
 	for i := range points {

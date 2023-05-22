@@ -1,4 +1,4 @@
-package _661_Image_Smoother
+package leetcode
 
 func imageSmoother(img [][]int) [][]int {
 	ans := make([][]int, len(img))

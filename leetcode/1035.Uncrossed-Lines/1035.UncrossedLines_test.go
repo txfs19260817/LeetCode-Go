@@ -1,4 +1,4 @@
-package _035_Uncrossed_Lines
+package leetcode
 
 import "testing"
 

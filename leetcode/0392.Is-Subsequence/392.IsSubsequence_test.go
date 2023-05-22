@@ -1,4 +1,4 @@
-package _392_Is_Subsequence
+package leetcode
 
 import "testing"
 

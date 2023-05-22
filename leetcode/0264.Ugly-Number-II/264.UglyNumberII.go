@@ -1,4 +1,4 @@
-package _264_Ugly_Number_II
+package leetcode
 
 func nthUglyNumber(n int) int {
 	dp := make([]int, n+1)

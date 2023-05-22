@@ -1,4 +1,4 @@
-package _965_Intervals_Between_Identical_Elements
+package leetcode
 
 import (
 	"reflect"

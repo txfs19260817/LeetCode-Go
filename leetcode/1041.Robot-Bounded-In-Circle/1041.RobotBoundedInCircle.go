@@ -1,4 +1,4 @@
-package _041_Robot_Bounded_In_Circle
+package leetcode
 
 func isRobotBounded(instructions string) bool {
 	dir, d, cur := [4][2]int{{0, 1}, {1, 0}, {0, -1}, {-1, 0}}, 0, [2]int{0, 0}

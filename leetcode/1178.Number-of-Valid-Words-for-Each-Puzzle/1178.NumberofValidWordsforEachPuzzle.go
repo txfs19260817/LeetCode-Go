@@ -1,4 +1,4 @@
-package _178_Number_of_Valid_Words_for_Each_Puzzle
+package leetcode
 
 func findNumOfValidWords(words []string, puzzles []string) []int {
 	str2uint := func(s string) (num uint) {

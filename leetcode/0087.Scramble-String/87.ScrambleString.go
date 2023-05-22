@@ -1,4 +1,4 @@
-package _087_Scramble_String
+package leetcode
 
 func isScramble(s1 string, s2 string) bool {
 	dp := make([][][]int8, len(s1))

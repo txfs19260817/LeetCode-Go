@@ -1,4 +1,4 @@
-package _151_Maximum_Good_People_Based_on_Statements
+package leetcode
 
 import "testing"
 

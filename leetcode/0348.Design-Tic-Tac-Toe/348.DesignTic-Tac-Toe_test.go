@@ -1,4 +1,4 @@
-package _348_Design_Tic_Tac_Toe
+package leetcode
 
 import (
 	"github.com/stretchr/testify/assert"

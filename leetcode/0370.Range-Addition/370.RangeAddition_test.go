@@ -1,4 +1,4 @@
-package _370_Range_Addition
+package leetcode
 
 import (
 	"reflect"

@@ -1,4 +1,4 @@
-package _224_Basic_Calculator
+package leetcode
 
 func calculate(s string) int {
 	ans, sign := 0, 1

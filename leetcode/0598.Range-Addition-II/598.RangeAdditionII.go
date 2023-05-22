@@ -1,4 +1,4 @@
-package _598_Range_Addition_II
+package leetcode
 
 func maxCount(m int, n int, ops [][]int) int {
 	for _, op := range ops {

@@ -1,4 +1,4 @@
-package _838_Push_Dominoes
+package leetcode
 
 func pushDominoes(dominoes string) string {
 	dominoes, res := "L"+dominoes+"R", make([]byte, 0, len(dominoes))

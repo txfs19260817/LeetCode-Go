@@ -1,4 +1,4 @@
-package _434_Number_of_Segments_in_a_String
+package leetcode
 
 func countSegments(s string) int {
 	var ans int

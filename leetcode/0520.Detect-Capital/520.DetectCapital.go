@@ -1,4 +1,4 @@
-package _520_Detect_Capital
+package leetcode
 
 func detectCapitalUse(word string) bool {
 	var upper int

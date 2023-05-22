@@ -1,4 +1,4 @@
-package _368_Largest_Divisible_Subset
+package leetcode
 
 import (
 	"github.com/stretchr/testify/assert"

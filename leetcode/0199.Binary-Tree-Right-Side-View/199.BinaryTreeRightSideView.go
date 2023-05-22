@@ -1,4 +1,4 @@
-package _199_Binary_Tree_Right_Side_View
+package leetcode
 
 type TreeNode struct {
 	Val   int

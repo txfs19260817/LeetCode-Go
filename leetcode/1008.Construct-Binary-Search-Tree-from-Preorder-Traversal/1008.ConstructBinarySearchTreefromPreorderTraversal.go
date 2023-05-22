@@ -1,4 +1,4 @@
-package _008_Construct_Binary_Search_Tree_from_Preorder_Traversal
+package leetcode
 
 type TreeNode struct {
 	Val   int

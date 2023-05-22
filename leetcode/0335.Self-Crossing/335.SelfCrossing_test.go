@@ -1,4 +1,4 @@
-package _335_Self_Crossing
+package leetcode
 
 import "testing"
 

@@ -1,4 +1,4 @@
-package _301_Remove_Invalid_Parentheses
+package leetcode
 
 import (
 	"testing"

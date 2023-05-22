@@ -1,4 +1,4 @@
-package _069_Sqrt_x
+package leetcode
 
 import "testing"
 

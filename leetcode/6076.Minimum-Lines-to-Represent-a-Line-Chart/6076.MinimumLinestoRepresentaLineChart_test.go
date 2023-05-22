@@ -1,4 +1,4 @@
-package _076_Minimum_Lines_to_Represent_a_Line_Chart
+package leetcode
 
 import "testing"
 

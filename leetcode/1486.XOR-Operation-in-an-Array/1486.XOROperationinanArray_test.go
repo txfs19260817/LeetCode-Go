@@ -1,4 +1,4 @@
-package _486_XOR_Operation_in_an_Array
+package leetcode
 
 import "testing"
 

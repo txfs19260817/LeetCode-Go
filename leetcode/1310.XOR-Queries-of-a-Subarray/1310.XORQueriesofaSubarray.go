@@ -1,4 +1,4 @@
-package _310_XOR_Queries_of_a_Subarray
+package leetcode
 
 func xorQueries(arr []int, queries [][]int) []int {
 	ans, prefix := make([]int, len(queries)), make([]int, len(arr))

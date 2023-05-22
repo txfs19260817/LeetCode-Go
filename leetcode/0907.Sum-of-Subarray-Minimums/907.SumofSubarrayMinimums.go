@@ -1,4 +1,4 @@
-package _907_Sum_of_Subarray_Minimums
+package leetcode
 
 type pair struct {
 	v, i int

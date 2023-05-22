@@ -1,4 +1,4 @@
-package _392_Longest_Happy_Prefix
+package leetcode
 
 import "testing"
 

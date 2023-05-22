@@ -1,4 +1,4 @@
-package _098_Validate_Binary_Search_Tree
+package leetcode
 
 type TreeNode struct {
 	Val   int

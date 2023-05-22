@@ -1,4 +1,4 @@
-package _042_Count_Lattice_Points_Inside_a_Circle
+package leetcode
 
 import "testing"
 

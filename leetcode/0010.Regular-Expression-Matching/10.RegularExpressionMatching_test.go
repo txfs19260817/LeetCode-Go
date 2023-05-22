@@ -1,4 +1,4 @@
-package _010_Regular_Expression_Matching
+package leetcode
 
 import "testing"
 

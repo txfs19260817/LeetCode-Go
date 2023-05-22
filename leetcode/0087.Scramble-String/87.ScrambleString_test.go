@@ -1,4 +1,4 @@
-package _087_Scramble_String
+package leetcode
 
 import "testing"
 

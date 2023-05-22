@@ -1,4 +1,4 @@
-package _031_Find_All_K_Distant_Indices_in_an_Array
+package leetcode
 
 func findKDistantIndices(nums []int, key int, k int) []int {
 	var ans []int

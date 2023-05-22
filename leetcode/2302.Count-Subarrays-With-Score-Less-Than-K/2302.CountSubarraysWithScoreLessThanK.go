@@ -1,4 +1,4 @@
-package _302_Count_Subarrays_With_Score_Less_Than_K
+package leetcode
 
 func countSubarrays(nums []int, k int64) int64 {
 	var ans, sum int64

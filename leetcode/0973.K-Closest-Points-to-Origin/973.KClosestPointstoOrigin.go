@@ -1,4 +1,4 @@
-package _973_K_Closest_Points_to_Origin
+package leetcode
 
 import "container/heap"
 

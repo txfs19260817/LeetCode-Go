@@ -1,4 +1,4 @@
-package _052_N_Queens_II
+package leetcode
 
 type position struct {
 	x, y int

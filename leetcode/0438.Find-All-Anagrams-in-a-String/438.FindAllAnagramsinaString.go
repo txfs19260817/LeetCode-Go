@@ -1,4 +1,4 @@
-package _438_Find_All_Anagrams_in_a_String
+package leetcode
 
 func findAnagrams(s string, p string) []int {
 	var ans []int

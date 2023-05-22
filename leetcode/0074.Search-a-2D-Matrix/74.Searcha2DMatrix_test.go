@@ -1,4 +1,4 @@
-package _074_Search_a_2D_Matrix
+package leetcode
 
 import "testing"
 

@@ -1,4 +1,4 @@
-package _146_LRU_Cache
+package leetcode
 
 type LRUCache struct {
 	m          map[int]*listnode
@@ -42,7 +42,7 @@ func (this *LRUCache) remove(node *listnode) {
 	}
 	if node == this.tail {
 		p := this.tail.prev
-		this.head.prev, p.next = nil, nil
+		this.tail.prev, p.next = nil, nil
 		this.tail = p
 		return
 	}

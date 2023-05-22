@@ -1,4 +1,4 @@
-package _810_Chalkboard_XOR_Game
+package leetcode
 
 func xorGame(nums []int) bool {
 	if len(nums)%2 == 0 {

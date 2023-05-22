@@ -1,4 +1,4 @@
-package _031_Next_Permutation
+package leetcode
 
 import (
 	"testing"

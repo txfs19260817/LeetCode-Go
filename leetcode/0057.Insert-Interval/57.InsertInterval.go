@@ -1,4 +1,4 @@
-package _057_Insert_Interval
+package leetcode
 
 func insert(intervals [][]int, newInterval []int) [][]int {
 	if len(intervals) == 0 {

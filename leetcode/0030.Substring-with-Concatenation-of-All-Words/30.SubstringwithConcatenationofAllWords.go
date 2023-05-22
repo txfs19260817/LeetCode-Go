@@ -1,4 +1,4 @@
-package _030_Substring_with_Concatenation_of_All_Words
+package leetcode
 
 // https://leetcode-cn.com/problems/substring-with-concatenation-of-all-words/solution/golang-hua-dong-chuang-kou-fa-by-bloodborne-3/
 func findSubstring(s string, words []string) []int {

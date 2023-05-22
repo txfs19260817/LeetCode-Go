@@ -1,4 +1,4 @@
-package _310_XOR_Queries_of_a_Subarray
+package leetcode
 
 import (
 	"reflect"

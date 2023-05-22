@@ -1,4 +1,4 @@
-package _203_Remove_Linked_List_Elements
+package leetcode
 
 type ListNode struct {
 	Val  int

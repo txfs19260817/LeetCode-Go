@@ -1,4 +1,4 @@
-package _047_Remove_Digit_From_Number_to_Maximize_Result
+package leetcode
 
 import "testing"
 

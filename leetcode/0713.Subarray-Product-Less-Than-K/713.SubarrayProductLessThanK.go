@@ -1,4 +1,4 @@
-package _713_Subarray_Product_Less_Than_K
+package leetcode
 
 func numSubarrayProductLessThanK(nums []int, k int) int {
 	prod, ans := 1, 0

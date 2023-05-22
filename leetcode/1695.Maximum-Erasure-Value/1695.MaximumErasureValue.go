@@ -1,4 +1,4 @@
-package _695_Maximum_Erasure_Value
+package leetcode
 
 func maximumUniqueSubarray(nums []int) int {
 	l, r, freq, ans := 0, 0, map[int]int{}, 0

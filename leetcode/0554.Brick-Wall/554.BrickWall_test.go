@@ -1,4 +1,4 @@
-package _554_Brick_Wall
+package leetcode
 
 import "testing"
 

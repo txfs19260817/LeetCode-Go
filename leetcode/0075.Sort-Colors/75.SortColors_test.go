@@ -1,4 +1,4 @@
-package _075_Sort_Colors
+package leetcode
 
 import (
 	"reflect"

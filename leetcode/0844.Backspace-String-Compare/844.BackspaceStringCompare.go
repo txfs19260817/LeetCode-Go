@@ -1,4 +1,4 @@
-package _844_Backspace_String_Compare
+package leetcode
 
 func backspaceCompare(S string, T string) bool {
 	var sSkip, tSkip int

@@ -1,4 +1,4 @@
-package _664_Strange_Printer
+package leetcode
 
 import "testing"
 

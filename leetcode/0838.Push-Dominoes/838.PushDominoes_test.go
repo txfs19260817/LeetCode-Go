@@ -1,4 +1,4 @@
-package _838_Push_Dominoes
+package leetcode
 
 import "testing"
 

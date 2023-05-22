@@ -1,4 +1,4 @@
-package _136_Single_Number
+package leetcode
 
 func singleNumber(nums []int) int {
 	ans := nums[0]

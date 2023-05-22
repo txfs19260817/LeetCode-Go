@@ -1,4 +1,4 @@
-package _576_Out_of_Boundary_Paths
+package leetcode
 
 const mod int = 1e9 + 7
 

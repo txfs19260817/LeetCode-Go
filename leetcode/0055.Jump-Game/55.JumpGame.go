@@ -1,4 +1,4 @@
-package _055_Jump_Game
+package leetcode
 
 func canJump(nums []int) bool {
 	var end, maxFar int

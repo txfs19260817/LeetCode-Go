@@ -1,4 +1,4 @@
-package _220_Contains_Duplicate_III
+package leetcode
 
 func containsNearbyAlmostDuplicate(nums []int, k int, t int) bool {
 	buckets := map[int]int{} // element:bucket, bucket size = t+1

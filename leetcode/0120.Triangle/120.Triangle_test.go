@@ -1,4 +1,4 @@
-package _120_Triangle
+package leetcode
 
 import "testing"
 

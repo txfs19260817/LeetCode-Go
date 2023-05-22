@@ -1,4 +1,4 @@
-package _174_Dungeon_Game
+package leetcode
 
 func calculateMinimumHP(dungeon [][]int) int {
 	const MAX = 1 << 30

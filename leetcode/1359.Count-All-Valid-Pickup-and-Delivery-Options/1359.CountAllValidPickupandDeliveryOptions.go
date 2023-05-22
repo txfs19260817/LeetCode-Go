@@ -1,4 +1,4 @@
-package _359_Count_All_Valid_Pickup_and_Delivery_Options
+package leetcode
 
 // https://leetcode-cn.com/problems/count-all-valid-pickup-and-delivery-options/solution/you-xiao-de-kuai-di-xu-lie-shu-mu-by-leetcode-solu/
 func countOrders(n int) int {

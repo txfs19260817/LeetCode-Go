@@ -1,4 +1,4 @@
-package _084_Largest_Rectangle_in_Histogram
+package leetcode
 
 import "testing"
 

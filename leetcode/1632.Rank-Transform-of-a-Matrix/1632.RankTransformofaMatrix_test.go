@@ -1,4 +1,4 @@
-package _632_Rank_Transform_of_a_Matrix
+package leetcode
 
 import (
 	"reflect"

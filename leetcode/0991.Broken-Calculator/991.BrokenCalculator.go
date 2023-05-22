@@ -1,4 +1,4 @@
-package _991_Broken_Calculator
+package leetcode
 
 func brokenCalc(startValue int, target int) int {
 	var cnt int

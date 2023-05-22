@@ -1,4 +1,4 @@
-package _746_Min_Cost_Climbing_Stairs
+package leetcode
 
 import "testing"
 

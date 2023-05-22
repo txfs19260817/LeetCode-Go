@@ -1,4 +1,4 @@
-package _405_Convert_a_Number_to_Hexadecimal
+package leetcode
 
 import "testing"
 

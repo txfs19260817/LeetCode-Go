@@ -1,4 +1,4 @@
-package _348_Design_Tic_Tac_Toe
+package leetcode
 
 type TicTacToe struct {
 	rows, cols        []int

@@ -1,4 +1,4 @@
-package _382_Balance_a_Binary_Search_Tree
+package leetcode
 
 type TreeNode struct {
 	Val   int

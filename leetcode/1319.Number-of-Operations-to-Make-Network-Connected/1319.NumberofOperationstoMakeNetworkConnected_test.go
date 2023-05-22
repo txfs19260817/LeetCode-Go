@@ -1,4 +1,4 @@
-package _319_Number_of_Operations_to_Make_Network_Connected
+package leetcode
 
 import "testing"
 

@@ -1,4 +1,4 @@
-package _266_Count_Number_of_Texts
+package leetcode
 
 import "testing"
 

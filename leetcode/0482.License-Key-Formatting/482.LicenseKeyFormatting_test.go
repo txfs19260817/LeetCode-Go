@@ -1,4 +1,4 @@
-package _482_License_Key_Formatting
+package leetcode
 
 import "testing"
 

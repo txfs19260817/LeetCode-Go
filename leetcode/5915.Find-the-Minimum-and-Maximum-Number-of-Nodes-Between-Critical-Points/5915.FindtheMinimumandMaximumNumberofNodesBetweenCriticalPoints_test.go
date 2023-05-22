@@ -1,4 +1,4 @@
-package _915_Find_the_Minimum_and_Maximum_Number_of_Nodes_Between_Critical_Points
+package leetcode
 
 import (
 	"reflect"

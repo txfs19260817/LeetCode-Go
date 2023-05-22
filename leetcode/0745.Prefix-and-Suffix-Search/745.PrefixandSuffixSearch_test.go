@@ -1,4 +1,4 @@
-package _745_Prefix_and_Suffix_Search
+package leetcode
 
 import (
 	"testing"

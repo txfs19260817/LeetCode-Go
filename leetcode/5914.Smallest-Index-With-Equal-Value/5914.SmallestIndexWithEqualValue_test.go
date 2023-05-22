@@ -1,4 +1,4 @@
-package _914_Smallest_Index_With_Equal_Value
+package leetcode
 
 import "testing"
 

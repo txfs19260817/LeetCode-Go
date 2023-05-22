@@ -1,4 +1,4 @@
-package _010_Minimum_Time_to_Complete_Trips
+package leetcode
 
 import "testing"
 

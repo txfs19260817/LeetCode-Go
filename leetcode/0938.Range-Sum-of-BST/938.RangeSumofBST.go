@@ -1,4 +1,4 @@
-package _938_Range_Sum_of_BST
+package leetcode
 
 type TreeNode struct {
 	Val   int

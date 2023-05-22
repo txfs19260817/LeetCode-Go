@@ -1,4 +1,4 @@
-package _563_Binary_Tree_Tilt
+package leetcode
 
 type TreeNode struct {
 	Val   int

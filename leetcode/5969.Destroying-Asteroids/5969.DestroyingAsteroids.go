@@ -1,4 +1,4 @@
-package _969_Destroying_Asteroids
+package leetcode
 
 import "sort"
 

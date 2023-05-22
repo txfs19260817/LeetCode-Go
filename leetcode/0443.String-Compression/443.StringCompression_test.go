@@ -1,4 +1,4 @@
-package _443_String_Compression
+package leetcode
 
 import "testing"
 

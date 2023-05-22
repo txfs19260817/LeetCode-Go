@@ -1,4 +1,4 @@
-package _120_Maximum_Average_Subtree
+package leetcode
 
 import "testing"
 

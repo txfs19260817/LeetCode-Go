@@ -1,4 +1,4 @@
-package _234_Palindrome_Linked_List_
+package leetcode
 
 type ListNode struct {
 	Val  int

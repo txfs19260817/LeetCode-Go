@@ -1,4 +1,4 @@
-package _202_Happy_Number
+package leetcode
 
 func isHappy(n int) bool {
 	step := func(n int) int {

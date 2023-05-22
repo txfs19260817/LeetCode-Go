@@ -1,4 +1,4 @@
-package _006_ZigZag_Conversion
+package leetcode
 
 import "testing"
 

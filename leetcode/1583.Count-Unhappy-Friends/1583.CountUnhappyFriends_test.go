@@ -1,4 +1,4 @@
-package _583_Count_Unhappy_Friends
+package leetcode
 
 import "testing"
 

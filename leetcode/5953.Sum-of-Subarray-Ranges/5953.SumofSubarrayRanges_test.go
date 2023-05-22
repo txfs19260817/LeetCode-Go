@@ -1,4 +1,4 @@
-package _953_Sum_of_Subarray_Ranges
+package leetcode
 
 import "testing"
 

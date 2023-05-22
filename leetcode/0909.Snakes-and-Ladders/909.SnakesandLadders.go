@@ -1,4 +1,4 @@
-package _909_Snakes_and_Ladders
+package leetcode
 
 func snakesAndLadders(board [][]int) int {
 	n := len(board)

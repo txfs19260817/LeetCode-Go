@@ -1,4 +1,4 @@
-package _435_Non_overlapping_Intervals
+package leetcode
 
 import "testing"
 

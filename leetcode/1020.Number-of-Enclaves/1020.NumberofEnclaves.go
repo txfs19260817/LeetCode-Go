@@ -1,4 +1,4 @@
-package _020_Number_of_Enclaves
+package leetcode
 
 func numEnclaves(grid [][]int) int {
 	var ans int

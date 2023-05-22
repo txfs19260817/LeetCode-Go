@@ -1,4 +1,4 @@
-package _543_Diameter_of_Binary_Tree
+package leetcode
 
 import "testing"
 

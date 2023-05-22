@@ -1,4 +1,4 @@
-package _424_Longest_Repeating_Character_Replacement
+package leetcode
 
 func characterReplacement(s string, k int) int {
 	l, ans, freq, maxFreq := 0, 0, map[byte]int{}, 0

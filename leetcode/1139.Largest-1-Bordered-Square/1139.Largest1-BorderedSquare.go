@@ -1,4 +1,4 @@
-package _139_Largest_1_Bordered_Square
+package leetcode
 
 func largest1BorderedSquare(grid [][]int) int {
 	ans, px, py := 0, make([][]int, len(grid)+1), make([][]int, len(grid)+1) // prefix-sum

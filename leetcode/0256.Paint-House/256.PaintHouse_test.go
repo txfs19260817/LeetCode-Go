@@ -1,4 +1,4 @@
-package _256_Paint_House
+package leetcode
 
 import "testing"
 

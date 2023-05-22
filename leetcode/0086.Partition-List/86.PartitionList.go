@@ -1,4 +1,4 @@
-package _086_Partition_List
+package leetcode
 
 type ListNode struct {
 	Val  int

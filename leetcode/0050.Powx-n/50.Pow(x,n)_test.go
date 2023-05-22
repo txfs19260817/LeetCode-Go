@@ -1,4 +1,4 @@
-package _050_Powx_n
+package leetcode
 
 import "testing"
 

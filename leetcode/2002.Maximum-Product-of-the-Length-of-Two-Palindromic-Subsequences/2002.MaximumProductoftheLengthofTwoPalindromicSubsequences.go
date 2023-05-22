@@ -1,4 +1,4 @@
-package _002_Maximum_Product_of_the_Length_of_Two_Palindromic_Subsequences
+package leetcode
 
 func maxProduct(s string) int {
 	var ans int

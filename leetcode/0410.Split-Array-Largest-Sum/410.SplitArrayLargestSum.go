@@ -1,4 +1,4 @@
-package _410_Split_Array_Largest_Sum
+package leetcode
 
 func splitArray(nums []int, m int) int {
 	l, r := nums[0], nums[0]

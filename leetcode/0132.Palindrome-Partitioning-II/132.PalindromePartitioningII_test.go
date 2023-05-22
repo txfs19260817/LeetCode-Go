@@ -1,4 +1,4 @@
-package _132_Palindrome_Partitioning_II
+package leetcode
 
 import "testing"
 

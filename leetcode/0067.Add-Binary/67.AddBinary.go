@@ -1,4 +1,4 @@
-package _067_Add_Binary
+package leetcode
 
 func addBinary(a string, b string) string {
 	var ans []byte

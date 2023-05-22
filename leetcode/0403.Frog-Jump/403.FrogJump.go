@@ -1,4 +1,4 @@
-package _403_Frog_Jump
+package leetcode
 
 type pair struct {
 	unit, k int

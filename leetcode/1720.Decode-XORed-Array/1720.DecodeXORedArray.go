@@ -1,4 +1,4 @@
-package _720_Decode_XORed_Array
+package leetcode
 
 func decode(encoded []int, first int) []int {
 	ans := make([]int, len(encoded)+1)

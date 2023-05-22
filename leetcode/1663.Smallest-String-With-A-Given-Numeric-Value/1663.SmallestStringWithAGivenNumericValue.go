@@ -1,4 +1,4 @@
-package _663_Smallest_String_With_A_Given_Numeric_Value
+package leetcode
 
 func getSmallestString(n int, k int) string {
 	ans := make([]byte, n)

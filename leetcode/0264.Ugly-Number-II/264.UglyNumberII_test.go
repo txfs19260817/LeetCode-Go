@@ -1,4 +1,4 @@
-package _264_Ugly_Number_II
+package leetcode
 
 import "testing"
 

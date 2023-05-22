@@ -1,4 +1,4 @@
-package _000_Reverse_Prefix_of_Word
+package leetcode
 
 import "testing"
 

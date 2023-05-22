@@ -1,4 +1,4 @@
-package _633_Sum_of_Square_Numbers
+package leetcode
 
 func judgeSquareSum(c int) bool {
 	m := map[int]bool{}

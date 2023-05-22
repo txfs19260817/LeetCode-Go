@@ -1,4 +1,4 @@
-package _559_Detect_Cycles_in_2D_Grid
+package leetcode
 
 type unionFind struct {
 	parent, rank []int

@@ -1,4 +1,4 @@
-package _352_Data_Stream_as_Disjoint_Intervals
+package leetcode
 
 type SummaryRanges struct {
 	intervals [][]int

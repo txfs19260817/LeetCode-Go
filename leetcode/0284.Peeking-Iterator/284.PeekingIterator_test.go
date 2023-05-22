@@ -1,4 +1,4 @@
-package _284_Peeking_Iterator
+package leetcode
 
 import (
 	"github.com/stretchr/testify/assert"

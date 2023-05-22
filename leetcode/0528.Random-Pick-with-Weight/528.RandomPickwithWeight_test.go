@@ -1,4 +1,4 @@
-package _528_Random_Pick_with_Weight
+package leetcode
 
 import (
 	"testing"

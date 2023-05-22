@@ -1,4 +1,4 @@
-package _923_3Sum_With_Multiplicity
+package leetcode
 
 import "sort"
 

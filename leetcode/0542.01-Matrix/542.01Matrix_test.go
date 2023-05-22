@@ -1,4 +1,4 @@
-package _542_01_Matrix
+package leetcode
 
 import (
 	"reflect"

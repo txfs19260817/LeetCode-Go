@@ -1,4 +1,4 @@
-package _029_Two_City_Scheduling
+package leetcode
 
 import "sort"
 

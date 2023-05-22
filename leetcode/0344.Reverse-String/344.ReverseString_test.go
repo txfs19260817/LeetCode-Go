@@ -1,4 +1,4 @@
-package _344_Reverse_String
+package leetcode
 
 import (
 	"reflect"

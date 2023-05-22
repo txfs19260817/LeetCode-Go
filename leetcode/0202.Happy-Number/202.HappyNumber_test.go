@@ -1,4 +1,4 @@
-package _202_Happy_Number
+package leetcode
 
 import "testing"
 

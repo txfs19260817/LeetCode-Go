@@ -1,4 +1,4 @@
-package _019_Next_Greater_Node_In_Linked_List
+package leetcode
 
 type ListNode struct {
 	Val  int

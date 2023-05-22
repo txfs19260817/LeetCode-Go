@@ -1,4 +1,4 @@
-package _335_Self_Crossing
+package leetcode
 
 func isSelfCrossing(distance []int) bool {
 	for i := 3; i < len(distance); i++ {

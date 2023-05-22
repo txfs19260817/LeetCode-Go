@@ -1,4 +1,4 @@
-package _850_Rectangle_Area_II
+package leetcode
 
 func rectangleArea(rectangles [][]int) int {
 	ans, m := 0, int(1e9+7)

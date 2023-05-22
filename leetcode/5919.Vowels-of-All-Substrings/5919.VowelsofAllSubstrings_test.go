@@ -1,4 +1,4 @@
-package _919_Vowels_of_All_Substrings
+package leetcode
 
 import "testing"
 

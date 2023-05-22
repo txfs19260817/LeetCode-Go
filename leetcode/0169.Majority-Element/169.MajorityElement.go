@@ -1,4 +1,4 @@
-package _169_Majority_Element
+package leetcode
 
 func majorityElement(nums []int) int {
 	var major, count int

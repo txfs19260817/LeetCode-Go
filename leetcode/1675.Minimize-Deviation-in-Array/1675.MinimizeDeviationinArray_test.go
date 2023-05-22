@@ -1,4 +1,4 @@
-package _675_Minimize_Deviation_in_Array
+package leetcode
 
 import "testing"
 

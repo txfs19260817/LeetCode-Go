@@ -1,4 +1,4 @@
-package _919_Vowels_of_All_Substrings
+package leetcode
 
 func countVowels(word string) int64 {
 	var ans int64

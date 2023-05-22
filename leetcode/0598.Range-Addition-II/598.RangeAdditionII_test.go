@@ -1,4 +1,4 @@
-package _598_Range_Addition_II
+package leetcode
 
 import "testing"
 

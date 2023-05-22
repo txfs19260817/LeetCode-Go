@@ -1,4 +1,4 @@
-package _978_Longest_Turbulent_Subarray
+package leetcode
 
 func maxTurbulenceSize(arr []int) int {
 	ans, start, intCmp := 1, 0, func(i, j int) int {

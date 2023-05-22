@@ -1,4 +1,4 @@
-package _207_Course_Schedule
+package leetcode
 
 import "testing"
 

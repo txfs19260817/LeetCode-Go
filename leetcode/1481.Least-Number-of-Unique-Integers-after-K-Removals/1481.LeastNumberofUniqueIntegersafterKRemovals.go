@@ -1,4 +1,4 @@
-package _481_Least_Number_of_Unique_Integers_after_K_Removals
+package leetcode
 
 import "sort"
 

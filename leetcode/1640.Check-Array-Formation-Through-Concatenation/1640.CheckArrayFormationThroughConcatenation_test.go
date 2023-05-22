@@ -1,4 +1,4 @@
-package _640_Check_Array_Formation_Through_Concatenation
+package leetcode
 
 import "testing"
 

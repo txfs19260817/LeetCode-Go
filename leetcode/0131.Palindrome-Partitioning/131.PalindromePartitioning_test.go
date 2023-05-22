@@ -1,4 +1,4 @@
-package _131_Palindrome_Partitioning
+package leetcode
 
 import (
 	"reflect"

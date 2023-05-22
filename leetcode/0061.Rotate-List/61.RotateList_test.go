@@ -1,4 +1,4 @@
-package _061_Rotate_List
+package leetcode
 
 import (
 	"reflect"

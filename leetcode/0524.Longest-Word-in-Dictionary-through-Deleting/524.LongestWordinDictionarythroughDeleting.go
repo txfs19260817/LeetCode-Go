@@ -1,4 +1,4 @@
-package _524_Longest_Word_in_Dictionary_through_Deleting
+package leetcode
 
 func findLongestWord(s string, d []string) string {
 	var ans string

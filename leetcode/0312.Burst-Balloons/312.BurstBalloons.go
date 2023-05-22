@@ -1,4 +1,4 @@
-package _312_Burst_Balloons
+package leetcode
 
 func maxCoins(nums []int) int {
 	nums = append(append([]int{1}, nums...), 1)

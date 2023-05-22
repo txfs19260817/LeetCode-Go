@@ -1,4 +1,4 @@
-package _100_Same_Tree
+package leetcode
 
 type TreeNode struct {
 	Val   int

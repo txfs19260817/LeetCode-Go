@@ -1,4 +1,4 @@
-package _977_Squares_of_a_Sorted_Array
+package leetcode
 
 func sortedSquares(nums []int) []int {
 	ans := make([]int, len(nums))

@@ -1,4 +1,4 @@
-package _037_Sudoku_Solver
+package leetcode
 
 type position struct {
 	x, y int

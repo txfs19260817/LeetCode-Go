@@ -1,4 +1,4 @@
-package _980_Find_Unique_Binary_String
+package leetcode
 
 import (
 	"testing"

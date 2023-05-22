@@ -1,4 +1,4 @@
-package _021_Merge_Two_Sorted_Lists
+package leetcode
 
 import (
 	"reflect"

@@ -1,4 +1,4 @@
-package _353_Maximum_Number_of_Events_That_Can_Be_Attended
+package leetcode
 
 import "testing"
 

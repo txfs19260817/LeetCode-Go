@@ -1,4 +1,4 @@
-package _044_Wildcard_Matching
+package leetcode
 
 import "fmt"
 
@@ -27,7 +27,7 @@ func isMatch(s string, p string) bool {
 			if p[j] == '*' {
 				ans = dp(i, j+1) || dp(i+1, j)
 			} else {
-				ans = false // 发现不匹配
+				ans = false // found no match
 			}
 		}
 		m[key] = ans

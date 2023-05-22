@@ -1,4 +1,4 @@
-package _260_Single_Number_III
+package leetcode
 
 import (
 	"github.com/stretchr/testify/assert"

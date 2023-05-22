@@ -1,4 +1,4 @@
-package _070_Climbing_Stairs
+package leetcode
 
 import "testing"
 

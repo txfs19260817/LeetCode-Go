@@ -1,4 +1,4 @@
-package _004_Max_Consecutive_Ones_III
+package leetcode
 
 import "testing"
 

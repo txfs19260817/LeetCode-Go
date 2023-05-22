@@ -1,4 +1,4 @@
-package _992_Subarrays_with_K_Different_Integers
+package leetcode
 
 import "testing"
 

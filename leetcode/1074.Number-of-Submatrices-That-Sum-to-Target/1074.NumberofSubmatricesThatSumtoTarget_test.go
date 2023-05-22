@@ -1,4 +1,4 @@
-package _074_Number_of_Submatrices_That_Sum_to_Target
+package leetcode
 
 import "testing"
 

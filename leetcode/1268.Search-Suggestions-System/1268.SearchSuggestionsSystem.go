@@ -1,4 +1,4 @@
-package _268_Search_Suggestions_System
+package leetcode
 
 import "container/heap"
 

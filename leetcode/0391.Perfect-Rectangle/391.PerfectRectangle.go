@@ -1,4 +1,4 @@
-package _391_Perfect_Rectangle
+package leetcode
 
 func isRectangleCover(rectangles [][]int) bool {
 	point2cnt := map[[2]int]int{}

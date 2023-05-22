@@ -1,4 +1,4 @@
-package _394_Decode_String
+package leetcode
 
 import "testing"
 

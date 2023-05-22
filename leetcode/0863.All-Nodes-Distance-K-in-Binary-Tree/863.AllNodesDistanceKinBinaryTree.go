@@ -1,4 +1,4 @@
-package _863_All_Nodes_Distance_K_in_Binary_Tree
+package leetcode
 
 type TreeNode struct {
 	Val   int

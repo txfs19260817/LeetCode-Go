@@ -1,4 +1,4 @@
-package _042_Trapping_Rain_Water
+package leetcode
 
 func trap(height []int) int {
 	var res, mLeftHeight, mRightHeight int

@@ -1,4 +1,4 @@
-package _696_Count_Binary_Substrings
+package leetcode
 
 func countBinarySubstrings(s string) int {
 	ans, prev, cur := 0, 0, 1

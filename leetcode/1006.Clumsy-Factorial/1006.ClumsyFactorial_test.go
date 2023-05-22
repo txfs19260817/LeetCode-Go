@@ -1,4 +1,4 @@
-package _006_Clumsy_Factorial
+package leetcode
 
 import "testing"
 

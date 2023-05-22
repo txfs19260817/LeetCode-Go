@@ -1,4 +1,4 @@
-package _869_Reordered_Power_of_2
+package leetcode
 
 import "testing"
 

@@ -1,4 +1,4 @@
-package _708_Insert_into_a_Sorted_Circular_Linked_List
+package leetcode
 
 type Node struct {
 	Val  int

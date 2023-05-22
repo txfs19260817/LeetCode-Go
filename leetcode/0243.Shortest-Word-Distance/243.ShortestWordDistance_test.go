@@ -1,4 +1,4 @@
-package _243_Shortest_Word_Distance
+package leetcode
 
 import "testing"
 

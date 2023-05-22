@@ -1,4 +1,4 @@
-package _456_132_Pattern
+package leetcode
 
 import "testing"
 

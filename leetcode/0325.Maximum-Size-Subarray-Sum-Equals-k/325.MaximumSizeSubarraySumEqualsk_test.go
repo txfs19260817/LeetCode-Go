@@ -1,4 +1,4 @@
-package _325_Maximum_Size_Subarray_Sum_Equals_k
+package leetcode
 
 import "testing"
 

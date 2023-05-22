@@ -1,4 +1,4 @@
-package _575_Distribute_Candies
+package leetcode
 
 import "testing"
 

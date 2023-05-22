@@ -1,4 +1,4 @@
-package _560_Subarray_Sum_Equals_K
+package leetcode
 
 import "testing"
 

@@ -1,4 +1,4 @@
-package _897_Increasing_Order_Search_Tree
+package leetcode
 
 type TreeNode struct {
 	Val   int

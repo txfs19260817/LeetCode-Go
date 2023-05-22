@@ -1,4 +1,4 @@
-package _026_Remove_Duplicates_from_Sorted_Array
+package leetcode
 
 func removeDuplicates(nums []int) int {
 	process := func(k int) int {

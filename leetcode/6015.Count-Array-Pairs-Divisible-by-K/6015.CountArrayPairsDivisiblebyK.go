@@ -1,4 +1,4 @@
-package _015_Count_Array_Pairs_Divisible_by_K
+package leetcode
 
 func coutPairs(nums []int, k int) int64 {
 	ans, cnt := int64(0), make([]int, len(nums))

@@ -1,4 +1,4 @@
-package _129_Sum_Root_to_Leaf_Numbers
+package leetcode
 
 type TreeNode struct {
 	Val   int

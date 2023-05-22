@@ -1,4 +1,4 @@
-package _042_Trapping_Rain_Water
+package leetcode
 
 import "testing"
 

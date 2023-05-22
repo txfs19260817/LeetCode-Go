@@ -1,4 +1,4 @@
-package _799_Champagne_Tower
+package leetcode
 
 import "testing"
 

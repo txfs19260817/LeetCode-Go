@@ -1,4 +1,4 @@
-package _341_Flatten_Nested_List_Iterator
+package leetcode
 
 // NestedInteger This is the interface that allows for creating nested lists.
 // You should not implement it, or speculate about its implementation

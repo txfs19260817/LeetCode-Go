@@ -1,4 +1,4 @@
-package _004_Count_Operations_to_Obtain_Zero
+package leetcode
 
 import "testing"
 

@@ -1,4 +1,4 @@
-package _664_Strange_Printer
+package leetcode
 
 func strangePrinter(s string) int {
 	dp := make([][]int, len(s))

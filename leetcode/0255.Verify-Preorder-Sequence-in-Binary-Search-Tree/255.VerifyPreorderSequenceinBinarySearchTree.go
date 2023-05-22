@@ -1,4 +1,4 @@
-package _255_Verify_Preorder_Sequence_in_Binary_Search_Tree
+package leetcode
 
 func verifyPreorder(preorder []int) bool {
 	if len(preorder) < 2 {

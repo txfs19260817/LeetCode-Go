@@ -1,4 +1,4 @@
-package _231_Power_of_Two
+package leetcode
 
 func isPowerOfTwo(n int) bool {
 	if n <= 0 {

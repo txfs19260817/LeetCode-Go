@@ -1,4 +1,4 @@
-package _567_Maximum_Length_of_Subarray_With_Positive_Product
+package leetcode
 
 import "testing"
 

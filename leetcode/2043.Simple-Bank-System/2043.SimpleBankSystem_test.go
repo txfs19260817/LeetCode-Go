@@ -1,4 +1,4 @@
-package _043_Simple_Bank_System
+package leetcode
 
 import (
 	"github.com/stretchr/testify/assert"

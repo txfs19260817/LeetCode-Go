@@ -1,4 +1,4 @@
-package _494_Parallel_Courses_II
+package leetcode
 
 import "testing"
 

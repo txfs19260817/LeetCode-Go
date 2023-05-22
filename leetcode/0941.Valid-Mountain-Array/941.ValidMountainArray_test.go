@@ -1,4 +1,4 @@
-package _941_Valid_Mountain_Array
+package leetcode
 
 import "testing"
 

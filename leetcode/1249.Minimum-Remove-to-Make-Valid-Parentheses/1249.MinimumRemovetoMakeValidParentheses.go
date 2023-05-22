@@ -1,4 +1,4 @@
-package _249_Minimum_Remove_to_Make_Valid_Parentheses
+package leetcode
 
 func minRemoveToMakeValid(s string) string {
 	chars, balance, left := make([]rune, 0, len(s)), 0, 0

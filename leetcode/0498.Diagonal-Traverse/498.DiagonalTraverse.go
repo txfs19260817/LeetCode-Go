@@ -1,4 +1,4 @@
-package _498_Diagonal_Traverse
+package leetcode
 
 func findDiagonalOrder(mat [][]int) []int {
 	ans := make([]int, 0, len(mat)*len(mat[0]))

@@ -1,4 +1,4 @@
-package _638_Shopping_Offers
+package leetcode
 
 func shoppingOffers(price []int, special [][]int, needs []int) int {
 	var cost int

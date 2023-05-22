@@ -1,4 +1,4 @@
-package _957_Adding_Spaces_to_a_String
+package leetcode
 
 import "testing"
 

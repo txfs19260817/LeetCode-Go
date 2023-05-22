@@ -1,4 +1,4 @@
-package _249_Group_Shifted_Strings
+package leetcode
 
 import (
 	"github.com/stretchr/testify/assert"

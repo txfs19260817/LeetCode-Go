@@ -1,4 +1,4 @@
-package _570_Dot_Product_of_Two_Sparse_Vectors
+package leetcode
 
 type SparseVector struct {
 	i2v map[int]int

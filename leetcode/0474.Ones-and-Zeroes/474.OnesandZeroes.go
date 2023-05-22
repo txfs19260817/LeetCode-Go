@@ -1,4 +1,4 @@
-package _474_Ones_and_Zeroes
+package leetcode
 
 func findMaxForm(strs []string, m int, n int) int {
 	dp := make([][]int, m+1)

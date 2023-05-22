@@ -1,4 +1,4 @@
-package _904_Fruit_Into_Baskets
+package leetcode
 
 func totalFruit(tree []int) int {
 	ans, baskets := 0, map[int]int{} // type:num

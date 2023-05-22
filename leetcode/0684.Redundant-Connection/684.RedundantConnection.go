@@ -1,4 +1,4 @@
-package _684_Redundant_Connection
+package leetcode
 
 type UnionFind struct {
 	parent, rank []int

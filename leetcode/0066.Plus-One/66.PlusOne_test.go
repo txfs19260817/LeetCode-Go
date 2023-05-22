@@ -1,4 +1,4 @@
-package _066_Plus_One
+package leetcode
 
 import (
 	"reflect"

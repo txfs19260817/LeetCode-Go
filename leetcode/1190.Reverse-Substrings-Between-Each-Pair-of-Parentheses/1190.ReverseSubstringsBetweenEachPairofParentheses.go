@@ -1,4 +1,4 @@
-package _190_Reverse_Substrings_Between_Each_Pair_of_Parentheses
+package leetcode
 
 func reverseParentheses(s string) string {
 	pair, stack, ans := make([]int, len(s)), make([]int, 0, len(s)), make([]byte, 0, len(s))

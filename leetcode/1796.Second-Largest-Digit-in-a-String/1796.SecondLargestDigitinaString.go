@@ -1,4 +1,4 @@
-package _796_Second_Largest_Digit_in_a_String
+package leetcode
 
 func secondHighest(s string) int {
 	first, second := -1, -1

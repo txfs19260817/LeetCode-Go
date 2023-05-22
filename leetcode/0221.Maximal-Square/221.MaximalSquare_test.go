@@ -1,4 +1,4 @@
-package _221_Maximal_Square
+package leetcode
 
 import "testing"
 

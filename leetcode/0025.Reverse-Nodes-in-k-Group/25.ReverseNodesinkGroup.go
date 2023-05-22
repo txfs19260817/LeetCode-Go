@@ -1,4 +1,4 @@
-package _025_Reverse_Nodes_in_k_Group
+package leetcode
 
 type ListNode struct {
 	Val  int

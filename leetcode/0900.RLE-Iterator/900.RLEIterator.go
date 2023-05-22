@@ -1,4 +1,4 @@
-package _900_RLE_Iterator
+package leetcode
 
 type RLEIterator struct {
 	encoding   []int

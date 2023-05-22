@@ -1,4 +1,4 @@
-package _171_Remove_Zero_Sum_Consecutive_Nodes_from_Linked_List
+package leetcode
 
 type ListNode struct {
 	Val  int

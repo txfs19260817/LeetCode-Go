@@ -1,4 +1,4 @@
-package _143_Longest_Common_Subsequence
+package leetcode
 
 func longestCommonSubsequence(text1 string, text2 string) int {
 	dp := make([][]int, len(text1)+1)

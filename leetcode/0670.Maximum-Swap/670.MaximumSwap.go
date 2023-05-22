@@ -1,4 +1,4 @@
-package _670_Maximum_Swap
+package leetcode
 
 import "strconv"
 

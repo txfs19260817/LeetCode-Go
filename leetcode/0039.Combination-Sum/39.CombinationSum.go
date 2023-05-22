@@ -1,4 +1,4 @@
-package _039_Combination_Sum
+package leetcode
 
 import "sort"
 

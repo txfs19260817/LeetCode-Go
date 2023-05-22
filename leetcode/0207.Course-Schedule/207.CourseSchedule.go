@@ -1,4 +1,4 @@
-package _207_Course_Schedule
+package leetcode
 
 func canFinish(numCourses int, prerequisites [][]int) bool {
 	g := make([][]int, numCourses)

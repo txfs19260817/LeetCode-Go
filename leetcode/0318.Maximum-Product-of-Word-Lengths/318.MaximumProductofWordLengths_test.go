@@ -1,4 +1,4 @@
-package _318_Maximum_Product_of_Word_Lengths
+package leetcode
 
 import "testing"
 

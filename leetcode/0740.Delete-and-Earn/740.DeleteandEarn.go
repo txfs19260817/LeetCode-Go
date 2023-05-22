@@ -1,4 +1,4 @@
-package _740_Delete_and_Earn
+package leetcode
 
 func deleteAndEarn(nums []int) int {
 	freq := make([]int, 10001)

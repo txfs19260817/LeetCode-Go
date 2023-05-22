@@ -1,4 +1,4 @@
-package _256_Paint_House
+package leetcode
 
 func minCost(costs [][]int) int {
 	pre := costs[len(costs)-1]

@@ -1,4 +1,4 @@
-package _576_Out_of_Boundary_Paths
+package leetcode
 
 import "testing"
 

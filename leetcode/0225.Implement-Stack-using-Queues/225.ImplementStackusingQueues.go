@@ -1,4 +1,4 @@
-package _225_Implement_Stack_using_Queues
+package leetcode
 
 type MyStack struct {
 	q []int

@@ -1,4 +1,4 @@
-package _067_Add_Binary
+package leetcode
 
 import "testing"
 

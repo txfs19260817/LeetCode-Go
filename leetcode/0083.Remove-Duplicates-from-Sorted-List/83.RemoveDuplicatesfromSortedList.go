@@ -1,4 +1,4 @@
-package _083_Remove_Duplicates_from_Sorted_List
+package leetcode
 
 type ListNode struct {
 	Val  int

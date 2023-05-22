@@ -1,4 +1,4 @@
-package _041_First_Missing_Positive
+package leetcode
 
 func firstMissingPositive(nums []int) int {
 	for i := range nums {

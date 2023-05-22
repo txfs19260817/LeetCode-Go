@@ -1,4 +1,4 @@
-package _045_Jump_Game_II
+package leetcode
 
 import "testing"
 

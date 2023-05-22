@@ -1,4 +1,4 @@
-package _525_Contiguous_Array
+package leetcode
 
 func findMaxLength(nums []int) int {
 	ans, count, cnt2idx := 0, 0, map[int]int{0: -1}

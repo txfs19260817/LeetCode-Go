@@ -1,4 +1,4 @@
-package _205_Isomorphic_Strings
+package leetcode
 
 func isIsomorphic(s string, t string) bool {
 	s2t, t2s := map[byte]byte{}, map[byte]byte{}

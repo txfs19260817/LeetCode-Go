@@ -1,4 +1,4 @@
-package _986_Interval_List_Intersections
+package leetcode
 
 func intervalIntersection(firstList [][]int, secondList [][]int) [][]int {
 	var res [][]int

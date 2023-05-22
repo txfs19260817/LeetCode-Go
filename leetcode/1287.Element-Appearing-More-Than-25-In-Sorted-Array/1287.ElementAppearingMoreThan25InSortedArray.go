@@ -1,4 +1,4 @@
-package _287_Element_Appearing_More_Than_25_In_Sorted_Array
+package leetcode
 
 func findSpecialInteger(arr []int) int {
 	// If a value occurrs more than 25% of the time in a sorted array, then it must be on at least one of these three positions.

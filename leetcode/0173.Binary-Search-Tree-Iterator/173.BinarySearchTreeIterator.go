@@ -1,4 +1,4 @@
-package _173_Binary_Search_Tree_Iterator
+package leetcode
 
 type TreeNode struct {
 	Val   int

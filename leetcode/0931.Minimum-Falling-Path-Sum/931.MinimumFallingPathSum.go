@@ -1,4 +1,4 @@
-package _931_Minimum_Falling_Path_Sum
+package leetcode
 
 func minFallingPathSum(matrix [][]int) int {
 	for i := 1; i < len(matrix); i++ {

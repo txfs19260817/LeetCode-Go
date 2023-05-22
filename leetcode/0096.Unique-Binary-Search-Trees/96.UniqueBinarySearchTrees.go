@@ -1,4 +1,4 @@
-package _096_Unique_Binary_Search_Trees
+package leetcode
 
 func numTrees(n int) int {
 	dp := make([]int, n+1)

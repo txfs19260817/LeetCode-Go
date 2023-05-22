@@ -1,4 +1,4 @@
-package _953_Verifying_an_Alien_Dictionary
+package leetcode
 
 func isAlienSorted(words []string, order string) bool {
 	dict := map[byte]int{}

@@ -1,4 +1,4 @@
-package _089_Gray_Code
+package leetcode
 
 func grayCode(n int) []int {
 	ans := make([]int, 0, 1<<n)

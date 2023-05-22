@@ -1,4 +1,4 @@
-package _650_Lowest_Common_Ancestor_of_a_Binary_Tree_III
+package leetcode
 
 type Node struct {
 	Val    int

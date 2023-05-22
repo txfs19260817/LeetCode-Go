@@ -1,4 +1,4 @@
-package _516_Longest_Palindromic_Subsequence
+package leetcode
 
 import "testing"
 

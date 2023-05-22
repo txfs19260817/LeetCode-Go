@@ -1,4 +1,4 @@
-package _956_Find_First_Palindromic_String_in_the_Array
+package leetcode
 
 func firstPalindrome(words []string) string {
 	ans, isPalindrome := "", func(s string) bool {

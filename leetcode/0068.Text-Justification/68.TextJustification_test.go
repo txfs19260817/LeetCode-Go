@@ -1,4 +1,4 @@
-package _068_Text_Justification
+package leetcode
 
 import (
 	"github.com/stretchr/testify/assert"

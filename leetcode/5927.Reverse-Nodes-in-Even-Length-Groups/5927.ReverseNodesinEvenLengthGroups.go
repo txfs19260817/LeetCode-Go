@@ -1,4 +1,4 @@
-package _927_Reverse_Nodes_in_Even_Length_Groups
+package leetcode
 
 type ListNode struct {
 	Val  int
@@ -14,14 +14,14 @@ func reverseEvenLengthGroups(head *ListNode) *ListNode {
 			preRear = rear
 			rear = rear.Next
 		}
-		if steps%2 == 0&&steps!=0 {
+		if steps%2 == 0 && steps != 0 {
 			preRear.Next = nil
 			newhead, newtail := reverse(front)
 			tail.Next = newhead
 			newtail.Next = rear
 			preRear = newtail
 		}
-		front,tail=rear, preRear
+		front, tail = rear, preRear
 	}
 	return head
 }

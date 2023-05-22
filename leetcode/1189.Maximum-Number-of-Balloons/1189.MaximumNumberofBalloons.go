@@ -1,4 +1,4 @@
-package _189_Maximum_Number_of_Balloons
+package leetcode
 
 func maxNumberOfBalloons(text string) int {
 	m := map[rune]int{}

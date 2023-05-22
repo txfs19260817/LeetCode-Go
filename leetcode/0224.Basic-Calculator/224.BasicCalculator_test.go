@@ -1,4 +1,4 @@
-package _224_Basic_Calculator
+package leetcode
 
 import "testing"
 

@@ -1,4 +1,4 @@
-package _658_Minimum_Operations_to_Reduce_X_to_Zero
+package leetcode
 
 func minOperations(nums []int, x int) int {
 	whole := 0

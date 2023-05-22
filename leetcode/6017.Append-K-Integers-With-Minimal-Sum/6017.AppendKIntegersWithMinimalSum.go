@@ -1,4 +1,4 @@
-package _017_Append_K_Integers_With_Minimal_Sum
+package leetcode
 
 import "sort"
 

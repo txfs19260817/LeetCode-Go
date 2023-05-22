@@ -1,4 +1,4 @@
-package _376_Time_Needed_to_Inform_All_Employees
+package leetcode
 
 type node struct {
 	id, time int

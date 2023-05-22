@@ -1,4 +1,4 @@
-package _152_Analyze_User_Website_Visit_Pattern
+package leetcode
 
 import "sort"
 

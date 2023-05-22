@@ -1,4 +1,4 @@
-package _554_Brick_Wall
+package leetcode
 
 func leastBricks(wall [][]int) int {
 	pos2edges := map[int]int{}

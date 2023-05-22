@@ -1,4 +1,4 @@
-package _876_Middle_of_the_Linked_List
+package leetcode
 
 type ListNode struct {
 	Val  int

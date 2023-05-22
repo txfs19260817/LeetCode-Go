@@ -1,4 +1,4 @@
-package _817_Linked_List_Components
+package leetcode
 
 type ListNode struct {
 	Val  int

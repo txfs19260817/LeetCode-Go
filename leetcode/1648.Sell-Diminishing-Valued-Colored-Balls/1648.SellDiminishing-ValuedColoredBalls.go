@@ -1,4 +1,4 @@
-package _648_Sell_Diminishing_Valued_Colored_Balls
+package leetcode
 
 import "container/heap"
 

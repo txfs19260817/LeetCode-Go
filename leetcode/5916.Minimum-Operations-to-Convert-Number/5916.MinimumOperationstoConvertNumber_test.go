@@ -1,4 +1,4 @@
-package _916_Minimum_Operations_to_Convert_Number
+package leetcode
 
 import "testing"
 

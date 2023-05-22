@@ -1,4 +1,4 @@
-package _029_Divide_Two_Integers
+package leetcode
 
 import "testing"
 

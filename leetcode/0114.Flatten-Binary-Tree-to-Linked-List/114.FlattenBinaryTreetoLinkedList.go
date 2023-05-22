@@ -1,4 +1,4 @@
-package _114_Flatten_Binary_Tree_to_Linked_List
+package leetcode
 
 type TreeNode struct {
 	Val   int

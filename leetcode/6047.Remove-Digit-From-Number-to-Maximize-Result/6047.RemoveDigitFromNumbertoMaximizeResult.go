@@ -1,4 +1,4 @@
-package _047_Remove_Digit_From_Number_to_Maximize_Result
+package leetcode
 
 func removeDigit(number string, digit byte) string {
 	var ans string

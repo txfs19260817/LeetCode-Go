@@ -1,4 +1,4 @@
-package _055_Minimum_Number_of_Operations_to_Convert_Time
+package leetcode
 
 import "testing"
 

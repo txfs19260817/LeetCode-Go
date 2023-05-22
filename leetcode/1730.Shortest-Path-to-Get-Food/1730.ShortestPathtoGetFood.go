@@ -1,4 +1,4 @@
-package _730_Shortest_Path_to_Get_Food
+package leetcode
 
 func getFood(grid [][]byte) int {
 	dir := [4][2]int{{0, 1}, {1, 0}, {0, -1}, {-1, 0}}

@@ -1,4 +1,4 @@
-package _891_Cutting_Ribbons
+package leetcode
 
 import "testing"
 

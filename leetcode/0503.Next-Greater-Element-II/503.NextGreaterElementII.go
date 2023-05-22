@@ -1,4 +1,4 @@
-package _503_Next_Greater_Element_II
+package leetcode
 
 func nextGreaterElements(nums []int) []int {
 	type ele struct {

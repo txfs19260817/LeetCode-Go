@@ -1,4 +1,4 @@
-package _053_Maximum_Subarray
+package leetcode
 
 func maxSubArray(nums []int) int {
 	ans, cur := nums[0], nums[0]

@@ -1,4 +1,4 @@
-package _245_Shortest_Word_Distance_III
+package leetcode
 
 func shortestWordDistance(wordsDict []string, word1 string, word2 string) int {
 	ans, p1, p2 := 1<<31, -1, -1

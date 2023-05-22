@@ -1,4 +1,4 @@
-package _047_Remove_All_Adjacent_Duplicates_In_String
+package leetcode
 
 import "testing"
 

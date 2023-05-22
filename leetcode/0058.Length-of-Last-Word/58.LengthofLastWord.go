@@ -1,4 +1,4 @@
-package _058_Length_of_Last_Word
+package leetcode
 
 func lengthOfLastWord(s string) int {
 	var l, r int

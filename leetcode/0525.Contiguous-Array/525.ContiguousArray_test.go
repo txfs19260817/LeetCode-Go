@@ -1,4 +1,4 @@
-package _525_Contiguous_Array
+package leetcode
 
 import "testing"
 

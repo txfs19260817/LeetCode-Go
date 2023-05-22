@@ -1,4 +1,4 @@
-package _204_Count_Primes
+package leetcode
 
 import "testing"
 

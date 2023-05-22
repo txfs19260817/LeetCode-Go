@@ -1,4 +1,4 @@
-package _299_Bulls_and_Cows
+package leetcode
 
 import "testing"
 

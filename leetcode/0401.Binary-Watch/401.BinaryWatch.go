@@ -1,4 +1,4 @@
-package _401_Binary_Watch
+package leetcode
 
 import "strconv"
 

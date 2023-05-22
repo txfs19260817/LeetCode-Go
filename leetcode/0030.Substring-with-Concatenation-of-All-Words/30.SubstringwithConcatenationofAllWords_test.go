@@ -1,4 +1,4 @@
-package _030_Substring_with_Concatenation_of_All_Words
+package leetcode
 
 import (
 	"reflect"

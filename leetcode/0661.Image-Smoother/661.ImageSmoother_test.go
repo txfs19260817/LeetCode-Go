@@ -1,4 +1,4 @@
-package _661_Image_Smoother
+package leetcode
 
 import (
 	"reflect"

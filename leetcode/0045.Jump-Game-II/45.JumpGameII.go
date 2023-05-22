@@ -1,4 +1,4 @@
-package _045_Jump_Game_II
+package leetcode
 
 func jump(nums []int) int {
 	var ans, pivot, maxFar int

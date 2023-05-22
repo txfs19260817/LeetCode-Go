@@ -1,4 +1,4 @@
-package _092_Replace_Elements_in_an_Array
+package leetcode
 
 import (
 	"reflect"

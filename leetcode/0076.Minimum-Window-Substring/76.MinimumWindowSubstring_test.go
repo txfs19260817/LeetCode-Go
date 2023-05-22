@@ -1,4 +1,4 @@
-package _076_Minimum_Window_Substring
+package leetcode
 
 import (
 	"fmt"

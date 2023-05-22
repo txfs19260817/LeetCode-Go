@@ -1,4 +1,4 @@
-package _695_Maximum_Erasure_Value
+package leetcode
 
 import "testing"
 

@@ -1,4 +1,4 @@
-package _810_Chalkboard_XOR_Game
+package leetcode
 
 import "testing"
 

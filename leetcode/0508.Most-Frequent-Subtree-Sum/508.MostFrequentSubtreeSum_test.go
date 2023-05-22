@@ -1,4 +1,4 @@
-package _508_Most_Frequent_Subtree_Sum
+package leetcode
 
 import (
 	"testing"

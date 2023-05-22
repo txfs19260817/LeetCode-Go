@@ -1,4 +1,4 @@
-package _150_Find_All_Lonely_Numbers_in_the_Array
+package leetcode
 
 import (
 	"reflect"

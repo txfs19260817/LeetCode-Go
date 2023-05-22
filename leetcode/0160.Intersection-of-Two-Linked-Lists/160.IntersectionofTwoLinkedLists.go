@@ -1,4 +1,4 @@
-package _160_Intersection_of_Two_Linked_Lists
+package leetcode
 
 type ListNode struct {
 	Val  int

@@ -1,4 +1,4 @@
-package _734_Decode_XORed_Permutation
+package leetcode
 
 func decode(encoded []int) []int {
 	var total, odd int

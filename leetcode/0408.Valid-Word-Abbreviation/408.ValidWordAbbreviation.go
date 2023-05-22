@@ -1,4 +1,4 @@
-package _408_Valid_Word_Abbreviation
+package leetcode
 
 func validWordAbbreviation(word string, abbr string) bool {
 	var i, j int

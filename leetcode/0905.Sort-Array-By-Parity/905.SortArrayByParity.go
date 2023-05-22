@@ -1,4 +1,4 @@
-package _905_Sort_Array_By_Parity
+package leetcode
 
 import "sort"
 

@@ -1,4 +1,4 @@
-package _482_Minimum_Number_of_Days_to_Make_m_Bouquets
+package leetcode
 
 func minDays(bloomDay []int, m int, k int) int {
 	start, end := minmaxInSlice(bloomDay)

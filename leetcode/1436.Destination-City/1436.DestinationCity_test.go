@@ -1,4 +1,4 @@
-package _436_Destination_City
+package leetcode
 
 import "testing"
 

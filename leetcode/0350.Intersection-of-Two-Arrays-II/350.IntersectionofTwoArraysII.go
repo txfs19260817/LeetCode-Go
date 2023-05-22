@@ -1,4 +1,4 @@
-package _350_Intersection_of_Two_Arrays_II
+package leetcode
 
 func intersect(nums1 []int, nums2 []int) []int {
 	m := map[int]int{}

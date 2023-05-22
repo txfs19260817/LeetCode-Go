@@ -1,4 +1,4 @@
-package _130_Minimum_Cost_Tree_From_Leaf_Values
+package leetcode
 
 import "testing"
 

@@ -1,4 +1,4 @@
-package _841_Keys_and_Rooms
+package leetcode
 
 func canVisitAllRooms(rooms [][]int) bool {
 	visited := make([]bool, len(rooms))

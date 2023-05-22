@@ -1,4 +1,4 @@
-package _337_The_K_Weakest_Rows_in_a_Matrix
+package leetcode
 
 import (
 	"sort"

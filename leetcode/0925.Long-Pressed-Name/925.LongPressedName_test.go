@@ -1,4 +1,4 @@
-package _925_Long_Pressed_Name
+package leetcode
 
 import "testing"
 

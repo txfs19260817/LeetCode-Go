@@ -1,4 +1,4 @@
-package _721_Swapping_Nodes_in_a_Linked_List
+package leetcode
 
 type ListNode struct {
 	Val  int

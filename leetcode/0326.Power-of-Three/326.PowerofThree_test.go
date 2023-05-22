@@ -1,4 +1,4 @@
-package _326_Power_of_Three
+package leetcode
 
 import "testing"
 

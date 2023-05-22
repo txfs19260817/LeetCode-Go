@@ -1,4 +1,4 @@
-package _178_Number_of_Valid_Words_for_Each_Puzzle
+package leetcode
 
 import (
 	"reflect"

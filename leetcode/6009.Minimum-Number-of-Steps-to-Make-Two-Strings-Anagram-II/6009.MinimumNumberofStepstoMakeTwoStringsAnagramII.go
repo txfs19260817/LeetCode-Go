@@ -1,4 +1,4 @@
-package _009_Minimum_Number_of_Steps_to_Make_Two_Strings_Anagram_II
+package leetcode
 
 func minSteps(s string, t string) int {
 	ans, m := 0, map[rune]int{}

@@ -1,4 +1,4 @@
-package _302_Encrypt_and_Decrypt_Strings
+package leetcode
 
 import (
 	"github.com/stretchr/testify/assert"

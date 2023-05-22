@@ -1,4 +1,4 @@
-package _545_Boundary_of_Binary_Tree
+package leetcode
 
 type TreeNode struct {
 	Val   int

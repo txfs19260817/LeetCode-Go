@@ -1,4 +1,4 @@
-package _922_Sort_Array_By_Parity_II
+package leetcode
 
 func sortArrayByParityII(nums []int) []int {
 	for i, j := 0, 1; i < len(nums) && j < len(nums); {

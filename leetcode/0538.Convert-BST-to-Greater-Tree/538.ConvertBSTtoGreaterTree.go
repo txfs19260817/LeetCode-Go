@@ -1,4 +1,4 @@
-package _538_Convert_BST_to_Greater_Tree
+package leetcode
 
 type TreeNode struct {
 	Val   int

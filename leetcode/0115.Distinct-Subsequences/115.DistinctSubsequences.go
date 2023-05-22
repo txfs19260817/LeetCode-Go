@@ -1,4 +1,4 @@
-package _115_Distinct_Subsequences
+package leetcode
 
 func numDistinct(s string, t string) int {
 	ans, dp := 0, make([]int, len(s)) // dp[j] = the num of s[:j] occurs sub t[:i]

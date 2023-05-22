@@ -1,4 +1,4 @@
-package _072_Edit_Distance
+package leetcode
 
 func minDistance(word1 string, word2 string) int {
 	dp := make([][]int, len(word1)+1)

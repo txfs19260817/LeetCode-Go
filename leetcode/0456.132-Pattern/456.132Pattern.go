@@ -1,4 +1,4 @@
-package _456_132_Pattern
+package leetcode
 
 func find132pattern(nums []int) bool {
 	if len(nums) < 3 {

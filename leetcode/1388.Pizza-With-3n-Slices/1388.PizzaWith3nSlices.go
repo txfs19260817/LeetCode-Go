@@ -1,4 +1,4 @@
-package _388_Pizza_With_3n_Slices
+package leetcode
 
 func maxSizeSlices(slices []int) int {
 	return max(calc(slices[:len(slices)-1]), calc(slices[1:]))

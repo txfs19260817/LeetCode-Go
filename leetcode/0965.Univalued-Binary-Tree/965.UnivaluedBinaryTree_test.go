@@ -1,4 +1,4 @@
-package _965_Univalued_Binary_Tree
+package leetcode
 
 import "testing"
 

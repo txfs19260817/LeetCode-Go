@@ -1,4 +1,4 @@
-package _707_Design_Linked_List
+package leetcode
 
 import (
 	"fmt"

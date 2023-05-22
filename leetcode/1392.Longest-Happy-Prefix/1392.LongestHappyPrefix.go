@@ -1,4 +1,4 @@
-package _392_Longest_Happy_Prefix
+package leetcode
 
 func longestPrefix(s string) string {
 	h1, h2, length, mul, MOD := 0, 0, 0, 1, 1000000007

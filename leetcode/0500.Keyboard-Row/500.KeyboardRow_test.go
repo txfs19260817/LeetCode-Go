@@ -1,4 +1,4 @@
-package _500_Keyboard_Row
+package leetcode
 
 import (
 	"reflect"

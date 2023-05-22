@@ -1,4 +1,4 @@
-package _492_Construct_the_Rectangle
+package leetcode
 
 import "math"
 

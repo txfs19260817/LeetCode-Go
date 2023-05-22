@@ -1,4 +1,4 @@
-package _477_Total_Hamming_Distance
+package leetcode
 
 import "testing"
 

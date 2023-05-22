@@ -1,4 +1,4 @@
-package _345_Reverse_Vowels_of_a_String
+package leetcode
 
 func reverseVowels(s string) string {
 	chars := []byte(s)

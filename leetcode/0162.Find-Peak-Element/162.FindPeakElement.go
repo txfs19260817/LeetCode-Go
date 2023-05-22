@@ -1,4 +1,4 @@
-package _162_Find_Peak_Element
+package leetcode
 
 func findPeakElement(nums []int) int {
 	l, r := 0, len(nums)-1

@@ -1,4 +1,4 @@
-package _410_Split_Array_Largest_Sum
+package leetcode
 
 import "testing"
 

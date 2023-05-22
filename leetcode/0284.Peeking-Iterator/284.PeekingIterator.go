@@ -1,4 +1,4 @@
-package _284_Peeking_Iterator
+package leetcode
 
 // Iterator Below is the interface which is already defined for you.
 type Iterator struct {

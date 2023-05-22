@@ -1,4 +1,4 @@
-package _762_Buildings_With_an_Ocean_View
+package leetcode
 
 func findBuildings(heights []int) []int {
 	var idxStack []int

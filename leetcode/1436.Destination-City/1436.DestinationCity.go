@@ -1,4 +1,4 @@
-package _436_Destination_City
+package leetcode
 
 func destCity(paths [][]string) string {
 	ans, m := "", map[string]bool{}

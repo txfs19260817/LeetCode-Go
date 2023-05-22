@@ -1,4 +1,4 @@
-package _023_Merge_k_Sorted_Lists
+package leetcode
 
 type ListNode struct {
 	Val  int

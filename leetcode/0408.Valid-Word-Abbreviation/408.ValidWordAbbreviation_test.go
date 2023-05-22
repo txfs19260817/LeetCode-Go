@@ -1,4 +1,4 @@
-package _408_Valid_Word_Abbreviation
+package leetcode
 
 import "testing"
 

@@ -1,4 +1,4 @@
-package _547_Number_of_Provinces
+package leetcode
 
 import "testing"
 

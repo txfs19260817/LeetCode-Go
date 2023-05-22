@@ -1,4 +1,4 @@
-package _155_Min_Stack
+package leetcode
 
 import (
 	"testing"

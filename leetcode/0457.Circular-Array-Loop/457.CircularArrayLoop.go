@@ -1,4 +1,4 @@
-package _457_Circular_Array_Loop
+package leetcode
 
 func circularArrayLoop(nums []int) bool {
 	for i := 0; i < len(nums); i++ {

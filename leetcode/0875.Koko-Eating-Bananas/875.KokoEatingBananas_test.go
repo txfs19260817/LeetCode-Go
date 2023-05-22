@@ -1,4 +1,4 @@
-package _875_Koko_Eating_Bananas
+package leetcode
 
 import "testing"
 

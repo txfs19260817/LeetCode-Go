@@ -1,4 +1,4 @@
-package _215_Kth_Largest_Element_in_an_Array
+package leetcode
 
 func findKthLargest(nums []int, k int) int {
 	return qs(nums, 0, len(nums)-1, k-1)

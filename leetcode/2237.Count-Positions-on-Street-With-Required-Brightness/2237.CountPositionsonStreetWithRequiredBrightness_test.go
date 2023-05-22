@@ -1,4 +1,4 @@
-package _237_Count_Positions_on_Street_With_Required_Brightness
+package leetcode
 
 import "testing"
 

@@ -1,4 +1,4 @@
-package _451_Sort_Characters_By_Frequency
+package leetcode
 
 import (
 	"container/heap"

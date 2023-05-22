@@ -1,4 +1,4 @@
-package _080_Remove_Duplicates_from_Sorted_Array_II
+package leetcode
 
 import "testing"
 

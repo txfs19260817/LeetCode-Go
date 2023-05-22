@@ -1,4 +1,4 @@
-package _503_Next_Greater_Element_II
+package leetcode
 
 import (
 	"reflect"

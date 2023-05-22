@@ -1,4 +1,4 @@
-package _060_Check_if_an_Original_String_Exists_Given_Two_Encoded_Strings
+package leetcode
 
 import "testing"
 

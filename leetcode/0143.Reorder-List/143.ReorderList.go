@@ -1,4 +1,4 @@
-package _143_Reorder_List
+package leetcode
 
 type ListNode struct {
 	Val  int

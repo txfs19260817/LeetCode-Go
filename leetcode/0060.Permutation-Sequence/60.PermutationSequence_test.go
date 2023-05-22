@@ -1,4 +1,4 @@
-package _060_Permutation_Sequence
+package leetcode
 
 import "testing"
 

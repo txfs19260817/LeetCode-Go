@@ -1,4 +1,4 @@
-package _637_Average_of_Levels_in_Binary_Tree
+package leetcode
 
 type TreeNode struct {
 	Val   int

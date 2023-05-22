@@ -1,4 +1,4 @@
-package _441_Arranging_Coins
+package leetcode
 
 import "math"
 

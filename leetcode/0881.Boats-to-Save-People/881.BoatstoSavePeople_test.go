@@ -1,4 +1,4 @@
-package _881_Boats_to_Save_People
+package leetcode
 
 import "testing"
 

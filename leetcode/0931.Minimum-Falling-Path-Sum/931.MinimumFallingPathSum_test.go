@@ -1,4 +1,4 @@
-package _931_Minimum_Falling_Path_Sum
+package leetcode
 
 import "testing"
 

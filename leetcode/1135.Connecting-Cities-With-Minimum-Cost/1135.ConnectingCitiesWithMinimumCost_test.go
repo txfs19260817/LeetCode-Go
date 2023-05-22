@@ -1,4 +1,4 @@
-package _135_Connecting_Cities_With_Minimum_Cost
+package leetcode
 
 import "testing"
 

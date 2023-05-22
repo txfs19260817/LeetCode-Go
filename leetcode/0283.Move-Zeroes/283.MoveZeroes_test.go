@@ -1,4 +1,4 @@
-package _283_Move_Zeroes
+package leetcode
 
 import (
 	"testing"

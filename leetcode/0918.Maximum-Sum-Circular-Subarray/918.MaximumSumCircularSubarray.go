@@ -1,4 +1,4 @@
-package _918_Maximum_Sum_Circular_Subarray
+package leetcode
 
 func maxSubarraySumCircular(A []int) int {
 	curMax, curMin, ansMax, ansMin, sum := 0, 0, A[0], A[0], 0

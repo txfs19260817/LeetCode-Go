@@ -1,4 +1,4 @@
-package _266_Count_Number_of_Texts
+package leetcode
 
 const mod, mx int = 1e9 + 7, 1e5
 

@@ -1,4 +1,4 @@
-package _764_Largest_Plus_Sign
+package leetcode
 
 func orderOfLargestPlusSign(n int, mines [][]int) int {
 	m := map[[2]int]bool{}

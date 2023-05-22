@@ -1,4 +1,4 @@
-package _148_Count_Elements_With_Strictly_Smaller_and_Greater_Elements
+package leetcode
 
 func countElements(nums []int) int {
 	ma, mi, cntMa, cntMi := nums[0], nums[0], 1, 1

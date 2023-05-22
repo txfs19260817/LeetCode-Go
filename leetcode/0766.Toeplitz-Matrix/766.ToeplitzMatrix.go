@@ -1,4 +1,4 @@
-package _766_Toeplitz_Matrix
+package leetcode
 
 func isToeplitzMatrix(matrix [][]int) bool {
 	for i, row := range matrix {

@@ -1,4 +1,4 @@
-package _073_Set_Matrix_Zeroes
+package leetcode
 
 func setZeroes(matrix [][]int) {
 	var row0, col0 bool

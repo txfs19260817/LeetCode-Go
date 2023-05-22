@@ -1,4 +1,4 @@
-package _044_Longest_Duplicate_Substring
+package leetcode
 
 func longestDupSubstring(s string) string {
 	l, r := 1, len(s)

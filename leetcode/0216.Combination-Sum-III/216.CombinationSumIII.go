@@ -1,4 +1,4 @@
-package _216_Combination_Sum_III
+package leetcode
 
 func combinationSum3(k int, n int) [][]int {
 	var ans [][]int

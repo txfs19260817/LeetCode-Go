@@ -1,4 +1,4 @@
-package _309_Best_Time_to_Buy_and_Sell_Stock_with_Cooldown
+package leetcode
 
 func maxProfit(prices []int) int {
 	buy, sell, cooldown := 0, -1<<31, 0 // hold, release, dp[i-2]

@@ -1,4 +1,4 @@
-package _056_Largest_3_Same_Digit_Number_in_String
+package leetcode
 
 import (
 	"fmt"

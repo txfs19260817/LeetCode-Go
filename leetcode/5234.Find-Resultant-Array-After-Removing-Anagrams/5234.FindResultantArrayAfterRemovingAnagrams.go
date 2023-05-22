@@ -1,4 +1,4 @@
-package _234_Find_Resultant_Array_After_Removing_Anagrams
+package leetcode
 
 import "sort"
 

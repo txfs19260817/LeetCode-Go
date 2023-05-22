@@ -1,4 +1,4 @@
-package _062_Unique_Paths
+package leetcode
 
 import "math/big"
 

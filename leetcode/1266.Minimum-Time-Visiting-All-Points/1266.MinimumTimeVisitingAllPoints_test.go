@@ -1,4 +1,4 @@
-package _266_Minimum_Time_Visiting_All_Points
+package leetcode
 
 import "testing"
 

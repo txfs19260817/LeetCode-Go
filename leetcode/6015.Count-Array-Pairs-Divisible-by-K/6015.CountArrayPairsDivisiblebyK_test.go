@@ -1,4 +1,4 @@
-package _015_Count_Array_Pairs_Divisible_by_K
+package leetcode
 
 import "testing"
 

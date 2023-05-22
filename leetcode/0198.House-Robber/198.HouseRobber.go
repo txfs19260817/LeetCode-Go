@@ -1,4 +1,4 @@
-package _198_House_Robber
+package leetcode
 
 func rob(nums []int) int {
 	if len(nums) == 0 {

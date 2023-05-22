@@ -1,4 +1,4 @@
-package _668_Kth_Smallest_Number_in_Multiplication_Table
+package leetcode
 
 import "testing"
 

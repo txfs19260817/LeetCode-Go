@@ -1,4 +1,4 @@
-package _287_Find_the_Duplicate_Number
+package leetcode
 
 import "testing"
 

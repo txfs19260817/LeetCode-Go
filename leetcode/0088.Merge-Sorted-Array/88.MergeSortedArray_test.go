@@ -1,4 +1,4 @@
-package _088_Merge_Sorted_Array
+package leetcode
 
 import (
 	"reflect"

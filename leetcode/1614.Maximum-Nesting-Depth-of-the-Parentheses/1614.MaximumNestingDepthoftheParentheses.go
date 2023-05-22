@@ -1,4 +1,4 @@
-package _614_Maximum_Nesting_Depth_of_the_Parentheses
+package leetcode
 
 func maxDepth(s string) int {
 	var count, ans int

@@ -1,4 +1,4 @@
-package _730_Shortest_Path_to_Get_Food
+package leetcode
 
 import "testing"
 

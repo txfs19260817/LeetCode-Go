@@ -1,4 +1,4 @@
-package _965_Intervals_Between_Identical_Elements
+package leetcode
 
 func getDistances(arr []int) []int64 {
 	ans, num2i := make([]int64, len(arr)), map[int][]int{}

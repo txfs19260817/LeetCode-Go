@@ -1,4 +1,4 @@
-package _075_Maximum_Bags_With_Full_Capacity_of_Rocks
+package leetcode
 
 import "sort"
 

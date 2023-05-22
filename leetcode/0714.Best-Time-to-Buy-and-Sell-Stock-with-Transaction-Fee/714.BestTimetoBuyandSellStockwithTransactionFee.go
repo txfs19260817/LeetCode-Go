@@ -1,4 +1,4 @@
-package _714_Best_Time_to_Buy_and_Sell_Stock_with_Transaction_Fee
+package leetcode
 
 func maxProfit(prices []int, fee int) int {
 	buy, sell := 0, -1<<31 // hold, release

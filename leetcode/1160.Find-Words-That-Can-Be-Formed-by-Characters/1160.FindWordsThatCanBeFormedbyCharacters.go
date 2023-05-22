@@ -1,4 +1,4 @@
-package _160_Find_Words_That_Can_Be_Formed_by_Characters
+package leetcode
 
 func countCharacters(words []string, chars string) int {
 	ans, chars2Count := 0, map[rune]int{}

@@ -1,4 +1,4 @@
-package _556_Next_Greater_Element_III
+package leetcode
 
 import "strconv"
 

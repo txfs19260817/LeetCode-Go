@@ -1,4 +1,4 @@
-package _539_Kth_Missing_Positive_Number
+package leetcode
 
 func findKthPositive(arr []int, k int) int {
 	var i, p int

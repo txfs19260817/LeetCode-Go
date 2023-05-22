@@ -1,4 +1,4 @@
-package _551_Minimum_Operations_to_Make_Array_Equal
+package leetcode
 
 import "testing"
 

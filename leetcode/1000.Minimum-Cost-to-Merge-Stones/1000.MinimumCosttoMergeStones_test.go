@@ -1,4 +1,4 @@
-package _000_Minimum_Cost_to_Merge_Stones
+package leetcode
 
 import "testing"
 

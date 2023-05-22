@@ -1,4 +1,4 @@
-package _128_Longest_Consecutive_Sequence
+package leetcode
 
 func longestConsecutive(nums []int) int {
 	ans, m := 0, map[int]int{} // num:length

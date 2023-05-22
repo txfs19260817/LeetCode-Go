@@ -1,4 +1,4 @@
-package _041_Intersection_of_Multiple_Arrays
+package leetcode
 
 import "sort"
 

@@ -1,4 +1,4 @@
-package _600_Non_negative_Integers_without_Consecutive_Ones
+package leetcode
 
 // https://leetcode-cn.com/problems/non-negative-integers-without-consecutive-ones/solution/suan-fa-xiao-ai-wo-lai-gei-ni-jie-shi-qi-4nh4/
 func findIntegers(n int) int {

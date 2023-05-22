@@ -1,4 +1,4 @@
-package _279_Perfect_Squares
+package leetcode
 
 import "testing"
 

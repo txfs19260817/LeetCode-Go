@@ -1,4 +1,4 @@
-package _135_Candy
+package leetcode
 
 func candy(ratings []int) int {
 	ans, pre, decNum := 1, 1, 0

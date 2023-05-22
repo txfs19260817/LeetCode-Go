@@ -1,4 +1,4 @@
-package _907_Next_Greater_Numerically_Balanced_Number
+package leetcode
 
 import "testing"
 

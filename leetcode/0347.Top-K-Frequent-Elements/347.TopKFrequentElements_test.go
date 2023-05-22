@@ -1,4 +1,4 @@
-package _347_Top_K_Frequent_Elements
+package leetcode
 
 import (
 	"github.com/stretchr/testify/assert"

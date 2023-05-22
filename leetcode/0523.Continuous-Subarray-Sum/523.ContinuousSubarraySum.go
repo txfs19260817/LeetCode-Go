@@ -1,4 +1,4 @@
-package _523_Continuous_Subarray_Sum
+package leetcode
 
 func checkSubarraySum(nums []int, k int) bool {
 	rem2idx, remainder := map[int]int{0: -1}, 0

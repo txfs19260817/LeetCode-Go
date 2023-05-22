@@ -1,4 +1,4 @@
-package _112_Path_Sum
+package leetcode
 
 import "testing"
 

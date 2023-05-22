@@ -1,4 +1,4 @@
-package _918_Count_Vowel_Substrings_of_a_String
+package leetcode
 
 import "testing"
 

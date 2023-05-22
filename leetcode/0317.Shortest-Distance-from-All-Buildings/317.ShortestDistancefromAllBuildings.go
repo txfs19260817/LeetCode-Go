@@ -1,4 +1,4 @@
-package _317_Shortest_Distance_from_All_Buildings
+package leetcode
 
 func shortestDistance(grid [][]int) int {
 	ans, buildings, dirs := 1<<30, 0, [][]int{{0, 1}, {1, 0}, {0, -1}, {-1, 0}}

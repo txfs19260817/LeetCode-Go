@@ -1,4 +1,4 @@
-package _219_Maximum_Candies_Allocated_to_K_Children
+package leetcode
 
 func maximumCandies(candies []int, k int64) int {
 	var l, r int

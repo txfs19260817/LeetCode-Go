@@ -1,4 +1,4 @@
-package _071_Simplify_Path
+package leetcode
 
 import "testing"
 

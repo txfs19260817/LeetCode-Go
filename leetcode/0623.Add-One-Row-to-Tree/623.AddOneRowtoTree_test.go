@@ -1,4 +1,4 @@
-package _623_Add_One_Row_to_Tree
+package leetcode
 
 import (
 	"reflect"

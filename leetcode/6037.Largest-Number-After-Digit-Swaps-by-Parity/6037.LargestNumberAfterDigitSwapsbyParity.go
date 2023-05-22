@@ -1,4 +1,4 @@
-package _037_Largest_Number_After_Digit_Swaps_by_Parity
+package leetcode
 
 import (
 	"sort"

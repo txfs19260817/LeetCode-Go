@@ -1,4 +1,4 @@
-package _947_Most_Stones_Removed_with_Same_Row_or_Column
+package leetcode
 
 type UnionFind struct {
 	parent, rank []int

@@ -1,4 +1,4 @@
-package _187_Repeated_DNA_Sequences
+package leetcode
 
 func findRepeatedDnaSequences(s string) []string {
 	var ans []string

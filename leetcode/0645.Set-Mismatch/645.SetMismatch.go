@@ -1,4 +1,4 @@
-package _645_Set_Mismatch
+package leetcode
 
 func findErrorNums(nums []int) []int {
 	dup, mismatch := -1, 1

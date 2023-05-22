@@ -1,4 +1,4 @@
-package _007_Reverse_Integer
+package leetcode
 
 import "testing"
 

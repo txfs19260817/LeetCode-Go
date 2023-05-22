@@ -1,4 +1,4 @@
-package _532_K_diff_Pairs_in_an_Array
+package leetcode
 
 import "testing"
 

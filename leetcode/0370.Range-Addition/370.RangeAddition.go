@@ -1,4 +1,4 @@
-package _370_Range_Addition
+package leetcode
 
 func getModifiedArray(length int, updates [][]int) []int {
 	arr := make([]int, length)

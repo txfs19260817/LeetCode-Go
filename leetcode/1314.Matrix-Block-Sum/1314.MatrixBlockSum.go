@@ -1,4 +1,4 @@
-package _314_Matrix_Block_Sum
+package leetcode
 
 func matrixBlockSum(mat [][]int, k int) [][]int {
 	// get prefix mat

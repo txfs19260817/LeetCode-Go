@@ -1,4 +1,4 @@
-package _872_Leaf_Similar_Trees
+package leetcode
 
 type TreeNode struct {
 	Val   int

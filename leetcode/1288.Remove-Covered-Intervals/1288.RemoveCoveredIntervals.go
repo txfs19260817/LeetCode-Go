@@ -1,4 +1,4 @@
-package _288_Remove_Covered_Intervals
+package leetcode
 
 import "sort"
 

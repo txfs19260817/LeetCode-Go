@@ -1,4 +1,4 @@
-package _381_Insert_Delete_GetRandom_O_1___Duplicates_allowed
+package leetcode
 
 import (
 	"math"

@@ -1,4 +1,4 @@
-package _056_Merge_Intervals
+package leetcode
 
 import (
 	"reflect"

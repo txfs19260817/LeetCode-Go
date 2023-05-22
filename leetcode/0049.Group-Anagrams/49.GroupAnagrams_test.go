@@ -1,4 +1,4 @@
-package _049_Group_Anagrams
+package leetcode
 
 import (
 	"sort"

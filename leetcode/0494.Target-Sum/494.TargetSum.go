@@ -1,4 +1,4 @@
-package _494_Target_Sum
+package leetcode
 
 func findTargetSumWays(nums []int, target int) int {
 	var sum int

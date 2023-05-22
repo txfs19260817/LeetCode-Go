@@ -1,4 +1,4 @@
-package _462_Minimum_Moves_to_Equal_Array_Elements_II
+package leetcode
 
 import "testing"
 

@@ -1,4 +1,4 @@
-package _187_Repeated_DNA_Sequences
+package leetcode
 
 import (
 	"reflect"

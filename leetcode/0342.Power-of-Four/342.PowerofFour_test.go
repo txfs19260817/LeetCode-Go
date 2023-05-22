@@ -1,4 +1,4 @@
-package _342_Power_of_Four
+package leetcode
 
 import "testing"
 

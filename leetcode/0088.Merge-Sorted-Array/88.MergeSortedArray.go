@@ -1,4 +1,4 @@
-package _088_Merge_Sorted_Array
+package leetcode
 
 func merge(nums1 []int, m int, nums2 []int, n int) {
 	i, j, k := m-1, n-1, m+n-1

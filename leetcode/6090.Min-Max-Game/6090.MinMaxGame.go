@@ -1,4 +1,4 @@
-package _090_Min_Max_Game
+package leetcode
 
 func minMaxGame(nums []int) int {
 	for len(nums) > 1 {

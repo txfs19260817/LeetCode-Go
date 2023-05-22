@@ -1,4 +1,4 @@
-package _328_Break_a_Palindrome
+package leetcode
 
 import "testing"
 

@@ -1,4 +1,4 @@
-package _018_Create_Binary_Tree_From_Descriptions
+package leetcode
 
 type TreeNode struct {
 	Val   int

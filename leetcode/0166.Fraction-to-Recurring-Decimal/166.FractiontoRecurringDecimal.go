@@ -1,4 +1,4 @@
-package _166_Fraction_to_Recurring_Decimal
+package leetcode
 
 import "strconv"
 

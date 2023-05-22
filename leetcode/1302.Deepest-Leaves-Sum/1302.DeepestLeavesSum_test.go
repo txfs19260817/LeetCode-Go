@@ -1,4 +1,4 @@
-package _302_Deepest_Leaves_Sum
+package leetcode
 
 import "testing"
 

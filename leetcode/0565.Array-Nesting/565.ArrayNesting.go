@@ -1,4 +1,4 @@
-package _565_Array_Nesting
+package leetcode
 
 func arrayNesting(nums []int) int { // Space O(n)
 	ans, visited := 0, make([]bool, len(nums))

@@ -1,4 +1,4 @@
-package _988_Smallest_String_Starting_From_Leaf
+package leetcode
 
 import "testing"
 
@@ -21,8 +21,8 @@ func Test_smallestFromLeaf(t *testing.T) {
 					Right: &TreeNode{Val: 4},
 				},
 				Right: &TreeNode{
-					Val:   2,
-					Left:  &TreeNode{Val: 3},
+					Val:  2,
+					Left: &TreeNode{Val: 3},
 				},
 			}},
 			want: "dba",

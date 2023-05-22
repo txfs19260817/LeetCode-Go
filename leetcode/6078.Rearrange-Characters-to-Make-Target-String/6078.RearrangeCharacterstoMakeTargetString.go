@@ -1,4 +1,4 @@
-package _078_Rearrange_Characters_to_Make_Target_String
+package leetcode
 
 func rearrangeCharacters(s string, target string) int {
 	m, ans := map[rune]int{}, 0

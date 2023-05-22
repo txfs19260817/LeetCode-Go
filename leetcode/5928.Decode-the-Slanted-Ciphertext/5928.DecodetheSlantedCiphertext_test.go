@@ -1,4 +1,4 @@
-package _928_Decode_the_Slanted_Ciphertext
+package leetcode
 
 import "testing"
 
@@ -14,7 +14,7 @@ func Test_decodeCiphertext(t *testing.T) {
 	}{
 		{
 			name: `encodedText = "ch   ie   pr", rows = 3`,
-			args: args{"ch   ie   pr",3},
+			args: args{"ch   ie   pr", 3},
 			want: "cipher",
 		},
 	}

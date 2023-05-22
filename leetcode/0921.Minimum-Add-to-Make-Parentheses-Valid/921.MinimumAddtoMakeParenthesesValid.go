@@ -1,4 +1,4 @@
-package _921_Minimum_Add_to_Make_Parentheses_Valid
+package leetcode
 
 func minAddToMakeValid(s string) int {
 	var balance, correct int

@@ -1,4 +1,4 @@
-package _102_Binary_Tree_Level_Order_Traversal
+package leetcode
 
 type TreeNode struct {
 	Val   int

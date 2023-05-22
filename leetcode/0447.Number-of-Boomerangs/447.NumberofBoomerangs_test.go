@@ -1,4 +1,4 @@
-package _447_Number_of_Boomerangs
+package leetcode
 
 import "testing"
 

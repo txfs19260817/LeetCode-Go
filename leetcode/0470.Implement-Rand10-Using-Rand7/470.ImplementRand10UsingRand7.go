@@ -1,4 +1,4 @@
-package _470_Implement_Rand10_Using_Rand7
+package leetcode
 
 import "math/rand"
 

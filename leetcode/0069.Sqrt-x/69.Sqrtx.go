@@ -1,4 +1,4 @@
-package _069_Sqrt_x
+package leetcode
 
 func mySqrt(x int) int {
 	l, r := 0, x

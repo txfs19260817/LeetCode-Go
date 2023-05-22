@@ -1,4 +1,4 @@
-package _028_Count_Collisions_on_a_Road
+package leetcode
 
 import "testing"
 

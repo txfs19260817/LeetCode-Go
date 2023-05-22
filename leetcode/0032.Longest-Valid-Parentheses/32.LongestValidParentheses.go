@@ -1,4 +1,4 @@
-package _032_Longest_Valid_Parentheses
+package leetcode
 
 func longestValidParentheses(s string) int {
 	var ans, l, r int

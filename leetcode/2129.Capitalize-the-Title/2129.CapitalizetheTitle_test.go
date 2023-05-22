@@ -1,4 +1,4 @@
-package _129_Capitalize_the_Title
+package leetcode
 
 import "testing"
 

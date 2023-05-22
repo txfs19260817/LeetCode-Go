@@ -1,4 +1,4 @@
-package _988_Smallest_String_Starting_From_Leaf
+package leetcode
 
 type TreeNode struct {
 	Val   int

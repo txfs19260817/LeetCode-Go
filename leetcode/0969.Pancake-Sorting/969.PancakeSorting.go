@@ -1,4 +1,4 @@
-package _969_Pancake_Sorting
+package leetcode
 
 func pancakeSort(arr []int) []int {
 	if len(arr) == 0 {

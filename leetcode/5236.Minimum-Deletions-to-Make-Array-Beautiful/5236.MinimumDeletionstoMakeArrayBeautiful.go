@@ -1,4 +1,4 @@
-package _236_Minimum_Deletions_to_Make_Array_Beautiful
+package leetcode
 
 func minDeletion(nums []int) int {
 	var stack []int

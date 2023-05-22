@@ -1,4 +1,4 @@
-package _190_Reverse_Substrings_Between_Each_Pair_of_Parentheses
+package leetcode
 
 import "testing"
 

@@ -1,4 +1,4 @@
-package _928_Decode_the_Slanted_Ciphertext
+package leetcode
 
 import "strings"
 

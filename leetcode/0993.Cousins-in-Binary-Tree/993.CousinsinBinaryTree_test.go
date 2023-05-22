@@ -1,4 +1,4 @@
-package _993_Cousins_in_Binary_Tree
+package leetcode
 
 import "testing"
 

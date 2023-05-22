@@ -1,4 +1,4 @@
-package _240_Tiling_a_Rectangle_with_the_Fewest_Squares
+package leetcode
 
 import "testing"
 

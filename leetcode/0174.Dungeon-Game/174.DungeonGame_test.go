@@ -1,4 +1,4 @@
-package _174_Dungeon_Game
+package leetcode
 
 import "testing"
 

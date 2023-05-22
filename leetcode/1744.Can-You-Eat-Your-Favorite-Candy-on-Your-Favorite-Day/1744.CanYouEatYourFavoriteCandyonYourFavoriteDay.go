@@ -1,4 +1,4 @@
-package _744_Can_You_Eat_Your_Favorite_Candy_on_Your_Favorite_Day
+package leetcode
 
 func canEat(candiesCount []int, queries [][]int) []bool {
 	ans, smallerSum := make([]bool, len(queries)), make([]int, len(candiesCount))

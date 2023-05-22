@@ -1,4 +1,4 @@
-package _930_Binary_Subarrays_With_Sum
+package leetcode
 
 func numSubarraysWithSum(A []int, S int) int {
 	ans, sumi, m := 0, 0, map[int]int{0: 1}

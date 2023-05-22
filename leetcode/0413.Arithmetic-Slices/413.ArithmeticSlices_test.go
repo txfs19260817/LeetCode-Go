@@ -1,4 +1,4 @@
-package _413_Arithmetic_Slices
+package leetcode
 
 import "testing"
 

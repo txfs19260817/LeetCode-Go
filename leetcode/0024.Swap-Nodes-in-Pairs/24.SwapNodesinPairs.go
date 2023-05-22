@@ -1,4 +1,4 @@
-package _024_Swap_Nodes_in_Pairs
+package leetcode
 
 type ListNode struct {
 	Val  int

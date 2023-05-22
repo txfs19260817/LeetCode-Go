@@ -1,11 +1,11 @@
-package _318_Maximum_Product_of_Word_Lengths
+package leetcode
 
 func maxProduct(words []string) int {
 	ans, mask2len := 0, map[int]int{}
 	for _, word := range words {
 		var mask int
 		for _, c := range word {
-			mask |= 1 << int(c - 'a')
+			mask |= 1 << int(c-'a')
 		}
 		if len(word) > mask2len[mask] {
 			mask2len[mask] = len(word)

@@ -1,4 +1,4 @@
-package _380_Insert_Delete_GetRandom_O_1
+package leetcode
 
 import (
 	"github.com/stretchr/testify/assert"

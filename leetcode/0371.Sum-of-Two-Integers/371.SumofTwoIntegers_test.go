@@ -1,4 +1,4 @@
-package _371_Sum_of_Two_Integers
+package leetcode
 
 import "testing"
 

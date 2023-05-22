@@ -1,4 +1,4 @@
-package _915_Number_of_Wonderful_Substrings
+package leetcode
 
 import "testing"
 

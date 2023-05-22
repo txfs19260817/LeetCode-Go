@@ -1,4 +1,4 @@
-package _131_Palindrome_Partitioning
+package leetcode
 
 func partition(s string) [][]string {
 	var ans [][]string

@@ -1,4 +1,4 @@
-package _263_Ugly_Number
+package leetcode
 
 func isUgly(n int) bool {
 	if n <= 0 {

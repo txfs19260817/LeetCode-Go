@@ -1,4 +1,4 @@
-package _101_Symmetric_Tree
+package leetcode
 
 type TreeNode struct {
 	Val   int

@@ -1,4 +1,4 @@
-package _070_Climbing_Stairs
+package leetcode
 
 func climbStairs(n int) int {
 	a, b := 1, 1

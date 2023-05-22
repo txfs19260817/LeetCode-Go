@@ -1,4 +1,4 @@
-package _205_Isomorphic_Strings
+package leetcode
 
 import "testing"
 

@@ -1,4 +1,4 @@
-package _235_Find_Players_With_Zero_or_One_Losses
+package leetcode
 
 import (
 	"reflect"

@@ -1,4 +1,4 @@
-package _018_4Sum
+package leetcode
 
 import "sort"
 

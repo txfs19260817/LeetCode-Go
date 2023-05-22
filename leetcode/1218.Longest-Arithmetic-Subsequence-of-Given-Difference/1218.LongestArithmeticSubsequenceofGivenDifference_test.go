@@ -1,4 +1,4 @@
-package _218_Longest_Arithmetic_Subsequence_of_Given_Difference
+package leetcode
 
 import "testing"
 

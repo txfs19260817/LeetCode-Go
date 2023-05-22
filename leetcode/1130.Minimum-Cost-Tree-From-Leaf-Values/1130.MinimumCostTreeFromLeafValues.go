@@ -1,4 +1,4 @@
-package _130_Minimum_Cost_Tree_From_Leaf_Values
+package leetcode
 
 func mctFromLeafValues(arr []int) int { // Monotonic stack
 	var ans int

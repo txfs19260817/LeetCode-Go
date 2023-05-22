@@ -1,4 +1,4 @@
-package _330_Patching_Array
+package leetcode
 
 func minPatches(nums []int, n int) int {
 	var ans int

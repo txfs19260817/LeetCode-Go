@@ -1,4 +1,4 @@
-package _090_Min_Max_Game
+package leetcode
 
 import "testing"
 

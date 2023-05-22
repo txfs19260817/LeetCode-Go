@@ -1,4 +1,4 @@
-package _255_Verify_Preorder_Sequence_in_Binary_Search_Tree
+package leetcode
 
 import "testing"
 

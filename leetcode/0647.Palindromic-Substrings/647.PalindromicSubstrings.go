@@ -1,4 +1,4 @@
-package _647_Palindromic_Substrings
+package leetcode
 
 func countSubstrings(s string) int {
 	var ans int

@@ -1,4 +1,4 @@
-package _001_Number_of_Pairs_of_Interchangeable_Rectangles
+package leetcode
 
 import "testing"
 

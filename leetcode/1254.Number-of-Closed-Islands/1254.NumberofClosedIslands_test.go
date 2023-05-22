@@ -1,4 +1,4 @@
-package _254_Number_of_Closed_Islands
+package leetcode
 
 import "testing"
 

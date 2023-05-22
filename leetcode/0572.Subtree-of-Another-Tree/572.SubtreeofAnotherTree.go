@@ -1,4 +1,4 @@
-package _572_Subtree_of_Another_Tree
+package leetcode
 
 type TreeNode struct {
 	Val   int

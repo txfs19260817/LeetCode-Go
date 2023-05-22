@@ -1,4 +1,4 @@
-package _673_Number_of_Longest_Increasing_Subsequence
+package leetcode
 
 func findNumberOfLIS(nums []int) int {
 	ans, dp, count := 0, make([]int, len(nums)), make([]int, len(nums))

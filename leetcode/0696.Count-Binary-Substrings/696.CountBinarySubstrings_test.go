@@ -1,4 +1,4 @@
-package _696_Count_Binary_Substrings
+package leetcode
 
 import "testing"
 

@@ -1,4 +1,4 @@
-package _244_Shortest_Word_Distance_II
+package leetcode
 
 import "sort"
 

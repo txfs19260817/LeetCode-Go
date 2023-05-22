@@ -1,4 +1,4 @@
-package _927_Reverse_Nodes_in_Even_Length_Groups
+package leetcode
 
 import (
 	"reflect"

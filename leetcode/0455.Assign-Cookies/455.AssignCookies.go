@@ -1,4 +1,4 @@
-package _455_Assign_Cookies
+package leetcode
 
 import "sort"
 

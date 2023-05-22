@@ -1,4 +1,4 @@
-package _029_Divide_Two_Integers
+package leetcode
 
 func divide(dividend int, divisor int) int {
 	ans, sign := 0, 1

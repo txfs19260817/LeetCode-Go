@@ -1,4 +1,4 @@
-package _331_Verify_Preorder_Serialization_of_a_Binary_Tree
+package leetcode
 
 import "strings"
 

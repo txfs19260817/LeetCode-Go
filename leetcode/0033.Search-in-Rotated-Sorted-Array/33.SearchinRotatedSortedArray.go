@@ -1,4 +1,4 @@
-package _033_Search_in_Rotated_Sorted_Array
+package leetcode
 
 func search(nums []int, target int) int {
 	start, end := 0, len(nums)-1

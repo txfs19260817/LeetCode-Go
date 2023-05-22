@@ -1,4 +1,4 @@
-package _725_Split_Linked_List_in_Parts
+package leetcode
 
 import (
 	"fmt"

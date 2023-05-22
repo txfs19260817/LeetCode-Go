@@ -1,4 +1,4 @@
-package _802_Find_Eventual_Safe_States
+package leetcode
 
 import (
 	"reflect"

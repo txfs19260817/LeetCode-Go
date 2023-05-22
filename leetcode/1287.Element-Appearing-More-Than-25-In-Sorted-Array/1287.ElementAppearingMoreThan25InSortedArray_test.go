@@ -1,4 +1,4 @@
-package _287_Element_Appearing_More_Than_25_In_Sorted_Array
+package leetcode
 
 import "testing"
 
@@ -13,17 +13,17 @@ func Test_findSpecialInteger(t *testing.T) {
 	}{
 		{
 			name: "[1,2,3,4,5,6,7,8,9,10,11,12,12,12,12]",
-			args: args{[]int{1,2,3,4,5,6,7,8,9,10,11,12,12,12,12}},
+			args: args{[]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 12, 12, 12}},
 			want: 12,
 		},
 		{
 			name: "[1,2,3,4,5,6,7,8,9]",
-			args: args{[]int{1,2,3,4,5,6,7,8,9}},
+			args: args{[]int{1, 2, 3, 4, 5, 6, 7, 8, 9}},
 			want: -1,
 		},
 		{
 			name: "[1,1]",
-			args: args{[]int{1,1}},
+			args: args{[]int{1, 1}},
 			want: 1,
 		},
 	}

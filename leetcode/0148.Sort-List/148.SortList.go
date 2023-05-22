@@ -1,4 +1,4 @@
-package _148_Sort_List
+package leetcode
 
 type ListNode struct {
 	Val  int

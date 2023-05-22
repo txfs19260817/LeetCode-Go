@@ -1,4 +1,4 @@
-package _320_Generalized_Abbreviation
+package leetcode
 
 import (
 	"github.com/stretchr/testify/assert"

@@ -1,4 +1,4 @@
-package _149_Rearrange_Array_Elements_by_Sign
+package leetcode
 
 func rearrangeArray(nums []int) []int {
 	ans, i, j := make([]int, len(nums)), 0, 1

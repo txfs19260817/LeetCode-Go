@@ -1,4 +1,4 @@
-package _492_The_kth_Factor_of_n
+package leetcode
 
 func kthFactor(n int, k int) int {
 	i := 1

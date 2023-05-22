@@ -1,4 +1,4 @@
-package _191_Number_of_1_Bits
+package leetcode
 
 func hammingWeight(num uint32) int {
 	var count int

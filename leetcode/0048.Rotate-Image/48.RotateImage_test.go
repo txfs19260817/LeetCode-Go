@@ -1,4 +1,4 @@
-package _048_Rotate_Image
+package leetcode
 
 import (
 	"testing"

@@ -1,4 +1,4 @@
-package _767_Reorganize_String
+package leetcode
 
 import (
 	"sort"

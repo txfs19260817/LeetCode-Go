@@ -1,4 +1,4 @@
-package _203_Count_Artifacts_That_Can_Be_Extracted
+package leetcode
 
 import "testing"
 

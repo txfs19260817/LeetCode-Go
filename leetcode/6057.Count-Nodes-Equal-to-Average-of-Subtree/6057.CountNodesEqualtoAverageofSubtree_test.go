@@ -1,4 +1,4 @@
-package _057_Count_Nodes_Equal_to_Average_of_Subtree
+package leetcode
 
 import "testing"
 

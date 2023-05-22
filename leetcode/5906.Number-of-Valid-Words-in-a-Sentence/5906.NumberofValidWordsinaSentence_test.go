@@ -1,4 +1,4 @@
-package _906_Number_of_Valid_Words_in_a_Sentence
+package leetcode
 
 import "testing"
 

@@ -1,4 +1,4 @@
-package _300_Longest_Increasing_Subsequence
+package leetcode
 
 import "sort"
 

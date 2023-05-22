@@ -1,4 +1,4 @@
-package _063_Unique_Paths_II
+package leetcode
 
 func uniquePathsWithObstacles(obstacleGrid [][]int) int {
 	n, m := len(obstacleGrid), len(obstacleGrid[0])

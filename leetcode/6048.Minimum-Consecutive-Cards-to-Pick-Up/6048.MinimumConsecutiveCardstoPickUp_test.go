@@ -1,4 +1,4 @@
-package _048_Minimum_Consecutive_Cards_to_Pick_Up
+package leetcode
 
 import "testing"
 

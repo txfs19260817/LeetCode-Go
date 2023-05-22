@@ -1,4 +1,4 @@
-package _575_Distribute_Candies
+package leetcode
 
 func distributeCandies(candyType []int) int {
 	m := map[int]bool{} // type:exist

@@ -1,4 +1,4 @@
-package _304_Range_Sum_Query_2D___Immutable
+package leetcode
 
 import (
 	"testing"

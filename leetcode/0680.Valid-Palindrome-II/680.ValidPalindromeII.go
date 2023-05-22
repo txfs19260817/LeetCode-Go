@@ -1,4 +1,4 @@
-package _680_Valid_Palindrome_II
+package leetcode
 
 func validPalindrome(s string) bool {
 	for l, r := 0, len(s)-1; l < r; l, r = l+1, r-1 {

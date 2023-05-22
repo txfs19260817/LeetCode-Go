@@ -1,4 +1,4 @@
-package _200_Number_of_Islands
+package leetcode
 
 import "testing"
 

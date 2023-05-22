@@ -1,4 +1,4 @@
-package _229_Majority_Element_II
+package leetcode
 
 import (
 	"reflect"

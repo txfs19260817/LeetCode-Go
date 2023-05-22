@@ -1,4 +1,4 @@
-package _235_Lowest_Common_Ancestor_of_a_Binary_Search_Tree
+package leetcode
 
 type TreeNode struct {
 	Val   int

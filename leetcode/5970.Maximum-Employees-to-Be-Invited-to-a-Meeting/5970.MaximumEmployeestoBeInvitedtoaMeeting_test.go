@@ -1,4 +1,4 @@
-package _970_Maximum_Employees_to_Be_Invited_to_a_Meeting
+package leetcode
 
 import "testing"
 

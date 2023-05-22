@@ -1,4 +1,4 @@
-package _828_Count_Unique_Characters_of_All_Substrings_of_a_Given_String
+package leetcode
 
 func uniqueLetterString(s string) int {
 	ans, c2i := 0, map[rune][]int{}

@@ -1,4 +1,4 @@
-package _079_Apply_Discount_to_Prices
+package leetcode
 
 import "testing"
 

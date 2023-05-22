@@ -1,4 +1,4 @@
-package _976_Largest_Perimeter_Triangle
+package leetcode
 
 import (
 	"sort"

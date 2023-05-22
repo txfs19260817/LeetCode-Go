@@ -1,4 +1,4 @@
-package _375_Guess_Number_Higher_or_Lower_II
+package leetcode
 
 import "math"
 

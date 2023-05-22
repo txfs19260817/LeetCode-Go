@@ -1,4 +1,4 @@
-package _474_Delete_N_Nodes_After_M_Nodes_of_a_Linked_List
+package leetcode
 
 type ListNode struct {
 	Val  int

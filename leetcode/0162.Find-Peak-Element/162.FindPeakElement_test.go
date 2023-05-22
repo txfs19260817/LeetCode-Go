@@ -1,4 +1,4 @@
-package _162_Find_Peak_Element
+package leetcode
 
 import "testing"
 

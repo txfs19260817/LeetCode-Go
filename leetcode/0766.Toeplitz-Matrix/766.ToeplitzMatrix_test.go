@@ -1,4 +1,4 @@
-package _766_Toeplitz_Matrix
+package leetcode
 
 import "testing"
 

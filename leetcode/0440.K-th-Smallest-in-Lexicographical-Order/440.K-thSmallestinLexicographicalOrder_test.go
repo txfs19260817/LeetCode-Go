@@ -1,4 +1,4 @@
-package _440_K_th_Smallest_in_Lexicographical_Order
+package leetcode
 
 import "testing"
 

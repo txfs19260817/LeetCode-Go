@@ -1,4 +1,4 @@
-package _001_Two_Sum
+package leetcode
 
 import (
 	"testing"

@@ -1,4 +1,4 @@
-package _164_Maximum_Gap
+package leetcode
 
 func maximumGap(nums []int) int {
 	if len(nums) < 2 {

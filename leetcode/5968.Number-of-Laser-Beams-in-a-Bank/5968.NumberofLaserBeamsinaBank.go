@@ -1,4 +1,4 @@
-package _968_Number_of_Laser_Beams_in_a_Bank
+package leetcode
 
 func numberOfBeams(bank []string) int {
 	var ans, prod int

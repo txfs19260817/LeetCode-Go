@@ -1,4 +1,4 @@
-package _448_Count_Good_Nodes_in_Binary_Tree
+package leetcode
 
 type TreeNode struct {
 	Val   int

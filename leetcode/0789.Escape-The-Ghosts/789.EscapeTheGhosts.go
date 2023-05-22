@@ -1,4 +1,4 @@
-package _789_Escape_The_Ghosts
+package leetcode
 
 func escapeGhosts(ghosts [][]int, target []int) bool {
 	r := abs(target[0]) + abs(target[1])

@@ -1,4 +1,4 @@
-package _006_Removing_Minimum_Number_of_Magic_Beans
+package leetcode
 
 import "testing"
 

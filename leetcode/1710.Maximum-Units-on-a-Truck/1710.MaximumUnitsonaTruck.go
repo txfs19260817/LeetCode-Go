@@ -1,4 +1,4 @@
-package _710_Maximum_Units_on_a_Truck
+package leetcode
 
 import "sort"
 

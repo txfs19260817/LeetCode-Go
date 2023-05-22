@@ -1,4 +1,4 @@
-package _039_Maximum_Product_After_K_Increments
+package leetcode
 
 import "testing"
 

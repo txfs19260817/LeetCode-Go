@@ -1,4 +1,4 @@
-package _404_Sum_of_Left_Leaves
+package leetcode
 
 import "testing"
 

@@ -1,4 +1,4 @@
-package _936_Stamping_The_Sequence
+package leetcode
 
 import (
 	"reflect"

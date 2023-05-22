@@ -1,4 +1,4 @@
-package _092_Shortest_Common_Supersequence
+package leetcode
 
 func shortestCommonSupersequence(str1 string, str2 string) string {
 	ans, common := make([]byte, 0, len(str1)+len(str2)), longestCommonSubsequence(str1, str2)

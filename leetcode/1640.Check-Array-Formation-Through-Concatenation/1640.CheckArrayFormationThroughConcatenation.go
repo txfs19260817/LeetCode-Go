@@ -1,4 +1,4 @@
-package _640_Check_Array_Formation_Through_Concatenation
+package leetcode
 
 func canFormArray(arr []int, pieces [][]int) bool {
 	connected, dict := make([]int, 0, len(arr)), map[int][]int{} // pieces[i][0]:pieces[i]

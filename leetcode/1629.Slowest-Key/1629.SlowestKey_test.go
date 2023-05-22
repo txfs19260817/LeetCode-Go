@@ -1,4 +1,4 @@
-package _629_Slowest_Key
+package leetcode
 
 import "testing"
 

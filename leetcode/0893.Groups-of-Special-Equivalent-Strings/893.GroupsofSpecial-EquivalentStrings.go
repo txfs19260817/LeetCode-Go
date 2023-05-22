@@ -1,4 +1,4 @@
-package _893_Groups_of_Special_Equivalent_Strings
+package leetcode
 
 import "sort"
 

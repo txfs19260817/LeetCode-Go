@@ -1,4 +1,4 @@
-package _055_Plates_Between_Candles
+package leetcode
 
 import (
 	"reflect"

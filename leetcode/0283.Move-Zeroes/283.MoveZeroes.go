@@ -1,4 +1,4 @@
-package _283_Move_Zeroes
+package leetcode
 
 func moveZeroes(nums []int) {
 	for s, f := 0, 0; f < len(nums); f++ {

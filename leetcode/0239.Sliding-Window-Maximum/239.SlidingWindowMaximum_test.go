@@ -1,4 +1,4 @@
-package _239_Sliding_Window_Maximum
+package leetcode
 
 import (
 	"reflect"

@@ -1,4 +1,4 @@
-package _043_Count_Number_of_Rectangles_Containing_Each_Point
+package leetcode
 
 import (
 	"reflect"

@@ -1,4 +1,4 @@
-package _109_Convert_Sorted_List_to_Binary_Search_Tree
+package leetcode
 
 type ListNode struct {
 	Val  int

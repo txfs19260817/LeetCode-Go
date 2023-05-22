@@ -1,4 +1,4 @@
-package _723_Find_Minimum_Time_to_Finish_All_Jobs
+package leetcode
 
 func minimumTimeRequired(jobs []int, k int) int {
 	ans := 1 << 31

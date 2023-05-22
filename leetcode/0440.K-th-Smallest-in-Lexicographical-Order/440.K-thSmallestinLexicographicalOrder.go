@@ -1,4 +1,4 @@
-package _440_K_th_Smallest_in_Lexicographical_Order
+package leetcode
 
 func findKthNumber(n int, k int) int {
 	getSteps := func(n, prefix int) (count int) {

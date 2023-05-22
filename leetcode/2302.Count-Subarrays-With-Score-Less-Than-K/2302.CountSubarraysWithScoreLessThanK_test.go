@@ -1,4 +1,4 @@
-package _302_Count_Subarrays_With_Score_Less_Than_K
+package leetcode
 
 import "testing"
 

@@ -1,4 +1,4 @@
-package _008_String_to_Integer_atoi
+package leetcode
 
 import "testing"
 

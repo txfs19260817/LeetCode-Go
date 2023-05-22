@@ -1,4 +1,4 @@
-package _060_Check_if_an_Original_String_Exists_Given_Two_Encoded_Strings
+package leetcode
 
 func possiblyEquals(s1 string, s2 string) bool {
 	visited, bias := make([][][2000]bool, len(s1)+1), 1000 // diff range (-1000, 1000)

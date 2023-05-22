@@ -1,4 +1,4 @@
-package _856_Score_of_Parentheses
+package leetcode
 
 import "testing"
 

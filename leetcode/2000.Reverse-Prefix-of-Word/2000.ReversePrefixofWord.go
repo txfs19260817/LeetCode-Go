@@ -1,4 +1,4 @@
-package _000_Reverse_Prefix_of_Word
+package leetcode
 
 func reversePrefix(word string, ch byte) string {
 	end := -1

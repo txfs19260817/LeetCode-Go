@@ -1,4 +1,4 @@
-package _016_3Sum_Closest
+package leetcode
 
 import "sort"
 

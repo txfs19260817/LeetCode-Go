@@ -1,4 +1,4 @@
-package _050_Powx_n
+package leetcode
 
 func myPow(x float64, n int) float64 {
 	if n == 0 {

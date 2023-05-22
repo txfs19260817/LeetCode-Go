@@ -1,4 +1,4 @@
-package _929_Unique_Email_Addresses
+package leetcode
 
 import "strings"
 

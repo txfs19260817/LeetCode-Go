@@ -1,4 +1,4 @@
-package _799_Champagne_Tower
+package leetcode
 
 func champagneTower(poured int, query_row int, query_glass int) float64 {
 	t := make([][]float64, 102)

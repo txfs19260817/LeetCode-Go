@@ -1,4 +1,4 @@
-package _200_Number_of_Islands
+package leetcode
 
 func numIslands(grid [][]byte) int {
 	var dfs func(int, int)

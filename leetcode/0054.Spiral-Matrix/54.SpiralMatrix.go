@@ -1,4 +1,4 @@
-package _054_Spiral_Matrix
+package leetcode
 
 func spiralOrder(matrix [][]int) []int {
 	top, left, bottom, right, count := 0, 0, len(matrix)-1, len(matrix[0])-1, len(matrix)*len(matrix[0])

@@ -1,4 +1,4 @@
-package _964_Execution_of_All_Suffix_Instructions_Staying_in_a_Grid
+package leetcode
 
 import (
 	"reflect"

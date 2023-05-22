@@ -1,4 +1,4 @@
-package _048_Rotate_Image
+package leetcode
 
 func rotate(matrix [][]int) {
 	for i := 0; i < len(matrix); i++ {

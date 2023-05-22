@@ -1,4 +1,4 @@
-package _033_Search_in_Rotated_Sorted_Array
+package leetcode
 
 import "testing"
 

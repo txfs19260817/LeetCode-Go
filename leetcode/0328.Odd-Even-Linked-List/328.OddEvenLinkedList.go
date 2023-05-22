@@ -1,4 +1,4 @@
-package _328_Odd_Even_Linked_List_
+package leetcode
 
 type ListNode struct {
 	Val  int

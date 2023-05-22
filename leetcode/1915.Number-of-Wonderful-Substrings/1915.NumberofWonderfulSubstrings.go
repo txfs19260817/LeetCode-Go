@@ -1,4 +1,4 @@
-package _915_Number_of_Wonderful_Substrings
+package leetcode
 
 // https://leetcode-cn.com/problems/number-of-wonderful-substrings/solution/qian-zhui-he-chang-jian-ji-qiao-by-endle-t57t/
 func wonderfulSubstrings(word string) int64 {

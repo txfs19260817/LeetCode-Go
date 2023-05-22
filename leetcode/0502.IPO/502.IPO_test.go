@@ -1,4 +1,4 @@
-package _502_IPO
+package leetcode
 
 import "testing"
 

@@ -1,4 +1,4 @@
-package _265_Paint_House_II
+package leetcode
 
 type pair struct {
 	num, idx int

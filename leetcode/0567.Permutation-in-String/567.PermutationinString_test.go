@@ -1,4 +1,4 @@
-package _567_Permutation_in_String
+package leetcode
 
 import (
 	"testing"

@@ -1,4 +1,4 @@
-package _031_Next_Permutation
+package leetcode
 
 func nextPermutation(nums []int) {
 	i, j, k := len(nums)-2, len(nums)-1, len(nums)-1

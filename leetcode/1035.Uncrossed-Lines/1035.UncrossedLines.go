@@ -1,4 +1,4 @@
-package _035_Uncrossed_Lines
+package leetcode
 
 func maxUncrossedLines(nums1 []int, nums2 []int) int {
 	dp := make([][]int, len(nums1)+1)

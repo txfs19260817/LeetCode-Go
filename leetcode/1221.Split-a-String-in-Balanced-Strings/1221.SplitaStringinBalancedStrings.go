@@ -1,4 +1,4 @@
-package _221_Split_a_String_in_Balanced_Strings
+package leetcode
 
 func balancedStringSplit(s string) int {
 	var ans int

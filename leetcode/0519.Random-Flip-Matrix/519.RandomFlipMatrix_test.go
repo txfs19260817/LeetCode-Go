@@ -1,4 +1,4 @@
-package _519_Random_Flip_Matrix
+package leetcode
 
 import (
 	"testing"

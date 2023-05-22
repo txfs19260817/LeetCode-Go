@@ -1,4 +1,4 @@
-package _324_Wiggle_Sort_II
+package leetcode
 
 func wiggleSort(nums []int) {
 	if len(nums) < 2 {

@@ -1,4 +1,4 @@
-package _254_Number_of_Closed_Islands
+package leetcode
 
 // similar: 1254, 1020, 130
 func closedIsland(grid [][]int) int {

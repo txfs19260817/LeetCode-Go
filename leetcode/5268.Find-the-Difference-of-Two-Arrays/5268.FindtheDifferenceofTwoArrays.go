@@ -1,4 +1,4 @@
-package _268_Find_the_Difference_of_Two_Arrays
+package leetcode
 
 func findDifference(nums1 []int, nums2 []int) [][]int {
 	ans, m1, m2 := make([][]int, 2), map[int]bool{}, map[int]bool{}

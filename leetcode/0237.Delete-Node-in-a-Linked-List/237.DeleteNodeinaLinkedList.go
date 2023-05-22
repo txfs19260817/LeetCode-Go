@@ -1,4 +1,4 @@
-package _237_Delete_Node_in_a_Linked_List_
+package leetcode
 
 type ListNode struct {
 	Val  int

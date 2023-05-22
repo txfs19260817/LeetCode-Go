@@ -1,4 +1,4 @@
-package _909_Snakes_and_Ladders
+package leetcode
 
 import "testing"
 

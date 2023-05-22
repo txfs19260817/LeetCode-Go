@@ -1,4 +1,4 @@
-package _952_Rings_and_Rods
+package leetcode
 
 func countPoints(rings string) int {
 	ans, m := 0, map[int]map[byte]bool{}

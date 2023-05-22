@@ -1,4 +1,4 @@
-package _012_Count_Integers_With_Even_Digit_Sum
+package leetcode
 
 import "testing"
 

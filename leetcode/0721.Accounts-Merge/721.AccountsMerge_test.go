@@ -1,4 +1,4 @@
-package _721_Accounts_Merge
+package leetcode
 
 import (
 	"reflect"

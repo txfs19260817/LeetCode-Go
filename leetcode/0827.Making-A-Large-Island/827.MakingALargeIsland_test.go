@@ -1,4 +1,4 @@
-package _827_Making_A_Large_Island
+package leetcode
 
 import "testing"
 

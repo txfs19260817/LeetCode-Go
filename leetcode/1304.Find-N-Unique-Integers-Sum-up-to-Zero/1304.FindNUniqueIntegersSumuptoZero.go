@@ -1,4 +1,4 @@
-package _304_Find_N_Unique_Integers_Sum_up_to_Zero
+package leetcode
 
 func sumZero(n int) []int {
 	ans := make([]int, 0, n)

@@ -1,4 +1,4 @@
-package _204_Count_Primes
+package leetcode
 
 func countPrimes(n int) int {
 	ans, isPrime := 0, make([]bool, n) // an array of Bool values, indexed by 2 to n,

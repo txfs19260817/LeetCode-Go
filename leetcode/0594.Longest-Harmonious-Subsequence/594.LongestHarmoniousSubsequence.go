@@ -1,4 +1,4 @@
-package _594_Longest_Harmonious_Subsequence
+package leetcode
 
 import "sort"
 

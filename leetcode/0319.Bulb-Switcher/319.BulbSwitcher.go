@@ -1,4 +1,4 @@
-package _319_Bulb_Switcher
+package leetcode
 
 import "math"
 

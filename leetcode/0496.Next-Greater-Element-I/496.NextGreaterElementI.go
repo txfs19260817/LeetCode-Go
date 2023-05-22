@@ -1,4 +1,4 @@
-package _496_Next_Greater_Element_I
+package leetcode
 
 func nextGreaterElement(nums1 []int, nums2 []int) []int {
 	ans, monoStack, nextGreater := make([]int, len(nums1)), make([]int, 0, len(nums2)), map[int]int{}

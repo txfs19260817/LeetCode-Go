@@ -1,4 +1,4 @@
-package _054_Distant_Barcodes
+package leetcode
 
 import "sort"
 

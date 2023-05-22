@@ -1,4 +1,4 @@
-package _677_Map_Sum_Pairs
+package leetcode
 
 import (
 	"github.com/stretchr/testify/assert"

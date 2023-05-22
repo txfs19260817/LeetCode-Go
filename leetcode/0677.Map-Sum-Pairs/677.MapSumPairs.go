@@ -1,4 +1,4 @@
-package _677_Map_Sum_Pairs
+package leetcode
 
 type MapSum struct {
 	t *trie

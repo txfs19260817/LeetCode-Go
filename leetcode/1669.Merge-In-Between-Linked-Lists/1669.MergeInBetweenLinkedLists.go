@@ -1,4 +1,4 @@
-package _669_Merge_In_Between_Linked_Lists_
+package leetcode
 
 type ListNode struct {
 	Val  int

@@ -1,4 +1,4 @@
-package _208_Implement_Trie_Prefix_Tree
+package leetcode
 
 type Trie struct {
 	children [26]*Trie

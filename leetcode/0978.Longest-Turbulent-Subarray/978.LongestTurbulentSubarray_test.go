@@ -1,4 +1,4 @@
-package _978_Longest_Turbulent_Subarray
+package leetcode
 
 import "testing"
 

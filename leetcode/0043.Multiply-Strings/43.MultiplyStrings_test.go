@@ -1,4 +1,4 @@
-package _043_Multiply_Strings
+package leetcode
 
 import "testing"
 

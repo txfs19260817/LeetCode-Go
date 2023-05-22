@@ -1,4 +1,4 @@
-package _446_Arithmetic_Slices_II___Subsequence
+package leetcode
 
 func numberOfArithmeticSlices(nums []int) int {
 	ans, dp := 0, make([]map[int]int, len(nums))

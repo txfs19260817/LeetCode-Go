@@ -1,4 +1,4 @@
-package _678_Valid_Parenthesis_String
+package leetcode
 
 func checkValidString(s string) bool {
 	return helper(s, false) && helper(s, true)

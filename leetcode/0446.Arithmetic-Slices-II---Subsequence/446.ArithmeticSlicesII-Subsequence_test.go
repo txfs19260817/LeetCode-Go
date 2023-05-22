@@ -1,4 +1,4 @@
-package _446_Arithmetic_Slices_II___Subsequence
+package leetcode
 
 import "testing"
 

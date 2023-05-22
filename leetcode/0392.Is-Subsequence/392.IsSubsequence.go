@@ -1,4 +1,4 @@
-package _392_Is_Subsequence
+package leetcode
 
 func isSubsequence(s string, t string) bool {
 	for i, j := 0, 0; i < len(s); i, j = i+1, j+1 {

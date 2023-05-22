@@ -1,4 +1,4 @@
-package _000_Minimum_Cost_to_Merge_Stones
+package leetcode
 
 // https://leetcode-cn.com/problems/minimum-cost-to-merge-stones/solution/yi-dong-you-yi-dao-nan-yi-bu-bu-shuo-ming-si-lu-he/
 func mergeStones(stones []int, k int) int {

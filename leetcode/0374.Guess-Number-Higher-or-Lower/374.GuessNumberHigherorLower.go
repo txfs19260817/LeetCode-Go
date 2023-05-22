@@ -1,4 +1,4 @@
-package _374_Guess_Number_Higher_or_Lower
+package leetcode
 
 var pick int
 

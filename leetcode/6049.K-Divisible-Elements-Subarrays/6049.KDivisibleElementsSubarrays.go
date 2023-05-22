@@ -1,4 +1,4 @@
-package _049_K_Divisible_Elements_Subarrays
+package leetcode
 
 func countDistinct(nums []int, k int, p int) int {
 	ans, prefix, trie := 0, make([]int, len(nums)), NewTrie()

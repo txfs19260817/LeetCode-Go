@@ -1,4 +1,4 @@
-package _967_Check_if_All_As_Appears_Before_All_Bs
+package leetcode
 
 import "testing"
 

@@ -1,4 +1,4 @@
-package _904_Fruit_Into_Baskets
+package leetcode
 
 import "testing"
 

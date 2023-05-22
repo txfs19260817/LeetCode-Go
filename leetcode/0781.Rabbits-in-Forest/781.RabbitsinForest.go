@@ -1,4 +1,4 @@
-package _781_Rabbits_in_Forest
+package leetcode
 
 func numRabbits(answers []int) int {
 	var ans int

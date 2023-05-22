@@ -1,4 +1,4 @@
-package _233_Number_of_Digit_One
+package leetcode
 
 import "testing"
 

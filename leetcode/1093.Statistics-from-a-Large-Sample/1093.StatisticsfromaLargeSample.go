@@ -1,4 +1,4 @@
-package _093_Statistics_from_a_Large_Sample
+package leetcode
 
 func sampleStats(count []int) []float64 {
 	// minimum, maximum, mean, median, mode

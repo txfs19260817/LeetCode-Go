@@ -1,4 +1,4 @@
-package _084_Largest_Rectangle_in_Histogram
+package leetcode
 
 func largestRectangleArea(heights []int) int {
 	ans, monoStack := 0, make([]int, 0, len(heights)) // stores indices

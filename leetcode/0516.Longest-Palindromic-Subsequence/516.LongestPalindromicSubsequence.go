@@ -1,4 +1,4 @@
-package _516_Longest_Palindromic_Subsequence
+package leetcode
 
 func longestPalindromeSubseq(s string) int {
 	dp := make([][]int, len(s)+1)

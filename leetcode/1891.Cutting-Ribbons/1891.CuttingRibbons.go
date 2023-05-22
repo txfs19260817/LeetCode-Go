@@ -1,4 +1,4 @@
-package _891_Cutting_Ribbons
+package leetcode
 
 func maxLength(ribbons []int, k int) int {
 	l, r := 0, 100000

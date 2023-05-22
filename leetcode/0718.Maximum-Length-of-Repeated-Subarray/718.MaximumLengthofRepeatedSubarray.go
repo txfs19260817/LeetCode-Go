@@ -1,4 +1,4 @@
-package _718_Maximum_Length_of_Repeated_Subarray
+package leetcode
 
 func findLength(A []int, B []int) int {
 	ans, dp := 0, make([][]int, len(A)+1)

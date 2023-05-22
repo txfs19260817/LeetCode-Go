@@ -1,4 +1,4 @@
-package _871_Minimum_Number_of_Refueling_Stops
+package leetcode
 
 import "container/heap"
 

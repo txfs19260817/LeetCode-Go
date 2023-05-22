@@ -1,4 +1,4 @@
-package _075_Sort_Colors
+package leetcode
 
 func sortColors(nums []int) {
 	var r0, w1, b2 int

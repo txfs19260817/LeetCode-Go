@@ -1,4 +1,4 @@
-package _219_Contains_Duplicate_II
+package leetcode
 
 func containsNearbyDuplicate(nums []int, k int) bool {
 	window := map[int]bool{} // num:exist

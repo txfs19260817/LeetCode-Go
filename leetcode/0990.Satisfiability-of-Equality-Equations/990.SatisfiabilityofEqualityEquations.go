@@ -1,4 +1,4 @@
-package _990_Satisfiability_of_Equality_Equations
+package leetcode
 
 type UnionFind struct {
 	parent, rank []int

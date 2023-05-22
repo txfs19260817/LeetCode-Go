@@ -1,4 +1,4 @@
-package _926_Time_Needed_to_Buy_Tickets
+package leetcode
 
 import "testing"
 

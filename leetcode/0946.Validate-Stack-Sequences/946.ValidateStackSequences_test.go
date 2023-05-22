@@ -1,4 +1,4 @@
-package _946_Validate_Stack_Sequences
+package leetcode
 
 import "testing"
 

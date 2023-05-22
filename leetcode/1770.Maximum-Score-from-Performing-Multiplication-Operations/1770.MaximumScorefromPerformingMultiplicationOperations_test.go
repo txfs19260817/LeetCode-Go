@@ -1,4 +1,4 @@
-package _770_Maximum_Score_from_Performing_Multiplication_Operations
+package leetcode
 
 import "testing"
 

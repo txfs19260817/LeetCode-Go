@@ -1,4 +1,4 @@
-package _460_Make_Two_Arrays_Equal_by_Reversing_Sub_arrays
+package leetcode
 
 import "testing"
 

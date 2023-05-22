@@ -1,4 +1,4 @@
-package _165_Compare_Version_Numbers
+package leetcode
 
 func compareVersion(version1 string, version2 string) int {
 	for i, j := 0, 0; i < len(version1) || j < len(version2); {

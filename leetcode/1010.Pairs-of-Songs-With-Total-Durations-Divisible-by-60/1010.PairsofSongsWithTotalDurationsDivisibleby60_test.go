@@ -1,4 +1,4 @@
-package _010_Pairs_of_Songs_With_Total_Durations_Divisible_by_60
+package leetcode
 
 import "testing"
 

@@ -1,4 +1,4 @@
-package _149_Max_Points_on_a_Line
+package leetcode
 
 import "testing"
 

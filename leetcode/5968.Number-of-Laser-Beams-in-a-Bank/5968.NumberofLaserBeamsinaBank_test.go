@@ -1,4 +1,4 @@
-package _968_Number_of_Laser_Beams_in_a_Bank
+package leetcode
 
 import "testing"
 

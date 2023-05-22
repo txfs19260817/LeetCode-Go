@@ -1,4 +1,4 @@
-package _150_Evaluate_Reverse_Polish_Notation
+package leetcode
 
 import "testing"
 

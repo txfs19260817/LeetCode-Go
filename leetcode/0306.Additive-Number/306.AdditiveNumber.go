@@ -1,4 +1,4 @@
-package _306_Additive_Number
+package leetcode
 
 import (
 	"strconv"

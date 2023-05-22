@@ -1,4 +1,4 @@
-package _856_Score_of_Parentheses
+package leetcode
 
 // https://leetcode.com/problems/score-of-parentheses/solution/314388
 func scoreOfParentheses(s string) int {

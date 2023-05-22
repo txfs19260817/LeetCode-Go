@@ -1,4 +1,4 @@
-package _916_Minimum_Operations_to_Convert_Number
+package leetcode
 
 func minimumOperations(nums []int, start int, goal int) int {
 	visited, q := [1001]bool{}, []int{start}

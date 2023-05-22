@@ -1,4 +1,4 @@
-package _109_Corporate_Flight_Bookings
+package leetcode
 
 func corpFlightBookings(bookings [][]int, n int) []int {
 	ans := make([]int, n)

@@ -1,4 +1,4 @@
-package _064_Minimum_Path_Sum
+package leetcode
 
 import "testing"
 

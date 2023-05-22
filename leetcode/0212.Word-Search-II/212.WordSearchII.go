@@ -1,4 +1,4 @@
-package _212_Word_Search_II
+package leetcode
 
 func findWords(board [][]byte, words []string) []string {
 	dir := [4][2]int{{-1, 0}, {1, 0}, {0, 1}, {0, -1}}

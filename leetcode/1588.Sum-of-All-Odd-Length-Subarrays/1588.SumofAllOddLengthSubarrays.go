@@ -1,4 +1,4 @@
-package _588_Sum_of_All_Odd_Length_Subarrays
+package leetcode
 
 func sumOddLengthSubarrays(arr []int) int {
 	var ans int

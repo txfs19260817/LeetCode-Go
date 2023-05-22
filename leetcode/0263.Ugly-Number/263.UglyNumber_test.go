@@ -1,4 +1,4 @@
-package _263_Ugly_Number
+package leetcode
 
 import "testing"
 

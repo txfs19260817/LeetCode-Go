@@ -1,4 +1,4 @@
-package _227_Basic_Calculator_II
+package leetcode
 
 func calculate(s string) int {
 	ans, curNum, preNum, sign := 0, 0, 0, '+'

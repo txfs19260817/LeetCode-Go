@@ -1,4 +1,4 @@
-package _028_Count_Collisions_on_a_Road
+package leetcode
 
 func countCollisions(directions string) int {
 	var ans, carsFromR, i int

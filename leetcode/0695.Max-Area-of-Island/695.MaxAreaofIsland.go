@@ -1,4 +1,4 @@
-package _695_Max_Area_of_Island
+package leetcode
 
 func maxAreaOfIsland(grid [][]int) int {
 	var ans int

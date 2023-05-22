@@ -1,4 +1,4 @@
-package _027_Count_Hills_and_Valleys_in_an_Array
+package leetcode
 
 func countHillValley(nums []int) int {
 	var ans int

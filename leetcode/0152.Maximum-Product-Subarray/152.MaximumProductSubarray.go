@@ -1,4 +1,4 @@
-package _152_Maximum_Product_Subarray
+package leetcode
 
 func maxProduct(nums []int) int {
 	ans, maxF, minF := nums[0], nums[0], nums[0]

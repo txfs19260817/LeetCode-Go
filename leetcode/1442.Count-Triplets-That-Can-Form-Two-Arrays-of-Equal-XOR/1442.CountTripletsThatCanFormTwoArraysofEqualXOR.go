@@ -1,4 +1,4 @@
-package _442_Count_Triplets_That_Can_Form_Two_Arrays_of_Equal_XOR
+package leetcode
 
 func countTriplets(arr []int) int {
 	ans, s, count, total := 0, 0, map[int]int{}, map[int]int{} // index:xor, index:count_i

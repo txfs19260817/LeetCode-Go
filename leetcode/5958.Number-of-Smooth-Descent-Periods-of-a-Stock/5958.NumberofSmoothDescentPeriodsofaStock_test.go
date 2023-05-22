@@ -1,4 +1,4 @@
-package _958_Number_of_Smooth_Descent_Periods_of_a_Stock
+package leetcode
 
 import "testing"
 

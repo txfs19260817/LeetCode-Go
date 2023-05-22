@@ -1,4 +1,4 @@
-package _210_Course_Schedule_II
+package leetcode
 
 func findOrder(numCourses int, prerequisites [][]int) []int {
 	ans, inDegrees, g := make([]int, 0, numCourses), make([]int, numCourses), make([][]int, numCourses)

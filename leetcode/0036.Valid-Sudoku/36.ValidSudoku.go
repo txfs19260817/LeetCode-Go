@@ -1,4 +1,4 @@
-package _036_Valid_Sudoku
+package leetcode
 
 func isValidSudoku(board [][]byte) bool {
 	rows, cols, boxes := [9][9]int{}, [9][9]int{}, [9][9]int{}

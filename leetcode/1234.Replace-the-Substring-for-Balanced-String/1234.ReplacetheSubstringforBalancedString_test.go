@@ -1,4 +1,4 @@
-package _234_Replace_the_Substring_for_Balanced_String
+package leetcode
 
 import "testing"
 

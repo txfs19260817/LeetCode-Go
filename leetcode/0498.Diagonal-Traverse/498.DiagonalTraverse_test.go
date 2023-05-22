@@ -1,4 +1,4 @@
-package _498_Diagonal_Traverse
+package leetcode
 
 import (
 	"reflect"

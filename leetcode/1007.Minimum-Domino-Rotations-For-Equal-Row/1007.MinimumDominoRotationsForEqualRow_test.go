@@ -1,4 +1,4 @@
-package _007_Minimum_Domino_Rotations_For_Equal_Row
+package leetcode
 
 import "testing"
 

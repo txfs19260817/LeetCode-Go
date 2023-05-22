@@ -1,4 +1,4 @@
-package _486_XOR_Operation_in_an_Array
+package leetcode
 
 func xorOperation(n int, start int) int {
 	// the lowest bit is 1 if and only if n and start are both odd numbers
@@ -23,7 +23,7 @@ func computeXOR(x int) int {
 	//      4    0100    0100        n
 	//      5    0101    0001        1
 	//      6    0110    0111       n+1
-	//      ……   ……      ……
+	//      ...  ...     ...        ...
 	switch x % 4 {
 	case 0:
 		return x

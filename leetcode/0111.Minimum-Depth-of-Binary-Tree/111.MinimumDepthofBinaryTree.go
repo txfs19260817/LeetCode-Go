@@ -1,4 +1,4 @@
-package _111_Minimum_Depth_of_Binary_Tree
+package leetcode
 
 type TreeNode struct {
 	Val   int

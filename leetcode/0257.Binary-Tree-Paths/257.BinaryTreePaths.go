@@ -1,4 +1,4 @@
-package _257_Binary_Tree_Paths
+package leetcode
 
 import (
 	"strconv"

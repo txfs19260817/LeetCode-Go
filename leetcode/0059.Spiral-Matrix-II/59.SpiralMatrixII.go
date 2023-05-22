@@ -1,4 +1,4 @@
-package _059_Spiral_Matrix_II
+package leetcode
 
 func generateMatrix(n int) [][]int {
 	ans := make([][]int, n)

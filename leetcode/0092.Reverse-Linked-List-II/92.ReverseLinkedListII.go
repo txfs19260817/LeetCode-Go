@@ -1,4 +1,4 @@
-package _092_Reverse_Linked_List_II
+package leetcode
 
 type ListNode struct {
 	Val  int

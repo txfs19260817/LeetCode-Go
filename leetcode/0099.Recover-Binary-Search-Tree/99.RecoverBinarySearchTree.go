@@ -1,4 +1,4 @@
-package _099_Recover_Binary_Search_Tree
+package leetcode
 
 type TreeNode struct {
 	Val   int

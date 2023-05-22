@@ -1,4 +1,4 @@
-package _249_Minimum_Remove_to_Make_Valid_Parentheses
+package leetcode
 
 import "testing"
 

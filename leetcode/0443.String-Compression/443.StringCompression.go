@@ -1,4 +1,4 @@
-package _443_String_Compression
+package leetcode
 
 func compress(chars []byte) int {
 	var l, r, w int // left, right pointers, and a writer pointer

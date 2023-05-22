@@ -1,4 +1,4 @@
-package _127_Word_Ladder
+package leetcode
 
 func ladderLength(beginWord string, endWord string, wordList []string) int {
 	wordSet := map[string]bool{}

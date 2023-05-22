@@ -1,4 +1,4 @@
-package _430_Flatten_a_Multilevel_Doubly_Linked_List
+package leetcode
 
 type Node struct {
 	Val   int

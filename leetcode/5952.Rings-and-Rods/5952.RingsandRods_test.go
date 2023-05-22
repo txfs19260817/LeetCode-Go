@@ -1,4 +1,4 @@
-package _952_Rings_and_Rods
+package leetcode
 
 import "testing"
 

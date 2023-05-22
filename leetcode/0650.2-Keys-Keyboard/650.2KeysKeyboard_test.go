@@ -1,4 +1,4 @@
-package _650_2_Keys_Keyboard
+package leetcode
 
 import "testing"
 

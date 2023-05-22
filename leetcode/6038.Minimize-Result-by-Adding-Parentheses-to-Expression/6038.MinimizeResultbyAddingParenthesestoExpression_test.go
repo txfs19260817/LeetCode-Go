@@ -1,4 +1,4 @@
-package _038_Minimize_Result_by_Adding_Parentheses_to_Expression
+package leetcode
 
 import "testing"
 

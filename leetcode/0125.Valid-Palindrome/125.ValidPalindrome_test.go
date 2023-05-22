@@ -1,4 +1,4 @@
-package _125_Valid_Palindrome
+package leetcode
 
 import "testing"
 

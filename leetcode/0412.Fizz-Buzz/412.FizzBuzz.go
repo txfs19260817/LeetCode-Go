@@ -1,4 +1,4 @@
-package _412_Fizz_Buzz
+package leetcode
 
 import "strconv"
 

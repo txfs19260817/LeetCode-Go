@@ -1,4 +1,4 @@
-package _325_Maximum_Size_Subarray_Sum_Equals_k
+package leetcode
 
 func maxSubArrayLen(nums []int, k int) int {
 	ans, preSum, sum2idx := 0, 0, map[int]int{0: -1}

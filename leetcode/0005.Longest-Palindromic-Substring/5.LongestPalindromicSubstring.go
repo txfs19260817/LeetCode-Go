@@ -1,4 +1,4 @@
-package _005_Longest_Palindromic_Substring
+package leetcode
 
 func longestPalindrome(s string) string {
 	var start, end int

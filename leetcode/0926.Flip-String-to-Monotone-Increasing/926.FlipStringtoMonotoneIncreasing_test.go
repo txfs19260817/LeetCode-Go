@@ -1,4 +1,4 @@
-package _926_Flip_String_to_Monotone_Increasing
+package leetcode
 
 import "testing"
 

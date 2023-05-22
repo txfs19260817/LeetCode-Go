@@ -1,4 +1,4 @@
-package _242_Valid_Anagram
+package leetcode
 
 func isAnagram(s string, t string) bool {
 	m := map[rune]int{}

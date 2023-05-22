@@ -1,4 +1,4 @@
-package _629_Slowest_Key
+package leetcode
 
 func slowestKey(releaseTimes []int, keysPressed string) byte {
 	ans, long := keysPressed[0], releaseTimes[0]

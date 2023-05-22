@@ -1,4 +1,4 @@
-package _042_Count_Lattice_Points_Inside_a_Circle
+package leetcode
 
 func countLatticePoints(circles [][]int) int {
 	m := map[[2]int]bool{}

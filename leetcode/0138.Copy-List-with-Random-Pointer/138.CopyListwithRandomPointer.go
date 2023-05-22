@@ -1,4 +1,4 @@
-package _138_Copy_List_with_Random_Pointer
+package leetcode
 
 type Node struct {
 	Val    int

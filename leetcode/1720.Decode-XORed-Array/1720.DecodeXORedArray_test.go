@@ -1,4 +1,4 @@
-package _720_Decode_XORed_Array
+package leetcode
 
 import (
 	"reflect"

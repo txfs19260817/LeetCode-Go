@@ -1,4 +1,4 @@
-package _958_Number_of_Smooth_Descent_Periods_of_a_Stock
+package leetcode
 
 func getDescentPeriods(prices []int) int64 {
 	ans, dp := int64(0), make([]int, len(prices))

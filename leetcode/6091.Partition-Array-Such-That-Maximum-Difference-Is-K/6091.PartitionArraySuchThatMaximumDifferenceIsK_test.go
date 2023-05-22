@@ -1,4 +1,4 @@
-package _091_Partition_Array_Such_That_Maximum_Difference_Is_K
+package leetcode
 
 import "testing"
 

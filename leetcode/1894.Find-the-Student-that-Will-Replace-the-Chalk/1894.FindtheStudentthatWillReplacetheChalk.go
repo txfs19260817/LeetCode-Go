@@ -1,4 +1,4 @@
-package _894_Find_the_Student_that_Will_Replace_the_Chalk
+package leetcode
 
 import "sort"
 

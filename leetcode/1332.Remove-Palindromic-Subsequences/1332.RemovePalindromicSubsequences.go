@@ -1,4 +1,4 @@
-package _332_Remove_Palindromic_Subsequences
+package leetcode
 
 func removePalindromeSub(s string) int {
 	if len(s) == 0 {

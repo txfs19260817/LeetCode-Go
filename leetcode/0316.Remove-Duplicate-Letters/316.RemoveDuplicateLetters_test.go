@@ -1,4 +1,4 @@
-package _316_Remove_Duplicate_Letters
+package leetcode
 
 import "testing"
 

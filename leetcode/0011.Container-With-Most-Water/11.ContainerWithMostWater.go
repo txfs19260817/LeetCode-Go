@@ -1,4 +1,4 @@
-package _011_Container_With_Most_Water
+package leetcode
 
 func maxArea(height []int) int {
 	ans := 0

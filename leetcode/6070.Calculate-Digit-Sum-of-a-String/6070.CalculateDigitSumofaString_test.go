@@ -1,4 +1,4 @@
-package _070_Calculate_Digit_Sum_of_a_String
+package leetcode
 
 import "testing"
 

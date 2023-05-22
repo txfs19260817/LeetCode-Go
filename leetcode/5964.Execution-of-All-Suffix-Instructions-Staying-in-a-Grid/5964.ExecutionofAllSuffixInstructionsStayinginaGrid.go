@@ -1,4 +1,4 @@
-package _964_Execution_of_All_Suffix_Instructions_Staying_in_a_Grid
+package leetcode
 
 func executeInstructions(n int, startPos []int, s string) []int {
 	dirs := map[byte][2]int{'L': {0, -1}, 'R': {0, 1}, 'U': {-1, 0}, 'D': {1, 0}}

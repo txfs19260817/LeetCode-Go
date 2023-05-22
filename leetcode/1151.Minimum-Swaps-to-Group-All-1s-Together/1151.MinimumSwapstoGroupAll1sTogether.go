@@ -1,4 +1,4 @@
-package _151_Minimum_Swaps_to_Group_All_1s_Together
+package leetcode
 
 func minSwaps(data []int) int {
 	var totalOnes, maxLocalOnes int

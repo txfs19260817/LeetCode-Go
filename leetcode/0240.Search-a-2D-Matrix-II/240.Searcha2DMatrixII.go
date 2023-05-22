@@ -1,4 +1,4 @@
-package _240_Search_a_2D_Matrix_II
+package leetcode
 
 func searchMatrix(matrix [][]int, target int) bool {
 	for i, j := len(matrix)-1, 0; i >= 0; i-- {

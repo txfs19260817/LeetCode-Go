@@ -1,4 +1,4 @@
-package _109_Corporate_Flight_Bookings
+package leetcode
 
 import (
 	"reflect"

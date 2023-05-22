@@ -1,4 +1,4 @@
-package _049_K_Divisible_Elements_Subarrays
+package leetcode
 
 import "testing"
 

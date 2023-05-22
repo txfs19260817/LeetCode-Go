@@ -1,4 +1,4 @@
-package _647_Palindromic_Substrings
+package leetcode
 
 import "testing"
 

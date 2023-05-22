@@ -1,4 +1,4 @@
-package _583_Delete_Operation_for_Two_Strings
+package leetcode
 
 func minDistance(word1 string, word2 string) int {
 	lcs := longestCommonSubsequence(word1, word2)

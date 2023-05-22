@@ -1,4 +1,4 @@
-package _213_Intersection_of_Three_Sorted_Arrays
+package leetcode
 
 import "sort"
 

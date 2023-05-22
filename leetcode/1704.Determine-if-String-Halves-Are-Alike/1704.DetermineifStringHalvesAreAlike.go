@@ -1,4 +1,4 @@
-package _704_Determine_if_String_Halves_Are_Alike
+package leetcode
 
 func halvesAreAlike(s string) bool {
 	var count int

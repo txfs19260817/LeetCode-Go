@@ -1,4 +1,4 @@
-package _071_Minimum_Rounds_to_Complete_All_Tasks
+package leetcode
 
 func minimumRounds(tasks []int) int {
 	ans, t2cnt := 0, map[int]int{}

@@ -1,4 +1,4 @@
-package _679_24_Game
+package leetcode
 
 const (
 	ADD = iota

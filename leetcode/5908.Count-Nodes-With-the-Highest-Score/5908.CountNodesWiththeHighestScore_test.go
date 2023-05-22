@@ -1,4 +1,4 @@
-package _908_Count_Nodes_With_the_Highest_Score
+package leetcode
 
 import "testing"
 

@@ -1,4 +1,4 @@
-package _957_Adding_Spaces_to_a_String
+package leetcode
 
 func addSpaces(s string, spaces []int) string {
 	ans, offset := make([]rune, len(s)+len(spaces)), 0

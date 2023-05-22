@@ -1,4 +1,4 @@
-package _093_Statistics_from_a_Large_Sample
+package leetcode
 
 import (
 	"reflect"

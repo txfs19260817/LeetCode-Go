@@ -1,4 +1,4 @@
-package _249_Group_Shifted_Strings
+package leetcode
 
 func groupStrings(strings []string) [][]string {
 	origin2idx := map[string][]string{}

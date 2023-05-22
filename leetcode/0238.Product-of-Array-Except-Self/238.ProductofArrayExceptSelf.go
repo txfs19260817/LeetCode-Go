@@ -1,4 +1,4 @@
-package _238_Product_of_Array_Except_Self
+package leetcode
 
 func productExceptSelf(nums []int) []int {
 	ans, r := make([]int, len(nums)), 1

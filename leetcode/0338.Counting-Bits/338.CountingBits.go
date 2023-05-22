@@ -1,4 +1,4 @@
-package _338_Counting_Bits
+package leetcode
 
 func countBits(num int) []int {
 	res := make([]int, num+1)

@@ -1,4 +1,4 @@
-package _789_Escape_The_Ghosts
+package leetcode
 
 import "testing"
 

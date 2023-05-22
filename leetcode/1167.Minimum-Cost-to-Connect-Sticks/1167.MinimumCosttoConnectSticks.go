@@ -1,4 +1,4 @@
-package _167_Minimum_Cost_to_Connect_Sticks
+package leetcode
 
 import "container/heap"
 

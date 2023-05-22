@@ -1,4 +1,4 @@
-package _926_Time_Needed_to_Buy_Tickets
+package leetcode
 
 func timeRequiredToBuy(tickets []int, k int) int {
 	var ans int

@@ -1,4 +1,4 @@
-package _115_Distinct_Subsequences
+package leetcode
 
 import "testing"
 

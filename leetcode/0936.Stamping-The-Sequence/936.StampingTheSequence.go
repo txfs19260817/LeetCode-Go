@@ -1,4 +1,4 @@
-package _936_Stamping_The_Sequence
+package leetcode
 
 func movesToStamp(stamp string, target string) []int {
 	ans, tSlice := make([]int, 0, 10*len(target)), []byte(target)

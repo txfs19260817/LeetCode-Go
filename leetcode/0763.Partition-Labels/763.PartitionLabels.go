@@ -1,4 +1,4 @@
-package _763_Partition_Labels
+package leetcode
 
 import "sort"
 

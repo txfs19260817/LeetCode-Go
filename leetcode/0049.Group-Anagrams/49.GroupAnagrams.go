@@ -1,4 +1,4 @@
-package _049_Group_Anagrams
+package leetcode
 
 func groupAnagrams(strs []string) [][]string {
 	var ans [][]string

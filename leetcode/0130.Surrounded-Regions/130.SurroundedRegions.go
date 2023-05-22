@@ -1,4 +1,4 @@
-package _130_Surrounded_Regions
+package leetcode
 
 func solve(board [][]byte) {
 	for i := 0; i < len(board); i++ {

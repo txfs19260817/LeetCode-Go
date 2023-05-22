@@ -1,4 +1,4 @@
-package _845_Longest_Mountain_in_Array
+package leetcode
 
 func longestMountain(arr []int) int {
 	l, r, res, isAscending := 0, 0, 0, true

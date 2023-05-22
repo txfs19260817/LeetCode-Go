@@ -1,4 +1,4 @@
-package _963_A_Number_After_a_Double_Reversal
+package leetcode
 
 import "testing"
 

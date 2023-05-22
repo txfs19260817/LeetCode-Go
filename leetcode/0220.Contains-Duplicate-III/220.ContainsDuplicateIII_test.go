@@ -1,4 +1,4 @@
-package _220_Contains_Duplicate_III
+package leetcode
 
 import "testing"
 

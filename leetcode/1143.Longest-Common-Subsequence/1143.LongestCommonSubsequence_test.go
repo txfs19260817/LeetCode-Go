@@ -1,4 +1,4 @@
-package _143_Longest_Common_Subsequence
+package leetcode
 
 import "testing"
 
