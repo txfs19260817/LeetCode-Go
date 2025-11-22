@@ -1,6 +1,9 @@
 package leetcode
 
-import "strconv"
+import (
+	"strconv"
+	"strings"
+)
 
 func decodeString(s string) string {
 	numIdxStart, numIdxEnd, backBracketIdx, bracketDepth := -1, -1, 0, 0
@@ -38,5 +41,35 @@ func decodeString(s string) string {
 		ans += mid
 	}
 	ans += decodeString(s[backBracketIdx+1:])
+	return ans
+}
+
+func decodeString2(s string) string {
+	ans, num := "", 0
+	for i := 0; i < len(s); {
+		// chars
+		for ; i < len(s) && s[i] >= 'a' && s[i] <= 'z'; i++ {
+			ans += string(s[i])
+		}
+		// num
+		for ; i < len(s) && s[i] >= '0' && s[i] <= '9'; i++ {
+			num = num*10 + int(s[i]-'0')
+		}
+		if i == len(s) {
+			break
+		}
+		i++
+		j := i
+		for depth := 1; depth > 0; j++ {
+			if s[j] == '[' {
+				depth++
+			} else if s[j] == ']' {
+				depth--
+			}
+		}
+		ans += strings.Repeat(decodeString(s[i:j-1]), num)
+		i = j
+		num = 0
+	}
 	return ans
 }
