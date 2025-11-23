@@ -1,0 +1,884 @@
+1.You are working on a logic game made up of a series of puzzles. The first type of puzzle you settle on is "sub-Sudoku", a game where the player has to position the numbers 1..N on an NxN matrix.
+ 
+
+Your job is to write a function that, given an NxN matrix, returns true if every row and column contains the numbers 1..N
+ 
+The UI for the game does not do any validation on the numbers the player enters, so the matrix can contain any signed integer.
+ 
+grid1 = [[2, 3, 1],
+[1, 2, 3],
+[3, 1, 2]] -> True (A grid of size 3: every row and column contains the numbers 1,2,3)
+ 
+grid2 = [[1, 2, 3],
+[3, 2, 1],
+[3, 1, 2]] -> False (The first column is missing the value 2. It should contain the numbers 1,2 and 3.
+Similarly, the second column is missing the value 3.)
+ 
+grid3 = [[2, 2, 3],
+[3, 1, 2],
+[2, 3, 1]] -> False (The first row is missing the value 1. Same for the first column.)
+ 
+grid4 = [[1]] -> True (a grid of size one: it contains 1 as the single value)
+ 
+grid5 = [[-1, -2, -3],
+[-2, -3, -1],
+[-3, -1, -2]] -> False (The rows and columns need to contain the values 1,2,3 and not -1, -2, and -3)
+ 
+grid6 = [[1, 3, 3],
+[3, 1, 2],
+[2, 3, 1]] -> False
+ 
+grid7 = [[1, 2, 3, 4],
+[4, 3, 2, 1],
+[1, 3, 2, 4],
+[4, 2, 3, 1]] -> False
+ 
+we could sort the array row wise and check for 1 to N in each of the elements
+we could sort the array col
+grid8 = [[0, 3],
+[3, 0]] -> False (for a grid of size two, all the rows and columns should contain 1 and 2, not 0 and 3 )
+ 
+grid9 = [[0, 1],
+[1, 0]] -> False (same as above all rows and columns should contain 1 and 2, not 0 and 1 )
+ 
+grid10 = [[1, 1, 6],
+[1, 6, 1],
+[6, 1, 1]] -> False
+ 
+grid11 = [[1, 2, 3, 4],
+[2, 3, 1, 4],
+[3, 1, 2, 4],
+[4, 2, 3, 1]] -> False
+ 
+grid12 = [[-1, -2, 12, 1],
+[12, -1, 1, -2],
+[-2, 1, -1, 12],
+[1, 12, -2, -1]] -> False (all the rows and columns should contain the values 1,2,3,4)
+(the input could contain positive and negative numbers)
+ 
+grid13 = [[2, 3, 3],
+[1, 2, 1],
+[3, 1, 2]] -> False
+ 
+grid14 = [[1, 3], -> False
+[3, 1]]
+ 
+grid15 = [[2, 3], -> False
+[3, 2]]
+ 
+grid16 = [[3, 2], -> False
+[2, 3]]
+ 
+grid17 = [[2, 3, 1], -> False
+[1, 2, 3],
+[2, 3, 1]];
+ 
+ 
+validateSudoku(grid1) => True
+validateSudoku(grid2) => False
+validateSudoku(grid3) => False
+validateSudoku(grid4) => True
+validateSudoku(grid5) => False
+validateSudoku(grid6) => False
+validateSudoku(grid7) => False
+validateSudoku(grid8) => False
+validateSudoku(grid9) => False
+validateSudoku(grid10) => False
+validateSudoku(grid11) => False
+validateSudoku(grid12) => False
+validateSudoku(grid13) => False
+validateSudoku(grid14) => False
+validateSudoku(grid15) => False
+validateSudoku(grid16) => False
+validateSudoku(grid17) => False
+ 
+Complexity analysis variables:
+ 
+N = The number of rows/columns in the matrix
+
+2.You are analyzing data for Aquaintly, a hot new social network.
+ 
+On Aquaintly, connections are always symmetrical. If a user Alice is connected to Bob, then Bob is also connected to Alice.
+ 
+You are given a sequential log of CONNECT and DISCONNECT events of the following form:
+- This event connects users Alice and Bob: ["CONNECT", "Alice", "Bob"]
+- This event disconnects the same users: ["DISCONNECT", "Bob", "Alice"] (order of users does not matter)
+ 
+We want to separate users based on their popularity (number of connections). To do this, write a function that takes in the event log and a number N and returns two collections:
+[Users with fewer than N connections], [Users with N or more connections]
+ 
+Example:
+events = [
+   ["CONNECT","Alice","Bob"],
+   ["DISCONNECT","Bob","Alice"],
+   ["CONNECT","Alice","Charlie"],
+   ["CONNECT","Dennis","Bob"],
+   ["CONNECT","Pam","Dennis"],
+   ["DISCONNECT","Pam","Dennis"],
+   ["CONNECT","Pam","Dennis"],
+   ["CONNECT","Edward","Bob"],
+   ["CONNECT","Dennis","Charlie"],
+   ["CONNECT","Alice","Nicole"],
+   ["CONNECT","Pam","Edward"],
+   ["DISCONNECT","Dennis","Charlie"],
+   ["CONNECT","Dennis","Edward"],
+   ["CONNECT","Charlie","Bob"]
+]
+ 
+Using a target of 3 connections, the expected results are:
+Users with less than 3 connections: ["Alice", "Charlie", "Pam", "Nicole"]
+Users with 3 or more connections: ["Dennis", "Bob", "Edward"]
+ 
+All test cases:
+grouping(events, 3) => [["Alice", "Charlie", "Pam", "Nicole"], ["Dennis", "Bob", "Edward"]]
+grouping(events, 1) => [[], ["Alice", "Charlie", "Dennis", "Bob", "Pam", "Edward", "Nicole"]]
+grouping(events, 10) => [["Alice", "Charlie", "Dennis", "Bob", "Pam", "Edward", "Nicole"], []]
+Complexity Variable:
+E = number of events
+
+3. We are working on a security system for a badged-access room in our company's building.
+ 
+Given an ordered list of employees who used their badge to enter or exit the room, write a function that returns two collections:
+ 
+1. All employees who didn't use their badge while exiting the room - they recorded an enter without a matching exit. (All employees are required to leave the room before the log ends.)
+ 
+2. All employees who didn't use their badge while entering the room - they recorded an exit without a matching enter. (The room is empty when the log begins.)
+ 
+Each collection should contain no duplicates, regardless of how many times a given employee matches the criteria for belonging to it.
+ 
+records1 = [
+  ["Paul",     "enter"],
+  ["Pauline",  "exit"],
+  ["Paul",     "enter"],
+  ["Paul",     "exit"],
+  ["Martha",   "exit"],
+  ["Joe",      "enter"],
+  ["Martha",   "enter"],
+  ["Steve",    "enter"],
+  ["Martha",   "exit"],
+  ["Jennifer", "enter"],
+  ["Joe",      "enter"],
+  ["Curtis",   "exit"],
+  ["Curtis",   "enter"],
+  ["Joe",      "exit"],
+  ["Martha",   "enter"],
+  ["Martha",   "exit"],
+  ["Jennifer", "exit"],
+  ["Joe",      "enter"],
+  ["Joe",      "enter"],
+  ["Martha",   "exit"],
+  ["Joe",      "exit"],
+  ["Joe",      "exit"] 
+]
+ 
+Expected output: ["Steve", "Curtis", "Paul", "Joe"], ["Martha", "Pauline", "Curtis", "Joe"]
+ 
+Other test cases:
+ 
+records2 = [
+  ["Paul", "enter"],
+  ["Paul", "exit"],
+]
+ 
+Expected output: [], []
+ 
+records3 = [
+  ["Paul", "enter"],
+  ["Paul", "enter"],
+  ["Paul", "exit"],
+  ["Paul", "exit"],
+]
+ 
+Expected output: ["Paul"], ["Paul"]
+ 
+records4 = [
+  ["Raj", "enter"],
+  ["Paul", "enter"],
+  ["Paul", "exit"],
+  ["Paul", "exit"],
+  ["Paul", "enter"],
+  ["Raj", "enter"],
+]
+ 
+ 
+Expected output: ["Raj", "Paul"], ["Paul"]
+ 
+1. All employees who didn't use their badge while exiting the room - they recorded an enter without a matching exit. (All employees are required to leave the room before the log ends.)
+ 
+2. All employees who didn't use their badge while entering the room - they recorded an exit without a matching enter. (The room is empty when the log begins.)
+ 
+All Test Cases:
+mismatches(records1) => ["Steve", "Curtis", "Paul", "Joe"], ["Martha", "Pauline", "Curtis", "Joe"]
+mismatches(records2) => [], []
+mismatches(records3) => ["Paul"], ["Paul"]
+mismatches(records4) => ["Raj", "Paul"], ["Paul"]
+ 
+n: length of the badge records array
+*/
+
+4.We are building a word processor and we would like to implement a "word-wrap" functionality.
+ 
+Given a list of words followed by a maximum number of characters in a line, return a collection of strings where each string element represents a line that contains as many words as possible, with the words in each line being concatenated with a single '-' (representing a space, but easier to see for testing). The length of each string must not exceed the maximum character length per line.
+ 
+Your function should take in the maximum characters per line and return a data structure representing all lines in the indicated max length.
+ 
+Examples:
+ 
+words1 = [ "The", "day", "began", "as", "still", "as", "the",
+          "night", "abruptly", "lighted", "with", "brilliant",
+          "flame" ]
+ 
+wrapLines(words1, 13) "wrap words1 to line length 13" =>
+ 
+  [ "The-day-began",
+    "as-still-as",
+    "the-night",
+    "abruptly",
+    "lighted-with",
+    "brilliant",
+    "flame" ]
+ 
+wrapLines(words1, 12) "wrap words1 to line length 12" =>
+ 
+  [ "The-day",
+    "began-as",
+    "still-as-the",
+    "night",
+    "abruptly",
+    "lighted-with",
+    "brilliant",
+    "flame" ]    
+ 
+ 
+wrapLines(words1, 20) "wrap words1 to line length 20" =>
+ 
+  [ "The-day-began-as",
+    "still-as-the-night",
+    "abruptly-lighted",
+    "with-brilliant-flame" ]
+ 
+words2 = [ "Hello" ]
+ 
+wrapLines(words2, 5) "wrap words2 to line length 5" =>
+ 
+  [ "Hello" ]
+ 
+ 
+wrapLines(words2, 30) "wrap words2 to line length 30" =>
+ 
+  [ "Hello" ]  
+ 
+words3 = [ "Hello", "Hello" ]
+ 
+wrapLines(words3, 5) "wrap words3 to line length 5" =>
+ 
+  [ "Hello",
+  "Hello" ]
+ 
+words4 = ["Well", "Hello", "world" ]
+ 
+wrapLines(words4, 5) "wrap words4 to line length 5" =>
+ 
+  [ "Well",
+  "Hello",
+  "world" ]
+ 
+words5 = ["Hello", "HelloWorld", "Hello", "Hello"]
+ 
+wrapLines(words5, 20) "wrap words 5 to line length 20 =>
+ 
+  [ "Hello-HelloWorld",
+    "Hello-Hello" ]
+ 
+ 
+words6 = [ "a", "b", "c", "d" ]
+wrapLines(words6, 20) "wrap words 6 to line length 20 =>
+ 
+  [ "a-b-c-d" ]
+ 
+wrapLines(words6, 4) "wrap words 6 to line length 4 =>
+ 
+  [ "a-b",
+    "c-d" ]
+ 
+wrapLines(words6, 1) "wrap words 6 to line length 1 =>
+ 
+  [ "a",
+    "b",
+    "c",
+    "d" ]
+ 
+All Test Cases:
+          words,  max line length
+wrapLines(words1, 13)
+wrapLines(words1, 12)
+wrapLines(words1, 20)
+wrapLines(words2, 5)
+wrapLines(words2, 30)
+wrapLines(words3, 5)
+wrapLines(words4, 5)
+wrapLines(words5, 20)
+wrapLines(words6, 20)
+wrapLines(words6, 4)
+wrapLines(words6, 1)
+ 
+n = number of words OR total characters
+*/
+ 
+/*
+words1 = [ "The", "day", "began", "as", "still", "as", "the",
+          "night", "abruptly", "lighted", "with", "brilliant",
+          "flame" ]
+ 
+wrapLines(words1, 13) "wrap words1 to line length 13" =>
+ 
+  [ "The-day-began",
+    "as-still-as",
+    "the-night",
+    "abruptly",
+    "lighted-with",
+    "brilliant",
+    "flame" ]
+    */
+
+5. You are a developer for a university. Your current project is to develop a system for students to find courses they share with friends. The university has a system for querying courses students are enrolled in, returned as a list of (ID, course) pairs.
+ 
+Write a function that takes in a collection of (student ID number, course name) pairs and returns, for every pair of students, a collection of all courses they share.
+ 
+ 
+Sample Input:
+ 
+enrollments1 = [
+  ["58", "Linear Algebra"],
+  ["94", "Art History"],
+  ["94", "Operating Systems"],
+  ["17", "Software Design"],
+  ["58", "Mechanics"],
+  ["58", "Economics"],
+  ["17", "Linear Algebra"],
+  ["17", "Political Science"],
+  ["94", "Economics"],
+  ["25", "Economics"],
+  ["58", "Software Design"],
+]
+ 
+Sample Output (pseudocode, in any order):
+ 
+find_pairs(enrollments1) =>
+{
+  "58,17": ["Software Design", "Linear Algebra"]
+  "58,94": ["Economics"]
+  "58,25": ["Economics"]
+  "94,25": ["Economics"]
+  "17,94": []
+  "17,25": []
+}
+ 
+ 
+Additional test cases:
+ 
+Sample Input:
+ 
+enrollments2 = [
+  ["0", "Advanced Mechanics"],
+  ["0", "Art History"],
+  ["1", "Course 1"],
+  ["1", "Course 2"],
+  ["2", "Computer Architecture"],
+  ["3", "Course 1"],
+  ["3", "Course 2"],
+  ["4", "Algorithms"]
+]
+ 
+ 
+Sample output:
+ 
+find_pairs(enrollments2) =>
+{
+  "1,0":[]
+  "2,0":[]
+  "2,1":[]
+  "3,0":[]
+  "3,1":["Course 1", "Course 2"]
+  "3,2":[]
+  "4,0":[]
+  "4,1":[]
+  "4,2":[]
+  "4,3":[]
+}
+ 
+Sample Input:
+enrollments3 = [
+  ["23", "Software Design"], 
+  ["3", "Advanced Mechanics"], 
+  ["2", "Art History"], 
+  ["33", "Another"],
+]
+ 
+ 
+Sample output:
+ 
+find_pairs(enrollments3) =>
+{
+  "23,3": []
+  "23,2": []
+  "23,33":[]
+  "3,2":  []
+  "3,33": []
+  "2,33": []
+}
+ 
+All Test Cases:
+find_pairs(enrollments1)
+find_pairs(enrollments2)
+find_pairs(enrollments3)
+ 
+Complexity analysis variables:
+ 
+n: number of student,course pairs in the input
+s: number of students
+c: total number of courses being offered (note: The number of courses any student can take is bounded by a small constant)
+
+6. You are with your friends in a castle, where there are multiple rooms named after flowers. Some of the rooms contain treasures - we call them the treasure rooms.
+ 
+Each room contains a single instruction that tells you which room to go to next.
+ 
+*** instructions_1 and treasure_rooms_1 ***
+ 
+lily* ---------      daisy  sunflower
+               |        |     |
+               v        v     v
+jasmin --> tulip*      violet* ----> rose* -->
+            ^    |      ^             ^       |
+            |    |      |             |       |
+            ------    iris            ---------
+ 
+* denotes a treasure room, e.g., rose is a treasure room, but jasmin isn't.
+ 
+This is given as a list of pairs of (source_room, destination_room)
+ 
+instructions_1 = [ 
+    ["jasmin", "tulip"],
+    ["lily", "tulip"],
+    ["tulip", "tulip"], 
+    ["rose", "rose"],
+    ["violet", "rose"], 
+    ["sunflower", "violet"],
+    ["daisy", "violet"],
+    ["iris", "violet"]
+]
+ 
+treasure_rooms_1 = ["lily", "tulip", "violet", "rose"]
+ 
+Write a function that takes two parameters as input:
+* a list of instructions represented as pairs of (source_room, destination_room), and
+* a list containing the treasure rooms,
+ 
+and returns a collection of all the rooms that satisfy the following two conditions:
+* at least two *other* rooms have instructions pointing to this room
+* this room's instruction immediately points to a treasure room
+ 
+filter_rooms(instructions_1, treasure_rooms_1) => ["tulip", "violet"]
+* tulip can be accessed from rooms lily and jasmin. Tulip's instruction points to a treasure room (tulip itself)
+* violet can be accessed from daisy, sunflower and iris. Violet's instruction points to a treasure room (rose)
+ 
+Additional inputs
+ 
+treasure_rooms_2 = ["lily", "jasmin", "violet"]  
+ 
+filter_rooms(instructions_1, treasure_rooms_2) => []
+* none of the rooms reachable from tulip or violet are treasure rooms
+ 
+*** instructions_2 and treasure_rooms_3 ***
+ 
+lily ---------          --------
+              |          |      |
+              v          v      |
+jasmin --> tulip ---> violet*--^  
+ 
+instructions_2 = [ 
+    ["jasmin", "tulip"],
+    ["lily", "tulip"],
+    ["tulip", "violet"],
+    ["violet", "violet"]       
+]
+ 
+treasure_rooms_3 = ["violet"]
+ 
+filter_rooms(instructions_2, treasure_rooms_3) => [tulip]
+* tulip can be accessed from rooms lily and jasmin. Tulip's instruction points to a treasure room (violet)
+ 
+All the test cases: 
+filter_rooms(instructions_1, treasure_rooms_1)    => ["tulip", "violet"]
+filter_rooms(instructions_1, treasure_rooms_2)    => [] 
+filter_rooms(instructions_2, treasure_rooms_3)    => [tulip]
+ 
+Complexity Analysis variables:
+T: number of treasure rooms
+I: number of instructions given
+ 
+ 
+*/
+using System;
+using System.Collections.Generic;
+using System.Linq;
+ 
+class Solution {
+    static void Main(String[] args) {
+        String[][] instructions_1 = new String[][] {
+            new String[] {"jasmin", "tulip"},
+            new String[] {"lily", "tulip"},
+            new String[] {"tulip", "tulip"},
+            new String[] {"rose", "rose"},
+            new String[] {"violet", "rose"},
+            new String[] {"sunflower", "violet"},
+            new String[] {"daisy", "violet"},
+            new String[] {"iris", "violet"}
+        };
+ 
+        String[][] instructions_2 = new String[][] {
+            new String[] {"jasmin", "tulip"},
+            new String[] {"lily", "tulip"},
+            new String[] {"tulip", "violet"}, 
+            new String[] {"violet", "violet"}	
+        };
+ 
+        String[] treasure_rooms_1 = new String[] {"lily", "tulip", "violet", "rose"};
+        String[] treasure_rooms_2 = new String[] {"lily", "jasmin", "violet"};
+        String[] treasure_rooms_3 = new String[] {"violet"};
+ 
+ 
+    }
+}
+
+7. You are working on an authentication system and there is a set of rules the users have to follow when picking a new password: 
+
+1. It has to be at least 16 characters long.
+2. The password cannot contain the word "password". This rule is not case-sensitive.
+3. The same character cannot be used more than 4 times. This rule is case-sensitive, "a" and "A" are different characters.
+4. The password has to contain at least one uppercase and one lowercase letter.
+5. The password has to contain at least one of the following special characters "*","#","@".
+ 
+
+Write a function that takes in a password and returns a collection of any rule numbers that are not met.
+
+ 
+
+password_1 = "Strongpwd9999#ac"              ==> []
+
+password_2 = "Aess10#"                       ==> [1]
+
+password_3 = "Password@"                     ==> [1,2]
+
+password_4 = "#PassWord011111112222223x"     ==> [2,3]
+
+password_5 = "PASSWORDz#1111111"             ==> [2,3]
+
+password_6 = "aaaapassword$$"                ==> [1,2,3,4,5]
+
+password_7 = "LESS10#"                       ==> [1,4]
+
+password_8 = "SsSSSt#passWord"               ==> [1,2]
+
+password_9 = "SsSSSt#passWordpassword"       ==> [2,3]
+
+password_10 = "aZ*"                          ==> [1]
+
+ 
+
+All test cases:
+
+ 
+
+validate(password_1) ==> []
+
+validate(password_2) ==> [1]
+
+validate(password_3) ==> [1,2]
+
+validate(password_4) ==> [2,3]
+
+validate(password_5) ==> [2,3]
+
+validate(password_6) ==> [1,2,3,4,5]
+
+validate(password_7) ==> [1,4]
+
+validate(password_8) ==> [1,2]
+
+validate(password_9) ==> [2,3]
+
+validate(password_10) ==> [1]
+
+ 
+
+Complexity variables:
+
+ 
+
+N = length of the password
+
+8. We have a catalog of song titles (and their lengths) that we play at a local radio station.  We have been asked to play two of those songs in a row, and they must add up to exactly seven minutes long.  
+ 
+Given a list of songs and their durations, write a function that returns the names of any two distinct songs that add up to exactly seven minutes.  If there is no such pair, return an empty collection.
+ 
+Example:
+song_times_1 = [
+    ("Stairway to Heaven", "8:05"), ("Immigrant Song", "2:27"),
+    ("Rock and Roll", "3:41"), ("Communication Breakdown", "2:29"),
+    ("Good Times Bad Times", "2:48"), ("Hot Dog", "3:19"),
+    ("The Crunge", "3:18"), ("Achilles Last Stand", "10:26"),
+    ("Black Dog", "4:55")
+]
+find_pair(song_times_1) => ["Rock and Roll", "Hot Dog"] (3:41 + 3:19 = 7:00)
+ 
+Additional Input:
+song_times_2 = [
+    ("Stairway to Heaven", "8:05"), ("Immigrant Song", "2:27"),
+    ("Rock and Roll", "3:41"), ("Communication Breakdown", "2:29"),
+    ("Good Times Bad Times", "2:48"), ("Black Dog", "4:55"),
+    ("The Crunge", "3:18"), ("Achilles Last Stand", "10:26"),
+    ("The Ocean", "4:31"), ("Hot Dog", "3:19"),
+]
+song_times_3 = [
+    ("Stairway to Heaven", "8:05"), ("Immigrant Song", "2:27"),
+    ("Rock and Roll", "3:41"), ("Communication Breakdown", "2:29"),
+    ("Hey Hey What Can I Do", "4:00"), ("Poor Tom", "3:00"),
+    ("Black Dog", "4:55")
+]
+song_times_4 = [
+    ("Hey Hey What Can I Do", "4:00"), ("Rock and Roll", "3:41"),
+    ("Communication Breakdown", "2:29"), ("Going to California", "3:30"),
+    ("On The Run", "3:50"), ("The Wrestler", "3:50"), 
+    ("Black Mountain Side", "2:00"), ("Black Dog", "4:55")
+]
+song_times_5 = [("Celebration Day", "3:30"), ("Going to California", "3:30")]
+song_times_6 = [
+  ("Rock and Roll", "3:41"), ("If I lived here", "3:59"),
+  ("Day and night", "5:03"), ("Tempo song", "1:57")
+]
+ 
+ 
+Complexity Variable:
+n = number of song/time pairs
+ 
+All Test Cases - snake_case:
+find_pair(song_times_1) => ["Rock and Roll", "Hot Dog"]
+find_pair(song_times_2) => ["Rock and Roll", "Hot Dog"] or ["Communication Breakdown", "The Ocean"]
+find_pair(song_times_3) => ["Hey Hey What Can I Do", "Poor Tom"]
+find_pair(song_times_4) => []
+find_pair(song_times_5) => ["Celebration Day", "Going to California"]
+find_pair(song_times_6) => ["Day and night", "Tempo song"]
+ 
+All Test Cases - camelCase:
+findPair(songTimes1) => ["Rock and Roll", "Hot Dog"]
+findPair(songTimes2) => ["Rock and Roll", "Hot Dog"] or ["Communication Breakdown", "The Ocean"]
+findPair(songTimes3) => ["Hey Hey What Can I Do", "Poor Tom"]
+findPair(songTimes4) => []
+findPair(songTimes5) => ["Celebration Day", "Going to California"]
+findPair(songTimes6) => ["Day and night", "Tempo song"]
+*/
+ 
+using System;
+using System.Collections.Generic;
+using System.Linq;
+ 
+class Solution {
+    static void Main(String[] args) {
+        var songTimes1 = new string[][] {
+            new string[] {"Stairway to Heaven", "8:05"}, 
+            new string[] {"Immigrant Song", "2:27"},
+            new string[] {"Rock and Roll", "3:41"}, 
+            new string[] {"Communication Breakdown", "2:29"},
+            new string[] {"Good Times Bad Times", "2:48"}, 
+            new string[] {"Hot Dog", "3:19"},
+            new string[] {"The Crunge", "3:18"}, 
+            new string[] {"Achilles Last Stand", "10:26"},
+            new string[] {"Black Dog", "4:55"}
+        };
+        var songTimes2 = new string[][] {
+            new string[] {"Stairway to Heaven", "8:05"}, 
+            new string[] {"Immigrant Song", "2:27"},
+            new string[] {"Rock and Roll", "3:41"}, 
+            new string[] {"Communication Breakdown", "2:29"},
+            new string[] {"Good Times Bad Times", "2:48"}, 
+            new string[] {"Black Dog", "4:55"},
+            new string[] {"The Crunge", "3:18"}, 
+            new string[] {"Achilles Last Stand", "10:26"},
+            new string[] {"The Ocean", "4:31"}, 
+            new string[] {"Hot Dog", "3:19"}
+        };
+        var songTimes3 = new string[][] {
+            new string[] {"Stairway to Heaven", "8:05"}, 
+            new string[] {"Immigrant Song", "2:27"},
+            new string[] {"Rock and Roll", "3:41"}, 
+            new string[] {"Communication Breakdown", "2:29"},
+            new string[] {"Hey Hey What Can I Do", "4:00"}, 
+            new string[] {"Poor Tom", "3:00"},
+            new string[] {"Black Dog", "4:55"}
+        };
+        var songTimes4 = new string[][] {
+            new string[] {"Hey Hey What Can I Do", "4:00"}, 
+            new string[] {"Rock and Roll", "3:41"}, 
+            new string[] {"Communication Breakdown", "2:29"}, 
+            new string[] {"Going to California", "3:30"}, 
+            new string[] {"On The Run", "3:50"}, 
+            new string[] {"The Wrestler", "3:50"}, 
+            new string[] {"Black Mountain Side", "2:00"}, 
+            new string[] {"Black Dog", "4:55"}
+        };    
+        var songTimes5 = new string[][] {
+            new string[] {"Celebration Day", "3:30"}, 
+            new string[] {"Going to California", "3:30"}
+        };
+        var songTimes6 = new string[][] {
+            new string[] {"Rock and Roll", "3:41"},
+            new string[] {"If I lived here", "3:59"},
+            new string[] {"Day and night", "5:03"},
+            new string[] {"Tempo song", "1:57"}
+        };
+    }
+
+9. A new singer is looking for songs to perform. To be able to perform a song all the notes in the song must be within the singer's range, which is given by the lowest and highest notes the singer is able to sing.
+ 
+A note is represented by:
+- A letter for its pitch, ordered (lowest) C D E F G A B (highest)
+- A number for its octave, ordered (lowest) 0 1 2 3 4 5 6 7 (highest)
+ 
+For example, C5 is a note with pitch C and octave 5.
+ 
+A note with a larger octave number is always higher than a note with a smaller octave number. If the octave number is the same, then a note with a later pitch letter is higher.
+ 
+For example, here are some notes in order from lower to higher:
+... G3 A3 B3 C4 D4 E4 F4 G4 A4 B4 C5 D5 …
+ 
+A3 is higher than G3 because A comes after G in the ordering above
+C4 is higher than B3 because its octave number is larger
+ 
+The lowest possible note is C0 and the highest possible note is B7.
+ 
+You will be given as input a list of notes in a song, the lowest note the singer can sing, and the highest note the singer can sing. Write a function that returns whether the singer can sing the song.
+ 
+Examples:
+song1 = ["F4", "B4", "C5"]
+singable(song1,"F4 ", "C5") => True
+  Every note in the song is between F4 and C5, so the singer can sing this song.
+  Note that B4 is higher than F4, since notes are ordered C D E F G A B
+ 
+singable(song1, "A4", "C5") => False
+  F4 is lower than A4, so the singer cannot sing this song
+ 
+song2 = ["C3", "E3", "G3", "C4", "E4", "G4", "C5"]
+singable(song2, "B2", "C5") => True
+singable(song2, "C3", "B4") => False
+  B2 is lower than C3. A note with a smaller octave number is always lower than a note with a larger octave number. Similarly, B4 is lower than C5
+ 
+Additional input data:
+song3 = [ "B4", "F5", "B5" ]
+ 
+song4 = ["B4", "E4", "G4", "G4", "A4", "B4", "E4", 
+          "B4", "E4", "G4", "G4", "A4", "C5", "B4", 
+          "E5", "G4", "G4", "A4", "B4", "C5", "D5", 
+          "C5", "B4", "C5", "E5", "D5", "C5", "C5", 
+          "B4", "B4", "E5", "E4", "G4", "G4", "A4", 
+          "B4", "B4", "B4", "C5", "E5", "A5", "E5", 
+          "C5", "A4", "E5", "D5", "C5", "B4"]
+ 
+song5 = [ "F4" ]
+ 
+All test cases:
+singable(song1, "F4", "C5") => True
+singable(song1, "A4", "C5") => False
+singable(song2, "B2", "C5") => True
+singable(song2, "C3", "B4") => False
+singable(song3, "B4", "B5") => True
+singable(song3, "B4", "C5") => False
+singable(song4, "D4", "A5") => True
+singable(song4, "D4", "G5") => False
+singable(song4, "D4", "C6") => True
+singable(song4, "F4", "C6") => False
+singable(song5, "D4", "E4") => False
+ 
+Complexity Variables: 
+N = length of the song
+ 
+ 
+*/
+using System;
+using System.Collections.Generic;
+using System.Linq;
+ 
+class Solution {
+    static void Main(String[] args) {
+        var song1 = new string[] {"F4", "B4", "C5"};
+        var song2 = new string[] {"C3", "E3", "G3", "C4", "E4", "G4", "C5"};
+        var song3 = new string[] {"B4", "F5", "B5" };
+        var song4 = new string[] {"B4", "E4", "G4", "G4", "A4", "B4", "E4", 
+                                "B4", "E4", "G4", "G4", "A4", "C5", "B4", 
+                                "E5", "G4", "G4", "A4", "B4", "C5", "D5", 
+                                "C5", "B4", "C5", "E5", "D5", "C5", "C5", 
+                                "B4", "B4", "E5", "E4", "G4", "G4", "A4", 
+                                "B4", "B4", "B4", "C5", "E5", "A5", "E5", 
+                                "C5", "A4", "E5", "D5", "C5", "B4"};
+        var song5 = new string[] {"F4"};
+ 
+    }
+
+10. You are reading a Build Your Own Story book. It is like a normal book except that choices on some pages affect the story, sending you to one of two options for your next page.
+ 
+You start reading at page 1 and read forward one page at a time unless you reach a choice or an ending.
+ 
+The choices are provided in a list, sorted by the page containing the choice, and each choice has two options of pages to go to next. In this example, you are on page 3, where there is a choice. Option 1 goes to page 7 and Option 2 goes to page 8.
+ 
+choices1_1 = [[3, 7, 8], [9, 4, 2]] => [[current_page, option_1, option_2], ...]
+The ending pages are also given in a sorted list:
+ 
+endings1 = [6, 15, 21, 30]
+ 
+These choices are really stressing you out, so you decide that you'll either always pick the first option, or always pick the second option.
+ 
+Given a list of endings, a list of choices with their options, and the choice you will always take (Option 1 or Option 2), return the ending you will reach. If you get stuck in a loop, return -1.
+ 
+Example:
+stories(endings1, choices1_1, 1) (always Option 1)
+  Start: 1 -> 2 -> 3(choice) -> 7 -> 8 -> 9(choice) -> 4 -> 5 -> 6(end) => Return 6
+ 
+stories(endings1, choices1_1, 2) (always Option 2)
+  Start: 1 -> 2 -> 3(choice) -> 8 -> 9(choice) -> 2 -> 3(choice) -> 8 ... => Return -1
+ 
+Additional inputs:
+choices1_2 = [[3, 14, 2]]
+choices1_3 = [[5, 11, 28], [9, 19, 29], [14, 16, 20], [18, 7, 22], [25, 6, 30]]
+choices1_4 = [[2, 10, 15], [3, 4, 10], [4, 3, 15], [10, 3, 15]]
+ 
+endings2 = [11]
+choices2_1 = [[2, 3, 4], [5, 10, 2]]
+choices2_2 = []
+ 
+endings3 = [4, 11]
+choices3_1 = [[10, 6, 8]]
+ 
+endings4 = [20]
+choices4_1 = [[2,6,3], [3,1,4], [4,10,5], [6,3,7]]
+ 
+Complexity Variable:
+n = number of pages
+(endings and choices are bound by the number of pages)
+ 
+All Test Cases :
+stories(endings1, choices1_1, 1) => 6
+stories(endings1, choices1_1, 2) => -1
+stories(endings1, choices1_2, 1) => 15
+stories(endings1, choices1_2, 2) => -1
+stories(endings1, choices1_3, 1) => 21
+stories(endings1, choices1_3, 2) => 30
+stories(endings1, choices1_4, 1) => -1
+stories(endings1, choices1_4, 2) => 15
+stories(endings2, choices2_1, 1) => 11
+stories(endings2, choices2_1, 2) => -1
+stories(endings2, choices2_2, 1) => 11
+stories(endings2, choices2_2, 2) => 11
+stories(endings3, choices3_1, 1) => 4
+stories(endings3, choices3_1, 2) => 4
+stories(endings4, choices4_1, 1) => -1
+*/
