@@ -1,5 +1,7 @@
 package leetcode
 
+import "slices"
+
 func hIndex(citations []int) int {
 	n := len(citations)
 	if n == 0 {
@@ -22,4 +24,15 @@ func hIndex(citations []int) int {
 		}
 	}
 	return 0
+}
+
+func hIndex2(citations []int) int {
+	var h int
+	slices.Sort(citations)
+	for _, c := range slices.Backward(citations) {
+		if c > h { // c>=h+1
+			h++
+		}
+	}
+	return h
 }
