@@ -70,11 +70,8 @@ D - number of days in the forecast
 
 func BestDayToCross(altitudes []int, snowForecast [][]int) []int {
 	n := len(altitudes)
-	currentSnow := make([]int, n)
-	noSnowDays := make([]int, n)
-
-	bestDay := -1
-	minClimbs := -1
+	currentSnow, noSnowDays := make([]int, n), make([]int, n)
+	bestDay, minClimbs := -1, -1
 
 	for day, dailySnow := range snowForecast {
 		// 1. Apply snow and melt logic
@@ -90,10 +87,8 @@ func BestDayToCross(altitudes []int, snowForecast [][]int) []int {
 			}
 
 			// Melt if needed (afternoon of the second day without snow)
-			if noSnowDays[i] >= 2 {
-				if currentSnow[i] > 0 {
-					currentSnow[i]--
-				}
+			if noSnowDays[i] >= 2 && currentSnow[i] > 0 {
+				currentSnow[i]--
 			}
 		}
 
@@ -104,8 +99,7 @@ func BestDayToCross(altitudes []int, snowForecast [][]int) []int {
 			currentHeights[i] = altitudes[i] + currentSnow[i]
 		}
 
-		valid := true
-		climbs := 0
+		valid, climbs := true, 0
 		for i := 0; i < n-1; i++ {
 			diff := currentHeights[i+1] - currentHeights[i]
 			if diff > 1 || diff < -1 {
@@ -118,11 +112,9 @@ func BestDayToCross(altitudes []int, snowForecast [][]int) []int {
 			}
 		}
 
-		if valid {
-			if bestDay == -1 || climbs < minClimbs {
-				bestDay = day
-				minClimbs = climbs
-			}
+		if valid && (bestDay == -1 || climbs < minClimbs) {
+			bestDay = day
+			minClimbs = climbs
 		}
 	}
 
