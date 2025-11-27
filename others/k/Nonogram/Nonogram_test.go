@@ -34,6 +34,27 @@ func Test_nonogram(t *testing.T) {
 			if got := nonogram(tt.args.mat, tt.args.rows, tt.args.cols); got != tt.want {
 				t.Errorf("nonogram() = %v, want %v", got, tt.want)
 			}
+			if got := nonogram_recursion(tt.args.mat, tt.args.rows, tt.args.cols); got != tt.want {
+				t.Errorf("nonogram_recursion() = %v, want %v", got, tt.want)
+			}
 		})
+	}
+}
+
+func Benchmark_nonogram(b *testing.B) {
+	mat := [][]int{{1, 1, 1, 1}, {0, 1, 1, 1}, {0, 1, 0, 0}, {1, 1, 0, 1}, {0, 0, 1, 1}}
+	rows := [][]int{{}, {1}, {1, 2}, {1}, {2}}
+	cols := [][]int{{2, 1}, {1}, {2}, {1}}
+	for i := 0; i < b.N; i++ {
+		nonogram(mat, rows, cols)
+	}
+}
+
+func Benchmark_nonogram_recursion(b *testing.B) {
+	mat := [][]int{{1, 1, 1, 1}, {0, 1, 1, 1}, {0, 1, 0, 0}, {1, 1, 0, 1}, {0, 0, 1, 1}}
+	rows := [][]int{{}, {1}, {1, 2}, {1}, {2}}
+	cols := [][]int{{2, 1}, {1}, {2}, {1}}
+	for i := 0; i < b.N; i++ {
+		nonogram_recursion(mat, rows, cols)
 	}
 }
