@@ -18,16 +18,18 @@ func maximalSquare(matrix [][]byte) int {
 	return maxLen * maxLen
 }
 
-func max(a, b int) int {
-	if a > b {
-		return a
+func maximalSquare2(matrix [][]byte) int {
+	n := len(matrix[0])
+	ans, dp := 0, [2][]int{make([]int, n+1), make([]int, n+1)}
+	for i, row := range matrix {
+		for j, v := range row {
+			if v == '1' {
+				dp[(i+1)%2][j+1] = min(dp[i%2][j], dp[i%2][j+1], dp[(i+1)%2][j]) + 1
+				ans = max(ans, dp[(i+1)%2][j+1])
+			} else {
+				dp[(i+1)%2][j+1] = 0
+			}
+		}
 	}
-	return b
-}
-
-func min(a, b int) int {
-	if a < b {
-		return a
-	}
-	return b
+	return ans * ans
 }

@@ -27,6 +27,23 @@ func Test_maximalSquare(t *testing.T) {
 			if got := maximalSquare(tt.args.matrix); got != tt.want {
 				t.Errorf("maximalSquare() = %v, want %v", got, tt.want)
 			}
+			if got := maximalSquare2(tt.args.matrix); got != tt.want {
+				t.Errorf("maximalSquare2() = %v, want %v", got, tt.want)
+			}
 		})
+	}
+}
+
+func Benchmark_maximalSquare(b *testing.B) {
+	for i := 0; i <= b.N; i++ {
+		m := [][]byte{{'1', '0', '1', '0', '0'}, {'1', '0', '1', '1', '1'}, {'1', '1', '1', '1', '1'}, {'1', '0', '0', '1', '0'}}
+		maximalSquare(m)
+	}
+}
+
+func Benchmark_maximalSquare2(b *testing.B) {
+	for i := 0; i <= b.N; i++ {
+		m := [][]byte{{'1', '0', '1', '0', '0'}, {'1', '0', '1', '1', '1'}, {'1', '1', '1', '1', '1'}, {'1', '0', '0', '1', '0'}}
+		maximalSquare2(m)
 	}
 }
