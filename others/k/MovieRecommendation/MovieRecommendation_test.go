@@ -2,7 +2,6 @@ package k
 
 import (
 	"fmt"
-	"sort"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -162,15 +161,8 @@ func Test_grouping(t *testing.T) {
 				assert.Equal(t, 0, len(got[1]), "Should have no users with >= 3 connections")
 				return
 			}
-
-			// 标准测试用例：排序后比较
-			sort.Strings(got[0])
-			sort.Strings(got[1])
-			// 如果 want 里的数据未排序，也排一下以便比较
-			sort.Strings(tt.want[0])
-			sort.Strings(tt.want[1])
-
-			assert.Equal(t, tt.want, got)
+			assert.ElementsMatch(t, tt.want[0], got[0], "Should have users with < n connections")
+			assert.ElementsMatch(t, tt.want[1], got[1], "Should have users with >= n connections")
 		})
 	}
 }
