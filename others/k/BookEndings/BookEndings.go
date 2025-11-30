@@ -311,7 +311,6 @@ func sightseeing(trails [][]string, attractions []string) bool {
 			usedTrails[edge.trailIdx] = true
 
 			// Track if this is a new attraction visited
-			wasVisited := visitedAttr[edge.neighbor]
 			if attractionSet[edge.neighbor] {
 				visitedAttr[edge.neighbor] = true
 			}
@@ -320,8 +319,9 @@ func sightseeing(trails [][]string, attractions []string) bool {
 				return true
 			}
 
+			// Backtracking
 			usedTrails[edge.trailIdx] = false
-			if attractionSet[edge.neighbor] && !wasVisited {
+			if attractionSet[edge.neighbor] {
 				delete(visitedAttr, edge.neighbor) // Use delete instead of assigning false because we check lengths above
 			}
 		}

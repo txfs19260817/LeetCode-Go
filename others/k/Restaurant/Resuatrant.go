@@ -54,6 +54,18 @@ len(transactions[i]) == 3
 0 <= customerId, eventId, amount <= 10^9
 */
 
+func SummarizeCustomer(transactions [][]int, customerID int) (eventCount int, totalAmount int) {
+	idset := map[int]bool{}
+	for _, transaction := range transactions {
+		customerId, eventId, amount := transaction[0], transaction[1], transaction[2]
+		if customerId == customerID {
+			totalAmount += amount
+			idset[eventId] = true
+		}
+	}
+	return len(idset), totalAmount
+}
+
 /*
 Problem 2 – Restaurant Recommendation From Friends
 Description
@@ -130,3 +142,38 @@ Constraints
 
 Restaurant IDs are integers in range [0, 10^9].
 */
+
+func RecommendRestaurants(liked []int, friendsLiked [][]int) (recommended []int, maxCount int) {
+	likedSet := map[int]bool{}
+	for _, l := range liked {
+		likedSet[l] = true
+	}
+
+	res2cnt := map[int]int{}
+	for _, friLikedIds := range friendsLiked {
+		shared := 0
+		for _, likedId := range friLikedIds {
+			if likedSet[likedId] {
+				shared++
+			}
+		}
+
+		if shared >= 2 {
+			for _, likedId := range friLikedIds {
+				if !likedSet[likedId] {
+					res2cnt[likedId]++
+				}
+			}
+		}
+	}
+
+	for res, cnt := range res2cnt {
+		if cnt > maxCount {
+			maxCount = cnt
+			recommended = []int{res}
+		} else if cnt == maxCount {
+			recommended = append(recommended, res)
+		}
+	}
+	return
+}

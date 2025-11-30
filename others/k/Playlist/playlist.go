@@ -59,60 +59,54 @@ func findPair(songTimes [][]string) []string {
 
 /*
 Given list of songs as String[] and initialSong, find the longest sequence of songs as List<String> with the following consideration.
-- initialSong is not given in the the list of songs.
+- initialSong is not given in the list of songs.
 - the next song in sequence should start with the same word as last word in the previous song.
 - if there are multiple such songs, select any one
 - the song in the sequence should not repeat.
 - words in song is separated by space.
 */
 func longestPlaylist(initialSong string, songs []string) []string {
-	n := len(songs)
-	firstWords, lastWords := make([]string, n), make([]string, n)
+	firstWords := make(map[string][]int, len(songs))
 	for i, song := range songs {
-		words := strings.Fields(song)
-		firstWords[i], lastWords[i] = words[0], words[len(words)-1]
+		fields := strings.Fields(song)
+		firstWords[fields[0]] = append(firstWords[fields[0]], i)
 	}
 
-	firstWord2Indices := map[string][]int{}
-	for i, word := range firstWords {
-		firstWord2Indices[word] = append(firstWord2Indices[word], i)
-	}
+	fields := strings.Fields(initialSong)
+	beginningWord := fields[len(fields)-1]
 
-	visitedIdx := make([]bool, n)
+	visited := make([]bool, len(songs))
 	var bestPath []int
-	var dfs func(idx int, path []int)
-	dfs = func(idx int, path []int) {
-		visitedIdx[idx] = true
-		defer func() { visitedIdx[idx] = false }() // Backtrack; path slice is discarded on return (passed by value)
+	var dfs func(int, []int)
+	dfs = func(curIdx int, path []int) {
+		path = append(path, curIdx)
+		visited[curIdx] = true
+		defer func() { visited[curIdx] = false }()
 
-		path = append(path, idx)
 		// Update bestPath if this path is longer.
-		if len(bestPath) < len(path) {
+		if len(path) > len(bestPath) {
 			bestPath = slices.Clone(path)
 		}
 
 		// Continue to any song whose first word == last word of current song.
-		nextWord := lastWords[idx]
-		for _, j := range firstWord2Indices[nextWord] {
-			if !visitedIdx[j] {
-				dfs(j, path)
+		song := songs[curIdx]
+		fields := strings.Fields(song)
+		lastWord := fields[len(fields)-1]
+		for _, i := range firstWords[lastWord] {
+			if !visited[i] {
+				dfs(i, path)
 			}
 		}
 	}
 
 	// Start DFS from all songs that start with the last word of initialSong.
-	initialSongParts := strings.Fields(initialSong)
-	beginWord := initialSongParts[len(initialSongParts)-1]
-	for _, idx := range firstWord2Indices[beginWord] {
-		if !visitedIdx[idx] {
-			dfs(idx, nil)
-		}
+	for _, i := range firstWords[beginningWord] {
+		dfs(i, nil)
 	}
 
-	// Convert bestPath indices to []string.
-	result := make([]string, len(bestPath))
-	for i, idx := range bestPath {
-		result[i] = songs[idx]
+	ans := make([]string, len(bestPath))
+	for i := range ans {
+		ans[i] = songs[bestPath[i]]
 	}
-	return result
+	return ans
 }
