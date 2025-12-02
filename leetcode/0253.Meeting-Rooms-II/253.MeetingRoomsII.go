@@ -36,8 +36,7 @@ func (h *intHeap) Top() interface{} {
 func minMeetingRooms(intervals [][]int) int {
 	h := &intHeap{}                                                                         // Min heap stores end time
 	sort.Slice(intervals, func(i, j int) bool { return intervals[i][0] < intervals[j][0] }) // Sort intervals by start time
-	heap.Push(h, intervals[0][1])                                                           // Add the first meeting
-	for _, interval := range intervals[1:] {
+	for _, interval := range intervals {
 		if h.Len() > 0 && interval[0] >= h.Top().(int) { // If the room due to free up the earliest is free, assign that room to this meeting.
 			heap.Pop(h)
 		}
