@@ -1,17 +1,15 @@
 package leetcode
 
 func isHappy(n int) bool {
-	step := func(n int) int {
-		var sum int
-		for m := n; m > 0; m /= 10 {
-			sum += (m % 10) * (m % 10)
+	step := func(x int) (sum int) {
+		for ; x > 0; x /= 10 {
+			sum += (x % 10) * (x % 10)
 		}
-		return sum
+		return
 	}
 	s, f := n, step(n)
 	for f != 1 && s != f {
-		s = step(s)
-		f = step(step(f))
+		s, f = step(s), step(step(f))
 	}
 	return f == 1
 }
