@@ -1,8 +1,9 @@
 package leetcode
 
 import (
-	"github.com/stretchr/testify/assert"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func TestConstructor(t *testing.T) {

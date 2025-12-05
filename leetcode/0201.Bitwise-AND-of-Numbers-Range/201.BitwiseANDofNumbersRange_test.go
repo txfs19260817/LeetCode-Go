@@ -28,6 +28,21 @@ func Test_rangeBitwiseAnd(t *testing.T) {
 			if got := rangeBitwiseAnd(tt.args.m, tt.args.n); got != tt.want {
 				t.Errorf("rangeBitwiseAnd() = %v, want %v", got, tt.want)
 			}
+			if got := rangeBitwiseAnd2(tt.args.m, tt.args.n); got != tt.want {
+				t.Errorf("rangeBitwiseAnd2() = %v, want %v", got, tt.want)
+			}
 		})
+	}
+}
+
+func Benchmark_rangeBitwiseAnd(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		rangeBitwiseAnd(1, 2147483647)
+	}
+}
+
+func Benchmark_rangeBitwiseAnd2(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		rangeBitwiseAnd2(1, 2147483647)
 	}
 }
