@@ -24,6 +24,32 @@ func maxEvents(events [][]int) int {
 	return ans
 }
 
+func maxEvents2(events [][]int) int {
+	var ans int
+	mx := 1
+	for _, e := range events {
+		mx = max(mx, e[1])
+	}
+	h := &intHeap{}
+	groups := make([][]int, mx+1)
+	for _, e := range events {
+		groups[e[0]] = append(groups[e[0]], e[1])
+	}
+	for d, g := range groups {
+		for h.Len() > 0 && (*h)[0] < d {
+			heap.Pop(h)
+		}
+		for _, end := range g {
+			heap.Push(h, end)
+		}
+		if h.Len() > 0 {
+			heap.Pop(h)
+			ans++
+		}
+	}
+	return ans
+}
+
 type intHeap []int
 
 func (h intHeap) Len() int {

@@ -26,6 +26,21 @@ func Test_maxEvents(t *testing.T) {
 			if got := maxEvents(tt.args.events); got != tt.want {
 				t.Errorf("maxEvents() = %v, want %v", got, tt.want)
 			}
+			if got := maxEvents2(tt.args.events); got != tt.want {
+				t.Errorf("maxEvents2() = %v, want %v", got, tt.want)
+			}
 		})
+	}
+}
+
+func Benchmark_maxEvents(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		maxEvents([][]int{{1, 2}, {2, 3}, {3, 4}, {1, 2}})
+	}
+}
+
+func Benchmark_maxEvents2(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		maxEvents2([][]int{{1, 2}, {2, 3}, {3, 4}, {1, 2}})
 	}
 }
