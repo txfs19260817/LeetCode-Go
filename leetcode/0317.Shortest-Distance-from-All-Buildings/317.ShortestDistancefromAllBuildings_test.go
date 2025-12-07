@@ -56,21 +56,6 @@ func Test_shortestDistance(t *testing.T) {
 			if got := shortestDistance(tt.args.grid); got != tt.want {
 				t.Errorf("shortestDistance() = %v, want %v", got, tt.want)
 			}
-			if got := shortestDistance1(tt.args.grid); got != tt.want {
-				t.Errorf("shortestDistance1() = %v, want %v", got, tt.want)
-			}
 		})
-	}
-}
-
-func Benchmark_shortestDistance(b *testing.B) {
-	for i := 0; i < b.N; i++ {
-		shortestDistance(large)
-	}
-}
-
-func Benchmark_shortestDistance1(b *testing.B) {
-	for i := 0; i < b.N; i++ {
-		shortestDistance1(large)
 	}
 }
