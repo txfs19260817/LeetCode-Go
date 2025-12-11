@@ -1,34 +1,23 @@
 package leetcode
 
 func findAnagrams(s string, p string) []int {
-	var ans []int
-	if len(s) < len(p) {
-		return ans
-	}
-	dict, window := map[byte]int{}, map[byte]int{}
+	k := len(p)
+	ans, ms, mp := []int{}, [26]int{}, [26]int{}
 	for _, c := range p {
-		dict[byte(c)]++
+		mp[c-'a']++
 	}
-	for l, r := 0, 0; l < len(s)-len(p)+1; {
-		if r < len(s) && (r-l < len(p) || !compareMap(dict, window)) {
-			window[s[r]]++
-			r++
-		} else {
-			window[s[l]]--
-			l++
+	for i, c := range s {
+		ms[c-'a']++
+
+		if i < k-1 {
+			continue
 		}
-		if r-l == len(p) && compareMap(dict, window) {
-			ans = append(ans, l)
+
+		if mp == ms {
+			ans = append(ans, i-k+1)
 		}
+
+		ms[s[i-k+1]-'a']--
 	}
 	return ans
-}
-
-func compareMap(dict, window map[byte]int) bool {
-	for k := range dict {
-		if dict[k] > window[k] {
-			return false
-		}
-	}
-	return true
 }
