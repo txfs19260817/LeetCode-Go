@@ -9,7 +9,8 @@ import (
 func TestRandomFlipMatrix(t *testing.T) {
 	s := Constructor(3, 1)
 	candidates := [][]int{{0, 0}, {1, 0}, {2, 0}}
-	candidatesCpy := candidates
+	candidatesCpy := make([][]int, len(candidates))
+	copy(candidatesCpy, candidates)
 
 	flip := s.Flip()
 	assert.Contains(t, candidates, flip)

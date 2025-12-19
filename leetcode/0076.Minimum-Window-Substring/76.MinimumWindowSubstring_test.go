@@ -77,6 +77,21 @@ func Test_minWindow(t *testing.T) {
 			if got := minWindow(tt.args.s, tt.args.t); got != tt.want {
 				t.Errorf("minWindow() = %v, want %v", got, tt.want)
 			}
+			if got := minWindow2(tt.args.s, tt.args.t); got != tt.want {
+				t.Errorf("minWindow2() = %v, want %v", got, tt.want)
+			}
 		})
+	}
+}
+
+func Benchmark_minWindow(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		minWindow("ADOBECODEBANC", "ABC")
+	}
+}
+
+func Benchmark_minWindow2(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		minWindow2("ADOBECODEBANC", "ABC")
 	}
 }
