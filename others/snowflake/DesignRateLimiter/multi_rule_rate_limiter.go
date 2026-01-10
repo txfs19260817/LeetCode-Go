@@ -20,9 +20,7 @@ type MultiRuleRateLimiter struct {
 
 // NewMultiRuleRateLimiter initializes an empty rate limiter with no rules.
 func NewMultiRuleRateLimiter() *MultiRuleRateLimiter {
-	return &MultiRuleRateLimiter{
-		rules: make([]*multiRule, 0),
-	}
+	return &MultiRuleRateLimiter{}
 }
 
 // RegisterRule adds a new rate limiting rule with the specified ttl and limit.

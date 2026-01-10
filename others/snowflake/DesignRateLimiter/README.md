@@ -65,3 +65,99 @@ Implement the `RateLimiter` class:
 
 ---
 
+## Design Rate Limiter II
+
+**Difficulty:** Hard  
+**Topics:** Design, Queue
+
+---
+
+## Metadata
+
+- **Interview Stages:** Onsite  
+- **Frequency:** ~80%  
+- **Asked By:** Snowflake  
+- **Last Reported:** 6 days ago  
+
+---
+
+## Problem Description
+
+*(This question is a variation of the Hack2Hire question **Design Rate Limiter**. If you haven't completed that question yet, it is recommended to solve it first.)*
+
+Design a rate limiter system that controls the number of requests allowed within specified time windows. The system should support multiple rate-limiting rules simultaneously and determine if a new request should be accepted or rejected based on all active rules.
+
+A rate-limiting rule consists of:
+
+- A time window (`ttl`) in milliseconds
+- A maximum number of requests (`limit`) allowed within that window
+
+---
+
+## API Design
+
+Implement the `MultiRuleRateLimiter` class:
+
+- `MultiRuleRateLimiter()`  
+  Initializes an empty rate limiter with no rules.
+
+- `int registerRule(int ttl, int limit)`  
+  Adds a new rate-limiting rule with the specified `ttl` and `limit`.  
+  Returns the rule ID (index) for future reference.
+
+- `boolean allowRequest()`  
+  Checks if a new request can be served based on all active rules.  
+  Returns `true` only if the request passes all active rules.  
+  If no rules are registered, returns `true`.
+
+---
+
+## Constraints
+
+- `1 ≤ ttl ≤ 10^9` milliseconds
+- `1 ≤ limit ≤ 10^6` requests
+- The system must be thread-safe
+- Assume the rule ID starts from `0`
+
+---
+
+## Example
+
+**Input:**  
+*(Assuming the interval for each request is 100ms)*
+
+```text
+["MultiRuleRateLimiter", "registerRule", "registerRule", "allowRequest",
+ "allowRequest", "allowRequest", "allowRequest", "allowRequest",
+ "allowRequest", "allowRequest", "allowRequest", "allowRequest",
+ "allowRequest", "allowRequest"]
+
+[[], [500, 2], [1000, 3], [], [], [], [], [], [], [], [], [], [], []]
+````
+
+**Output:**
+
+```text
+[null, 0, 1, true, true, false, false, false, true,
+ false, false, false, false, true]
+```
+
+**Explanation:**
+
+* `MultiRuleRateLimiter limiter = new MultiRuleRateLimiter();`
+* `limiter.registerRule(500, 2);`
+  Returns `0`. Registers rule 0: allow 2 requests per 500ms.
+* `limiter.registerRule(1000, 3);`
+  Returns `1`. Registers rule 1: allow 3 requests per 1000ms.
+* `limiter.allowRequest();` → `true` (t = 0ms)
+* `limiter.allowRequest();` → `true` (t = 100ms)
+* `limiter.allowRequest();` → `false`, rejected by rule 0 (t = 200ms)
+* `limiter.allowRequest();` → `false`, rejected by rule 0 (t = 300ms)
+* `limiter.allowRequest();` → `false`, rejected by rule 0 (t = 400ms)
+* `limiter.allowRequest();` → `true` (t = 500ms)
+* `limiter.allowRequest();` → `false`, rejected by rule 1 (t = 600ms)
+* `limiter.allowRequest();` → `false`, rejected by rule 1 (t = 700ms)
+* `limiter.allowRequest();` → `false`, rejected by rule 1 (t = 800ms)
+* `limiter.allowRequest();` → `false`, rejected by rule 1 (t = 900ms)
+* `limiter.allowRequest();` → `true` (t = 1000ms)
+
