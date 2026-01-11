@@ -100,6 +100,67 @@ func TestGrep(t *testing.T) {
 	}
 }
 
+func TestGrepParallel(t *testing.T) {
+	tests := []struct {
+		name        string
+		lines       []string
+		target      string
+		linesAround int
+		expected    []string
+	}{
+		{
+			name: "Example case",
+			lines: []string{
+				"good morning",
+				"hello there",
+				"my name is Alex",
+				"my friend is albert",
+				"it is nice to meet you Alex",
+			},
+			target:      "Alex",
+			linesAround: 1,
+			expected: []string{
+				"hello there",
+				"my name is Alex",
+				"my friend is albert",
+				"it is nice to meet you Alex",
+			},
+		},
+		{
+			name:        "No match",
+			lines:       []string{"a", "b", "c"},
+			target:      "z",
+			linesAround: 1,
+			expected:    nil,
+		},
+		{
+			name: "Large chunks test",
+			lines: func() []string {
+				l := make([]string, 100)
+				for i := range l {
+					l[i] = "none"
+				}
+				l[10] = "Target"
+				l[50] = "Target"
+				l[90] = "Target"
+				return l
+			}(),
+			target:      "Target",
+			linesAround: 1,
+			expected:    []string{"none", "Target", "none", "none", "Target", "none", "none", "Target", "none"},
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			got := GrepParallel(tt.lines, tt.target, tt.linesAround)
+			if !reflect.DeepEqual(got, tt.expected) {
+				t.Errorf("GrepParallel() = %v, want %v", got, tt.expected)
+			}
+		})
+	}
+}
+
 func TestStreamingGrep(t *testing.T) {
 	tests := []struct {
 		name        string
@@ -178,6 +239,78 @@ func TestStreamingGrep(t *testing.T) {
 			}
 			if !reflect.DeepEqual(got, tt.expected) {
 				t.Errorf("StreamingGrep = %v, want %v", got, tt.expected)
+			}
+		})
+	}
+}
+
+func TestGrepStreamingParallel(t *testing.T) {
+	tests := []struct {
+		name        string
+		lines       []string
+		target      string
+		linesAround int
+		expected    []string
+	}{
+		{
+			name: "Example case streaming parallel",
+			lines: []string{
+				"good morning",
+				"hello there",
+				"my name is Alex",
+				"my friend is albert",
+				"it is nice to meet you Alex",
+			},
+			target:      "Alex",
+			linesAround: 1,
+			expected: []string{
+				"hello there",
+				"my name is Alex",
+				"my friend is albert",
+				"it is nice to meet you Alex",
+			},
+		},
+		{
+			name: "Gap between matches parallel",
+			lines: []string{
+				"A",
+				"Target",
+				"B",
+				"C",
+				"Target",
+				"D",
+			},
+			target:      "Target",
+			linesAround: 1,
+			expected: []string{
+				"A",
+				"Target",
+				"B",
+				"C",
+				"Target",
+				"D",
+			},
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			input := make(chan string)
+			go func() {
+				for _, line := range tt.lines {
+					input <- line
+				}
+				close(input)
+			}()
+
+			outChan := GrepStreamingParallel(input, tt.target, tt.linesAround)
+			var got []string
+			for line := range outChan {
+				got = append(got, line)
+			}
+
+			if !reflect.DeepEqual(got, tt.expected) {
+				t.Errorf("GrepStreamingParallel = %v, want %v", got, tt.expected)
 			}
 		})
 	}
