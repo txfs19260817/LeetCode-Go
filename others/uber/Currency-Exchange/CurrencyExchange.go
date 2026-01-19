@@ -13,14 +13,9 @@ Implement the `CurrencyConverter` class:
 - `getBestRate(String from, String to)` Return the best exchange rate that can be obtained from `from` currency to `to` currency.
 */
 
-type edge struct {
-	to   int
-	rate float64
-}
-
 type CurrencyConverter struct {
 	cur2id map[string]int
-	adj    [][]edge
+	adj    []map[int]float64
 }
 
 func Constructor(fromArr []string, toArr []string, rateArr []float64) CurrencyConverter {
@@ -39,25 +34,15 @@ func Constructor(fromArr []string, toArr []string, rateArr []float64) CurrencyCo
 		getId(toArr[i])
 	}
 	n := len(cur2id)
-	adj := make([][]edge, n)
-
-	// Helper to add edge, keeping max rate if multiple defined
-	// Note: We use a map temporarily to deduplicate edges for the same pair
-	tempAdj := make([]map[int]float64, n)
-	for i := range tempAdj {
-		tempAdj[i] = make(map[int]float64)
+	adj := make([]map[int]float64, n)
+	for i := range adj {
+		adj[i] = make(map[int]float64)
 	}
 
 	for i := range fromArr {
 		u, v, r := getId(fromArr[i]), getId(toArr[i]), rateArr[i]
-		tempAdj[u][v] = max(tempAdj[u][v], r)
-		tempAdj[v][u] = max(tempAdj[v][u], 1/r)
-	}
-
-	for u, neighbors := range tempAdj {
-		for v, r := range neighbors {
-			adj[u] = append(adj[u], edge{to: v, rate: r})
-		}
+		adj[u][v] = max(adj[u][v], r)
+		adj[v][u] = max(adj[v][u], 1/r)
 	}
 
 	return CurrencyConverter{cur2id, adj}
@@ -81,10 +66,10 @@ func (cc *CurrencyConverter) GetBestRate(from string, to string) float64 {
 		visited[u] = true
 		maxRate := -1.0
 
-		for _, e := range cc.adj[u] {
-			if !visited[e.to] {
-				if res := dfs(e.to); res != -1.0 {
-					maxRate = max(maxRate, e.rate*dfs(e.to))
+		for v, rate := range cc.adj[u] {
+			if !visited[v] {
+				if res := dfs(v); res != -1.0 {
+					maxRate = max(maxRate, rate*res)
 				}
 			}
 		}
