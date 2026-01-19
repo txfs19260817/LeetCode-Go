@@ -30,68 +30,68 @@ def validate(descriptor: MessageDescriptor, parsed_yaml: dict[str, Any]) -> List
 
 
 def _validate_message(
-    descriptor: MessageDescriptor, obj: dict[str, Any], path: str, errors: List[str]
+    descriptor: MessageDescriptor, parsed_yaml: dict[str, Any], path: str, errors: List[str]
 ) -> None:
-    field_map = {f.name: f for f in descriptor.fields}
+    field_names = {f.name for f in descriptor.fields}
 
-    for key in obj:
-        if key not in field_map:
+    for key in parsed_yaml:
+        if key not in field_names:
             errors.append(f"{path}.{key}: unknown field")
 
     for field in descriptor.fields:
-        if field.name not in obj:
+        if field.name not in parsed_yaml:
             if not field.optional and not field.repeated:
                 errors.append(f"{path}.{field.name}: missing required field")
             continue
         
-        if (value := obj[field.name]) is None and not field.optional:
+        if (value := parsed_yaml[field.name]) is None and not field.optional:
             errors.append(f"{path}.{field.name}: null is not allowed")
             continue
 
         _validate_field(field, value, f"{path}.{field.name}", errors)
 
 
-def _validate_field(field: FieldDescriptor, value: Any, path: str, errors: List[str]) -> None:
+def _validate_field(field: FieldDescriptor, yaml_value: Any, path: str, errors: List[str]) -> None:
     if field.repeated:
-        if not isinstance(value, list):
-            errors.append(f"{path}: expected list, got {_type_name(value)}")
+        if not isinstance(yaml_value, list):
+            errors.append(f"{path}: expected list, got {_type_name(yaml_value)}")
             return
-        for i, item in enumerate(value):
+        for i, item in enumerate(yaml_value):
             _validate_scalar_or_message(field, item, f"{path}[{i}]", errors)
         return
 
-    _validate_scalar_or_message(field, value, path, errors)
+    _validate_scalar_or_message(field, yaml_value, path, errors)
 
 
 def _validate_scalar_or_message(
-    field: FieldDescriptor, value: Any, path: str, errors: List[str]
+    field: FieldDescriptor, yaml_value: Any, path: str, errors: List[str]
 ) -> None:
     ftype = field.field_type
     if ftype in ("int", "int32"):
-        if not _is_int(value):
-            errors.append(f"{path}: expected int, got {_type_name(value)}")
+        if not _is_int(yaml_value):
+            errors.append(f"{path}: expected int, got {_type_name(yaml_value)}")
         return
     if ftype in ("float", "double"):
-        if not _is_float(value):
-            errors.append(f"{path}: expected float, got {_type_name(value)}")
+        if not _is_float(yaml_value):
+            errors.append(f"{path}: expected float, got {_type_name(yaml_value)}")
         return
     if ftype == "string":
-        if not isinstance(value, str):
-            errors.append(f"{path}: expected string, got {_type_name(value)}")
+        if not isinstance(yaml_value, str):
+            errors.append(f"{path}: expected string, got {_type_name(yaml_value)}")
         return
     if ftype == "bool":
-        if not isinstance(value, bool):
-            errors.append(f"{path}: expected bool, got {_type_name(value)}")
+        if not isinstance(yaml_value, bool):
+            errors.append(f"{path}: expected bool, got {_type_name(yaml_value)}")
         return
 
     if ftype == "message":
-        if not isinstance(value, dict):
-            errors.append(f"{path}: expected object, got {_type_name(value)}")
+        if not isinstance(yaml_value, dict):
+            errors.append(f"{path}: expected object, got {_type_name(yaml_value)}")
             return
         if not isinstance(field.sub_descriptor, MessageDescriptor):
             errors.append(f"{path}: missing message descriptor")
             return
-        _validate_message(field.sub_descriptor, value, path, errors)
+        _validate_message(field.sub_descriptor, yaml_value, path, errors)
         return
 
     errors.append(f"{path}: unknown field type '{ftype}'")
