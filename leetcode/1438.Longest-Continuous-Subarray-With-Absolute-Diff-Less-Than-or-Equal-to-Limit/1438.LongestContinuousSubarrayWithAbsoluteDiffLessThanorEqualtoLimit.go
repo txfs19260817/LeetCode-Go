@@ -2,32 +2,31 @@ package leetcode
 
 func longestSubarray(nums []int, limit int) int {
 	var ans, l int
-	var minQ, maxQ []int // dec, inc queues
-	for r, v := range nums {
-		for len(minQ) > 0 && minQ[len(minQ)-1] > v {
+	var minQ, maxQ []int // inc/dec index queues
+	for i, x := range nums {
+		// right insert
+		for len(minQ) > 0 && x <= nums[minQ[len(minQ)-1]] { // minQ is a monotonic increasing queue
 			minQ = minQ[:len(minQ)-1]
 		}
-		minQ = append(minQ, v)
-		for len(maxQ) > 0 && maxQ[len(maxQ)-1] < v {
+		minQ = append(minQ, i)
+		for len(maxQ) > 0 && x >= nums[maxQ[len(maxQ)-1]] { // maxQ is a monotonic decreasing queue
 			maxQ = maxQ[:len(maxQ)-1]
 		}
-		maxQ = append(maxQ, v)
+		maxQ = append(maxQ, i)
 
-		// shrink window when exceed limit
-		// the first element in minQ/maxQ is the smallest/largest element in the window
-		for ; len(minQ) > 0 && len(maxQ) > 0 && maxQ[0]-minQ[0] > limit; l++ {
-			if minQ[0] == nums[l] {
-				minQ = minQ[1:]
-			}
-			if maxQ[0] == nums[l] {
+		// left pop
+		for nums[maxQ[0]]-nums[minQ[0]] > limit {
+			l++
+			if l > maxQ[0] {
 				maxQ = maxQ[1:]
 			}
+			if l > minQ[0] {
+				minQ = minQ[1:]
+			}
 		}
 
-		// update ans with current window size
-		if length := r - l + 1; length > ans {
-			ans = length
-		}
+		// update ans
+		ans = max(ans, i-l+1)
 	}
 	return ans
 }
