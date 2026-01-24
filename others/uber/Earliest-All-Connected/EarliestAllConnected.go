@@ -12,9 +12,6 @@ type RiderLog struct {
 // EarliestAllConnected returns the earliest time when all riders are connected.
 // Riders are labeled from 0 to n-1. If never fully connected, returns -1.
 func EarliestAllConnected(n int, logs []RiderLog) int {
-	if n <= 0 {
-		return -1
-	}
 	if n == 1 {
 		return 0
 	}
@@ -23,9 +20,6 @@ func EarliestAllConnected(n int, logs []RiderLog) int {
 
 	uf := newUnionFind(n)
 	for _, log := range logs {
-		if log.A < 0 || log.A >= n || log.B < 0 || log.B >= n {
-			continue
-		}
 		if uf.union(log.A, log.B) && uf.count == 1 {
 			return log.Time
 		}

@@ -88,12 +88,8 @@ func (rt *RevenueTracker) TopSmallestKCustomer(minRevenue int, k int) []int {
 	for minHeap.Len() > 0 && len(result) < k {
 		rev := heap.Pop(minHeap).(int)
 		ids := revenueToIDs[rev]
-
-		if remaining := k - len(result); len(ids) <= remaining {
-			result = append(result, ids...)
-		} else {
-			result = append(result, ids[:remaining]...)
-		}
+		remaining := k - len(result)
+		result = append(result, ids[:min(len(ids), remaining)]...)
 	}
 
 	return result
