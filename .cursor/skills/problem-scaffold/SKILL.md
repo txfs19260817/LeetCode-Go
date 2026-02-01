@@ -27,8 +27,8 @@ When the user asks to scaffold a coding problem folder:
   - Example: "design card game" -> `Design-Card-Game`
 - File stem: remove hyphens from the folder name
   - Example: `Design-Card-Game` -> `DesignCardGame`
-- Go package name: lower-case file stem
-  - Example: `designcardgame`
+- Go package name: parent folder name (usually lower-case company name)
+  - Example: `uber`
 
 ## Folder structure
 Create:
@@ -78,24 +78,11 @@ Only include sections that are provided by the user; do not invent details.
 ## Go test file rules
 - Use table-driven tests in `<FileStem>_test.go`.
 - Prefer `github.com/stretchr/testify/assert`.
-- Build cases from the provided sample I/O.
-- In skeleton mode, make tests skippable by default with a local constant:
-```
-const enableTests = false
-if !enableTests {
-    t.Skip("TODO: enable after implementation")
-}
-```
+- Build cases from the provided sample I/O as well as some edge cases under the constraints.
 
 ## Python solution rules
 - Match the required interface from the problem statement.
 - Provide `if __name__ == "__main__":` tests with asserts built from sample I/O.
-- In skeleton mode, default to `RUN_TESTS = False` and include TODO stubs:
-```
-RUN_TESTS = False
-if RUN_TESTS:
-    assert solve(...) == ...
-```
 
 ## Sanity checks
 - Folder name is Title-Case with hyphens.
