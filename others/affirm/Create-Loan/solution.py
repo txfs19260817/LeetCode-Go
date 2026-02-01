@@ -1,5 +1,4 @@
 from dataclasses import dataclass
-from typing import Dict, List, Set, Tuple
 
 
 @dataclass
@@ -9,29 +8,25 @@ class Loan:
     loan_company: str
 
 
-def build_parent_map(relations: Dict[str, List[str]]) -> Dict[str, str]:
+def build_parent_map(relations: dict[str, list[str]]) -> dict[str, str]:
     """
     relations: parent -> [child1, child2, ...]
     returns: parent_of[child] = parent
     """
-    parent_of: Dict[str, str] = {}
+    parent_of: dict[str, str] = {}
     for parent, children in relations.items():
         for child in children:
-            if child in parent_of and parent_of[child] != parent:
-                raise ValueError(
-                    f"Child {child} has multiple parents: {parent_of[child]} and {parent}"
-                )
             parent_of[child] = parent
     return parent_of
 
 
-def find_root(company: str, parent_of: Dict[str, str]) -> str:
+def find_root(company: str, parent_of: dict[str, str]) -> str:
     """
     Returns topmost parent (root) of company.
     Path-compress along the way.
     """
-    seen: Set[str] = set()
-    path: List[str] = []
+    seen: set[str] = set()
+    path: list[str] = []
     cur = company
 
     while cur in parent_of:
@@ -49,7 +44,7 @@ def find_root(company: str, parent_of: Dict[str, str]) -> str:
 
 
 def create_loan(
-    customer_id: str, requested_company: str, parent_of: Dict[str, str]
+    customer_id: str, requested_company: str, parent_of: dict[str, str]
 ) -> Loan:
     loan_company = find_root(requested_company, parent_of)
     return Loan(
