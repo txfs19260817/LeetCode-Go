@@ -1,0 +1,13 @@
+{
+    "country": "US",
+    "products": [
+        {
+            "product": "mouse",
+            "quantity": 20
+        },
+        {
+            "product": "laptop",
+            "quantity": 5
+        }
+    ]
+}

@@ -1,0 +1,56 @@
+{
+    "US": [
+        {
+            "product": "mouse",
+            "costs": [
+                {
+                    "minQuantity": 0,
+                    "maxQuantity": null,
+                    "cost": 550
+                }
+            ]
+        },
+        {
+            "product": "laptop",
+            "costs": [
+                {
+                    "minQuantity": 0,
+                    "maxQuantity": 2,
+                    "cost": 1000
+                },
+                {
+                    "minQuantity": 3,
+                    "maxQuantity": null,
+                    "cost": 900
+                }
+            ]
+        }
+    ],
+    "CA": [
+        {
+            "product": "mouse",
+            "costs": [
+                {
+                    "minQuantity": 0,
+                    "maxQuantity": null,
+                    "cost": 750
+                }
+            ]
+        },
+        {
+            "product": "laptop",
+            "costs": [
+                {
+                    "minQuantity": 0,
+                    "maxQuantity": 2,
+                    "cost": 1100
+                },
+                {
+                    "minQuantity": 3,
+                    "maxQuantity": null,
+                    "cost": 100
+                }
+            ]
+        }
+    ]
+}
