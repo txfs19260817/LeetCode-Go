@@ -76,7 +76,7 @@ func FindRobotsPosition2(board [][]byte, distance []int) [][]int {
 	// col-wise: u->d
 	for j := range n {
 		prev := -1
-		for i := range n {
+		for i := range m {
 			if board[i][j] == 'X' {
 				prev = i
 			} else {
@@ -84,8 +84,8 @@ func FindRobotsPosition2(board [][]byte, distance []int) [][]int {
 			}
 		}
 
-		next := n
-		for i := n - 1; i >= 0; i-- {
+		next := m
+		for i := m - 1; i >= 0; i-- {
 			if board[i][j] == 'X' {
 				next = i
 			} else {

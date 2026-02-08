@@ -70,7 +70,7 @@ Only include sections that are provided by the user; do not invent details.
 ```
 
 ## Go source file rules
-- Use `package <go_package>` where `<go_package>` is the lower-case file stem.
+- Use `package <go_package>` where `<go_package>` is the lower-case parent folder.
 - Implement the function/class specified in the problem. If missing, ask for the preferred signature.
 - Keep helpers private and concise.
 - In skeleton mode, include TODO stubs and return zero values or empty structs.
@@ -88,5 +88,5 @@ Only include sections that are provided by the user; do not invent details.
 - Folder name is Title-Case with hyphens.
 - Files are named correctly and live under the requested base path.
 - README includes title, description, and sample I/O.
-- Go package name is lower-case file stem.
+- Go package name is lower-case parent folder.
 - Python tests live under `__main__`.
