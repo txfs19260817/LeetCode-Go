@@ -55,6 +55,29 @@ func (rs *RevenueSystem) AddByReferral(revenue int, referrerId int) int {
 func (rs *RevenueSystem) GetTopKCustomer(k, minRevenue int) []int {
 	h := &minHeap{}
 	for _, c := range rs.customers {
+		if c.totalRevenue < minRevenue {
+			continue
+		}
+		if h.Len() < k {
+			heap.Push(h, c)
+			continue
+		}
+		if (*h)[0].totalRevenue < c.totalRevenue {
+			(*h)[0] = c
+			heap.Fix(h, 0)
+		}
+	}
+	result := make([]int, h.Len())
+	for i := len(result) - 1; i >= 0; i-- {
+		result[i] = heap.Pop(h).(*customer).id
+	}
+	return result
+}
+
+// getTopKCustomerPushPop keeps the original push-then-pop approach for benchmarking.
+func (rs *RevenueSystem) getTopKCustomerPushPop(k, minRevenue int) []int {
+	h := &minHeap{}
+	for _, c := range rs.customers {
 		if c.totalRevenue >= minRevenue {
 			heap.Push(h, c)
 			if h.Len() > k {

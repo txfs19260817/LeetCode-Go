@@ -26,3 +26,14 @@ Design an IP firewall that determines whether an IPv4 address is allowed or deni
 - `"192.168.1.50"` → DENY (matches /24 rule 2)
 - `"192.168.2.10"` → ALLOW (matches /16 rule 3)
 - `"10.0.0.1"` → DENY (matches 0.0.0.0/0 rule 4)
+
+## Follow-up: AllowCIDR
+
+**AllowCIDR(cidr string) bool** — Return `true` if **every** IP in the given CIDR range would be allowed.
+
+Uses recursive bisection: scan rules in priority order; if one rule covers the entire query, return its action. If a higher-priority narrower rule partially overlaps the query, split the query into two halves (prefix+1) and check each recursively.
+
+```
+fw.AllowCIDR("192.168.1.0/24") → false  // 192.168.1.50 is denied
+fw.AllowCIDR("192.168.2.0/24") → true   // fully inside /16 ALLOW
+```

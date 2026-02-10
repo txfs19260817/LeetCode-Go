@@ -51,6 +51,70 @@ func parseIP(ip string) uint32 {
 	return result
 }
 
+// AllowCIDR returns true if EVERY IP in the given CIDR range would be
+// allowed by the firewall rules.
+//
+// Uses recursive bisection: scan rules in priority order; if a single rule
+// covers the entire query range, return its action.  If a higher-priority
+// narrower rule partially overlaps the query, split the query into two
+// halves (prefix+1) and check each recursively.
+func (fw *IpFirewall) AllowCIDR(cidr string) bool {
+	network, _ := parseCIDR(cidr)
+	return fw.allowRange(network, parsePrefixLen(cidr))
+}
+
+func (fw *IpFirewall) allowRange(network uint32, prefixLen int) bool {
+	qMask := prefixToMask(prefixLen)
+	needsSplit := false
+
+	for _, r := range fw.rules {
+		// Does this rule cover the ENTIRE query range?
+		// (rule is at least as broad, and query falls within rule)
+		if qMask&r.mask == r.mask && network&r.mask == r.network {
+			if needsSplit {
+				break // higher-priority narrower rule exists — must recurse
+			}
+			return r.allow
+		}
+		// Is this rule a proper subset of the query? (strictly narrower & contained)
+		if qMask&r.mask != r.mask && r.network&qMask == network {
+			needsSplit = true
+		}
+	}
+
+	// Base case: single IP — scan rules directly.
+	if prefixLen >= 32 {
+		for _, r := range fw.rules {
+			if network&r.mask == r.network {
+				return r.allow
+			}
+		}
+		return false
+	}
+
+	// Split into two /prefixLen+1 halves and require both to be allowed.
+	bit := uint32(1) << (31 - prefixLen)
+	return fw.allowRange(network, prefixLen+1) &&
+		fw.allowRange(network|bit, prefixLen+1)
+}
+
+// parsePrefixLen extracts the prefix length from a CIDR string (default 32).
+func parsePrefixLen(cidr string) int {
+	if idx := strings.Index(cidr, "/"); idx != -1 {
+		p, _ := strconv.Atoi(cidr[idx+1:])
+		return p
+	}
+	return 32
+}
+
+// prefixToMask converts a prefix length to a subnet mask.
+func prefixToMask(prefixLen int) uint32 {
+	if prefixLen == 0 {
+		return 0
+	}
+	return ^uint32(0) << (32 - prefixLen)
+}
+
 // parseCIDR converts a CIDR string (or plain IP) into a network address and mask.
 func parseCIDR(cidr string) (network uint32, mask uint32) {
 	prefixLen := 32

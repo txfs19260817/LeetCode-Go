@@ -1,6 +1,7 @@
 package databricks
 
 import (
+	"math/rand"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -50,4 +51,74 @@ func TestRevenueSystem_MultipleReferrals(t *testing.T) {
 	assert.Equal(t, []int{0, 1, 2, 3}, rs.GetTopKCustomer(10, 0))
 	// Top 2 with >= 0
 	assert.Equal(t, []int{0, 1}, rs.GetTopKCustomer(2, 0))
+}
+
+func BenchmarkGetTopKCustomer_Scenarios(b *testing.B) {
+	const n = 100000
+	uniform := makeUniformRevenues(n, 1000, 1)
+	increasing := makeIncreasingRevenues(n)
+	methods := []struct {
+		name string
+		fn   func(*RevenueSystem, int, int) []int
+	}{
+		{name: "PushPop", fn: (*RevenueSystem).getTopKCustomerPushPop},
+		{name: "TopCompare", fn: (*RevenueSystem).GetTopKCustomer},
+	}
+
+	cases := []struct {
+		name       string
+		revenues   []int
+		k          int
+		minRevenue int
+	}{
+		{name: "SparseEligible_SmallK", revenues: uniform, k: 10, minRevenue: 950},
+		{name: "SparseEligible_LargeK", revenues: uniform, k: 20000, minRevenue: 950},
+		{name: "DenseEligible_SmallK", revenues: uniform, k: 10, minRevenue: 100},
+		{name: "DenseEligible_LargeK", revenues: uniform, k: 50000, minRevenue: 100},
+		{name: "AllEligible_WorstCaseInc", revenues: increasing, k: 10, minRevenue: 0},
+	}
+
+	for _, tc := range cases {
+		b.Run(tc.name, func(b *testing.B) {
+			for _, method := range methods {
+				b.Run(method.name, func(b *testing.B) {
+					benchmarkGetTopKCustomer(b, method.fn, tc.revenues, tc.k, tc.minRevenue)
+				})
+			}
+		})
+	}
+}
+
+func benchmarkGetTopKCustomer(b *testing.B, fn func(*RevenueSystem, int, int) []int, revenues []int, k, minRevenue int) {
+	rs := buildRevenueSystem(revenues)
+	b.ReportAllocs()
+	b.ResetTimer()
+	for b.Loop() {
+		_ = fn(rs, k, minRevenue)
+	}
+}
+
+func buildRevenueSystem(revenues []int) *RevenueSystem {
+	rs := NewRevenueSystem()
+	for _, revenue := range revenues {
+		rs.Add(revenue)
+	}
+	return rs
+}
+
+func makeUniformRevenues(n, max int, seed int64) []int {
+	rnd := rand.New(rand.NewSource(seed))
+	revenues := make([]int, n)
+	for i := range revenues {
+		revenues[i] = rnd.Intn(max)
+	}
+	return revenues
+}
+
+func makeIncreasingRevenues(n int) []int {
+	revenues := make([]int, n)
+	for i := range revenues {
+		revenues[i] = i
+	}
+	return revenues
 }
