@@ -24,3 +24,53 @@ system.getTopKCustomer(2, 100) // → [0, 1]
 system.addByReferral(50, 4)  // → 5. Customer 4: $100, Customer 5: $50
 system.getTopKCustomer(3, 100) // → [0, 1, 4]
 ```
+
+## Follow-up: Nested Revenue
+
+Change total revenue to include the **entire referral subtree** (not just
+direct referrals).
+
+```
+0 (own=100)          Nested: 0 → 100+40+25 = 165
+└── 2 (own=40)               2 → 40+25 = 65
+    └── 3 (own=25)           3 → 25
+1 (own=60)                   1 → 60+10 = 70
+└── 4 (own=10)               4 → 10
+```
+
+### Read-Heavy Optimization — Eager Propagation
+
+On every `AddByReferral`, walk up the parent chain from the referrer to
+the root, adding the new revenue to each ancestor's cached
+`nestedRevenue`.
+
+| Operation | Complexity |
+|---|---|
+| `AddByReferral` | **O(D)** — D = depth of referral chain |
+| `GetTopKCustomer` | **O(N log K)** — precomputed values, direct heap |
+| Per-customer revenue lookup | **O(1)** |
+
+Best when reads are much more frequent than writes.
+
+### Write-Heavy Optimization — Lazy Aggregation
+
+Store only the parent pointer on write. On `GetTopKCustomer`, compute
+nested revenue for **all** nodes via a single bottom-up pass (reverse ID
+order, since child IDs > parent IDs), then feed into the top-K heap.
+
+| Operation | Complexity |
+|---|---|
+| `AddByReferral` | **O(1)** — store parent pointer only |
+| `GetTopKCustomer` | **O(N log K)** — includes O(N) aggregation pass |
+| Per-customer revenue lookup | **O(subtree size)** |
+
+Best when writes are much more frequent than reads.
+
+### When to pick which?
+
+- **Read-heavy workload** (e.g. dashboard refreshing every second, few
+  new customers): use eager propagation so every query hits precomputed
+  values.  Also enables O(1) per-customer revenue lookups.
+- **Write-heavy workload** (e.g. high-volume referral event stream,
+  occasional batch reports): use lazy aggregation to keep writes at O(1)
+  and pay the aggregation cost only when you actually query.

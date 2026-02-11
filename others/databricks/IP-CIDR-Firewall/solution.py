@@ -20,11 +20,18 @@ class IpFirewall:
         return self._allow_range(network, prefix_len)
 
     def _allow_range(self, network: int, prefix_len: int) -> bool:
+        """Return True only if every IP in the query prefix is allowed."""
+        # Query range represented as a network + prefix.
+        # q_mask keeps only the fixed prefix bits for this query.
         q_mask = self._prefix_to_mask(prefix_len)
+        # True means at least one more specific rule exists inside this query,
+        # so we cannot trust a broad match and must split into subranges.
         needs_split = False
         for allow, r_net, r_mask in self.rules:
             # Rule covers entire query?
             if q_mask & r_mask == r_mask and network & r_mask == r_net:
+                # If no subset rules were seen, this first full-covering rule
+                # determines the whole query range.
                 if needs_split:
                     break
                 return allow
@@ -32,11 +39,14 @@ class IpFirewall:
             if q_mask & r_mask != r_mask and r_net & q_mask == network:
                 needs_split = True
         if prefix_len >= 32:
+            # Leaf (/32): evaluate this exact IP with first-match semantics.
             for allow, r_net, r_mask in self.rules:
                 if network & r_mask == r_net:
                     return allow
             return False
+        # Split query into two child prefixes by toggling the next host bit.
         bit = 1 << (31 - prefix_len)
+        # Entire query is allowed only if BOTH halves are fully allowed.
         return (self._allow_range(network, prefix_len + 1) and
                 self._allow_range(network | bit, prefix_len + 1))
 
