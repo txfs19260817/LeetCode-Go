@@ -1,44 +1,54 @@
 # Notify Subscription Plan
 
-Generate subscription email notifications for users based on plan start,
-expiration, and plan changes. Users receive:
+Generate subscription notification emails from a reusable `schedule`.
 
-- `[Welcome]` at begin date
-- `[Upcoming expiration]` 15 days before expiration
-- `[Expired]` at expiration date
-- `[Changed]` when switching plans
-- `[Renewed]` when extending duration
+## Parts
 
-Plan changes can modify future expiration notices.
+### Part 1
+
+Given `user_accounts` and `schedule`, print which email should be sent on each day in chronological order.
+Code: `notify_subscription_plan_part1.py`
+
+### Part 2
+
+Add `subscription_changes`:
+
+- a user may change plan on a specific day
+- on that day, send one extra `[Updated]` email
+- all notifications after that day should use the latest plan name
+Code: `notify_subscription_plan_part2.py`
+
+### Part 3
+
+`subscription_changes` may also contain `extension`:
+
+- it means extending subscription by `N` days
+- on that day, send one extra `[Renewed]` email
+- `upcoming expiry` and `expired` notifications should be emitted according to the extended end date
+Code: `notify_subscription_plan_part3.py`
+
+## Entrypoint
+
+`notify_subscription_plan.py` is kept as a thin wrapper to Part 3 for backward compatibility.
 
 ## Input
 
-- `users`: list of user records with `name`, `plan`, `begin_date`, `duration`.
-- `changes`: list of change records with `new_plan` or `extension`.
+- `user_accounts` (or backward-compatible `users`):
+  list of `{name, plan, begin_date, duration}`
+- `schedule` (or backward-compatible `send_schedule`): `Map<String, String>`
+- optional `subscription_changes`: list of:
+  `{name|user, day|date|change_date, new_plan?, extension?}`
+
+## Schedule rules
+
+- `"start"`: send on `begin_date`
+- `"end"`: send on final end date
+- other keys: numeric string offset relative to final end date
+  (example: `"-15"` means `end_date - 15`)
 
 ## Output
 
-- Email notifications in chronological order.
-
-## Example
-
-**Input**
-
-```
-user A: plan X, begin 0, duration 30
-change: A switches to plan Y at day 5
-```
-
-**Output**
-
-```
-0: [Welcome] A, subscribe in plan X
-5: [Changed] A, subscribe in plan Y
-15: [Upcoming expiration] A, subscribe in plan Y
-30: [Expired] A, subscribe in plan Y
-```
-
-## Constraints
-
-- Dates are non-negative integers.
-- A change applies from its change date forward.
+- print notifications by day in ascending order
+- keep generation order for same-day notifications
+- message format:
+  `day: [Label] <name>, subscribe in plan <plan>`
