@@ -55,3 +55,52 @@ func TestLazyArray_OriginalUnchanged(t *testing.T) {
 	// Original should still find raw values
 	assert.Equal(t, 1, la.IndexOf(20))
 }
+
+func TestLazyArray_FilterOnly(t *testing.T) {
+	la := NewLazyArray([]int{10, 20, 30, 40, 50})
+	filtered := la.Filter(func(n int) bool { return n%20 == 0 })
+	assert.Equal(t, 1, filtered.IndexOf(20))
+	assert.Equal(t, 3, filtered.IndexOf(40))
+	assert.Equal(t, -1, filtered.IndexOf(10))
+}
+
+func TestLazyArray_FilterAfterMap(t *testing.T) {
+	la := NewLazyArray([]int{1, 2, 3, 4, 5})
+	result := la.
+		Map(func(n int) int { return n * 3 }).
+		Filter(func(n int) bool { return n%2 == 0 })
+	// mapped -> [3,6,9,12,15], filtered -> [6,12]
+	assert.Equal(t, 1, result.IndexOf(6))
+	assert.Equal(t, 3, result.IndexOf(12))
+	assert.Equal(t, -1, result.IndexOf(9))
+}
+
+func TestLazyArray_FilterBeforeMap(t *testing.T) {
+	la := NewLazyArray([]int{1, 2, 3, 4, 5})
+	result := la.
+		Filter(func(n int) bool { return n%2 == 1 }).
+		Map(func(n int) int { return n * 10 })
+	// filtered odds -> [1,3,5], mapped -> [10,30,50]
+	assert.Equal(t, 0, result.IndexOf(10))
+	assert.Equal(t, 4, result.IndexOf(50))
+	assert.Equal(t, -1, result.IndexOf(20))
+}
+
+func TestLazyArray_EarlyTermination_AvoidsLaterPanic(t *testing.T) {
+	la := NewLazyArray([]int{3, 4, 5, 6})
+	processed := make([]int, 0, 2)
+	mapped := la.
+		Filter(func(n int) bool { return n%2 == 1 }).
+		Map(func(n int) int {
+			if n > 5 {
+				panic("should not reach value 6")
+			}
+			processed = append(processed, n)
+			return n
+		})
+
+	assert.NotPanics(t, func() {
+		assert.Equal(t, 2, mapped.IndexOf(5))
+	})
+	assert.Equal(t, []int{3, 5}, processed)
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Problem Scaffold"
+  short_description: "Scaffold coding problem folders"
+  default_prompt: "Use $problem-scaffold to create a coding problem folder with README, Go source/tests, and a Python solution."
