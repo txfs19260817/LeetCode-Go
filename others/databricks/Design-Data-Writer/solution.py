@@ -45,28 +45,26 @@ class DataWriter:
     # -- internal ------------------------------------------------------------
 
     def _batch_loop(self) -> None:
+        batch: list[tuple[bytes, threading.Event]] = []
+
         while True:
-            # Phase 1: block for at least one entry.
-            item = self._queue.get()
+            try:
+                # Block for the first item, then opportunistically drain.
+                item = self._queue.get() if not batch else self._queue.get_nowait()
+            except Empty:
+                self._flush(batch)
+                batch.clear()
+                continue
+
             if item is None:
+                self._flush(batch)
                 return
-            batch = [item]
 
-            # Phase 2: drain all currently-available entries.
-            while True:
-                try:
-                    item = self._queue.get_nowait()
-                except Empty:
-                    break
-                if item is None:
-                    self._flush(batch)
-                    return
-                batch.append(item)
-
-            # Phase 3: write + fsync + signal.
-            self._flush(batch)
+            batch.append(item)
 
     def _flush(self, batch: list[tuple[bytes, threading.Event]]) -> None:
+        if not batch:
+            return
         buf = BytesIO()
         for data, _ in batch:
             _encode_record(buf, data)

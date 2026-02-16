@@ -15,47 +15,60 @@ class SimpleDataWriter:
     """
 
     def __init__(self, file_path: str) -> None:
+        # Append-only binary file handle shared by the single writer thread.
         self._file = open(file_path, "ab")  # noqa: SIM115
+        # Producer queue: each item is (payload, completion_event).
+        # `None` is a sentinel meaning "flush remaining work and stop".
         self._queue: Queue[tuple[bytes, threading.Event] | None] = Queue(maxsize=4096)
         self._writer = threading.Thread(target=self._batch_loop, daemon=True)
         self._writer.start()
 
     def push(self, data: bytes) -> None:
+        # Caller blocks until writer thread persists this payload.
         event = threading.Event()
         self._queue.put((bytes(data), event))
         event.wait()
 
     def close(self) -> None:
+        # Send stop signal, wait for writer to finish, then close file.
         self._queue.put(None)
         self._writer.join()
         self._file.close()
 
     def _batch_loop(self) -> None:
+        batch: list[tuple[bytes, threading.Event]] = []
+
         while True:
-            item = self._queue.get()
+            try:
+                # Blocking to wait for the first;
+                # otherwise draining queue in a non-blocking way
+                item = self._queue.get() if not batch else self._queue.get_nowait()
+            except Empty:
+                # Queue is empty, flushing
+                self._flush(batch)
+                batch.clear()
+                continue
+
             if item is None:
+                # Close signal: flushing remaining
+                self._flush(batch)
                 return
-            batch = [item]
 
-            while True:
-                try:
-                    item = self._queue.get_nowait()
-                except Empty:
-                    break
-                if item is None:
-                    self._flush(batch)
-                    return
-                batch.append(item)
+            batch.append(item)
 
-            self._flush(batch)
 
     def _flush(self, batch: list[tuple[bytes, threading.Event]]) -> None:
+        if not batch:
+            return
+        # Coalesce payloads into a single contiguous write.
         buf = bytearray()
         for data, _ in batch:
             buf.extend(data)
         self._file.write(buf)
+        # Ensure durability for all records in the batch.
         self._file.flush()
         os.fsync(self._file.fileno())
+        # Unblock all waiting push callers after durable commit.
         for _, event in batch:
             event.set()
 
