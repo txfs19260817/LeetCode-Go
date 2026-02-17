@@ -31,6 +31,42 @@ def _route_summary(path: List[str], methods: List[str], cost: int) -> RouteSumma
     return {"route": " -> ".join(path), "method": " -> ".join(methods), "cost": cost}
 
 
+def _first_leg_to_target(
+    route_dict: Dict[str, List[Route]], mids: List[str], target_country: str
+) -> Dict[str, Tuple[str, int]]:
+    """
+    For each mid country, cache the first (method, cost) route that reaches target_country.
+    This preserves iteration order while avoiding repeated rescans of the same mid adjacency.
+    """
+    first_leg: Dict[str, Tuple[str, int]] = {}
+    for mid in dict.fromkeys(mids):
+        for target, method, cost in route_dict.get(mid, []):
+            if target == target_country:
+                first_leg[mid] = (method, cost)
+                break
+    return first_leg
+
+
+def _cheapest_leg_to_target(
+    route_dict: Dict[str, List[Route]], mids: List[str], target_country: str
+) -> Dict[str, Tuple[str, int]]:
+    """
+    For each mid country, cache the cheapest (method, cost) route to target_country.
+    Ties keep the first encountered route to preserve deterministic behavior.
+    """
+    cheapest_leg: Dict[str, Tuple[str, int]] = {}
+    for mid in dict.fromkeys(mids):
+        best: Optional[Tuple[str, int]] = None
+        for target, method, cost in route_dict.get(mid, []):
+            if target != target_country:
+                continue
+            if best is None or cost < best[1]:
+                best = (method, cost)
+        if best is not None:
+            cheapest_leg[mid] = best
+    return cheapest_leg
+
+
 # Part 1: direct route with specific method
 def direct_cost(
     route_string: str, source_country: str, target_country: str, method: str
@@ -58,21 +94,29 @@ def find_route_with_one_stop(
     Direct routes are preferred because they are checked first.
     """
     route_dict = parse_routes(route_string)
+    source_routes = route_dict.get(source_country, [])
 
     # First check direct routes (0 stops).
-    for target, method, cost in route_dict.get(source_country, []):
+    for target, method, cost in source_routes:
         if target == target_country:
             return _route_summary([source_country, target], [method], cost)
 
     # Then check 1-stop routes (source -> mid -> target).
-    for mid, first_method, first_cost in route_dict.get(source_country, []):
-        for target, second_method, second_cost in route_dict.get(mid, []):
-            if target == target_country:
-                return _route_summary(
-                    [source_country, mid, target],
-                    [first_method, second_method],
-                    first_cost + second_cost,
-                )
+    first_leg_map = _first_leg_to_target(
+        route_dict,
+        [mid for mid, _, _ in source_routes],
+        target_country,
+    )
+    for mid, first_method, first_cost in source_routes:
+        second_leg = first_leg_map.get(mid)
+        if second_leg is None:
+            continue
+        second_method, second_cost = second_leg
+        return _route_summary(
+            [source_country, mid, target_country],
+            [first_method, second_method],
+            first_cost + second_cost,
+        )
 
     return None
 
@@ -86,27 +130,35 @@ def cheapest_route_with_one_stop(
     If multiple routes have the same cost, the first encountered is returned.
     """
     route_dict = parse_routes(route_string)
+    source_routes = route_dict.get(source_country, [])
     best_route: Optional[RouteSummary] = None
 
     # Direct routes: initialize best_route if possible.
-    for target, method, cost in route_dict.get(source_country, []):
+    for target, method, cost in source_routes:
         if target == target_country:
             candidate = _route_summary([source_country, target], [method], cost)
             if best_route is None or candidate["cost"] < best_route["cost"]:
                 best_route = candidate
 
-    # One-stop routes: check all source -> mid -> target combinations.
-    for mid, first_method, first_cost in route_dict.get(source_country, []):
-        for target, second_method, second_cost in route_dict.get(mid, []):
-            if target == target_country:
-                total_cost = first_cost + second_cost
-                candidate = _route_summary(
-                    [source_country, mid, target],
-                    [first_method, second_method],
-                    total_cost,
-                )
-                if best_route is None or total_cost < best_route["cost"]:
-                    best_route = candidate
+    # One-stop routes: combine each source->mid edge with the cheapest mid->target edge.
+    cheapest_leg_map = _cheapest_leg_to_target(
+        route_dict,
+        [mid for mid, _, _ in source_routes],
+        target_country,
+    )
+    for mid, first_method, first_cost in source_routes:
+        second_leg = cheapest_leg_map.get(mid)
+        if second_leg is None:
+            continue
+        second_method, second_cost = second_leg
+        total_cost = first_cost + second_cost
+        candidate = _route_summary(
+            [source_country, mid, target_country],
+            [first_method, second_method],
+            total_cost,
+        )
+        if best_route is None or total_cost < best_route["cost"]:
+            best_route = candidate
 
     return best_route
 

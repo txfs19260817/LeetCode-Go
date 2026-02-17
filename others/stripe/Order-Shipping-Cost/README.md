@@ -1,46 +1,78 @@
 # Order Shipping Cost
 
-Given an order and country-specific shipping cost rules, compute the total
-shipping cost. Each product has tiered pricing based on quantity ranges.
-Some tiers may be **fixed** (flat fee for that tier) or **incremental**
-(per-item cost within the tier).
+Given an order and country-specific shipping rules, calculate total shipping
+cost.
+
+This folder now supports all three interview variants:
+
+1. Fixed per-item product cost.
+2. Tiered incremental cost by quantity range.
+3. Mixed tier strategy with `incremental` and `fixed`.
 
 ## Input
 
-- `order`: object with `country` and list of `{product, quantity}`.
-- `shipping_costs`: per-country list of product cost tiers.
+- `order`: `{ "country": string, "items": [{"product": string, "quantity": int}] }`
+- `shipping_costs`: map from country to product cost rules.
 
-Each tier has:
+### 第一问 (Variant 1): fixed per-item
 
-- `minQuantity`, `maxQuantity` (inclusive)
+```json
+{
+  "US": [
+    {"product": "mouse", "cost": 550},
+    {"product": "laptop", "cost": 1000}
+  ],
+  "CA": [
+    {"product": "mouse", "cost": 750},
+    {"product": "laptop", "cost": 1100}
+  ]
+}
+```
+
+Expected:
+
+- `US`: `16000`
+- `CA`: `20500`
+
+### 第二问 (Variant 2): tiered incremental
+
+Each tier:
+
+- `minQuantity`, `maxQuantity` (`null` means open-ended)
 - `cost`
-- optional `type` (`fixed` or `incremental`)
+- default type is incremental
 
-## Output
+Expected:
 
-- Total shipping cost as an integer.
+- `US`: `15700`
+- `CA`: `20200`
 
-## Example
+### 第三问 (Variant 3): mixed fixed + incremental tiers
 
-**Order**
+Each tier also has:
 
-```
-{ "country": "US", "items": [ { "product": "mouse", "quantity": 20 } ] }
-```
+- `type`: `incremental` or `fixed`
 
-**Shipping tiers**
+Expected:
 
-```
-mouse: 0+ units at 550 each
-```
+- `US`: `14700`
+- `CA`: `19100`
 
-**Output**
+## Tier Semantics
 
-```
-11000
-```
+- Quantity tiers are computed on 1-based units.
+- `minQuantity = 0` means "from unit 1".
+- A tier covers units `[max(1, minQuantity), maxQuantity]`.
+- If `maxQuantity` is `null`, it covers to infinity.
+- `incremental`: charge `units_in_tier * cost`.
+- `fixed`: if any unit falls in the tier, charge `cost` once.
 
-## Constraints
+## Corrected Data
 
-- `maxQuantity` may be null for open-ended tiers.
-- Quantities are non-negative integers.
+The CA laptop tier price in variant 2/3 should be `1000` (not `100`).
+
+## Implementations
+
+- `order_shipping_cost.py`: Python implementation with `__main__` assertions.
+- `OrderShippingCost.go`: Go implementation.
+- `OrderShippingCost_test.go`: Go unit tests.

@@ -48,7 +48,7 @@
                 {
                     "minQuantity": 3,
                     "maxQuantity": null,
-                    "cost": 100
+                    "cost": 1000
                 }
             ]
         }

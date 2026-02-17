@@ -1,6 +1,6 @@
 {
     "country": "US",
-    "products": [
+    "items": [
         {
             "product": "mouse",
             "quantity": 20
