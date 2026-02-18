@@ -56,11 +56,16 @@ func (h *pickHeap) Pop() interface{} {
 	return item
 }
 
+// GenerateNFT covers all README stages:
+// 1) Base problem: supports plain trait values (equivalent to weight 1).
+// 2) Follow-up 1: output is unique; panic when n exceeds unique combinations.
+// 3) Follow-up 2: supports weighted trait values and weighted unique sampling.
 func (s *Solution) GenerateNFT(config Config, n int) []map[string]string {
 	if n <= 0 {
 		return []map[string]string{}
 	}
 
+	// Follow-up 1: compute upper bound of unique combinations.
 	traitNames := make([]string, 0, len(config.Traits))
 	for trait := range config.Traits {
 		traitNames = append(traitNames, trait)
@@ -87,6 +92,8 @@ func (s *Solution) GenerateNFT(config Config, n int) []map[string]string {
 		panic("too many combinations to materialize")
 	}
 
+	// Follow-up 2: materialize combinations and accumulate product weights.
+	// Base problem is the same path with all weights = 1.
 	combos := make([]combo, 0, int(totalCombos))
 	current := make(map[string]string, len(traitNames))
 	var build func(idx int, weight float64)
@@ -113,6 +120,7 @@ func (s *Solution) GenerateNFT(config Config, n int) []map[string]string {
 	}
 	build(0, 1)
 
+	// Follow-up 1: if all unique combos are requested, just shuffle and return.
 	if int64(n) == totalCombos {
 		rand.Shuffle(len(combos), func(i, j int) {
 			combos[i], combos[j] = combos[j], combos[i]
@@ -124,6 +132,8 @@ func (s *Solution) GenerateNFT(config Config, n int) []map[string]string {
 		return out
 	}
 
+	// Follow-up 2: weighted random sampling without replacement.
+	// Uses Efraimidis-Spirakis key sampling over the full combination set.
 	h := &pickHeap{}
 	heap.Init(h)
 	for _, item := range combos {

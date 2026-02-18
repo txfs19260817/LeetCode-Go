@@ -8,6 +8,9 @@ import (
 )
 
 func TestGenerateNFT(t *testing.T) {
+	// Base problem + Follow-up 1:
+	// - plain trait strings
+	// - output must still be unique in current implementation
 	cases := []struct {
 		name   string
 		config Config
@@ -99,6 +102,7 @@ func TestGenerateNFT(t *testing.T) {
 }
 
 func TestGenerateNFTWeighted(t *testing.T) {
+	// Follow-up 2: weighted trait values.
 	config := Config{
 		Name: "config-weighted",
 		Size: "large",
@@ -129,6 +133,7 @@ func TestGenerateNFTWeighted(t *testing.T) {
 }
 
 func TestGenerateNFTTooMany(t *testing.T) {
+	// Follow-up 1: n exceeds number of unique combinations.
 	config := Config{
 		Name: "simple",
 		Size: "small",
