@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from random import choice
+from tokenize import group
 from typing import Dict, List, Tuple
 
 
@@ -74,76 +76,59 @@ class BlockChainMining:
     # Part 3: parent-child + sibling-branch-exclusive
     # DFS to build per-root path options, then group knapsack DP.
     def max_fee_with_parents(self, block_size: int, txs: List[Transaction]) -> MiningPlan:
-        if block_size <= 0:
-            return MiningPlan(0, 0, [])
-
-        groups = self._build_groups(txs)
-        g = len(groups)
-        dp = [[0] * (block_size + 1) for _ in range(g + 1)]
-        pick = [[-1] * (block_size + 1) for _ in range(g + 1)]
-        prev_cap = [[0] * (block_size + 1) for _ in range(g + 1)]
-
-        for i in range(1, g + 1):
-            group = groups[i - 1]
-            for cap in range(block_size + 1):
-                dp[i][cap] = dp[i - 1][cap]  # skip this group
-                prev_cap[i][cap] = cap
-                for idx, (opt_size, opt_fee, _) in enumerate(group):
-                    if opt_size <= cap:
-                        candidate = dp[i - 1][cap - opt_size] + opt_fee
-                        if candidate > dp[i][cap]:
-                            dp[i][cap] = candidate
-                            pick[i][cap] = idx
-                            prev_cap[i][cap] = cap - opt_size
-
-        best_cap = max(range(block_size + 1), key=lambda c: (dp[g][c], -c))
-
-        picked_ids: List[str] = []
-        cap = best_cap
-        for i in range(g, 0, -1):
-            idx = pick[i][cap]
-            if idx != -1:
-                picked_ids.extend(groups[i - 1][idx][2])
-            cap = prev_cap[i][cap]
-
-        picked_ids.sort()
-        return MiningPlan(dp[g][best_cap], best_cap, picked_ids)
-
-    def _build_groups(
-        self, txs: List[Transaction]
-    ) -> List[List[Tuple[int, int, List[str]]]]:
-        tx_by_id: Dict[str, Transaction] = {tx.id: tx for tx in txs}
-
-        children: Dict[str, List[str]] = {}
-        roots: List[str] = []
+        # 1. Build the forest
+        nodes = {tx.id: tx for tx in txs}
+        children = {tx.id: [] for tx in txs}
+        roots = []
 
         for tx in txs:
-            if tx.parent_id and tx.parent_id in tx_by_id:
-                children.setdefault(tx.parent_id, []).append(tx.id)
+            if (pid := tx.parent_id) and pid in nodes:
+                children[pid].append(tx.id)
             else:
                 roots.append(tx.id)
 
-        roots.sort()
-        for parent_id in children:
-            children[parent_id].sort()
-
-        groups: List[List[Tuple[int, int, List[str]]]] = []
+        # 2. Extract all valid paths for each tree (group)
+        groups = []
         for root in roots:
-            group: List[Tuple[int, int, List[str]]] = []
-
-            def dfs(node_id: str, path: List[str], size: int, fee: int) -> None:
-                tx = tx_by_id[node_id]
-                new_path = path + [node_id]
-                new_size = size + tx.size
-                new_fee = fee + tx.fee
-                group.append((new_size, new_fee, new_path))
-                for child_id in children.get(node_id, []):
-                    dfs(child_id, new_path, new_size, new_fee)
+            paths = []
+            def dfs(node_id, cur_ids, cur_size, cur_fee):
+                tx = nodes[node_id]
+                new_ids = cur_ids + [tx.id]
+                new_size = cur_size + tx.size
+                new_fee = cur_fee + tx.fee
+                if new_size <= block_size:
+                    paths.append({'ids': new_ids, 'size': new_size, 'fee': new_fee})
+                    for child_id in children[node_id]:
+                        dfs(child_id, new_ids, new_size, new_fee)
 
             dfs(root, [], 0, 0)
-            groups.append(group)
-        return groups
+            if paths:
+                groups.append(paths)
 
+        # 3. DP
+        dp = [[0] * (block_size + 1) for _ in range(len(groups) + 1)]
+        choice = [[None] * (block_size + 1) for _ in range(len(groups) + 1)]
+        for i in range(1, len(groups) + 1):
+            group_paths = groups[i-1]
+            for w in range(block_size + 1):
+                dp[i][w] = dp[i-1][w] # not take any path from this group
+                for path in group_paths:
+                    if path["size"] <= w:
+                        val = dp[i-1][w-path["size"]] + path["fee"]
+                        if val > dp[i][w]:
+                            dp[i][w] = val
+                            choice[i][w] = path
+        best_cap = max(range(block_size + 1), key=lambda c: (dp[len(groups)][c], -c))
+
+        # 4. backtrack to find picked IDs
+        w = block_size
+        picked_ids = []
+        for i in range(len(groups), 0, -1):
+            chosen_path = choice[i][w]
+            if chosen_path is not None:
+                w -= chosen_path["size"]
+                picked_ids.extend(chosen_path["ids"])
+        return MiningPlan(dp[len(groups)][block_size], best_cap, picked_ids)
 
 if __name__ == "__main__":
     miner = BlockChainMining()
