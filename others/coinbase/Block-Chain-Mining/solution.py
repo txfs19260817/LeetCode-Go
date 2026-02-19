@@ -20,12 +20,12 @@ class MiningPlan:
 
 
 class BlockChainMining:
-    # Base question: high-performance greedy approximation by fee/size.
+    # Part 1: scalable greedy (not always optimal)
     def max_fee_greedy(self, block_size: int, txs: List[Transaction]) -> MiningPlan:
         if block_size <= 0:
             return MiningPlan(0, 0, [])
 
-        items = [tx for tx in txs if tx.id and tx.size > 0 and tx.fee >= 0]
+        items = txs[:]
         items.sort(
             key=lambda tx: (-tx.fee / tx.size, -tx.fee, tx.size, tx.id),
         )
@@ -39,146 +39,116 @@ class BlockChainMining:
             picked.append(tx.id)
         return MiningPlan(fee, used, picked)
 
-    # Base question exact solution: sparse 0/1 knapsack DP.
+    # Part 2: exact 0-1 knapsack DP (easy when block_size is small, e.g. 100)
     def max_fee_optimal(self, block_size: int, txs: List[Transaction]) -> MiningPlan:
         if block_size <= 0:
             return MiningPlan(0, 0, [])
 
-        states: Dict[int, MiningPlan] = {0: MiningPlan(0, 0, [])}
-        for tx in txs:
-            if not tx.id or tx.size <= 0 or tx.fee < 0:
-                continue
-            next_states = {
-                size: MiningPlan(plan.total_fee, plan.used_size, plan.tx_ids[:])
-                for size, plan in states.items()
-            }
-            for used, plan in states.items():
-                new_used = used + tx.size
-                if new_used > block_size:
-                    continue
-                candidate = MiningPlan(
-                    plan.total_fee + tx.fee, new_used, plan.tx_ids[:] + [tx.id]
-                )
-                current = next_states.get(new_used)
-                if current is None or self._better_plan(candidate, current):
-                    next_states[new_used] = candidate
-            states = self._prune_states(next_states)
-        return self._best_plan(states)
+        n = len(txs)
+        dp = [[0] * (block_size + 1) for _ in range(n + 1)]
+        take = [[False] * (block_size + 1) for _ in range(n + 1)]
 
-    # Follow-up:
-    # 1) child requires parent in same block
-    # 2) sibling branches are mutually exclusive
-    # We convert each root tree into one group of root->node path options,
-    # then run multiple-choice knapsack over groups.
+        for i in range(1, n + 1):
+            tx = txs[i - 1]
+            for cap in range(block_size + 1):
+                dp[i][cap] = dp[i - 1][cap]
+                if tx.size <= cap:
+                    candidate = dp[i - 1][cap - tx.size] + tx.fee
+                    if candidate > dp[i][cap]:
+                        dp[i][cap] = candidate
+                        take[i][cap] = True
+
+        best_cap = max(range(block_size + 1), key=lambda c: (dp[n][c], -c))
+
+        picked_ids: List[str] = []
+        cap = best_cap
+        for i in range(n, 0, -1):
+            if take[i][cap]:
+                tx = txs[i - 1]
+                picked_ids.append(tx.id)
+                cap -= tx.size
+
+        picked_ids.sort()
+        return MiningPlan(dp[n][best_cap], best_cap, picked_ids)
+
+    # Part 3: parent-child + sibling-branch-exclusive
+    # DFS to build per-root path options, then group knapsack DP.
     def max_fee_with_parents(self, block_size: int, txs: List[Transaction]) -> MiningPlan:
         if block_size <= 0:
             return MiningPlan(0, 0, [])
 
         groups = self._build_groups(txs)
-        states: Dict[int, MiningPlan] = {0: MiningPlan(0, 0, [])}
-        for group in groups:
-            next_states = {
-                size: MiningPlan(plan.total_fee, plan.used_size, plan.tx_ids[:])
-                for size, plan in states.items()
-            }
-            for used, plan in states.items():
-                for option_size, option_fee, option_ids in group:
-                    new_used = used + option_size
-                    if new_used > block_size:
-                        continue
-                    candidate = MiningPlan(
-                        plan.total_fee + option_fee,
-                        new_used,
-                        plan.tx_ids[:] + option_ids,
-                    )
-                    current = next_states.get(new_used)
-                    if current is None or self._better_plan(candidate, current):
-                        next_states[new_used] = candidate
-            states = self._prune_states(next_states)
-        return self._best_plan(states)
+        g = len(groups)
+        dp = [[0] * (block_size + 1) for _ in range(g + 1)]
+        pick = [[-1] * (block_size + 1) for _ in range(g + 1)]
+        prev_cap = [[0] * (block_size + 1) for _ in range(g + 1)]
+
+        for i in range(1, g + 1):
+            group = groups[i - 1]
+            for cap in range(block_size + 1):
+                dp[i][cap] = dp[i - 1][cap]  # skip this group
+                prev_cap[i][cap] = cap
+                for idx, (opt_size, opt_fee, _) in enumerate(group):
+                    if opt_size <= cap:
+                        candidate = dp[i - 1][cap - opt_size] + opt_fee
+                        if candidate > dp[i][cap]:
+                            dp[i][cap] = candidate
+                            pick[i][cap] = idx
+                            prev_cap[i][cap] = cap - opt_size
+
+        best_cap = max(range(block_size + 1), key=lambda c: (dp[g][c], -c))
+
+        picked_ids: List[str] = []
+        cap = best_cap
+        for i in range(g, 0, -1):
+            idx = pick[i][cap]
+            if idx != -1:
+                picked_ids.extend(groups[i - 1][idx][2])
+            cap = prev_cap[i][cap]
+
+        picked_ids.sort()
+        return MiningPlan(dp[g][best_cap], best_cap, picked_ids)
 
     def _build_groups(
         self, txs: List[Transaction]
     ) -> List[List[Tuple[int, int, List[str]]]]:
-        tx_by_id: Dict[str, Transaction] = {}
-        for tx in txs:
-            if tx.id and tx.size > 0 and tx.fee >= 0 and tx.id not in tx_by_id:
-                tx_by_id[tx.id] = tx
-
-        if not tx_by_id:
-            return []
+        tx_by_id: Dict[str, Transaction] = {tx.id: tx for tx in txs}
 
         children: Dict[str, List[str]] = {}
         roots: List[str] = []
 
-        for tx_id, tx in tx_by_id.items():
-            if not tx.parent_id or tx.parent_id not in tx_by_id:
-                roots.append(tx_id)
+        for tx in txs:
+            if tx.parent_id and tx.parent_id in tx_by_id:
+                children.setdefault(tx.parent_id, []).append(tx.id)
             else:
-                children.setdefault(tx.parent_id, []).append(tx_id)
+                roots.append(tx.id)
 
-        if not roots:
-            roots = sorted(tx_by_id.keys())
-        else:
-            roots.sort()
+        roots.sort()
         for parent_id in children:
             children[parent_id].sort()
 
         groups: List[List[Tuple[int, int, List[str]]]] = []
         for root in roots:
             group: List[Tuple[int, int, List[str]]] = []
-            stack = set()
 
-            def dfs(tx_id: str, path: List[str], size: int, fee: int) -> None:
-                if tx_id in stack:
-                    return
-                tx = tx_by_id.get(tx_id)
-                if tx is None:
-                    return
-                stack.add(tx_id)
-                new_path = path + [tx_id]
+            def dfs(node_id: str, path: List[str], size: int, fee: int) -> None:
+                tx = tx_by_id[node_id]
+                new_path = path + [node_id]
                 new_size = size + tx.size
                 new_fee = fee + tx.fee
                 group.append((new_size, new_fee, new_path))
-                for child_id in children.get(tx_id, []):
+                for child_id in children.get(node_id, []):
                     dfs(child_id, new_path, new_size, new_fee)
-                stack.remove(tx_id)
 
             dfs(root, [], 0, 0)
-            if group:
-                groups.append(group)
+            groups.append(group)
         return groups
-
-    def _prune_states(self, states: Dict[int, MiningPlan]) -> Dict[int, MiningPlan]:
-        best_fee = -1
-        pruned: Dict[int, MiningPlan] = {}
-        for size in sorted(states.keys()):
-            plan = states[size]
-            if plan.total_fee > best_fee:
-                pruned[size] = plan
-                best_fee = plan.total_fee
-        return pruned
-
-    def _best_plan(self, states: Dict[int, MiningPlan]) -> MiningPlan:
-        best = MiningPlan(0, 0, [])
-        initialized = False
-        for plan in states.values():
-            if not initialized or self._better_plan(plan, best):
-                best = plan
-                initialized = True
-        return best
-
-    def _better_plan(self, a: MiningPlan, b: MiningPlan) -> bool:
-        if a.total_fee != b.total_fee:
-            return a.total_fee > b.total_fee
-        if a.used_size != b.used_size:
-            return a.used_size < b.used_size
-        return ",".join(a.tx_ids) < ",".join(b.tx_ids)
 
 
 if __name__ == "__main__":
     miner = BlockChainMining()
 
+    # Part 1 vs Part 2: greedy fails, DP gets optimum
     base_txs = [
         Transaction("a", 6, 13),
         Transaction("b", 5, 10),
@@ -186,9 +156,21 @@ if __name__ == "__main__":
     ]
     greedy = miner.max_fee_greedy(10, base_txs)
     optimal = miner.max_fee_optimal(10, base_txs)
-    assert greedy.total_fee == 13
-    assert optimal.total_fee == 20
+    assert greedy.total_fee == 13 and sorted(greedy.tx_ids) == ["a"]
+    assert optimal.total_fee == 20 and sorted(optimal.tx_ids) == ["b", "c"]
 
+    # blockSize=100 pattern
+    size_100_txs = [
+        Transaction("t1", 60, 150),
+        Transaction("t2", 50, 130),
+        Transaction("t3", 40, 95),
+        Transaction("t4", 30, 65),
+    ]
+    plan_100 = miner.max_fee_optimal(100, size_100_txs)
+    assert plan_100.total_fee == 245
+    assert sorted(plan_100.tx_ids) == ["t1", "t3"]
+
+    # Part 3: branch exclusivity + parent dependency
     follow_txs = [
         Transaction("1", 2, 3, ""),
         Transaction("2", 2, 4, "1"),
@@ -198,4 +180,6 @@ if __name__ == "__main__":
     ]
     plan = miner.max_fee_with_parents(14, follow_txs)
     assert plan.total_fee == 24
-    assert ("3" in plan.tx_ids) != ("4" in plan.tx_ids)
+    assert sorted(plan.tx_ids) == ["1", "2", "3", "5"]
+
+    print("All asserts passed.")
