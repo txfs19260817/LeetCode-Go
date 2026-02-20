@@ -3,23 +3,12 @@ class Solution:
         if source == dest:
             return ""
 
-        def fib_nodes(n: int) -> int:
-            """
-            the number of nodes in an order-n Fibonacci tree.
-            The recurrence is size(n) = 1 + size(n-1) + size(n-2)
-            (one root plus right subtree of order n-1 and left subtree of order n-2).
-            I use an iterative loop to avoid recursion overhead.
-            :param n:
-            :return:
-            """
-            if n <= 1:
-                return 1
-            a, b = 1, 1
-            for _ in range(2, n + 1):
-                a, b = b, 1 + a + b
-            return b
+        # Precompute subtree sizes once so each lookup inside path_from_root is O(1).
+        size = [1] * (order + 1)
+        for n in range(2, order + 1):
+            size[n] = 1 + size[n - 1] + size[n - 2]
 
-        def path_from_root(order: int, root_label: int, target: int) -> str:
+        def path_from_root(cur_order: int, root_label: int, target: int) -> str:
             """
             A helper that returns the L/R path from a subtree root to a target label.
             Under **preorder** labeling, the left child root is always root_label + 1,
@@ -32,9 +21,9 @@ class Solution:
             :return:
             """
             path = []
-            while order > 1 and root_label != target:
-                left_size = fib_nodes(order - 2)
-                right_start = root_label + 1 + left_size
+            while cur_order > 1 and root_label != target:
+                left_size = size[cur_order - 2]  # left order = root order - 2
+                right_start = root_label + 1 + left_size  # root node, skip root, skip left subtree
 
                 # If our target is strictly less than right_start,
                 # it must be in the left subtree.
@@ -45,11 +34,11 @@ class Solution:
                 if target < right_start:
                     path.append("L")
                     root_label += 1
-                    order -= 2
+                    cur_order -= 2
                 else:
                     path.append("R")
                     root_label = right_start
-                    order -= 1
+                    cur_order -= 1
             return "".join(path)
 
         path_to_source = path_from_root(order, 0, source)

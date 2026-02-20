@@ -1,8 +1,5 @@
 class Solution:
     def encode(self, values: list[int]) -> list[str]:
-        if not values:
-            return []
-
         # Identify maximal runs of consecutive identical values.
         runs: list[tuple[int, int]] = []
         i = 0
@@ -18,22 +15,25 @@ class Solution:
         bp_buf: list[int] = []
 
         def flush_bp() -> None:
-            nonlocal bp_buf
-            if not bp_buf:
-                return
-            result.append(f"BP[{','.join(str(v) for v in bp_buf)}]")
-            bp_buf = []
+            """Helper for: When encountering an RLE-eligible run, flush any accumulated BP buffer first."""
+            if bp_buf:
+                result.append(f"BP[{','.join(str(v) for v in bp_buf)}]")
+                bp_buf.clear()
 
         for idx, (val, cnt) in enumerate(runs):
-            is_last = idx == len(runs) - 1
-
             if cnt >= 8:
+                # For long runs, emit RLE—it’s more compact.
+                # I flush any pending BP first to preserve the original order:
+                # buffered literals must appear before this RLE token
                 flush_bp()
                 result.append(f"RLE[{val},{cnt}]")
-            elif is_last and not bp_buf:
+            elif idx == len(runs) - 1 and not bp_buf:
                 # Last run exception
                 result.append(f"RLE[{val},{cnt}]")
             else:
+                # Otherwise, treat it as literals: append the value cnt times into bp_buf.
+                # Once buffer reaches 8, flush.
+                # This lets multiple short runs combine into a dense BP block
                 for _ in range(cnt):
                     bp_buf.append(val)
                     if len(bp_buf) == 8:
