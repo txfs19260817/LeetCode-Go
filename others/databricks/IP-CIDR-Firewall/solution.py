@@ -1,29 +1,40 @@
 class IpFirewall:
     def __init__(self, rules: list[list[str]]):
         self.rules = []
-        for action, cidr in rules:
-            allow = action == "ALLOW"
-            network, mask = self._parse_cidr(cidr)
+        for r in rules:
+            allow = r[0] == "ALLOW"
+            network, mask = self._parse_cidr(r[1])
             self.rules.append((allow, network, mask))
 
     def allow_access(self, ip: str) -> bool:
-        ip_val = self._parse_ip(ip)
+        parsed_ip = self._parse_ip(ip)
         for allow, network, mask in self.rules:
-            if ip_val & mask == network:
+            if parsed_ip & mask == network:
                 return allow
         return False
 
     def allow_cidr(self, cidr: str) -> bool:
         """Return True if EVERY IP in *cidr* would be allowed."""
         network, _ = self._parse_cidr(cidr)
-        prefix_len = self._parse_prefix_len(cidr)
+        prefix_len = int(cidr.split("/")[1]) if "/" in cidr else 32
         return self._allow_range(network, prefix_len)
 
     def _allow_range(self, network: int, prefix_len: int) -> bool:
-        """Return True only if every IP in the query prefix is allowed."""
+        """
+        Return True only if every IP in the query prefix is allowed.
+
+        Next is checking an entire CIDR block.
+        This is trickier because a query range might be only partially covered by a rule,
+        or have a more specific DENY rule inside a broader ALLOW rule.
+        To solve this, I'll write a recursive helper function _allow_range.
+        As I check the rules, if I find a rule that completely covers our query block,
+        and I haven't seen any smaller subset rules inside it, I can just return its action.
+        But, if I detect that a rule only covers a subset of our query, I'll set a needs_split flag.
+        This means I can't trust a broad match and must split the query into smaller blocks.
+        """
         # Query range represented as a network + prefix.
         # q_mask keeps only the fixed prefix bits for this query.
-        q_mask = self._prefix_to_mask(prefix_len)
+        q_mask = (0xFFFFFFFF << (32 - prefix_len)) & 0xFFFFFFFF
         # True means at least one more specific rule exists inside this query,
         # so we cannot trust a broad match and must split into subranges.
         needs_split = False
@@ -40,10 +51,7 @@ class IpFirewall:
                 needs_split = True
         if prefix_len >= 32:
             # Leaf (/32): evaluate this exact IP with first-match semantics.
-            for allow, r_net, r_mask in self.rules:
-                if network & r_mask == r_net:
-                    return allow
-            return False
+            return self.allow_access(str(network))
         # Split query into two child prefixes by toggling the next host bit.
         bit = 1 << (31 - prefix_len)
         # Entire query is allowed only if BOTH halves are fully allowed.
@@ -53,12 +61,6 @@ class IpFirewall:
     @staticmethod
     def _parse_prefix_len(cidr: str) -> int:
         return int(cidr.split("/")[1]) if "/" in cidr else 32
-
-    @staticmethod
-    def _prefix_to_mask(prefix_len: int) -> int:
-        if prefix_len == 0:
-            return 0
-        return (0xFFFFFFFF << (32 - prefix_len)) & 0xFFFFFFFF
 
     @staticmethod
     def _parse_ip(ip: str) -> int:
@@ -75,12 +77,8 @@ class IpFirewall:
         else:
             ip_str = cidr
             prefix_len = 32
-        if prefix_len == 0:
-            mask = 0
-        else:
-            mask = (0xFFFFFFFF << (32 - prefix_len)) & 0xFFFFFFFF
-        ip_val = IpFirewall._parse_ip(ip_str)
-        network = ip_val & mask
+        mask = (0xFFFFFFFF << (32-prefix_len)) & 0xFFFFFFFF
+        network = IpFirewall._parse_ip(ip_str) & mask
         return network, mask
 
 
