@@ -7,9 +7,16 @@ Op = tuple[str, MapFn | FilterFn]
 
 
 class LazyArray:
+    _DROPPED = object()
+
     def __init__(self, arr: list[int], ops: Iterable[Op] = ()):
         self._arr = arr
         self._ops: list[Op] = list(ops)
+
+        # Incremental cache for this pipeline instance.
+        self._evaluated_upto = -1
+        self._cache: list[object] = []
+        self._first_index: dict[int, int] = {}
 
     def map(self, fn: MapFn):
         """Return a new LazyArray with fn appended to the pipeline.
@@ -39,6 +46,41 @@ class LazyArray:
                     if not func(v):   # drop when predicate fails
                         v = None
                         break
+
+            if v == target:  # check only after all ops for this item
+                return i
+
+        return -1
+
+    def indexOf2(self, target: int) -> int:
+        """Cached indexOf variant.
+
+        First query: O(n*k) worst case.
+        Repeated queries: only process the not-yet-cached suffix.
+        Space: O(n) cache for this pipeline instance.
+        """
+        if target in self._first_index:
+            return self._first_index[target]
+
+        start = self._evaluated_upto + 1
+        for i in range(start, len(self._arr)):
+            v = self._arr[i]
+            for t, func in self._ops:
+                if t == "map":
+                    v = func(v)
+                elif t == "filter":
+                    if not func(v):   # drop when predicate fails
+                        v = self._DROPPED
+                        break
+
+            self._cache.append(v)
+            self._evaluated_upto = i
+
+            if v is self._DROPPED:
+                continue
+
+            if v not in self._first_index:
+                self._first_index[v] = i
 
             if v == target:  # check only after all ops for this item
                 return i
@@ -113,5 +155,33 @@ if __name__ == "__main__":
     la9 = LazyArray([3, 4, 5, 6]).filter(lambda n: n % 2 == 1).map(map_count)
     assert la9.indexOf(5) == 2
     assert processed == [3, 5]
+
+    # Repeated indexOf (original version) recomputes.
+    seen_plain: list[int] = []
+
+    def expensive_plain(x: int) -> int:
+        seen_plain.append(x)
+        return x
+
+    la10 = LazyArray([1, 2, 3]).map(expensive_plain)
+    assert la10.indexOf(2) == 1
+    assert seen_plain == [1, 2]
+    assert la10.indexOf(2) == 1
+    assert seen_plain == [1, 2, 1, 2]
+
+    # Repeated indexOf2 should reuse cached prefix results.
+    seen: list[int] = []
+
+    def expensive(x: int) -> int:
+        seen.append(x)
+        return x
+
+    la11 = LazyArray([1, 2, 3]).map(expensive)
+    assert la11.indexOf2(2) == 1
+    assert seen == [1, 2]
+    assert la11.indexOf2(3) == 2
+    assert seen == [1, 2, 3]
+    assert la11.indexOf2(3) == 2
+    assert seen == [1, 2, 3]
 
     print("All tests passed!")

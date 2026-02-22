@@ -76,10 +76,17 @@ class DataWriter:
 
 
 def _encode_record(buf: BytesIO, data: bytes) -> None:
-    hdr = struct.pack("<I", len(data))
-    buf.write(hdr)
+    # Encode payload length as a 4-byte little-endian unsigned integer.
+    header = struct.pack("<I", len(data))
+
+    # Record layout is: [length][payload][crc32].
+    buf.write(header)
     buf.write(data)
-    crc = zlib.crc32(hdr + data) & 0xFFFFFFFF
+
+    # Protect both header and payload so recovery can validate boundaries too.
+    crc = zlib.crc32(header + data) & 0xFFFFFFFF
+
+    # Store CRC as a 4-byte little-endian unsigned integer.
     buf.write(struct.pack("<I", crc))
 
 
