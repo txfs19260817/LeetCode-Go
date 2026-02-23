@@ -13,45 +13,110 @@ func Test_customSortString(t *testing.T) {
 		want string
 	}{
 		{
-			name: `order = "cba", s = "abcd"`,
+			name: `order = "cbd", s = "abcd"`,
 			args: args{"cbd", "abcd"},
-			want: "cbad",
+			want: "",
 		},
 		{
 			name: `order = "cbafg", s = "abcd"`,
 			args: args{"cbafg", "abcd"},
-			want: "cbad",
+			want: "",
+		},
+		{
+			name: `order = "kqep", s = "pekeq"`,
+			args: args{"kqep", "pekeq"},
+			want: "kqeep",
+		},
+		{
+			name: `order = "cba", s = "aaabbbccc"`,
+			args: args{"cba", "aaabbbccc"},
+			want: "cccbbbaaa",
+		},
+		{
+			name: `order = "xyz", s = "abcd"`,
+			args: args{"xyz", "abcd"},
+			want: "",
+		},
+		{
+			name: `order = "", s = "leetcode"`,
+			args: args{"", "leetcode"},
+			want: "",
+		},
+		{
+			name: `order = "abc", s = ""`,
+			args: args{"abc", ""},
+			want: "",
+		},
+		{
+			name: `order = "abc", s = "aaabccab"`,
+			args: args{"abc", "aaabccab"},
+			want: "aaaabbcc",
+		},
+		{
+			name: `order = "zyxwvutsrqponmlkjihgfedcba", s = "abcabc"`,
+			args: args{"zyxwvutsrqponmlkjihgfedcba", "abcabc"},
+			want: "ccbbaa",
+		},
+		{
+			name: `order = "a", s = "aaaa"`,
+			args: args{"a", "aaaa"},
+			want: "aaaa",
 		},
 	}
+
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := customSortString(tt.args.order, tt.args.s); longestCommonSubsequence(tt.want, got) <= 0 {
+			got := customSortString(tt.args.order, tt.args.s)
+			if !isValidCustomSortResult(tt.args.order, tt.args.s, got) {
+				t.Errorf("customSortString() = %v, invalid for order=%q s=%q", got, tt.args.order, tt.args.s)
+			}
+			if tt.want != "" && got != tt.want {
 				t.Errorf("customSortString() = %v, want %v", got, tt.want)
+			}
+
+			got = customSortString2(tt.args.order, tt.args.s)
+			if !isValidCustomSortResult(tt.args.order, tt.args.s, got) {
+				t.Errorf("customSortString2() = %v, invalid for order=%q s=%q", got, tt.args.order, tt.args.s)
+			}
+			if tt.want != "" && got != tt.want {
+				t.Errorf("customSortString2() = %v, want %v", got, tt.want)
 			}
 		})
 	}
 }
 
-func longestCommonSubsequence(text1 string, text2 string) int {
-	dp := make([][]int, len(text1)+1)
-	for i := range dp {
-		dp[i] = make([]int, len(text2)+1)
+func isValidCustomSortResult(order, s, got string) bool {
+	if len(s) != len(got) {
+		return false
 	}
-	for i := 1; i <= len(text1); i++ {
-		for j := 1; j <= len(text2); j++ {
-			if text1[i-1] == text2[j-1] {
-				dp[i][j] = 1 + dp[i-1][j-1]
-			} else {
-				dp[i][j] = max(dp[i][j-1], dp[i-1][j])
-			}
-		}
-	}
-	return dp[len(text1)][len(text2)]
-}
 
-func max(a, b int) int {
-	if a > b {
-		return a
+	var sFreq, gotFreq [26]int
+	for i := 0; i < len(s); i++ {
+		sFreq[s[i]-'a']++
+		gotFreq[got[i]-'a']++
 	}
-	return b
+	if sFreq != gotFreq {
+		return false
+	}
+
+	rank := make([]int, 26)
+	for i := range rank {
+		rank[i] = -1
+	}
+	for i := 0; i < len(order); i++ {
+		rank[order[i]-'a'] = i
+	}
+
+	prevRank := -1
+	for i := 0; i < len(got); i++ {
+		r := rank[got[i]-'a']
+		if r == -1 {
+			continue
+		}
+		if r < prevRank {
+			return false
+		}
+		prevRank = r
+	}
+	return true
 }
