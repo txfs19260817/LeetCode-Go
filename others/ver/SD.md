@@ -105,7 +105,7 @@ flowchart LR
 
 Flink Job A 做 per-device state：
 
-* `last_seq`（或 `last_event_id`）
+* `last_seq`（利用 RocksDB 状态后端为每个设备维护 last_seq 和 last_minute_id）
 * `last_minute_id`（可选）
 * `last_status_for_minute`（处理“同一分钟多条”时需要）
 
