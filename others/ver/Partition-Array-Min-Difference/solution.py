@@ -4,6 +4,8 @@ from typing import List
 def min_partition_difference(nums: List[int]) -> int:
     if not nums:
         raise ValueError("nums must be non-empty")
+    if any(x < 0 for x in nums):
+        raise ValueError("nums must contain non-negative integers only")
 
     total = sum(nums)
     target = total // 2
@@ -15,8 +17,7 @@ def min_partition_difference(nums: List[int]) -> int:
     for num in nums:
         # Reverse traversal keeps each number used at most once (0/1 knapsack).
         for s in range(target, num - 1, -1):
-            if dp[s - num]:
-                dp[s] = True
+            dp[s] = dp[s] or dp[s - num]
 
     best = 0
     # Closest achievable sum to total/2 gives minimum partition difference.
@@ -33,10 +34,15 @@ if __name__ == "__main__":
     assert min_partition_difference([1, 6, 11, 5]) == 1
     assert min_partition_difference([1, 2, 3, 9]) == 3
     assert min_partition_difference([5]) == 5
-
     try:
         min_partition_difference([])
         raise AssertionError("Expected ValueError for empty input")
+    except ValueError:
+        pass
+
+    try:
+        min_partition_difference([36, -36])
+        raise AssertionError("Expected ValueError for negative input")
     except ValueError:
         pass
 
