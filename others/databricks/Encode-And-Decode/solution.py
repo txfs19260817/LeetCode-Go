@@ -49,91 +49,107 @@ class Solution:
         return result
 
 
-class StreamEncoder:
+class Run:
+    def encode(self) -> str:
+        raise NotImplementedError
+
+
+class RLERun(Run):
+    def __init__(self, value: int, count: int) -> None:
+        self.value = value
+        self.count = count
+
+    def encode(self) -> str:
+        return f"RLE[{self.value}, {self.count}]"
+
+
+class BPRun(Run):
+    def __init__(self, values: list[int]) -> None:
+        self.values = list(values)
+
+    def encode(self) -> str:
+        return f"BP{self.values}"
+
+
+class Encoder:
     def __init__(self) -> None:
         self.cur_val: int = 0
         self.cur_cnt: int = 0
         self.bp_buf: list[int] = []
         self.started: bool = False
+        self.runs: list[Run] = []
 
-    def write(self, value: int) -> list[str]:
+    def append(self, value: int) -> None:
         if not self.started:
             self.started = True
             self.cur_val = value
             self.cur_cnt = 1
-            return []
+            return
 
         if value == self.cur_val:
             self.cur_cnt += 1
-            return []
+            return
 
-        result = self._finalize_run(is_last=False)
+        self._finalize_run(is_last=False)
         self.cur_val = value
         self.cur_cnt = 1
-        return result
 
-    def flush(self) -> list[str]:
+    def finish(self) -> list[Run]:
         if not self.started:
             return []
-        result = self._finalize_run(is_last=True)
+        self._finalize_run(is_last=True)
+        out = self.runs
+
+        # reset
         self.started = False
         self.cur_cnt = 0
-        return result
+        self.runs = []
+        self.bp_buf = []
+        return out
 
-    def _finalize_run(self, is_last: bool) -> list[str]:
-        result: list[str] = []
-
+    def _finalize_run(self, is_last: bool) -> None:
         if self.cur_cnt >= 8:
-            result.extend(self._flush_bp())
-            result.append(f"RLE[{self.cur_val},{self.cur_cnt}]")
+            self._flush_bp()
+            self.runs.append(RLERun(self.cur_val, self.cur_cnt))
         elif is_last and not self.bp_buf:
-            result.append(f"RLE[{self.cur_val},{self.cur_cnt}]")
+            self.runs.append(RLERun(self.cur_val, self.cur_cnt))
         else:
             for _ in range(self.cur_cnt):
                 self.bp_buf.append(self.cur_val)
                 if len(self.bp_buf) == 8:
-                    result.extend(self._flush_bp())
+                    self._flush_bp()
             if is_last:
-                result.extend(self._flush_bp())
+                self._flush_bp()
 
-        return result
-
-    def _flush_bp(self) -> list[str]:
+    def _flush_bp(self) -> None:
         if not self.bp_buf:
-            return []
-        run = f"BP[{','.join(str(v) for v in self.bp_buf)}]"
+            return
+        run = BPRun(self.bp_buf)
         self.bp_buf.clear()
-        return [run]
+        self.runs.append(run)
 
 
-class StreamDecoder:
-    def write(self, run: str) -> list[int]:
-        if run.startswith("RLE["):
-            inner = run[4:-1]
-            parts = inner.split(",")
-            value, count = int(parts[0]), int(parts[1])
-            return [value] * count
-        if run.startswith("BP["):
-            inner = run[3:-1]
-            return [int(p) for p in inner.split(",")]
-        return []
+class Decoder:
+    def decode(self, runs: list[Run]) -> list[int]:
+        values: list[int] = []
+        for run in runs:
+            if isinstance(run, RLERun):
+                values.extend([run.value] * run.count)
+            elif isinstance(run, BPRun):
+                values.extend(run.values)
+        return values
 
 
-def encode_via_stream(values: list[int]) -> list[str]:
-    enc = StreamEncoder()
-    runs: list[str] = []
+def encode_via_stream(values: list[int]) -> list[Run]:
+    enc = Encoder()
     for v in values:
-        runs.extend(enc.write(v))
-    runs.extend(enc.flush())
-    return runs
+        enc.append(v)
+    return enc.finish()
 
 
-def decode_via_stream(runs: list[str]) -> list[int]:
-    dec = StreamDecoder()
-    values: list[int] = []
-    for r in runs:
-        values.extend(dec.write(r))
-    return values
+def decode_via_stream(runs: list[Run]) -> list[int]:
+    dec = Decoder()
+    return dec.decode(runs)
 
 
 if __name__ == "__main__":
@@ -171,47 +187,47 @@ if __name__ == "__main__":
 
     # Stream Example 1
     s_enc1 = encode_via_stream(inp1)
-    assert s_enc1 == ["RLE[5,8]", "BP[1,2,3]"], f"Got {s_enc1}"
+    assert [r.encode() for r in s_enc1] == ["RLE[5, 8]", "BP[1, 2, 3]"], f"Got {s_enc1}"
     assert decode_via_stream(s_enc1) == inp1
 
     # Stream Example 2
     s_enc2 = encode_via_stream(inp2)
-    assert s_enc2 == ["RLE[1,3]"], f"Got {s_enc2}"
+    assert [r.encode() for r in s_enc2] == ["RLE[1, 3]"], f"Got {s_enc2}"
     assert decode_via_stream(s_enc2) == inp2
 
     # Stream Example 3
     s_enc3 = encode_via_stream(inp3)
-    assert s_enc3 == ["BP[1,1,1,1,2,3,4,5]"], f"Got {s_enc3}"
+    assert [r.encode() for r in s_enc3] == ["BP[1, 1, 1, 1, 2, 3, 4, 5]"], f"Got {s_enc3}"
     assert decode_via_stream(s_enc3) == inp3
 
     # Stream Single element
     s_enc4 = encode_via_stream(inp4)
-    assert s_enc4 == ["RLE[42,1]"], f"Got {s_enc4}"
+    assert [r.encode() for r in s_enc4] == ["RLE[42, 1]"], f"Got {s_enc4}"
     assert decode_via_stream(s_enc4) == inp4
 
     # Stream Long mixed
     s_enc5 = encode_via_stream(inp5)
-    assert s_enc5 == ["RLE[7,10]", "BP[1,2,3]", "RLE[2,9]"], f"Got {s_enc5}"
+    assert [r.encode() for r in s_enc5] == ["RLE[7, 10]", "BP[1, 2, 3]", "RLE[2, 9]"], f"Got {s_enc5}"
     assert decode_via_stream(s_enc5) == inp5
 
     # Stream Empty
     assert encode_via_stream([]) == []
 
     # Stream Incremental emission
-    enc = StreamEncoder()
+    enc = Encoder()
     for _ in range(8):
-        assert enc.write(5) == []
-    assert enc.write(1) == ["RLE[5,8]"]
-    assert enc.write(2) == []
-    assert enc.write(3) == []
-    assert enc.flush() == ["BP[1,2,3]"]
+        enc.append(5)
+    enc.append(1)
+    enc.append(2)
+    enc.append(3)
+    assert [r.encode() for r in enc.finish()] == ["RLE[5, 8]", "BP[1, 2, 3]"]
 
     # Stream BP flush at 8
-    enc = StreamEncoder()
+    enc = Encoder()
     for _ in range(7):
-        assert enc.write(1) == []
-    assert enc.write(2) == []
-    assert enc.write(3) == ["BP[1,1,1,1,1,1,1,2]"]
-    assert enc.flush() == ["RLE[3,1]"]
+        enc.append(1)
+    enc.append(2)
+    enc.append(3)
+    assert [r.encode() for r in enc.finish()] == ["BP[1, 1, 1, 1, 1, 1, 1, 2]", "RLE[3, 1]"]
 
     print("All tests passed!")
