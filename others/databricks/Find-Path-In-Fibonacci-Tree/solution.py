@@ -1,65 +1,55 @@
 class Solution:
+    def __init__(self, max_order: int = 50):
+        self.max_order = max_order
+        self.N = [1] * (max_order + 1)
+        for i in range(2, max_order + 1):
+            self.N[i] = 1 + self.N[i - 1] + self.N[i - 2]
+
+    def _ensure_capacity(self, order: int) -> None:
+        if order <= self.max_order:
+            return
+        old_max = self.max_order
+        self.N.extend([1] * (order - old_max))
+        for i in range(old_max + 1, order + 1):
+            self.N[i] = 1 + self.N[i - 1] + self.N[i - 2]
+        self.max_order = order
+
+    def get_path_from_root(self, order: int, x: int) -> str:
+        path: str = ""
+        # `root_label` is the global preorder index of the current subtree root.  
+        # I update it while descending left or right 
+        # so I can compare `x` against subtree boundaries in the same global labeling system.
+        root_label = 0
+
+        # Global labels use preorder numbering.
+        # For order=n:
+        # - left subtree order is n-2, its root label is root_label + 1
+        # - right subtree order is n-1, its root label is root_label + 1 + size(left)
+        while order > 1 and root_label != x:
+            left_size = self.N[order - 2]
+            right_root = root_label + 1 + left_size
+
+            if x < right_root:
+                path += "L"
+                root_label += 1
+                order -= 2
+            else:
+                path += "R"
+                root_label = right_root
+                order -= 1
+
+        return path
+
     def findPath(self, order: int, source: int, dest: int) -> str:
-        if source == dest:
-            return ""
-
-        # Precompute subtree sizes once so each lookup inside path_from_root is O(1).
-        size = [1] * (order + 1)
-        for n in range(2, order + 1):
-            size[n] = 1 + size[n - 1] + size[n - 2]
-
-        def path_from_root(cur_order: int, root_label: int, target: int) -> str:
-            """
-            A helper that returns the L/R path from a subtree root to a target label.
-            Under **preorder** labeling, the left child root is always root_label + 1,
-            and the right child root starts at root_label + 1 + left_size,
-            where left_size is the number of nodes in the left subtree.
-
-            :param order: order describes that subtree’s structure
-            :param root_label: root_label is always the root label of the current subtree
-            :param target:
-            :return:
-            """
-            path = []
-            while cur_order > 1 and root_label != target:
-                left_size = size[cur_order - 2]  # left order = root order - 2
-                right_start = root_label + 1 + left_size  # root node, skip root, skip left subtree
-
-                # If our target is strictly less than right_start,
-                # it must be in the left subtree.
-                # I append 'L', update the root to the left child, and drop the order by 2.
-                # Otherwise, it's in the right subtree:
-                # I append 'R', jump the root label straight to right_start,
-                # and drop the order by 1.
-                if target < right_start:
-                    path.append("L")
-                    root_label += 1
-                    cur_order -= 2
-                else:
-                    path.append("R")
-                    root_label = right_start
-                    cur_order -= 1
-            return "".join(path)
-
-        path_to_source = path_from_root(order, 0, source)
-        path_to_dest = path_from_root(order, 0, dest)
-
-        # Longest common prefix = LCA depth
-        # generate the root-to-node paths for both the source and the destination.
-        # I'll iterate through both strings to find the length of their longest common prefix.
-        # This prefix represents the exact path to their Lowest Common Ancestor.
-        common = 0
-        while (
-            common < len(path_to_source)
-            and common < len(path_to_dest)
-            and path_to_source[common] == path_to_dest[common]
-        ):
-            common += 1
-
-        # To construct the final answer, we need to walk 'Up' from the source to the LCA.
-        # I do this by adding a 'U' for every remaining character in the source path.
-        # Then, I just append the remaining characters of the destination path to walk down to our target
-        return "U" * (len(path_to_source) - common) + path_to_dest[common:]
+        self._ensure_capacity(order)
+        a = self.get_path_from_root(order, source)
+        b = self.get_path_from_root(order, dest)
+        i = 0
+        while i < min(len(a), len(b)) and a[i] == b[i]:
+            i += 1
+        up = "U" * (len(a) - i)
+        down = b[i:]
+        return up + down
 
 
 if __name__ == "__main__":

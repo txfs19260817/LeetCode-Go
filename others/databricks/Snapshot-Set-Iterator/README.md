@@ -16,7 +16,7 @@ When an iterator is created, it iterates over exactly the elements present at th
 - `HasNext() bool` — Returns `true` if there are more elements.
 - `Next() int` — Returns the next element. Panics if no next element.
 
-Multiple iterators can coexist independently. All primary set operations are amortized O(1). Space is O(N+M) where N is total entries and M is total snapshot size across live iterators.
+Multiple iterators can coexist independently. All primary set operations are amortized O(1). Iterator extra space is O(1), and total space is O(N) for the entry log.
 
 ## Example
 
@@ -39,8 +39,10 @@ Iterating it2: [2,4]
 
 ## Approach
 
-- Maintain a slice of entries, each with `{value, addVersion, removeVersion}`.
-- A global version counter incremented on each add/remove.
-- A hash map from value to index in the entries slice.
-- `getIterator` captures the current version as `snapVersion` and builds a snapshot by walking entries: include if `addVersion < snapVersion` AND (`removeVersion == -1` OR `removeVersion >= snapVersion`).
-- Re-adding a previously removed element appends a new entry to preserve correct insertion order.
+- Use a single map with tagged keys:
+  - `("ent", addVersion) -> (value, removeVersion)`
+  - `("idx", value) -> latest addVersion`
+- A global version counter increments on each successful add/remove.
+- `getIterator` captures `snapVersion` and lazily scans add versions in `[0, snapVersion)`.
+- An entry is visible if `removeVersion == -1` or `removeVersion >= snapVersion`.
+- Re-adding a removed value creates a new addVersion, so insertion order remains correct.

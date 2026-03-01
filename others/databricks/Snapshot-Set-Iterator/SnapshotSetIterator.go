@@ -1,82 +1,125 @@
 package databricks
 
-type entry struct {
-	value         int
-	addVersion    int
-	removeVersion int // -1 means not removed
+const (
+	keyEntry = 0
+	keyIndex = 1
+)
+
+type storeKey struct {
+	kind int
+	id   int
+}
+
+type storeVal struct {
+	a int
+	b int
 }
 
 // SnapshotSet is a set of integers that supports snapshotted iteration.
 type SnapshotSet struct {
-	entries []entry
-	index   map[int]int // value -> index in entries
+	// Single map storage:
+	// {keyEntry, addVersion} -> {value, removeVersion}
+	// {keyIndex, value} -> {latestAddVersion, _}
+	store   map[storeKey]storeVal
 	version int
 }
 
 // NewSnapshotSet creates a new empty SnapshotSet.
 func NewSnapshotSet() *SnapshotSet {
 	return &SnapshotSet{
-		index: make(map[int]int),
+		store: make(map[storeKey]storeVal),
 	}
 }
 
 // Add inserts n into the set. Returns true if newly added, false if already present.
 func (s *SnapshotSet) Add(n int) bool {
-	if idx, ok := s.index[n]; ok && s.entries[idx].removeVersion == -1 {
-		return false // already present and not removed
+	idxKey := storeKey{kind: keyIndex, id: n}
+	if idxVal, ok := s.store[idxKey]; ok {
+		entKey := storeKey{kind: keyEntry, id: idxVal.a}
+		if entVal, ok := s.store[entKey]; ok && entVal.b == -1 {
+			return false // already present and not removed
+		}
 	}
-	s.entries = append(s.entries, entry{
-		value:         n,
-		addVersion:    s.version,
-		removeVersion: -1,
-	})
-	s.index[n] = len(s.entries) - 1
+
+	addVersion := s.version
+	s.store[storeKey{kind: keyEntry, id: addVersion}] = storeVal{a: n, b: -1}
+	s.store[idxKey] = storeVal{a: addVersion}
 	s.version++
 	return true
 }
 
 // Remove removes n from the set. Returns true if removed, false if not found.
 func (s *SnapshotSet) Remove(n int) bool {
-	idx, ok := s.index[n]
-	if !ok || s.entries[idx].removeVersion != -1 {
+	idxVal, ok := s.store[storeKey{kind: keyIndex, id: n}]
+	if !ok {
 		return false
 	}
-	s.entries[idx].removeVersion = s.version
+	entKey := storeKey{kind: keyEntry, id: idxVal.a}
+	entVal, ok := s.store[entKey]
+	if !ok || entVal.b != -1 {
+		return false
+	}
+
+	entVal.b = s.version
+	s.store[entKey] = entVal
 	s.version++
 	return true
 }
 
 // Contains returns true if n is currently in the set.
 func (s *SnapshotSet) Contains(n int) bool {
-	idx, ok := s.index[n]
+	idxVal, ok := s.store[storeKey{kind: keyIndex, id: n}]
 	if !ok {
 		return false
 	}
-	return s.entries[idx].removeVersion == -1
+	entVal, ok := s.store[storeKey{kind: keyEntry, id: idxVal.a}]
+	if !ok {
+		return false
+	}
+	return entVal.b == -1
 }
 
 // GetIterator returns an iterator over the elements present at this moment,
 // in insertion order. Later mutations do not affect this iterator.
 func (s *SnapshotSet) GetIterator() *SnapshotIterator {
-	snapVersion := s.version
-	snapshot := []int{}
-	for _, e := range s.entries {
-		if e.addVersion < snapVersion && (e.removeVersion == -1 || e.removeVersion >= snapVersion) {
-			snapshot = append(snapshot, e.value)
-		}
+	return &SnapshotIterator{
+		set:         s,
+		snapVersion: s.version,
+		scanLimit:   s.version,
 	}
-	return &SnapshotIterator{elements: snapshot}
 }
 
 // SnapshotIterator iterates over a frozen snapshot of the set.
+// It performs lazy scanning and uses O(1) iterator space.
 type SnapshotIterator struct {
-	elements []int
-	pos      int
+	set         *SnapshotSet
+	snapVersion int
+	scanLimit   int
+	scanPos     int
+	buffered    bool
+	buffer      int
 }
 
 // HasNext returns true if there are more elements to iterate.
 func (it *SnapshotIterator) HasNext() bool {
-	return it.pos < len(it.elements)
+	if it.buffered {
+		return true
+	}
+
+	for it.scanPos < it.scanLimit {
+		addVersion := it.scanPos
+		it.scanPos++
+		entVal, ok := it.set.store[storeKey{kind: keyEntry, id: addVersion}]
+		if !ok {
+			continue
+		}
+		if entVal.b == -1 || entVal.b >= it.snapVersion {
+			it.buffer = entVal.a
+			it.buffered = true
+			return true
+		}
+	}
+	return false
 }
 
 // Next returns the next element. Panics if no next element exists.
@@ -84,7 +127,7 @@ func (it *SnapshotIterator) Next() int {
 	if !it.HasNext() {
 		panic("SnapshotIterator: no next element")
 	}
-	val := it.elements[it.pos]
-	it.pos++
+	val := it.buffer
+	it.buffered = false
 	return val
 }

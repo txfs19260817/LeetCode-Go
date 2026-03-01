@@ -1,6 +1,72 @@
 # ---------------------------------------------------------------------------
+# Solution 2: O(1) per move — endpoint run-length counters
+# ---------------------------------------------------------------------------
+#
+# run[(row, col, half_dir_idx)] = length of the maximal same-player run
+#   starting at (row, col) and extending in that half-direction.
+#
+# Only the two ENDPOINTS of each run are kept current.  New placements
+# can only land on empty cells (outside every existing run), so only
+# endpoint values are ever queried.
+#
+# On each move, for each of 4 direction pairs:
+#   a = backward run via neighbor   b = forward run via neighbor
+#   total = a + 1 + b               (merged run through new cell)
+#   → update far-back endpoint      → update far-forward endpoint
+
+
+class TicTacToeO1:
+    # 8 half-directions in opposite pairs (even index ↔ odd index).
+    _half_dirs = [
+        (0, 1), (0, -1),    # pair 0: right  / left
+        (1, 0), (-1, 0),    # pair 1: down   / up
+        (1, 1), (-1, -1),   # pair 2: ↘      / ↖
+        (1, -1), (-1, 1),   # pair 3: ↙      / ↗
+    ]
+
+    def __init__(self, n: int, m: int, k: int):
+        self.n = n
+        self.m = m
+        self.k = k
+        self.board: dict[tuple[int, int], int] = {}
+        self.run: dict[tuple[int, int, int], int] = {}
+        self.winner = 0
+
+    def move(self, row: int, col: int, player: int) -> int:
+        if self.winner:
+            return self.winner
+        self.board[(row, col)] = player
+
+        for pair in range(4):
+            d1, d2 = pair * 2, pair * 2 + 1
+            dx1, dy1 = self._half_dirs[d1]
+            dx2, dy2 = self._half_dirs[d2]
+
+            nr1 = (
+                self.run[(row + dx1, col + dy1, d1)]
+                if self.board.get((row + dx1, col + dy1)) == player
+                else 0
+            )
+            nr2 = (
+                self.run[(row + dx2, col + dy2, d2)]
+                if self.board.get((row + dx2, col + dy2)) == player
+                else 0
+            )
+
+            total = 1 + nr1 + nr2
+            if total >= self.k:
+                self.winner = player
+                return player
+
+            self.run[(row + dx1 * nr1, col + dy1 * nr1, d2)] = total
+            self.run[(row + dx2 * nr2, col + dy2 * nr2, d1)] = total
+
+        return 0
+
+# ---------------------------------------------------------------------------
 # Solution 1: O(k) per move — scan up to k cells in each direction
 # ---------------------------------------------------------------------------
+
 
 class TicTacToe:
     def __init__(self, n: int, m: int, k: int):
@@ -39,69 +105,6 @@ class TicTacToe:
             if count >= self.k:
                 self.winner = player
                 return player
-        return 0
-
-
-# ---------------------------------------------------------------------------
-# Solution 2: O(1) per move — endpoint run-length counters
-# ---------------------------------------------------------------------------
-#
-# run[(row, col, half_dir_idx)] = length of the maximal same-player run
-#   starting at (row, col) and extending in that half-direction.
-#
-# Only the two ENDPOINTS of each run are kept current.  New placements
-# can only land on empty cells (outside every existing run), so only
-# endpoint values are ever queried.
-#
-# On each move, for each of 4 direction pairs:
-#   a = backward run via neighbor   b = forward run via neighbor
-#   total = a + 1 + b               (merged run through new cell)
-#   → update far-back endpoint      → update far-forward endpoint
-
-class TicTacToeO1:
-    # 8 half-directions in opposite pairs (even index ↔ odd index).
-    _half_dirs = [
-        (0, 1), (0, -1),    # pair 0: right  / left
-        (1, 0), (-1, 0),    # pair 1: down   / up
-        (1, 1), (-1, -1),   # pair 2: ↘      / ↖
-        (1, -1), (-1, 1),   # pair 3: ↙      / ↗
-    ]
-
-    def __init__(self, n: int, m: int, k: int):
-        self.n = n
-        self.m = m
-        self.k = k
-        self.board: dict[tuple[int, int], int] = {}
-        self.run: dict[tuple[int, int, int], int] = {}
-        self.winner = 0
-
-    def move(self, row: int, col: int, player: int) -> int:
-        if self.winner:
-            return self.winner
-        self.board[(row, col)] = player
-
-        for pair in range(4):
-            d, d_opp = pair * 2, pair * 2 + 1
-            dx, dy = self._half_dirs[d]
-
-            # a = backward run (neighbour in –d direction, extending further back)
-            pr, pc = row - dx, col - dy
-            a = self.run.get((pr, pc, d_opp), 0) if self.board.get((pr, pc)) == player else 0
-
-            # b = forward run (neighbour in +d direction, extending further forward)
-            sr, sc = row + dx, col + dy
-            b = self.run.get((sr, sc, d), 0) if self.board.get((sr, sc)) == player else 0
-
-            total = a + 1 + b
-
-            # Update far endpoints of the merged run
-            self.run[(row - dx * a, col - dy * a, d)] = total
-            self.run[(row + dx * b, col + dy * b, d_opp)] = total
-
-            if total >= self.k:
-                self.winner = player
-                return player
-
         return 0
 
 
