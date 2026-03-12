@@ -197,7 +197,9 @@ if __name__ == "__main__":
 
     # Stream Example 3
     s_enc3 = encode_via_stream(inp3)
-    assert [r.encode() for r in s_enc3] == ["BP[1, 1, 1, 1, 2, 3, 4, 5]"], f"Got {s_enc3}"
+    assert [r.encode() for r in s_enc3] == [
+        "BP[1, 1, 1, 1, 2, 3, 4, 5]"
+    ], f"Got {s_enc3}"
     assert decode_via_stream(s_enc3) == inp3
 
     # Stream Single element
@@ -207,7 +209,11 @@ if __name__ == "__main__":
 
     # Stream Long mixed
     s_enc5 = encode_via_stream(inp5)
-    assert [r.encode() for r in s_enc5] == ["RLE[7, 10]", "BP[1, 2, 3]", "RLE[2, 9]"], f"Got {s_enc5}"
+    assert [r.encode() for r in s_enc5] == [
+        "RLE[7, 10]",
+        "BP[1, 2, 3]",
+        "RLE[2, 9]",
+    ], f"Got {s_enc5}"
     assert decode_via_stream(s_enc5) == inp5
 
     # Stream Empty
@@ -228,6 +234,9 @@ if __name__ == "__main__":
         enc.append(1)
     enc.append(2)
     enc.append(3)
-    assert [r.encode() for r in enc.finish()] == ["BP[1, 1, 1, 1, 1, 1, 1, 2]", "RLE[3, 1]"]
+    assert [r.encode() for r in enc.finish()] == [
+        "BP[1, 1, 1, 1, 1, 1, 1, 2]",
+        "RLE[3, 1]",
+    ]
 
     print("All tests passed!")
