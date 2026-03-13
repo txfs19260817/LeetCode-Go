@@ -1,6 +1,34 @@
 package leetcode
 
-import "container/heap"
+import (
+	"container/heap"
+	"slices"
+)
+
+func topKFrequent(nums []int, k int) []int {
+	n2c, maxCnt := map[int]int{}, 0
+	for _, num := range nums {
+		n2c[num]++
+		maxCnt = max(maxCnt, n2c[num])
+	}
+	buckets := make([][]int, maxCnt+1)
+	for n, count := range n2c {
+		buckets[count] = append(buckets[count], n)
+	}
+	ans := make([]int, 0, k)
+	for _, bucket := range slices.Backward(buckets) {
+		remaining := k - len(ans)
+		if len(bucket) > remaining {
+			ans = append(ans, bucket[:remaining]...)
+			break
+		}
+		ans = append(ans, bucket...)
+		if len(ans) == k {
+			break
+		}
+	}
+	return ans
+}
 
 type pair struct {
 	num, cnt int
@@ -30,7 +58,7 @@ func (h *pairMinHeap) Push(x interface{}) {
 	*h = append(*h, x.(pair))
 }
 
-func topKFrequent(nums []int, k int) []int {
+func topKFrequent2(nums []int, k int) []int {
 	var ans []int
 	num2cnt, pHeap := map[int]int{}, make(pairMinHeap, 0, k+1)
 	for _, num := range nums {
