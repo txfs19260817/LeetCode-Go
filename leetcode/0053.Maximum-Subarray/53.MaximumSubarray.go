@@ -9,7 +9,7 @@ func maxSubArray(nums []int) int {
 	return ans
 }
 
-func maxSubArray1(nums []int) int {
+func maxSubArray2(nums []int) int {
 	ans, dp := nums[0], make([]int, len(nums))
 	dp[0] = nums[0]
 	for i := 1; i < len(nums); i++ {
@@ -19,11 +19,4 @@ func maxSubArray1(nums []int) int {
 		ans = max(ans, d)
 	}
 	return ans
-}
-
-func max(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
 }

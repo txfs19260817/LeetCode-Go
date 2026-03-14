@@ -12,9 +12,14 @@ func Test_maxEnvelopes(t *testing.T) {
 		want int
 	}{
 		{
-			name: "1",
+			name: "envelopes = [[5,4],[6,4],[6,7],[2,3]]",
 			args: args{[][]int{{5, 4}, {6, 4}, {6, 7}, {2, 3}}},
 			want: 3,
+		},
+		{
+			name: "envelopes = [[1,1],[1,1],[1,1]]",
+			args: args{[][]int{{1, 1}, {1, 1}, {1, 1}}},
+			want: 1,
 		},
 	}
 	for _, tt := range tests {

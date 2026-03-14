@@ -1,6 +1,9 @@
 package leetcode
 
-import "container/heap"
+import (
+	"container/heap"
+	"sort"
+)
 
 type strHeap []string
 
@@ -76,4 +79,22 @@ func suggestedProducts(products []string, searchWord string) [][]string {
 		t.Insert(w)
 	}
 	return t.GetSuggestions(searchWord)
+}
+
+func suggestedProducts2(products []string, searchWord string) [][]string {
+	sort.Strings(products)
+	ans := make([][]string, 0, len(searchWord))
+	for i := range searchWord {
+		query := searchWord[:i+1]
+		j := sort.Search(len(products), func(i int) bool { return query <= products[i] })
+		cur := make([]string, 0, 3)
+		for ; j < len(products) && len(query) <= len(products[j]) && products[j][:i+1] == query; j++ {
+			cur = append(cur, products[j])
+			if len(cur) >= 3 {
+				break
+			}
+		}
+		ans = append(ans, cur)
+	}
+	return ans
 }

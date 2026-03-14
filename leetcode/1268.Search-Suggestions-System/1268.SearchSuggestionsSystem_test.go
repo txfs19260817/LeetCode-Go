@@ -1,8 +1,9 @@
 package leetcode
 
 import (
-	"reflect"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func Test_suggestedProducts(t *testing.T) {
@@ -28,15 +29,41 @@ func Test_suggestedProducts(t *testing.T) {
 		},
 		{
 			name: "havana",
-			args: args{[]string{"havana"}, "tatiana"},
-			want: make([][]string, 7),
+			args: args{[]string{"havana"}, "havana"},
+			want: [][]string{{"havana"}, {"havana"}, {"havana"}, {"havana"}, {"havana"}, {"havana"}},
+		},
+		{
+			name: `"code","codephone","coddle","coddles","codes"`,
+			args: args{[]string{"code", "codephone", "coddle", "coddles", "codes"}, "coddle"},
+			want: [][]string{
+				{"coddle", "coddles", "code"},
+				{"coddle", "coddles", "code"},
+				{"coddle", "coddles", "code"},
+				{"coddle", "coddles"},
+				{"coddle", "coddles"},
+				{"coddle", "coddles"},
+			},
 		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := suggestedProducts(tt.args.products, tt.args.searchWord); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("suggestedProducts() = %v, want %v", got, tt.want)
-			}
+			assert.Equal(t, tt.want, suggestedProducts(tt.args.products, tt.args.searchWord))
+			assert.Equal(t, tt.want, suggestedProducts2(tt.args.products, tt.args.searchWord))
 		})
+	}
+}
+
+func Benchmark_suggestedProducts(b *testing.B) {
+	products := []string{"mobile", "mouse", "moneypot", "monitor", "mousepad"}
+	for b.Loop() {
+		_ = suggestedProducts(products, "mouse")
+	}
+}
+
+func Benchmark_suggestedProducts2(b *testing.B) {
+	products := []string{"mobile", "mouse", "moneypot", "monitor", "mousepad"}
+	for b.Loop() {
+		benchmarkProducts := append([]string(nil), products...)
+		_ = suggestedProducts2(benchmarkProducts, "mouse")
 	}
 }
