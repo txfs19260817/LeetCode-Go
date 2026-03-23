@@ -12,22 +12,20 @@ func numDistinctIslands(grid [][]int) int {
 
 	var dfs func(r, c int, step byte)
 	dfs = func(r, c int, step byte) {
-		// Fix bounds check: 'n' was compared with 'm' (n < 0 || n >= m) which is incorrect and weird.
-		// It should be c < 0 || c >= n
 		if r < 0 || r >= m || c < 0 || c >= n || visited[r][c] || grid[r][c] == 0 {
 			return
 		}
 		visited[r][c] = true
 		curIsland.WriteByte(step)
-		
+
 		// Use distinct characters for directions to uniquely identify path
 		dfs(r-1, c, 'U')
 		dfs(r+1, c, 'D')
 		dfs(r, c+1, 'R')
 		dfs(r, c-1, 'L')
-		
+
 		// Backtracking step to uniquely identify structure (important!)
-		curIsland.WriteByte('B') 
+		curIsland.WriteByte('B')
 	}
 
 	islandSet := map[string]bool{}

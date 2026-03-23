@@ -12,8 +12,7 @@ func merge(intervals [][]int) [][]int {
 
 	res := make([][]int, 1, len(intervals))
 	res[0] = intervals[0]
-	intervals = intervals[1:]
-	for _, interval := range intervals {
+	for _, interval := range intervals[1:] {
 		if res[len(res)-1][1] < interval[0] {
 			res = append(res, interval)
 		} else {
@@ -21,11 +20,4 @@ func merge(intervals [][]int) [][]int {
 		}
 	}
 	return res
-}
-
-func max(i, j int) int {
-	if i > j {
-		return i
-	}
-	return j
 }
