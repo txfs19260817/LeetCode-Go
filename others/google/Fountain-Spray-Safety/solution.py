@@ -16,19 +16,17 @@ def _previous_ge_indices(terrain: list[int]) -> list[int]:
 
 
 def _next_ge_indices(terrain: list[int]) -> list[int]:
-    n = len(terrain)
-    next_ge = [n] * n
+    next_ge = [len(terrain)] * len(terrain)
     stack: list[int] = []
 
-    for i in range(n - 1, -1, -1):
-        while stack and terrain[stack[-1]] < terrain[i]:
+    for i, height in reversed(list(enumerate(terrain))):
+        while stack and terrain[stack[-1]] < height:
             stack.pop()
         if stack:
             next_ge[i] = stack[-1]
         stack.append(i)
 
     return next_ge
-
 
 def find_unsafe_positions(terrain: list[int], fountains: list[int]) -> list[int]:
     n = len(terrain)

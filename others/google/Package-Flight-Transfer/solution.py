@@ -72,6 +72,17 @@ if __name__ == "__main__":
 
     assert solver.canTransfer("SFO", "SFO", []) is True
 
+    assert solver.canTransfer("A", "B", []) is False
+
+    assert solver.canTransfer(
+        "A",
+        "C",
+        [
+            ("A", "B", 1, 3),
+            ("B", "C", 3, 6),
+        ],
+    ) is True
+
     assert solver.canTransfer(
         "A",
         "D",
@@ -81,3 +92,25 @@ if __name__ == "__main__":
             ("C", "D", 4, 6),
         ],
     ) is True
+
+    assert solver.canTransfer(
+        "A",
+        "D",
+        [
+            ("A", "B", 0, 10),
+            ("A", "C", 1, 2),
+            ("C", "B", 2, 3),
+            ("B", "D", 4, 5),
+        ],
+    ) is True
+
+    assert solver.canTransfer(
+        "A",
+        "D",
+        [
+            ("A", "B", 0, 2),
+            ("B", "A", 2, 3),
+            ("B", "C", 3, 4),
+            ("C", "B", 4, 5),
+        ],
+    ) is False

@@ -44,6 +44,13 @@ Last seen index: [Question-List-With-Last-Seen.md](./Question-List-With-Last-See
 - [URL Router Design](./URL-Router-Design/README.md) (Hard; Google, Atlassian)
 - [Windowed Average excluding Largest K](./Windowed-Average-Excluding-Largest-K/README.md) (Medium; Google)
 
+## Dijkstra-Based Problems
+
+Identified from the current implementations under `others/google`:
+
+- [Maximizing Transmission Efficiency](./Maximizing-Transmission-Efficiency/README.md): `solution.py` explicitly implements `_max_product_dijkstra(...)` and uses a priority queue to optimize path quality on a weighted directed graph.
+- [Package Flight Transfer](./Package-Flight-Transfer/README.md): `solution.py` maintains the earliest arrival time per airport with a min-heap, which is a Dijkstra-style shortest-path traversal on time states.
+
 ## Google Question List With Last Seen
 
 - Generated from: `C:\Users\duola\Downloads\hack2hire-questions-2026-01-31T23-46-16-178Z.json`
