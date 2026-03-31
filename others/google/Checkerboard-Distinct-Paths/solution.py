@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from functools import lru_cache
+
 
 def count_paths(rows: int, cols: int) -> int:
     if rows <= 0 or cols <= 0:
@@ -24,10 +26,34 @@ def count_paths(rows: int, cols: int) -> int:
 
     return dp[rows - 1]
 
+def count_paths_dfs_memo(rows: int, cols: int) -> int:
+    if rows <= 0 or cols <= 0:
+        return 0
+
+    @lru_cache(maxsize=None)
+    def dfs(row: int, col: int) -> int:
+        if not (0 <= row < rows):
+            return 0
+        if col == cols - 1:  # From here to the dest, there's 1 path if I’m already there, otherwise none
+            return 1 if row == rows - 1 else 0
+
+        return (
+            dfs(row - 1, col + 1)
+            + dfs(row, col + 1)
+            + dfs(row + 1, col + 1)
+        )
+
+    return dfs(rows - 1, 0)
+
 
 if __name__ == "__main__":
     assert count_paths(1, 1) == 1
+    assert count_paths_dfs_memo(1, 1) == 1
     assert count_paths(2, 2) == 1
+    assert count_paths_dfs_memo(2, 2) == 1
     assert count_paths(2, 3) == 2
+    assert count_paths_dfs_memo(2, 3) == 2
     assert count_paths(3, 3) == 2
+    assert count_paths_dfs_memo(3, 3) == 2
     assert count_paths(3, 4) == 4
+    assert count_paths_dfs_memo(3, 4) == 4

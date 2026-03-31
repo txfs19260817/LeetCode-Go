@@ -1,8 +1,7 @@
 class HttpRouter:
     class TrieNode:
         def __init__(self):
-            self.children = {}  # str -> TrieNode
-            self.param_name = None
+            self.static_children = {}
             self.param_child = None
             self.pattern = None
 
@@ -17,31 +16,35 @@ class HttpRouter:
     def __init__(self):
         self.root = self.TrieNode()
 
+    def _split_path(self, path: str) -> list[str] | None:
+        if path != "/" and path.endswith("/"):
+            return None
+        return [segment for segment in path.split("/") if segment]
+
     def register_handler(self, path: str) -> None:
-        path_segments = [p for p in path.split("/") if p]
+        path_segments = self._split_path(path)
+        if path_segments is None:
+            raise ValueError("Trailing slash is not allowed in route registration")
+
         cur = self.root
         for segment in path_segments:
-            if segment.startswith("{"):
-                if cur.param_name is None:
-                    cur.param_name = segment
+            if segment.startswith("{") and segment.endswith("}"):
+                if cur.param_child is None:
                     cur.param_child = self.TrieNode()
-                elif cur.param_name != segment:
-                    raise ValueError(
-                        f"Parameter segment mismatch: {cur.param_name} != {segment}"
-                    )
                 cur = cur.param_child
             else:
-                cur = cur.children.setdefault(
-                    segment, self.TrieNode()
-                )  # if segment not in children, add it
-        cur.pattern = path  # set the pattern for the current node
+                cur = cur.static_children.setdefault(segment, self.TrieNode())
+        cur.pattern = path
 
     def get_handler(self, path: str) -> MatchResult | None:
-        path_segments = [p for p in path.split("/") if p]
+        path_segments = self._split_path(path)
+        if path_segments is None:
+            return None
+
         cur = self.root
         params: list[str] = []
         for segment in path_segments:
-            static_child = cur.children.get(segment)
+            static_child = cur.static_children.get(segment)
             if static_child is not None:
                 cur = static_child
             elif cur.param_child is not None:
