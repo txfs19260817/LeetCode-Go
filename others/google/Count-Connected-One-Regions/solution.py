@@ -61,11 +61,6 @@ def count_surrounded_regions(grid: list[list[int]], eight_connected: bool = True
 
     return regions
 
-
-def count_connected_one_regions(grid: list[list[int]], eight_connected: bool = True) -> int:
-    return count_surrounded_regions(grid, eight_connected)
-
-
 if __name__ == "__main__":
     grid = [
         [0, 1, 1, 0],
