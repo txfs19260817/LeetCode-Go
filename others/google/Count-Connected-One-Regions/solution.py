@@ -62,6 +62,26 @@ def count_surrounded_regions(grid: list[list[int]], eight_connected: bool = True
     return regions
 
 if __name__ == "__main__":
+    assert count_surrounded_regions([]) == 0
+    assert count_surrounded_regions([[]]) == 0
+    assert count_surrounded_regions([[0]]) == 0
+    assert count_surrounded_regions([[1]]) == 0
+    assert count_surrounded_regions([[0, 0], [0, 0]]) == 0
+
+    single_center = [
+        [0, 0, 0],
+        [0, 1, 0],
+        [0, 0, 0],
+    ]
+    assert count_surrounded_regions(single_center) == 1
+
+    all_ones = [
+        [1, 1, 1],
+        [1, 1, 1],
+        [1, 1, 1],
+    ]
+    assert count_surrounded_regions(all_ones) == 0
+
     grid = [
         [0, 1, 1, 0],
         [0, 1, 0, 0],
@@ -100,3 +120,35 @@ if __name__ == "__main__":
     ]
     assert count_surrounded_regions(diagonal_only, eight_connected=True) == 1
     assert count_surrounded_regions(diagonal_only, eight_connected=False) == 3
+
+    # 八连通下，中心块会通过对角线连接到边界上的 1，因此不算被包围。
+    border_diagonal_leak = [
+        [1, 0, 0, 0, 0],
+        [0, 1, 0, 0, 0],
+        [0, 0, 1, 0, 0],
+        [0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0],
+    ]
+    assert count_surrounded_regions(border_diagonal_leak, eight_connected=True) == 0
+    assert count_surrounded_regions(border_diagonal_leak, eight_connected=False) == 2
+
+    multiple_separate_holes = [
+        [0, 0, 0, 0, 0, 0, 0],
+        [0, 1, 0, 0, 1, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0],
+        [0, 1, 1, 0, 1, 1, 0],
+        [0, 1, 1, 0, 1, 1, 0],
+        [0, 0, 0, 0, 0, 0, 0],
+    ]
+    assert count_surrounded_regions(multiple_separate_holes, eight_connected=True) == 4
+    assert count_surrounded_regions(multiple_separate_holes, eight_connected=False) == 4
+
+    narrow_corridor_to_border = [
+        [0, 0, 0, 0, 0],
+        [0, 1, 1, 1, 0],
+        [0, 0, 0, 1, 0],
+        [0, 1, 1, 1, 0],
+        [0, 0, 0, 1, 1],
+    ]
+    assert count_surrounded_regions(narrow_corridor_to_border, eight_connected=True) == 0
+    assert count_surrounded_regions(narrow_corridor_to_border, eight_connected=False) == 0
