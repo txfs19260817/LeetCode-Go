@@ -30,3 +30,4 @@ playground.go
 mdtemplates/
 
 cmake-build-debug
+__pycache__/
